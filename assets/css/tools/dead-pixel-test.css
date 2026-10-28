@@ -1,0 +1,16 @@
+/* Dead pixel test */
+.dp-auto { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; cursor: pointer; }
+.dp-stage { display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 20px; text-align: center; }
+.dp-pick, .dp-keys { margin: 0; color: var(--muted); font-size: .92rem; }
+.dp-swatches { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.dp-swatch { width: 48px; height: 48px; border-radius: 10px; border: 2px solid var(--border); cursor: pointer; }
+.dp-swatch:hover { transform: scale(1.06); }
+.dp-screen { position: fixed; inset: 0; z-index: 1000; background: #000; cursor: pointer; outline: none; }
+.dp-screen[hidden] { display: none; }
+.dp-screen.hide-cursor { cursor: none; }
+.dp-hint {
+	position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%);
+	font: 600 15px/1.3 var(--font); opacity: 0; transition: opacity .4s; pointer-events: none;
+	white-space: nowrap; max-width: 92vw; overflow: hidden; text-overflow: ellipsis;
+}
+.dp-hint.is-on { opacity: .85; }

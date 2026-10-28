@@ -1,0 +1,21 @@
+/* Speaker cleaner */
+.sc-dur { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; font-weight: 600; }
+.sc-dur select { width: auto; min-height: 40px; padding: 6px 10px; }
+.sc-stage { min-height: 300px; }
+.sc-go {
+	position: relative; z-index: 1; display: grid; place-items: center; gap: 4px;
+	width: 180px; height: 180px; border-radius: 50%; border: 0; cursor: pointer;
+	background: var(--brand); color: var(--brand-ink); font: 700 1.1rem/1.2 var(--font);
+	box-shadow: 0 6px 24px color-mix(in srgb, var(--brand) 35%, transparent);
+	touch-action: manipulation;
+}
+.sc-go:hover { background: var(--brand-strong); }
+.sc-time { font: 600 1.6rem/1 var(--mono); font-variant-numeric: tabular-nums; opacity: .9; }
+.sc-rings { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.sc-rings span { position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 2px solid var(--brand); opacity: 0; }
+.is-playing .sc-rings span { animation: sc-ring 1.8s ease-out infinite; }
+.is-playing .sc-rings span:nth-child(2) { animation-delay: .6s; }
+.is-playing .sc-rings span:nth-child(3) { animation-delay: 1.2s; }
+@keyframes sc-ring { from { transform: scale(1); opacity: .55; } to { transform: scale(1.7); opacity: 0; } }
+.sc-meter { margin-top: 12px; }
+.sc-vol { margin-top: 14px; max-width: 420px; }

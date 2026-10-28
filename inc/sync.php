@@ -54,6 +54,8 @@ function tn_managed_pages() {
 function tn_sync_pages() {
 	$managed = tn_managed_pages();
 	$keys    = tn_all_keys();
+	$created = array();
+	$drafted = array();
 
 	foreach ( $keys as $key ) {
 		$def = tn_get_def( $key );
@@ -88,7 +90,8 @@ function tn_sync_pages() {
 			}
 			$id = $changed ? wp_update_post( wp_slash( $data ), true ) : $page->ID;
 		} else {
-			$id = wp_insert_post( wp_slash( $data ), true );
+			$id        = wp_insert_post( wp_slash( $data ), true );
+			$created[] = $key;
 		}
 
 		if ( is_wp_error( $id ) || ! $id ) {
@@ -102,11 +105,20 @@ function tn_sync_pages() {
 	}
 
 	// Content file removed: keep the page but take it offline.
-	foreach ( $managed as $page ) {
+	foreach ( $managed as $key => $page ) {
 		if ( 'publish' === $page->post_status ) {
 			wp_update_post( array( 'ID' => $page->ID, 'post_status' => 'draft' ) );
+			$drafted[] = $key;
 		}
 	}
+
+	/**
+	 * Fires after the pages match the content files (inc/indexnow.php listens).
+	 *
+	 * @param string[] $created Page keys that were just created.
+	 * @param string[] $drafted Page keys that were just taken offline.
+	 */
+	do_action( 'tn_after_sync', $created, $drafted );
 }
 
 /**

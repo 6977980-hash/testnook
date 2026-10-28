@@ -24,8 +24,9 @@ define( 'TN_ADSENSE_CLIENT', '' );
 define( 'TN_GA4_ID', '' );      // e.g. G-XXXXXXXXXX
 define( 'TN_CLARITY_ID', '' );  // e.g. abcd1234ef
 
-// IndexNow key (Phase 6). Empty disables the key file and pings.
-define( 'TN_INDEXNOW_KEY', '' );
+// IndexNow key: served at /<key>.txt and used to ping Bing and friends on
+// every content change (inc/indexnow.php). Public by design; empty disables it.
+define( 'TN_INDEXNOW_KEY', '00f5e7841c724dd298a04e4d3648544a' );
 
 // Founder / publisher identity (About page, Organization + Person schema).
 define( 'TN_FOUNDER_NAME', 'Ali Ahmad' );

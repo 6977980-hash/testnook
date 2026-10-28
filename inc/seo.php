@@ -108,7 +108,14 @@ add_action(
 		foreach ( $og as $prop => $val ) {
 			echo '<meta property="' . esc_attr( $prop ) . '" content="' . esc_attr( $val ) . '">' . "\n";
 		}
+		// Every share image is 1200x630 (assets/img/og-default.jpg and bin/make-og-images.py).
+		echo '<meta property="og:image:width" content="1200">' . "\n";
+		echo '<meta property="og:image:height" content="630">' . "\n";
+		echo '<meta property="og:image:alt" content="' . esc_attr( $f['title'] ) . '">' . "\n";
 		echo '<meta name="twitter:card" content="summary_large_image">' . "\n";
+		echo '<meta name="twitter:title" content="' . esc_attr( $f['title'] ) . '">' . "\n";
+		echo '<meta name="twitter:description" content="' . esc_attr( $f['description'] ) . '">' . "\n";
+		echo '<meta name="twitter:image" content="' . esc_attr( $f['image'] ) . '">' . "\n";
 	},
 	2
 );
@@ -216,7 +223,12 @@ function tn_schema_graph() {
 	if ( ! $def || tn_is_embed() ) {
 		return $graph;
 	}
-	$url = get_permalink();
+	$url    = get_permalink();
+	$fields = tn_seo_fields();
+	$dates  = array();
+	if ( ! empty( $def['updated'] ) ) {
+		$dates['dateModified'] = $def['updated'];
+	}
 
 	if ( 'tool' === $def['type'] ) {
 		$graph[] = array(
@@ -225,6 +237,10 @@ function tn_schema_graph() {
 			'name'                => $def['name'],
 			'url'                 => $url,
 			'description'         => $def['description'],
+			'image'               => $fields['image'],
+			'inLanguage'          => 'en',
+			'isPartOf'            => array( '@id' => home_url( '/#website' ) ),
+			'breadcrumb'          => array( '@id' => $url . '#breadcrumb' ),
 			'applicationCategory' => 'UtilitiesApplication',
 			'operatingSystem'     => 'Any (runs in a web browser)',
 			'browserRequirements' => 'Requires JavaScript and a modern browser',
@@ -235,7 +251,7 @@ function tn_schema_graph() {
 				'priceCurrency' => 'USD',
 			),
 			'publisher'           => array( '@id' => home_url( '/#organization' ) ),
-		);
+		) + $dates;
 	} elseif ( 'hub' === $def['type'] ) {
 		$items = array();
 		$pos   = 0;
@@ -250,30 +266,36 @@ function tn_schema_graph() {
 			}
 		}
 		$graph[] = array(
-			'@type'      => 'CollectionPage',
-			'@id'        => $url . '#page',
-			'name'       => $def['title'],
-			'url'        => $url,
-			'isPartOf'   => array( '@id' => home_url( '/#website' ) ),
-			'breadcrumb' => array( '@id' => $url . '#breadcrumb' ),
-			'mainEntity' => array(
+			'@type'       => 'CollectionPage',
+			'@id'         => $url . '#page',
+			'name'        => $def['title'],
+			'url'         => $url,
+			'description' => $def['description'],
+			'image'       => $fields['image'],
+			'inLanguage'  => 'en',
+			'isPartOf'    => array( '@id' => home_url( '/#website' ) ),
+			'breadcrumb'  => array( '@id' => $url . '#breadcrumb' ),
+			'mainEntity'  => array(
 				'@type'           => 'ItemList',
+				'numberOfItems'   => count( $items ),
 				'itemListElement' => $items,
 			),
-		);
+		) + $dates;
 	} else {
 		$types   = array(
 			'about'   => 'AboutPage',
 			'contact' => 'ContactPage',
 		);
 		$graph[] = array(
-			'@type'      => isset( $types[ $def['slug'] ] ) ? $types[ $def['slug'] ] : 'WebPage',
-			'@id'        => $url . '#page',
-			'name'       => $def['title'],
-			'url'        => $url,
-			'isPartOf'   => array( '@id' => home_url( '/#website' ) ),
-			'breadcrumb' => array( '@id' => $url . '#breadcrumb' ),
-		);
+			'@type'       => isset( $types[ $def['slug'] ] ) ? $types[ $def['slug'] ] : 'WebPage',
+			'@id'         => $url . '#page',
+			'name'        => $def['title'],
+			'url'         => $url,
+			'description' => isset( $def['description'] ) ? $def['description'] : '',
+			'inLanguage'  => 'en',
+			'isPartOf'    => array( '@id' => home_url( '/#website' ) ),
+			'breadcrumb'  => array( '@id' => $url . '#breadcrumb' ),
+		) + $dates;
 	}
 
 	$graph[] = tn_schema_breadcrumbs( $def );

@@ -92,9 +92,15 @@ return array(
 	'intro'       => 'Lede under the H1.',
 	'body'        => '<h2>...</h2><p>...</p>',  // guide text after the tool grid
 	'faq'         => array( array( 'Q', 'A' ) ),
+	'updated'     => '2026-10-28',  // shown as "Last updated", emitted as dateModified
 	'ads'         => 'standard',
 );
 ```
+
+The hub's `name`, `title`, `icon` and `blurb` come from `content/catalog.php`;
+the tool grid is built from the catalog too. Link the hub's tools from `body`
+so the guide text is useful on its own. Once the file exists, the header,
+footer, breadcrumbs and homepage link to `/<hub>/` instead of `/#<hub>`.
 
 ## Static page file
 
@@ -111,6 +117,19 @@ return array(
 
 ## Images
 
-- `assets/img/og-default.jpg` is the share image for every page.
-- Drop `assets/img/og/<slug>.jpg` (1200x630) to give a tool or hub its own.
+- `assets/img/og-default.jpg` is the share image for the homepage and static pages.
+- Every tool and hub has `assets/img/og/<slug>.jpg` (1200x630). After adding a
+  tool or hub to the catalog, run `python3 bin/make-og-images.py` (Pillow +
+  the Inter font) and commit the new image; `--force` regenerates all of them.
+  A missing image falls back to `og-default.jpg`.
 - Favicons live in `assets/img/` and are used unless a Site Icon is set in the Customizer.
+
+## IndexNow
+
+`inc/indexnow.php` serves `/<TN_INDEXNOW_KEY>.txt` and, after every content
+sync on the production site, submits the URLs whose content file changed (plus
+new and removed pages, and the homepage when the catalog changes) to
+`api.indexnow.org`, which feeds Bing, Yandex, Seznam and Naver. Nothing is
+sent when `wp_get_environment_type()` is not `production`. To resubmit every
+page, open `/wp-admin/?tn_indexnow=all` as an administrator. Google does not
+use IndexNow: keep submitting the sitemap in Search Console.

@@ -1,0 +1,26 @@
+/* Mouse tester */
+.mt-hint { font-size: .9rem; color: var(--muted); }
+.mt-stage { min-height: 360px; cursor: crosshair; user-select: none; -webkit-user-select: none; touch-action: none; }
+.mt-mouse { position: relative; width: 180px; height: 290px; margin: 24px 0; }
+.mt-part {
+	position: absolute; display: grid; place-items: center;
+	background: var(--surface); border: 2px solid var(--border); color: var(--muted);
+	font: 700 .85rem/1 var(--font); transition: background-color .1s, border-color .1s, color .1s;
+}
+.mt-left { top: 0; left: 0; width: 89px; height: 125px; border-radius: 90px 6px 6px 6px; }
+.mt-right { top: 0; right: 0; width: 89px; height: 125px; border-radius: 6px 90px 6px 6px; }
+.mt-left span, .mt-right span { margin-top: 30px; }
+.mt-body {
+	position: absolute; top: 129px; left: 0; right: 0; bottom: 0;
+	background: var(--surface); border: 2px solid var(--border); border-radius: 6px 6px 90px 90px;
+}
+.mt-wheel { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 34px; height: 92px; z-index: 2; }
+.mt-wheel .mt-part { position: static; width: 34px; border-radius: 10px; margin-bottom: 3px; font-size: .7rem; }
+.mt-up, .mt-down { height: 22px; }
+.mt-mid { height: 42px; }
+.mt-side { left: -20px; width: 18px; height: 42px; border-radius: 8px 0 0 8px; font-size: .7rem; z-index: 2; }
+.mt-fwd { top: 140px; }
+.mt-back { top: 188px; }
+.mt-part.is-done { border-color: var(--ok); color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--surface)); }
+.mt-part.is-down { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.mt-stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }

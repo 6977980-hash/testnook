@@ -1,0 +1,8 @@
+/* FPS test */
+.fps-big { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin: 4px 0 10px; font: 800 clamp(3rem, 8vw, 4.5rem)/1 var(--font); font-variant-numeric: tabular-nums; color: var(--brand); }
+.fps-big small { font-size: 1rem; font-weight: 700; color: var(--muted); letter-spacing: .08em; }
+.fps-stage { min-height: 220px; height: 220px; display: block; }
+.fps-stage canvas { width: 100%; height: 100%; display: block; }
+.fps-graph { display: block; width: 100%; height: 70px; margin-top: 10px; border-radius: var(--radius-sm); }
+.tool:fullscreen, .tool.is-pseudo-fs { display: flex; flex-direction: column; background: var(--bg); padding: 16px; }
+.tool:fullscreen .fps-stage, .tool.is-pseudo-fs .fps-stage { flex: 1; height: auto; }

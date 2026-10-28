@@ -1,0 +1,15 @@
+/* DPI analyzer */
+.dpi-field { min-width: 220px; flex: 1 1 220px; }
+.dpi-dist-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+.dpi-stage { min-height: 280px; cursor: crosshair; user-select: none; -webkit-user-select: none; padding: 24px; grid-template-rows: auto auto auto; gap: 18px; align-content: center; text-align: center; border: 2px dashed var(--border); outline: none; }
+.dpi-stage:focus { border-color: var(--focus); }
+.dpi-stage.is-measuring { border-color: var(--brand); border-style: solid; cursor: none; }
+.dpi-msg { display: grid; gap: 8px; }
+.dpi-msg strong { font-size: clamp(1.3rem, 3.5vw, 1.9rem); line-height: 1.2; }
+.dpi-msg span { color: var(--muted); font-size: .95rem; }
+.dpi-track { position: relative; height: 14px; width: min(100%, 560px); margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; }
+.dpi-fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--brand); border-radius: 999px; }
+.dpi-dot { position: absolute; top: 50%; left: 0; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--brand); border: 3px solid var(--surface); box-shadow: var(--shadow); }
+.dpi-live { font: 600 .9rem var(--font); font-variant-numeric: tabular-nums; color: var(--muted); }
+.dpi-foot { margin-top: 10px; justify-content: space-between; }
+.dpi-mode { font-size: .85rem; color: var(--muted); }

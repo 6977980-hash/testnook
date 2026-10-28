@@ -63,5 +63,13 @@ return array(
 		'pink-screen'             => array( 'name' => 'Pink Screen', 'blurb' => 'A full pink screen for selfie lighting and a soft mood light.', 'hub' => 'screen', 'also' => array() ),
 		'purple-screen'           => array( 'name' => 'Purple Screen', 'blurb' => 'A full purple screen for gaming mood light and colour checks.', 'hub' => 'screen', 'also' => array() ),
 		'grey-screen'             => array( 'name' => 'Grey Screen', 'blurb' => 'A full grey screen in 5-90% shades for uniformity and burn-in checks.', 'hub' => 'screen', 'also' => array() ),
+		'ufo-test'                => array( 'name' => 'UFO Test', 'blurb' => 'Moving UFOs at selectable speeds to see motion blur, ghosting and skipped frames.', 'hub' => 'screen', 'also' => array( 'benchmark' ) ),
+		'metronome'               => array( 'name' => 'Metronome', 'blurb' => 'An online metronome from 20 to 300 BPM with time signatures and accents.', 'hub' => 'audio', 'also' => array() ),
+		'tap-bpm'                 => array( 'name' => 'Tap BPM', 'blurb' => 'Tap along to any song and get its tempo in beats per minute.', 'hub' => 'audio', 'also' => array( 'benchmark' ) ),
+		'guitar-tuner'            => array( 'name' => 'Guitar Tuner', 'blurb' => 'A chromatic tuner that listens through your mic and shows the note and cents.', 'hub' => 'audio', 'also' => array( 'phone' ) ),
+		'stroop-test'             => array( 'name' => 'Stroop Test', 'blurb' => 'Name the ink colour, not the word, and measure the Stroop effect in ms.', 'hub' => 'benchmark', 'also' => array() ),
+		'f1-reaction-test'        => array( 'name' => 'F1 Reaction Test', 'blurb' => 'Five red lights go out at random: react like an F1 start and get your time.', 'hub' => 'benchmark', 'also' => array() ),
+		'right-click-cps-test'    => array( 'name' => 'Right Click CPS Test', 'blurb' => 'Count right clicks per second and check the right mouse button.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
+		'jitter-click-test'       => array( 'name' => 'Jitter Click Test', 'blurb' => 'A 10 second jitter clicking test with peak CPS and consistency.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
 	),
 );

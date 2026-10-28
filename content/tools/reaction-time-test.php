@@ -78,6 +78,6 @@ return array(
 		array( 'Can I take the reaction time test on a phone?', 'Yes. Tap the box when it turns green. Times are usually a little slower than on a desktop with a mouse because of touch screen delay.' ),
 		array( 'Is my best score saved?', 'Your best average is stored in this browser only, so you can try to beat it later. Nothing is sent to a server.' ),
 	),
-	'related'        => array( 'cps-test', 'spacebar-clicker', 'double-click-test', 'refresh-rate-test', 'fps-test', 'mouse-tester' ),
+	'related'        => array( 'f1-reaction-test', 'stroop-test', 'cps-test', 'spacebar-clicker', 'refresh-rate-test', 'fps-test' ),
 	'updated'        => '2026-10-28',
 );

@@ -76,6 +76,6 @@ return array(
 		array( 'Does refresh rate matter for normal use?', 'Higher rates make scrolling, mouse movement and games look smoother and feel more responsive. For office work 60 Hz is fine; for gaming 120-144 Hz is a big step up.' ),
 		array( 'Why do I get a different result on each monitor?', 'Each display has its own refresh rate. The test measures the screen the browser window is on, so move the window and press Measure again for each one.' ),
 	),
-	'related'      => array( 'fps-test', 'dead-pixel-test', 'stuck-pixel-fixer', 'burn-in-test', 'gamepad-tester', 'mouse-polling-rate-test' ),
+	'related'      => array( 'ufo-test', 'fps-test', 'dead-pixel-test', 'stuck-pixel-fixer', 'burn-in-test', 'mouse-polling-rate-test' ),
 	'updated'      => '2026-10-28',
 );

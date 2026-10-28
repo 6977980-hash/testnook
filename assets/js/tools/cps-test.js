@@ -1,7 +1,8 @@
-/* CPS test: counts raw pointer presses in the stage for a chosen number of seconds; timer starts on the first click. */
+/* CPS test: counts raw pointer presses in the stage for a chosen number of seconds; timer starts on the first click.
+   Shared by cps-test, right-click-cps-test and jitter-click-test; the stage's data-cps-mode (left | right | jitter) picks the button and the ranks. */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="cps-test"]');
+	var root = document.querySelector('[data-tool="cps-test"], [data-tool="right-click-cps-test"], [data-tool="jitter-click-test"]');
 	if (!root) { return; }
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
@@ -9,11 +10,13 @@
 	var stage = $('#cps-stage'), ring = $('#cps-ring'), timerEl = $('#cps-timer'), big = $('#cps-big'), small = $('#cps-small');
 	var cpsEl = $('#cps-cps'), countEl = $('#cps-count'), peakEl = $('#cps-peak'), rankEl = $('#cps-rank');
 	var graph = $('#cps-graph'), statusEl = $('#cps-status'), pbEl = $('#cps-pb'), rightOk = $('#cps-right');
-	var tSel = U.$$('[data-cps-t]', root);
+	var tSel = U.$$('[data-cps-t]', root), consistEl = $('#cps-consist');
+	var mode = stage.getAttribute('data-cps-mode') || 'left';
 
-	var dur = 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0;
+	var pressed = root.querySelector('[data-cps-t][aria-pressed="true"]');
+	var dur = pressed ? Number(pressed.getAttribute('data-cps-t')) : 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0;
 
-	function key() { return 'tn-cps-best-' + dur; }
+	function key() { return 'tn-cps-best-' + (mode === 'left' ? '' : mode + '-') + dur; }
 	function pb() {
 		var v = 0;
 		try { v = Number(localStorage.getItem(key())) || 0; } catch (e) { /* private mode */ }
@@ -22,6 +25,13 @@
 	}
 
 	function rank(cps) {
+		if (mode === 'jitter') {
+			if (cps < 6) { return 'Not jittering yet'; }
+			if (cps < 9) { return 'Warming up'; }
+			if (cps < 12) { return 'Jitter'; }
+			if (cps < 15) { return 'Fast jitter'; }
+			return 'Pro jitter';
+		}
 		if (cps < 4) { return 'Turtle'; }
 		if (cps < 6) { return 'Rabbit'; }
 		if (cps < 8) { return 'Fox'; }
@@ -58,6 +68,11 @@
 		timerEl.textContent = '0.0';
 		peakEl.textContent = U.fmt(Math.max.apply(null, perSec.concat([0])), 1);
 		rankEl.textContent = rank(cps);
+		if (consistEl) {
+			// Consistency: 100% when every second had the same count; the spread (SD) lowers it.
+			var mean = count / dur, sd = Math.sqrt(perSec.reduce(function (a, n) { return a + (n - mean) * (n - mean); }, 0) / dur);
+			consistEl.textContent = mean ? Math.max(0, Math.round(100 - sd / mean * 100)) + '%' : '-';
+		}
 		drawGraph();
 		stage.classList.remove('is-running');
 		stage.classList.add('is-done');
@@ -69,7 +84,7 @@
 			pb();
 			if (best) { msg += ' New personal best!'; }
 		}
-		U.status(statusEl, msg, cps >= 6 ? 'ok' : '');
+		U.status(statusEl, msg, cps >= (mode === 'jitter' ? 9 : 6) ? 'ok' : '');
 	}
 
 	function begin(t) {
@@ -84,6 +99,7 @@
 		small.textContent = 'Keep clicking!';
 		rankEl.textContent = '-';
 		peakEl.textContent = '0.0';
+		if (consistEl) { consistEl.textContent = '-'; }
 		graph.innerHTML = '';
 		U.status(statusEl, 'Go! Click as fast as you can.', '');
 		raf = requestAnimationFrame(tick);
@@ -103,8 +119,12 @@
 		stage.classList.add('is-hit');
 	}
 
+	function wanted(button) {
+		if (mode === 'right') { return button === 2; }
+		return button === 0 || (button === 2 && rightOk && rightOk.checked);
+	}
 	stage.addEventListener('pointerdown', function (e) {
-		if (e.pointerType === 'mouse' && e.button !== 0 && !(e.button === 2 && rightOk.checked)) { return; }
+		if (e.pointerType === 'mouse' && !wanted(e.button)) { return; }
 		e.preventDefault();
 		press(e.timeStamp || performance.now());
 	});
@@ -123,10 +143,11 @@
 		cpsEl.textContent = peakEl.textContent = '0.0';
 		countEl.textContent = '0';
 		rankEl.textContent = '-';
+		if (consistEl) { consistEl.textContent = '-'; }
 		graph.innerHTML = '';
-		big.textContent = 'Click here to start';
-		small.textContent = 'The timer starts on your first click.';
-		U.status(statusEl, 'Pick a time, then click in the box as fast as you can.', '');
+		big.textContent = mode === 'right' ? 'Right click here to start' : 'Click here to start';
+		small.textContent = mode === 'right' ? 'The timer starts on your first right click.' : 'The timer starts on your first click.';
+		U.status(statusEl, mode === 'right' ? 'Pick a time, then right click in the box as fast as you can.' : 'Pick a time, then click in the box as fast as you can.', '');
 		pb();
 	}
 	$('#cps-reset').addEventListener('click', reset);

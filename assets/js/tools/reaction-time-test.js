@@ -97,7 +97,7 @@
 		if (state === 'go') { record(t); }
 	}
 
-	stage.addEventListener('pointerdown', function (e) { if (e.button === 0 || e.pointerType !== 'mouse') { e.preventDefault(); press(e.timeStamp || performance.now()); } });
+	stage.addEventListener('pointerdown', function (e) { if (e.button === 0 || e.pointerType !== 'mouse') { e.preventDefault(); stage.focus({ preventScroll: true }); press(e.timeStamp || performance.now()); } });
 	stage.addEventListener('touchstart', function (e) { e.preventDefault(); press(e.timeStamp || performance.now()); }, { passive: false });
 	stage.addEventListener('keydown', function (e) {
 		if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); if (!e.repeat) { press(e.timeStamp || performance.now()); } }

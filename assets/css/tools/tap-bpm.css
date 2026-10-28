@@ -1,0 +1,11 @@
+/* Tap BPM */
+.tb-stage { min-height: 300px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; padding: 20px; grid-template-rows: auto auto; gap: 14px; align-content: center; text-align: center; border: 2px dashed var(--border); transition: border-color .15s; outline: none; }
+.tb-stage.is-live { border-color: var(--brand); border-style: solid; }
+.tb-ring { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto; background: var(--surface-2); border: 4px solid var(--border); display: grid; place-items: center; font: 700 .95rem var(--font); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+.tb-ring.is-hit { animation: tb-hit .25s ease-out; }
+@keyframes tb-hit { 0% { transform: scale(1.12); border-color: var(--brand); background: color-mix(in srgb, var(--brand) 25%, var(--surface-2)); } 100% { transform: scale(1); } }
+.tb-msg { display: grid; gap: 6px; }
+.tb-msg strong { font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tb-msg span { color: var(--muted); font-size: .95rem; }
+.tb-foot { margin-top: 10px; justify-content: space-between; }
+.tb-opt { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; cursor: pointer; }

@@ -3,17 +3,19 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'       => 'Reaction & Speed Benchmarks',
-	'seo_title'   => 'Benchmarks: Reaction Time, CPS Test, Spacebar & FPS (Free)',
-	'description' => 'Free online reaction and speed benchmarks. Measure your reaction time in ms, clicks per second, spacebar speed and the frame rate your browser can hold.',
-	'intro'       => 'Put a number on your reflexes and your hardware: a reaction time test with averages, a CPS test for clicks per second, a spacebar clicker and an FPS test. Every result comes with what is typical so you know where you stand.',
+	'seo_title'   => 'Benchmarks: Reaction Time, CPS, Stroop & F1 Start Tests (Free)',
+	'description' => 'Free online reaction and speed benchmarks: reaction time, F1 start lights, Stroop test, CPS, right click and jitter click tests, spacebar speed and FPS.',
+	'intro'       => 'Put a number on your reflexes and your hardware: reaction time and F1 start light tests, a Stroop test for attention, CPS tests for normal, right and jitter clicking, a spacebar clicker, a UFO motion test and an FPS test. Every result comes with what is typical so you know where you stand.',
 	'body'        => '<h2>Which benchmark do you need?</h2>
 <p>The <a href="/reaction-time-test/">reaction time test</a> measures how quickly you click after the screen turns green and averages several rounds. Most people land between 200 and 300 ms; gamers often reach the 150s. It is the simplest check of your own reflexes and of input lag on a new mouse, keyboard or monitor, since a change in setup shows up as a change in your average.</p>
-<p>The <a href="/cps-test/">CPS test</a> counts clicks per second over 1 to 100 seconds and is the standard way to compare clicking techniques such as jitter and butterfly clicking. The <a href="/spacebar-clicker/">spacebar clicker</a> does the same for the spacebar. The <a href="/fps-test/">FPS test</a> moves the question from you to the machine: it reports the frame rate the browser can hold, which is capped by the monitor\'s refresh rate.</p>
+<p>Two variations test the same reflex in different ways. The <a href="/f1-reaction-test/">F1 reaction test</a> replays a Formula 1 start: five red lights come on one per second and go out after a random hold, and you react to the lights going out. The <a href="/stroop-test/">Stroop test</a> adds a mental step: colour words printed in the wrong colour, where you must answer the ink colour and the delay the words cause is your Stroop effect.</p>
+<p>The <a href="/cps-test/">CPS test</a> counts clicks per second over 1 to 100 seconds and is the standard way to compare clicking techniques. The <a href="/jitter-click-test/">jitter click test</a> is a 10 second version with a consistency score for jitter clicking, and the <a href="/right-click-cps-test/">right click CPS test</a> counts the right button only. The <a href="/spacebar-clicker/">spacebar clicker</a> does the same for the spacebar, and the <a href="/tap-bpm/">tap BPM counter</a> turns steady tapping into a tempo. The <a href="/fps-test/">FPS test</a> and the <a href="/ufo-test/">UFO test</a> move the question from you to the machine: frame rate, motion blur and skipped frames, all capped by the monitor\'s refresh rate.</p>
 
 <h2>What counts as a good score</h2>
 <ul>
 <li><strong>Reaction time:</strong> under 200 ms is fast, 200 to 250 ms is average for adults, over 300 ms is slow or a sign of a laggy display or input.</li>
-<li><strong>CPS:</strong> 5 to 7 with normal clicking, 8 to 12 with jitter clicking, 15 or more with butterfly or drag clicking on a suitable mouse.</li>
+<li><strong>CPS:</strong> 5 to 7 with normal clicking, 8 to 12 with jitter clicking, 15 or more with butterfly or drag clicking on a suitable mouse. Right click scores run about one CPS lower.</li>
+<li><strong>Stroop effect:</strong> 50 to 150 ms is typical on a button test; accuracy under 80% makes the timing meaningless.</li>
 <li><strong>Spacebar:</strong> similar to CPS; most people manage 6 to 10 presses per second.</li>
 <li><strong>FPS:</strong> the test should hold the refresh rate of your monitor (60, 120, 144, 240 Hz). A lower, unstable number means the browser or the computer is struggling.</li>
 </ul>

@@ -54,7 +54,7 @@ return array(
 		array(
 			'FPS vs refresh rate',
 			'<p><strong>FPS</strong> (frames per second) is how many new images your computer draws each second. <strong>Refresh rate</strong> (Hz) is how many times per second your screen can show a new image. You only see the lower of the two: a game running at 200 FPS on a 60 Hz monitor still looks like 60, and a 144 Hz monitor showing a game at 50 FPS looks like 50.</p>
-<p>Because browsers sync animation to the display, this frame rate test also shows your likely refresh rate. If you paid for a 144 Hz monitor but the test shows 60, the monitor is probably set to 60 Hz in your display settings, or the cable cannot carry the higher rate. A dedicated refresh rate test is coming soon to the screen section.</p>',
+<p>Because browsers sync animation to the display, this frame rate test also shows your likely refresh rate. If you paid for a 144 Hz monitor but the test shows 60, the monitor is probably set to 60 Hz in your display settings, or the cable cannot carry the higher rate. For the exact figure, use the <a href="/refresh-rate-test/">refresh rate test</a>.</p>',
 			'fps-vs-hz',
 		),
 		array(

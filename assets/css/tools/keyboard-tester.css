@@ -1,0 +1,24 @@
+/* Keyboard tester */
+.tool-stage.kb-stage { display: block; place-items: normal; padding: 12px; min-height: 0; overflow-x: auto; }
+.kb-board { --u: clamp(26px, calc((100vw - 80px) / 23.5), 46px); display: flex; gap: calc(var(--u) * .4); justify-content: center; outline: none; width: max-content; margin: 0 auto; }
+.kb-board:focus-visible { box-shadow: 0 0 0 3px var(--focus); border-radius: var(--radius-sm); }
+.kb-tkl { --u: clamp(26px, calc((100vw - 80px) / 19.5), 46px); }
+.kb-sixty { --u: clamp(26px, calc((100vw - 60px) / 15.5), 48px); }
+.kb-block { display: grid; gap: 4px; align-content: start; }
+.kb-row { display: flex; gap: 4px; height: var(--u); }
+.kb-row:empty { height: calc(var(--u) * .5); }
+.kb-key, .kb-gap { --w: 1; --h: 1; width: calc(var(--u) * var(--w) + 4px * (var(--w) - 1)); flex: none; }
+.kb-key {
+	display: grid; place-items: center; height: calc(var(--u) * var(--h) + 4px * (var(--h) - 1));
+	border: 1px solid var(--border); border-bottom-width: 3px; border-radius: 6px; background: var(--surface); color: var(--muted);
+	font: 600 clamp(.5rem, calc(var(--u) * .3), .8rem)/1 var(--font); text-align: center; overflow: hidden; white-space: nowrap; user-select: none; -webkit-user-select: none;
+	transition: background-color .06s, border-color .06s, color .06s;
+	position: relative; z-index: 1;
+}
+.kb-key[style*="--h"] { z-index: 2; }
+.kb-key.is-done { border-color: var(--ok); color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--surface)); }
+.kb-key.is-down { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); transform: translateY(2px); border-bottom-width: 1px; }
+.kb-typing { margin-top: 12px; min-height: 70px; font: 1rem/1.4 var(--mono); }
+.kb-stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+.kb-stats .stat-value { font-size: 1.1rem; overflow-wrap: anywhere; }
+@media (max-width: 760px) { .kb-full .kb-block-2 { display: none; } }

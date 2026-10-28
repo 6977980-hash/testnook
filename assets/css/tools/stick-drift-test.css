@@ -1,0 +1,13 @@
+/* Stick drift test */
+.tool-stage.sd-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; place-items: stretch; padding: 16px; min-height: 0; }
+.sd-stick h3 { margin: 0 0 8px; font-size: .95rem; text-align: center; }
+.sd-stick canvas { display: block; width: 100%; max-width: 280px; aspect-ratio: 1; margin: 0 auto; }
+.sd-stick .stats { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 6px; }
+.sd-stick .stat { background: var(--surface); padding: 8px 10px; }
+.sd-stick .stat-value { font-size: 1.05rem; }
+.sd-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 260px; }
+.sd-dz { flex: 1 1 200px; max-width: 320px; }
+.sd-good { color: var(--ok); }
+.sd-warn { color: var(--warn); }
+.sd-bad { color: var(--bad); }
+@media (max-width: 560px) { .sd-stage { grid-template-columns: 1fr; } }

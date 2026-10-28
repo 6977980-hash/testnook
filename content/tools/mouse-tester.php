@@ -7,7 +7,7 @@ return array(
 	'description'    => 'Free online mouse tester. Check left, right and middle clicks, side buttons and scroll wheel up and down. See each button light up and count every click.',
 	'intro'          => 'Click, scroll and press the side buttons over the mouse below. Every button lights up when it works and keeps a count, so a faulty switch or wheel shows up straight away.',
 	'device'         => 'desktop',
-	'device_message' => 'This mouse test needs a mouse. Connect one to your computer, or use a laptop with a mouse attached. On a phone or tablet, taps count as left clicks only.',
+	'device_message' => 'This mouse test needs a mouse. Connect one to your computer, or use a laptop with a mouse attached. On a phone or tablet, taps count as left clicks only; use the <a href="/touch-screen-test/">touch screen test</a> to check the screen instead.',
 	'ads'            => 'standard',
 	'styles'         => array( 'mouse-tester' ),
 	'scripts'        => array( 'mouse-tester' ),

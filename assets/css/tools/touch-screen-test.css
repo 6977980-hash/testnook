@@ -1,0 +1,11 @@
+/* Touch screen test */
+.tool-stage.ts-stage { display: block; place-items: normal; height: min(62vh, 560px); min-height: 340px; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; cursor: crosshair; background: var(--surface-2); }
+.ts-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ts-hint { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--muted); pointer-events: none; }
+.ts-hint p { margin: 0; max-width: 340px; }
+.ts-hint[hidden] { display: none; }
+.ts-stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+.tool:fullscreen, .tool.is-pseudo-fs { display: flex; flex-direction: column; background: var(--bg); padding: 8px; }
+.tool:fullscreen .ts-stage, .tool.is-pseudo-fs .ts-stage { flex: 1; height: auto; min-height: 0; }
+.tool:fullscreen .stats, .tool:fullscreen .tool-status, .tool.is-pseudo-fs .stats, .tool.is-pseudo-fs .tool-status { display: none; }
+.tool:fullscreen .tool-bar, .tool.is-pseudo-fs .tool-bar { margin-bottom: 8px; }

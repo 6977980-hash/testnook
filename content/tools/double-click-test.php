@@ -7,7 +7,7 @@ return array(
 	'description'    => 'Free double click test. Click once in the box: if your mouse sends two clicks within 80 ms, the switch is faulty. See the gap between clicks and how to fix it.',
 	'intro'          => 'Does your mouse open two windows or drop files when you click once? Click in the box below a few times. The test times every click and catches any extra click that happens too fast to be yours.',
 	'device'         => 'desktop',
-	'device_message' => 'This test is for a mouse. On a touch screen, taps are counted but a double-tap fault cannot be told apart from two taps.',
+	'device_message' => 'This test is for a mouse. On a touch screen, taps are counted but a double-tap fault cannot be told apart from two taps. Check a touch screen with the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
 	'styles'         => array( 'double-click-test' ),
 	'scripts'        => array( 'double-click-test' ),

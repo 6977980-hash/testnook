@@ -1,0 +1,59 @@
+/* Gamepad tester */
+.gp-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 280px; }
+.tool-stage.gp-stage { display: block; place-items: normal; padding: 18px 12px; min-height: 0; }
+.gp-pad { max-width: 620px; margin: 0 auto; opacity: .55; transition: opacity .2s; }
+.gp-on .gp-pad { opacity: 1; }
+.gp-shoulders { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 10px; }
+.gp-shoulder { display: grid; gap: 6px; }
+.gp-trig { position: relative; height: 26px; border: 2px solid var(--border); border-radius: 8px 8px 4px 4px; background: var(--surface); overflow: hidden; }
+.gp-trig > span { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--brand); }
+.gp-trig .gp-t { position: absolute; inset: 0; display: grid; place-items: center; font: 700 .78rem var(--font); color: var(--text); mix-blend-mode: normal; }
+.gp-trig::after { content: attr(data-v); position: absolute; right: 6px; top: 4px; font: 600 .7rem var(--font); color: var(--muted); }
+.gp-body { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: center; padding: 20px 16px; background: var(--surface); border: 2px solid var(--border); border-radius: 48px 48px 90px 90px; }
+.gp-side { display: grid; gap: 18px; justify-items: center; }
+.gp-b {
+	display: grid; place-items: center; min-width: 40px; height: 40px; padding: 0 8px; border-radius: 999px;
+	background: var(--surface-2); border: 2px solid var(--border); color: var(--muted); font: 700 .8rem/1 var(--font);
+	transition: background-color .08s, border-color .08s, color .08s;
+}
+.gp-b.is-done, .gp-trig.is-done { border-color: var(--ok); color: var(--ok); }
+.gp-b.is-down { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.gp-trig.is-down { border-color: var(--brand); }
+.gp-dpad, .gp-face { display: grid; grid-template-columns: repeat(3, 40px); grid-template-rows: repeat(3, 40px); gap: 2px; }
+.gp-dpad .gp-b { border-radius: 8px; padding: 0; font-size: .7rem; }
+.gp-dpad [data-gp-btn="12"], .gp-face [data-gp-btn="3"] { grid-column: 2; grid-row: 1; }
+.gp-dpad [data-gp-btn="14"], .gp-face [data-gp-btn="2"] { grid-column: 1; grid-row: 2; }
+.gp-dpad [data-gp-btn="15"], .gp-face [data-gp-btn="1"] { grid-column: 3; grid-row: 2; }
+.gp-dpad [data-gp-btn="13"], .gp-face [data-gp-btn="0"] { grid-column: 2; grid-row: 3; }
+.gp-mid { display: grid; gap: 8px; justify-items: center; }
+.gp-mid .gp-row { display: flex; gap: 8px; }
+.gp-mid .gp-b { font-size: .7rem; height: 30px; }
+.gp-stick { position: relative; width: 92px; height: 92px; border-radius: 50%; border: 2px solid var(--border); background: var(--surface-2); display: grid; place-items: center; }
+.gp-stick::before, .gp-stick::after { content: ""; position: absolute; background: var(--border); }
+.gp-stick::before { left: 50%; top: 8px; bottom: 8px; width: 1px; }
+.gp-stick::after { top: 50%; left: 8px; right: 8px; height: 1px; }
+.gp-stick { --r: 34px; }
+.gp-dot { position: relative; width: 22px; height: 22px; border-radius: 50%; background: var(--muted); z-index: 1; }
+.gp-stick.is-down .gp-dot { background: var(--brand); }
+.gp-stick.is-done { border-color: var(--ok); }
+.gp-xy { position: absolute; bottom: -22px; left: 50%; transform: translateX(-50%); font: 600 .72rem var(--mono); color: var(--muted); white-space: nowrap; }
+.gp-raw { display: grid; gap: 12px; margin-top: 14px; }
+.gp-raw:empty { display: none; }
+.gp-raw h3 { margin: 0 0 6px; font-size: .9rem; }
+.gp-raw-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 6px; }
+.gp-raw-item { display: grid; gap: 2px; padding: 6px 8px; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid transparent; font-size: .75rem; color: var(--muted); }
+.gp-raw-item b { font: 700 .9rem var(--mono); color: var(--text); }
+.gp-raw-item.is-done { border-color: var(--ok); }
+.gp-raw-item.is-down { background: var(--brand-soft); }
+.gp-raw-axis { grid-column: span 2; }
+.gp-raw-axis i { position: relative; display: block; height: 6px; border-radius: 3px; background: var(--surface); overflow: hidden; }
+.gp-raw-axis em { position: absolute; top: 0; bottom: 0; left: 50%; width: 0; background: var(--brand); }
+@media (max-width: 560px) {
+	.gp-body { grid-template-columns: 1fr 1fr; border-radius: 28px; padding: 16px 10px; row-gap: 26px; }
+	.gp-mid { grid-column: 1 / -1; grid-row: 1; }
+	.gp-dpad, .gp-face { grid-template-columns: repeat(3, 34px); grid-template-rows: repeat(3, 34px); }
+	.gp-b { min-width: 34px; height: 34px; }
+	.gp-shoulders { gap: 14px; }
+	.gp-stick { width: 80px; height: 80px; --r: 28px; }
+}
+.gp-name { font-size: .95rem; overflow-wrap: anywhere; }

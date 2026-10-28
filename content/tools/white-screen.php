@@ -67,6 +67,6 @@ return array(
 		array( 'Can I pick a different brightness?', 'Yes. The grey shades give a less bright surface, and the warm and cool whites change the colour temperature. Your device brightness controls the rest.' ),
 		array( 'Is this page free to use?', 'Yes. It runs entirely in your browser, has no ads inside the full screen and nothing is downloaded or uploaded.' ),
 	),
-	'related'      => array( 'black-screen', 'dead-pixel-test', 'stuck-pixel-fixer', 'online-mirror', 'refresh-rate-test', 'burn-in-test' ),
+	'related'      => array( 'black-screen', 'grey-screen', 'dead-pixel-test', 'stuck-pixel-fixer', 'red-screen', 'pink-screen', 'online-mirror', 'burn-in-test' ),
 	'updated'      => '2026-10-28',
 );

@@ -55,5 +55,13 @@ return array(
 		'camera-test'             => array( 'name' => 'Camera Test', 'blurb' => 'Test front and back cameras on phones and laptops.', 'hub' => 'camera', 'also' => array( 'phone' ) ),
 		'burn-in-test'            => array( 'name' => 'Burn-in Test', 'blurb' => 'Spot screen burn-in and image retention on OLED and LCD.', 'hub' => 'screen', 'also' => array( 'phone' ) ),
 		'hearing-frequency-test'  => array( 'name' => 'Hearing Frequency Test', 'blurb' => 'Find the highest frequency you can hear with headphones.', 'hub' => 'audio', 'also' => array() ),
+		'red-screen'              => array( 'name' => 'Red Screen', 'blurb' => 'A full red screen for pixel checks and a night-vision light.', 'hub' => 'screen', 'also' => array() ),
+		'green-screen'            => array( 'name' => 'Green Screen', 'blurb' => 'A full green screen for pixel checks and a small chroma key backdrop.', 'hub' => 'screen', 'also' => array() ),
+		'blue-screen'             => array( 'name' => 'Blue Screen', 'blurb' => 'A full blue screen for pixel checks and OLED blue ageing.', 'hub' => 'screen', 'also' => array() ),
+		'yellow-screen'           => array( 'name' => 'Yellow Screen', 'blurb' => 'A full yellow screen: warm blue-free light and stuck pixel checks.', 'hub' => 'screen', 'also' => array() ),
+		'orange-screen'           => array( 'name' => 'Orange Screen', 'blurb' => 'A full orange screen for a warm sunset light and colour evenness.', 'hub' => 'screen', 'also' => array() ),
+		'pink-screen'             => array( 'name' => 'Pink Screen', 'blurb' => 'A full pink screen for selfie lighting and a soft mood light.', 'hub' => 'screen', 'also' => array() ),
+		'purple-screen'           => array( 'name' => 'Purple Screen', 'blurb' => 'A full purple screen for gaming mood light and colour checks.', 'hub' => 'screen', 'also' => array() ),
+		'grey-screen'             => array( 'name' => 'Grey Screen', 'blurb' => 'A full grey screen in 5-90% shades for uniformity and burn-in checks.', 'hub' => 'screen', 'also' => array() ),
 	),
 );

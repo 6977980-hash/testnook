@@ -52,6 +52,10 @@ return array(
 
 Name, blurb and hub come from `content/catalog.php` and are merged in.
 
+Files whose name starts with `_` (`_gamepad-diagram.php`, `_colour-screen.php`)
+are shared helpers `require`d by several tool files, not pages; keep them out
+of the catalog.
+
 ### Ads modes
 
 - `standard`: slot under the tool, one in the content, one after the FAQ.

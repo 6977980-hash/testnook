@@ -75,7 +75,7 @@ return array(
 		array( 'Can I test the side buttons on my mouse?', 'Yes. Buttons 4 and 5 (back and forward) are detected and counted, and the tester stops them from leaving the page while the pointer is inside the test area.' ),
 		array( 'Does this mouse test work with wireless mice?', 'Yes. Wired, wireless and Bluetooth mice all send the same events. If clicks are missed only on wireless, check the battery and move the receiver closer.' ),
 		array( 'Why does my mouse double click when I click once?', 'The switch is bouncing, sending two signals for one press. It usually gets worse over time. Our double click test measures how often it happens.' ),
-		array( 'Can I check my mouse DPI or polling rate here?', 'Not on this page. Use the <a href="/dpi-analyzer/">DPI analyzer</a> to measure your real DPI. A polling rate test is coming soon to the mouse section.' ),
+		array( 'Can I check my mouse DPI or polling rate here?', 'Not on this page. Use the <a href="/dpi-analyzer/">DPI analyzer</a> to measure your real DPI and the <a href="/mouse-polling-rate-test/">polling rate test</a> to measure how often it reports.' ),
 	),
 	'related'        => array( 'double-click-test', 'cps-test', 'scroll-test', 'dpi-analyzer', 'mouse-polling-rate-test', 'keyboard-tester', 'reaction-time-test' ),
 	'updated'        => '2026-10-28',

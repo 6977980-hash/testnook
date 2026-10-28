@@ -90,7 +90,7 @@ return array(
 	'extra'          => array(
 		array(
 			'Which controllers work with this gamepad tester?',
-			'<p>Any controller your browser can read: PS5 DualSense and DualSense Edge, PS4 DualShock 4, Xbox One, Series X|S and Elite controllers, Xbox 360 pads, the Switch Pro Controller, 8BitDo and most generic USB or Bluetooth gamepads. The diagram uses the browser\'s standard layout and switches the labels to PlayStation or Nintendo symbols when it recognises the controller. Dedicated pages for PS5, Xbox and PS4 controllers are on the way in the controller section.</p>
+			'<p>Any controller your browser can read: PS5 DualSense and DualSense Edge, PS4 DualShock 4, Xbox One, Series X|S and Elite controllers, Xbox 360 pads, the Switch Pro Controller, 8BitDo and most generic USB or Bluetooth gamepads. The diagram uses the browser\'s standard layout and switches the labels to PlayStation or Nintendo symbols when it recognises the controller. There are dedicated pages with model-specific tips for the <a href="/ps5-controller-test/">PS5 controller</a>, <a href="/xbox-controller-test/">Xbox controller</a> and <a href="/ps4-controller-test/">PS4 controller</a>.</p>
 <p>Chrome and Edge give the best support, including vibration. Firefox and Safari show buttons and sticks but may not support vibration from a web page.</p>',
 			'controllers',
 		),

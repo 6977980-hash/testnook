@@ -1,7 +1,10 @@
-/* Gamepad tester: standard-mapping controller diagram (buttons, analog triggers, sticks), raw button/axis list, tested-count, vibration and multi-controller picker. */
+/*
+ * Gamepad tester: standard-mapping controller diagram (buttons, analog triggers, sticks), raw button/axis list, tested-count, vibration and multi-controller picker.
+ * Shared by the PS5, Xbox and PS4 controller pages: their diagram carries data-pad="ps5|xbox|ps4", which sets the labels before a controller connects and adds a hint when a different controller is plugged in.
+ */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="gamepad-tester"]');
+	var root = document.querySelector('[data-tool="gamepad-tester"], [data-tool="ps5-controller-test"], [data-tool="xbox-controller-test"], [data-tool="ps4-controller-test"]');
 	if (!root) { return; }
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
@@ -11,9 +14,14 @@
 	var LABELS = {
 		xbox: ['A', 'B', 'X', 'Y', 'LB', 'RB', 'LT', 'RT', 'View', 'Menu', 'LS', 'RS', 'Up', 'Down', 'Left', 'Right', 'Xbox', 'Share'],
 		ps: ['✕', '○', '□', '△', 'L1', 'R1', 'L2', 'R2', 'Create', 'Options', 'L3', 'R3', 'Up', 'Down', 'Left', 'Right', 'PS', 'Touchpad'],
+		ps4: ['✕', '○', '□', '△', 'L1', 'R1', 'L2', 'R2', 'Share', 'Options', 'L3', 'R3', 'Up', 'Down', 'Left', 'Right', 'PS', 'Touchpad'],
 		nintendo: ['B', 'A', 'Y', 'X', 'L', 'R', 'ZL', 'ZR', '−', '+', 'LS', 'RS', 'Up', 'Down', 'Left', 'Right', 'Home', 'Capture']
 	};
-	var padIndex = -1, tested = {}, rawBuilt = '', style = 'xbox';
+	var NAMES = { ps5: 'PS5 DualSense', ps4: 'PS4 DualShock 4', xbox: 'Xbox' };
+	var LINKS = { ps5: '/ps5-controller-test/', ps4: '/ps4-controller-test/', xbox: '/xbox-controller-test/' };
+	var padEl = root.querySelector('[data-pad]');
+	var page = padEl ? padEl.getAttribute('data-pad') : '';
+	var padIndex = -1, tested = {}, rawBuilt = '', style = page === 'ps5' ? 'ps' : (page || 'xbox');
 	var btnEls = U.$$('[data-gp-btn]', root);
 	var trig = { 6: $('#gp-lt'), 7: $('#gp-rt') };
 	var sticks = [$('#gp-ls'), $('#gp-rs')];
@@ -24,6 +32,7 @@
 
 	function vendor(id) {
 		id = String(id).toLowerCase();
+		if (/05c4|09cc|0ba0|dualshock/.test(id)) { return 'ps4'; }
 		if (/054c|dualsense|dualshock|playstation|wireless controller/.test(id)) { return 'ps'; }
 		if (/057e|nintendo|pro controller|joy-con/.test(id)) { return 'nintendo'; }
 		return 'xbox';
@@ -65,7 +74,12 @@
 		info.map.textContent = p.mapping === 'standard' ? 'Standard' : 'Non-standard';
 		info.counts.textContent = p.buttons.length + ' / ' + p.axes.length;
 		rumbleBtn.disabled = !(p.vibrationActuator || (p.hapticActuators && p.hapticActuators.length));
-		U.status(statusEl, 'Connected: ' + shortName(p.id) + '. Press every button and move both sticks.', 'ok');
+		var msg = 'Connected: ' + shortName(p.id) + '. Press every button and move both sticks.';
+		var kind = style === 'ps' ? (/0ce6|0df2|dualsense/i.test(p.id) ? 'ps5' : '') : style === 'xbox' ? (/045e|xbox|xinput/i.test(p.id) ? 'xbox' : '') : style;
+		if (page && NAMES[kind] && kind !== page) {
+			msg += ' This looks like a ' + NAMES[kind] + ' controller; the ' + NAMES[kind] + ' test at ' + LINKS[kind] + ' has the matching tips.';
+		}
+		U.status(statusEl, msg, 'ok');
 	}
 
 	function buildRaw(p) {
@@ -140,6 +154,7 @@
 	padSel.addEventListener('change', function () { padIndex = Number(padSel.value); rawBuilt = ''; reset(); refresh(); });
 	rumbleBtn.addEventListener('click', rumble);
 	resetBtn.addEventListener('click', reset);
+	labelButtons();
 	refresh();
 	requestAnimationFrame(loop);
 }());

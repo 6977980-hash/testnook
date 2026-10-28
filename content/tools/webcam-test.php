@@ -81,7 +81,7 @@ return array(
 		array( 'Is it safe to allow camera access on this site?', 'Yes. The video stays on your device and is never uploaded or recorded. Permission only lasts for this site, and you can remove it any time from the address bar.' ),
 		array( 'What is a good webcam resolution and frame rate?', '1080p at 30 fps is a good standard for video calls and streaming. 720p at 30 fps is fine for most meetings. 60 fps matters mainly for streamers.' ),
 		array( 'Why is my frame rate lower than 30 fps?', 'Most often because the room is dark, so the camera uses a longer exposure. A slow USB port, a busy computer or a high resolution can also reduce it.' ),
-		array( 'Can I test my phone camera here?', 'Yes, the page works in mobile browsers and uses the front camera by default. Pick the back camera from the camera list. A dedicated camera test for phones is coming soon.' ),
+		array( 'Can I test my phone camera here?', 'Yes, the page works in mobile browsers and uses the front camera by default. Pick the back camera from the camera list, or use the <a href="/camera-test/">camera test</a>, which switches between front and back cameras with one button.' ),
 	),
 	'related'        => array( 'online-mirror', 'camera-test', 'mic-test', 'sound-test', 'headphone-test', 'speaker-cleaner' ),
 	'updated'        => '2026-10-28',

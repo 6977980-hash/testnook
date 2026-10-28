@@ -1,0 +1,19 @@
+/* F1 reaction test */
+.f1-stage { min-height: 320px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; text-align: center; padding: 20px; background: #15161a; color: #fff; grid-template-rows: auto auto; gap: 18px; align-content: center; transition: background-color .08s; }
+.f1-stage.is-go { background: #15a34a; }
+.f1-stage.is-jump { background: #b45309; }
+.f1-stage.is-pseudo-fs, .f1-stage:fullscreen { border-radius: 0; }
+.f1-gantry { display: flex; justify-content: center; gap: clamp(6px, 2vw, 14px); padding: clamp(8px, 2vw, 14px); background: #0a0a0c; border-radius: 10px; border: 2px solid #2b2d33; width: max-content; max-width: 100%; margin: 0 auto; }
+.f1-col { display: grid; gap: clamp(6px, 1.6vw, 10px); padding: clamp(5px, 1.4vw, 8px); background: #1c1d22; border-radius: 6px; }
+.f1-col i { display: block; width: clamp(26px, 7vw, 46px); height: clamp(26px, 7vw, 46px); border-radius: 50%; background: #3a1010; box-shadow: inset 0 0 0 2px #2a0a0a; transition: background-color .05s, box-shadow .05s; }
+.f1-col i:first-child { background: #1f2024; box-shadow: inset 0 0 0 2px #17181b; }
+.f1-col.is-on i:not(:first-child) { background: #ff2a2a; box-shadow: 0 0 14px 2px rgba(255, 42, 42, .65), inset 0 0 0 2px #ff6b6b; }
+.f1-msg { display: grid; gap: 8px; }
+.f1-msg strong { font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.1; min-height: 1.1em; font-variant-numeric: tabular-nums; }
+.f1-msg span { font-size: 1rem; opacity: .9; max-width: 440px; margin: 0 auto; }
+.f1-log { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 12px 0 0; padding: 0; min-height: 30px; }
+.f1-log li { font: 600 .85rem/1 var(--font); font-variant-numeric: tabular-nums; padding: 7px 10px; border-radius: 999px; background: var(--surface-2); color: var(--text); }
+.f1-log li.is-fast { background: color-mix(in srgb, var(--ok) 18%, var(--surface-2)); color: var(--ok); }
+.f1-log li.is-slow { background: color-mix(in srgb, var(--bad) 14%, var(--surface-2)); color: var(--bad); }
+.f1-foot { margin-top: 10px; justify-content: space-between; }
+.f1-pb { font-size: .88rem; color: var(--muted); }

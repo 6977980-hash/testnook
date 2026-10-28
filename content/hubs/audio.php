@@ -3,13 +3,16 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'       => 'Audio, Speaker & Mic Tests',
-	'seo_title'   => 'Audio Tests: Speaker, Headphone, Mic & Hearing (Free)',
-	'description' => 'Free online audio tests. Check speakers and headphones left and right, test your mic with playback, clean a phone speaker, generate tones and test your hearing.',
-	'intro'       => 'Test every part of your sound setup in the browser: speaker and headphone channel checks, a microphone test with recording and playback, a water-ejecting speaker cleaner, a tone generator and a hearing frequency test. Nothing is uploaded.',
+	'seo_title'   => 'Audio Tests & Tools: Speaker, Mic, Tuner, Metronome (Free)',
+	'description' => 'Free online audio tests and tools. Check speakers, headphones and mic, clean a phone speaker, generate tones, test hearing, tune a guitar, keep time with a metronome.',
+	'intro'       => 'Test every part of your sound setup in the browser: speaker and headphone channel checks, a microphone test with recording and playback, a water-ejecting speaker cleaner, a tone generator and a hearing frequency test. Musicians get a guitar tuner, a metronome and a tap BPM counter. Nothing is uploaded.',
 	'body'        => '<h2>Which audio test do you need?</h2>
 <p>No sound, or sound from only one side? The <a href="/sound-test/">sound test</a> plays tones through the left, right and both channels so you can tell a dead speaker from a balance setting. The <a href="/headphone-test/">headphone test</a> adds a left-right pan, a bass sweep and a polarity check for earphones and headsets.</p>
 <p>People cannot hear you on calls? Run the <a href="/mic-test/">mic test</a>. It shows a live level meter, records a short sample and plays it back, so you hear exactly what others hear. If your phone sounds muffled after rain or a swim, the <a href="/speaker-cleaner/">speaker cleaner</a> plays a low tone that pushes water and dust out of the speaker grille.</p>
 <p>The <a href="/tone-generator/">tone generator</a> produces sine, square, triangle and sawtooth waves at any frequency for testing speakers, tuning or finding a rattle. The <a href="/hearing-frequency-test/">hearing frequency test</a> steps through high frequencies with headphones on and tells you the highest you can hear, with a note on what is typical for each age.</p>
+
+<h2>Tools for musicians</h2>
+<p>The <a href="/guitar-tuner/">online guitar tuner</a> listens through your microphone and shows the note, the cents sharp or flat and a needle, with presets for guitar, drop D, bass and ukulele and a chromatic mode for anything else. The <a href="/metronome/">online metronome</a> keeps a sample-accurate click from 20 to 300 BPM with time signatures, subdivisions and tap tempo. The <a href="/tap-bpm/">tap BPM counter</a> works the other way round: tap along to a song and it tells you the tempo.</p>
 
 <h2>What the tests can find</h2>
 <ul>

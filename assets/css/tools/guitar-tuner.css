@@ -1,0 +1,40 @@
+/* Guitar tuner */
+.gt-bar .seg { flex-wrap: wrap; }
+.gt-stage { display: grid; gap: 14px; padding: 18px; place-items: normal; align-content: start; }
+.gt-dial { position: relative; width: min(100%, 420px); aspect-ratio: 2 / 1; margin: 0 auto; overflow: hidden; }
+.gt-arc { position: absolute; left: 0; top: 0; width: 100%; height: 200%; border-radius: 50%; background: conic-gradient(from 270deg at 50% 50%, var(--border) 0 82deg, color-mix(in srgb, var(--ok) 55%, var(--border)) 82deg 98deg, var(--border) 98deg 180deg, transparent 180deg); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 16px), #000 calc(100% - 15px)); mask: radial-gradient(farthest-side, transparent calc(100% - 16px), #000 calc(100% - 15px)); }
+.gt-ticks { position: absolute; inset: 0; }
+.gt-ticks span { position: absolute; left: 50%; bottom: 0; width: 2px; height: 100%; transform-origin: 50% 100%; }
+.gt-ticks span::before { content: ""; position: absolute; top: 22px; left: 0; width: 2px; height: 12px; background: var(--muted); }
+.gt-ticks span:nth-child(1) { transform: rotate(-80deg); }
+.gt-ticks span:nth-child(2) { transform: rotate(-64deg); }
+.gt-ticks span:nth-child(3) { transform: rotate(-48deg); }
+.gt-ticks span:nth-child(4) { transform: rotate(-32deg); }
+.gt-ticks span:nth-child(5) { transform: rotate(-16deg); }
+.gt-ticks span:nth-child(6) { transform: rotate(0deg); }
+.gt-ticks span:nth-child(7) { transform: rotate(16deg); }
+.gt-ticks span:nth-child(8) { transform: rotate(32deg); }
+.gt-ticks span:nth-child(9) { transform: rotate(48deg); }
+.gt-ticks span:nth-child(10) { transform: rotate(64deg); }
+.gt-ticks span:nth-child(11) { transform: rotate(80deg); }
+.gt-ticks span.is-major::before { height: 20px; background: var(--text); }
+.gt-needle { position: absolute; left: 50%; bottom: 0; width: 4px; height: 92%; margin-left: -2px; background: var(--brand); border-radius: 4px 4px 0 0; transform-origin: 50% 100%; transform: rotate(0deg); transition: transform .12s ease-out; }
+.gt-dial.is-flat .gt-needle, .gt-dial.is-sharp .gt-needle { background: var(--warn); }
+.gt-dial.is-ok .gt-needle { background: var(--ok); }
+.gt-pivot { position: absolute; left: 50%; bottom: -8px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: var(--text); }
+.gt-labels { display: flex; justify-content: space-between; width: min(100%, 420px); margin: -6px auto 0; font-size: .8rem; color: var(--muted); }
+.gt-read { text-align: center; display: grid; gap: 4px; }
+.gt-read .gt-notebox { font: 800 clamp(3rem, 12vw, 5rem)/1 var(--font); }
+.gt-read .gt-notebox small { font-size: .35em; font-weight: 700; color: var(--muted); vertical-align: top; }
+.gt-cents { font: 600 1.1rem var(--font); font-variant-numeric: tabular-nums; min-height: 1.4em; }
+.gt-dial.is-ok ~ .gt-read .gt-cents { color: var(--ok); }
+.gt-hz { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }
+.gt-target { text-align: center; font-size: .95rem; min-height: 1.5em; margin: 0; }
+.gt-strings { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.gt-string { min-width: 54px; min-height: 54px; border: 2px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); cursor: pointer; display: grid; place-items: center; gap: 0; font: 700 1.1rem/1 var(--font); }
+.gt-string small { font-size: .7rem; color: var(--muted); font-weight: 600; }
+.gt-string.is-active { border-color: var(--brand); background: color-mix(in srgb, var(--brand) 12%, var(--surface)); }
+.gt-string.is-playing { border-color: var(--warn); }
+.gt-opts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 16px; align-items: end; }
+.gt-opts input[type="number"] { width: 100%; }
+.gt-level { margin-top: 4px; }

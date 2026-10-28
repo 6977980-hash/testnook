@@ -76,6 +76,6 @@ return array(
 		array( 'Can I check my FPS on a phone?', 'Yes. Most phones show 60 FPS, and newer phones with 90 or 120 Hz screens show more when power saving is off.' ),
 		array( 'Does the FPS test work in every browser?', 'Yes, it works in Chrome, Edge, Firefox and Safari. Some browsers limit background or low-power tabs, so keep the tab active while testing.' ),
 	),
-	'related'      => array( 'refresh-rate-test', 'dead-pixel-test', 'reaction-time-test', 'mouse-polling-rate-test', 'stuck-pixel-fixer', 'gamepad-tester', 'cps-test' ),
+	'related'      => array( 'refresh-rate-test', 'ufo-test', 'dead-pixel-test', 'reaction-time-test', 'mouse-polling-rate-test', 'stuck-pixel-fixer', 'gamepad-tester', 'cps-test' ),
 	'updated'      => '2026-10-28',
 );

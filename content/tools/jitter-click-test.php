@@ -82,6 +82,6 @@ return array(
 		array( 'What does the consistency score mean?', 'It compares your click count in each second with the others. 100% means a perfectly steady rate; below about 70% means the vibration came in bursts.' ),
 		array( 'Is my best score saved?', 'Your best jitter CPS for each test length is stored in this browser only. Nothing is sent to a server.' ),
 	),
-	'related'        => array( 'cps-test', 'right-click-cps-test', 'double-click-test', 'mouse-tester', 'spacebar-clicker', 'reaction-time-test' ),
+	'related'        => array( 'cps-test', 'right-click-cps-test', 'auto-clicker-test', 'double-click-test', 'mouse-tester', 'reaction-time-test' ),
 	'updated'        => '2026-10-28',
 );

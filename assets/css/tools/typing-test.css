@@ -1,0 +1,29 @@
+/* Typing test: shared by typing-speed-test, 1-minute-typing-test, 5-minute-typing-test, wpm-test, typing-test-english */
+.tt-stage { min-height: 300px; padding: 18px 20px; place-items: normal; display: block; cursor: text; outline: none; border: 2px solid var(--border); transition: border-color .12s; }
+.tt-stage.is-focus { border-color: var(--brand); }
+.tt-stage.is-done { border-color: var(--ok); cursor: default; }
+.tt-stage.is-done .tt-window, .tt-stage.is-done .tt-overlay, .tt-stage.is-done .tt-hint { display: none; }
+.tt-hud { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 12px; font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tt-hud strong { color: var(--text); font-size: 1.1rem; }
+.tt-window { position: relative; height: calc(3 * 2.2em); overflow: hidden; font: 500 clamp(1.1rem, 2.6vw, 1.45rem)/2.2 var(--font); }
+.tt-text { position: absolute; left: 0; right: 0; top: 0; transition: transform .12s; word-break: normal; }
+.tt-w { display: inline-block; margin-right: .45em; white-space: nowrap; border-bottom: 2px solid transparent; }
+.tt-w.is-cur { border-bottom-color: var(--brand); }
+.tt-w.is-wrong { border-bottom-color: var(--bad); }
+.tt-w.is-extra, .tt-c.is-extra { color: var(--bad); }
+.tt-c { color: var(--muted); }
+.tt-c.is-ok { color: var(--text); }
+.tt-c.is-bad { color: var(--bad); text-decoration: underline; }
+.tt-input { position: absolute; opacity: 0; width: 1px; height: 1px; left: 0; top: 0; pointer-events: none; }
+.tt-hint { margin: 14px 0 0; font-size: .92rem; color: var(--muted); text-align: center; }
+.tt-overlay { position: absolute; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--surface-2) 70%, transparent); backdrop-filter: blur(2px); font-weight: 600; color: var(--text); }
+.tt-result { display: grid; gap: 4px; text-align: center; padding: 10px 0; }
+.tt-result strong { font: 800 clamp(2rem, 8vw, 3.2rem)/1.1 var(--font); }
+.tt-result span { color: var(--muted); }
+.tt-foot { margin-top: 12px; justify-content: space-between; }
+.tt-pb { font-size: .88rem; color: var(--muted); }
+.tt-mobile { display: none; }
+@media (pointer: coarse) {
+	.tt-input { opacity: 1; position: static; width: 100%; height: auto; pointer-events: auto; margin-top: 12px; font: 1rem var(--font); padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); }
+	.tt-mobile { display: block; }
+}

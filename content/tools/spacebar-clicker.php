@@ -70,6 +70,6 @@ return array(
 		array( 'What is a good spacebar CPS?', 'Around 8 presses per second on a 10 second test is good. Scores are lower than mouse CPS because the thumb moves more than a finger on a mouse button.' ),
 		array( 'Is my best score saved?', 'Your best presses per second for each test length is stored in this browser only. Nothing is uploaded.' ),
 	),
-	'related'        => array( 'keyboard-tester', 'cps-test', 'reaction-time-test', 'double-click-test', 'mouse-tester', 'touch-screen-test' ),
+	'related'        => array( 'keyboard-tester', 'typing-speed-test', 'cps-test', 'reaction-time-test', 'double-click-test', 'mouse-tester' ),
 	'updated'        => '2026-10-28',
 );

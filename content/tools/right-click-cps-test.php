@@ -82,6 +82,6 @@ return array(
 		array( 'Can I take this test on a touchpad?', 'Yes, if the touchpad has a right click zone or two-finger tap enabled. Two-finger taps are slower than a mouse button, so expect a lower score.' ),
 		array( 'Is my best score saved?', 'Your best right click CPS for each test length is stored in this browser only. Nothing is sent anywhere.' ),
 	),
-	'related'        => array( 'cps-test', 'jitter-click-test', 'double-click-test', 'mouse-tester', 'reaction-time-test', 'spacebar-clicker' ),
+	'related'        => array( 'cps-test', 'jitter-click-test', 'auto-clicker-test', 'double-click-test', 'mouse-tester', 'reaction-time-test' ),
 	'updated'        => '2026-10-28',
 );

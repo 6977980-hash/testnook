@@ -23,6 +23,9 @@ return array(
 <h2>Before you blame the mouse</h2>
 <p>Plug the mouse directly into the computer, not a hub or a monitor port. Check the double-click speed in your operating system, because a very fast setting can make normal clicks look like doubles. Turn off any mouse software profile and test again. Wireless mice often behave differently when the battery is low or the receiver is far away.</p>
 
+<h2>Clicking speed and auto clickers</h2>
+<p>The <a href="/cps-test/">CPS test</a>, <a href="/right-click-cps-test/">right click CPS test</a> and <a href="/jitter-click-test/">jitter click test</a> measure your own clicking. The <a href="/auto-clicker-test/">auto clicker test</a> measures a clicking program instead: its real clicks per second, the gap between clicks and whether the rate it claims actually reaches the browser.</p>
+
 <h2>On a phone or tablet?</h2>
 <p>These tests need a physical mouse. For the screen itself, the <a href="/touch-screen-test/">touch screen test</a> finds dead touch zones and tests multi-touch.</p>',
 	'faq'         => array(

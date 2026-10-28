@@ -82,6 +82,6 @@ return array(
 		array( 'Can I take the CPS test on a phone?', 'Yes, taps are counted the same way. Phone scores are usually a bit lower because the touch screen adds a small delay between taps.' ),
 		array( 'Is my best score saved?', 'Your best CPS for each test length is stored in this browser only. Nothing is sent anywhere.' ),
 	),
-	'related'        => array( 'jitter-click-test', 'right-click-cps-test', 'spacebar-clicker', 'reaction-time-test', 'double-click-test', 'mouse-tester' ),
+	'related'        => array( 'jitter-click-test', 'right-click-cps-test', 'auto-clicker-test', 'spacebar-clicker', 'reaction-time-test', 'double-click-test' ),
 	'updated'        => '2026-10-28',
 );

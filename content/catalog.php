@@ -19,6 +19,8 @@ return array(
 		'camera'     => array( 'name' => 'Camera', 'title' => 'Webcam & Camera Tests', 'icon' => 'camera', 'blurb' => 'Webcam, phone camera and an online mirror.' ),
 		'benchmark'  => array( 'name' => 'Benchmark', 'title' => 'Reaction & Speed Benchmarks', 'icon' => 'benchmark', 'blurb' => 'Reaction time, clicks per second and other skill tests.' ),
 		'phone'      => array( 'name' => 'Phone', 'title' => 'Phone Tests', 'icon' => 'phone', 'blurb' => 'Touch screen, speaker, camera and display tests for phones.' ),
+		'memory-test' => array( 'name' => 'Memory', 'title' => 'Memory Tests & Games', 'icon' => 'memory', 'blurb' => 'Chimp test, number, visual, sequence and verbal memory, and a memory game.' ),
+		'typing-test' => array( 'name' => 'Typing', 'title' => 'Typing Tests', 'icon' => 'typing', 'blurb' => 'Words per minute and accuracy on words or real sentences, 15 seconds to 5 minutes.' ),
 	),
 
 	// slug => name, card blurb, primary hub, extra hubs it is listed in.
@@ -71,5 +73,17 @@ return array(
 		'f1-reaction-test'        => array( 'name' => 'F1 Reaction Test', 'blurb' => 'Five red lights go out at random: react like an F1 start and get your time.', 'hub' => 'benchmark', 'also' => array() ),
 		'right-click-cps-test'    => array( 'name' => 'Right Click CPS Test', 'blurb' => 'Count right clicks per second and check the right mouse button.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
 		'jitter-click-test'       => array( 'name' => 'Jitter Click Test', 'blurb' => 'A 10 second jitter clicking test with peak CPS and consistency.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
+		'memory-game'             => array( 'name' => 'Memory Game', 'blurb' => 'Flip the cards and match every pair in as few moves as you can.', 'hub' => 'memory-test', 'also' => array() ),
+		'chimp-test'              => array( 'name' => 'Chimp Test', 'blurb' => 'Numbers hide when you click 1: tap them in order from memory, one more each level.', 'hub' => 'memory-test', 'also' => array( 'benchmark' ) ),
+		'number-memory-test'      => array( 'name' => 'Number Memory Test', 'blurb' => 'A number flashes up, you type it back; one digit longer every level.', 'hub' => 'memory-test', 'also' => array() ),
+		'visual-memory-test'      => array( 'name' => 'Visual Memory Test', 'blurb' => 'Tiles light up and go dark; click the ones that were lit as the grid grows.', 'hub' => 'memory-test', 'also' => array() ),
+		'sequence-memory-test'    => array( 'name' => 'Sequence Memory Test', 'blurb' => 'Repeat a growing sequence of flashing tiles in the right order.', 'hub' => 'memory-test', 'also' => array() ),
+		'verbal-memory-test'      => array( 'name' => 'Verbal Memory Test', 'blurb' => 'Words appear one by one: seen before in this round, or new?', 'hub' => 'memory-test', 'also' => array() ),
+		'typing-speed-test'       => array( 'name' => 'Typing Speed Test', 'blurb' => 'Type common words for 30 seconds to 5 minutes and get your WPM and accuracy.', 'hub' => 'typing-test', 'also' => array( 'benchmark', 'keyboard' ) ),
+		'1-minute-typing-test'    => array( 'name' => '1 Minute Typing Test', 'blurb' => 'The standard 60 second test on real English sentences.', 'hub' => 'typing-test', 'also' => array() ),
+		'5-minute-typing-test'    => array( 'name' => '5 Minute Typing Test', 'blurb' => 'Five minutes of sentences to measure the speed you can sustain.', 'hub' => 'typing-test', 'also' => array() ),
+		'wpm-test'                => array( 'name' => 'WPM Test', 'blurb' => 'A 15 to 60 second words per minute test, with the formula explained.', 'hub' => 'typing-test', 'also' => array() ),
+		'typing-test-english'     => array( 'name' => 'English Typing Test', 'blurb' => 'Sentences with capitals and punctuation, 1 to 5 minutes, like a job typing test.', 'hub' => 'typing-test', 'also' => array() ),
+		'auto-clicker-test'       => array( 'name' => 'Auto Clicker Test', 'blurb' => 'Measure the real CPS of an auto clicker and the gap between its clicks.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
 	),
 );

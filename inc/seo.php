@@ -79,6 +79,17 @@ add_filter(
 	}
 );
 
+// Search Console verification tag, on every page, before the SEO output.
+add_action(
+	'wp_head',
+	function () {
+		if ( defined( 'TN_GSC_VERIFICATION' ) && TN_GSC_VERIFICATION ) {
+			echo '<meta name="google-site-verification" content="' . esc_attr( TN_GSC_VERIFICATION ) . '">' . "\n";
+		}
+	},
+	0
+);
+
 add_action(
 	'wp_head',
 	function () {

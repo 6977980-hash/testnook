@@ -24,6 +24,10 @@ define( 'TN_ADSENSE_CLIENT', '' );
 define( 'TN_GA4_ID', '' );      // e.g. G-XXXXXXXXXX
 define( 'TN_CLARITY_ID', '' );  // e.g. abcd1234ef
 
+// Google Search Console verification (the content= value of the meta tag).
+// Printed in <head> on every page; empty means the tag is not printed.
+define( 'TN_GSC_VERIFICATION', 'LgGNxktmq48vzeArdfmRHnDeMvQ6rIVafW6v0hlVlpg' );
+
 // IndexNow key: served at /<key>.txt and used to ping Bing and friends on
 // every content change (inc/indexnow.php). Public by design; empty disables it.
 define( 'TN_INDEXNOW_KEY', '00f5e7841c724dd298a04e4d3648544a' );

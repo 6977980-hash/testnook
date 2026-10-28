@@ -1,14 +1,17 @@
-/* Shared by the white screen and black screen pages: full-screen solid colour with brightness steps, extra colours, a timer and cursor hiding. */
+/* Shared by the solid colour screen pages (white, black, red, green...): full-screen colour with shade steps, a timer and cursor hiding. */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="white-screen"], [data-tool="black-screen"]');
+	var screenEl = document.getElementById('cs-screen');
+	var root = screenEl && screenEl.closest('[data-tool]');
 	if (!root) { return; }
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
 
 	var screen = $('#cs-screen'), hint = $('#cs-hint'), statusEl = $('#cs-status'), timerSel = $('#cs-timer');
 	var swatches = U.$$('[data-cs-color]', root);
-	var current = root.getAttribute('data-tool') === 'black-screen' ? '#000000' : '#ffffff';
+	// The page's main colour is the swatch marked aria-pressed="true".
+	var first = root.querySelector('[data-cs-color][aria-pressed="true"]') || swatches[0];
+	var current = first ? first.getAttribute('data-cs-color') : '#ffffff';
 	var active = false, hintTimer = 0, cursorTimer = 0, endTimer = 0;
 
 	function dark(hex) {

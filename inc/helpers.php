@@ -97,7 +97,7 @@ function tn_allowed_html() {
 	$common  = array( 'id' => true, 'class' => true, 'style' => true, 'hidden' => true, 'role' => true, 'tabindex' => true, 'title' => true, 'aria-label' => true, 'aria-live' => true, 'aria-hidden' => true, 'aria-pressed' => true, 'aria-describedby' => true, 'aria-controls' => true, 'aria-expanded' => true );
 	$extra   = array(
 		'button'   => array( 'type' => true, 'disabled' => true, 'value' => true, 'name' => true ),
-		'input'    => array( 'type' => true, 'min' => true, 'max' => true, 'step' => true, 'value' => true, 'name' => true, 'checked' => true, 'disabled' => true, 'placeholder' => true, 'readonly' => true, 'inputmode' => true, 'autocomplete' => true, 'for' => true, 'list' => true ),
+		'input'    => array( 'type' => true, 'min' => true, 'max' => true, 'step' => true, 'value' => true, 'name' => true, 'checked' => true, 'disabled' => true, 'placeholder' => true, 'readonly' => true, 'inputmode' => true, 'autocomplete' => true, 'autocorrect' => true, 'autocapitalize' => true, 'spellcheck' => true, 'enterkeyhint' => true, 'pattern' => true, 'for' => true, 'list' => true ),
 		'select'   => array( 'name' => true, 'disabled' => true ),
 		'option'   => array( 'value' => true, 'selected' => true ),
 		'label'    => array( 'for' => true ),

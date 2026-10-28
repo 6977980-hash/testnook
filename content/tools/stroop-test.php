@@ -95,6 +95,6 @@ return array(
 		array( 'Can the Stroop test diagnose ADHD or dementia?', 'No. Standardised Stroop tasks are one element of professional assessments, but an online result on its own tells you nothing about any condition. Treat this page as a brain exercise and a way to compare your own sessions.' ),
 		array( 'Is my result saved?', 'Your smallest Stroop effect is stored in this browser only, and only for rounds with at least 80% accuracy. Nothing is sent to a server.' ),
 	),
-	'related'        => array( 'reaction-time-test', 'f1-reaction-test', 'cps-test', 'spacebar-clicker', 'keyboard-tester', 'refresh-rate-test' ),
+	'related'        => array( 'reaction-time-test', 'f1-reaction-test', 'chimp-test', 'number-memory-test', 'verbal-memory-test', 'typing-speed-test' ),
 	'updated'        => '2026-10-28',
 );

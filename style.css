@@ -1,0 +1,13 @@
+/*
+Theme Name: Testnook
+Theme URI: https://testnook.com/
+Author: Testnook
+Description: Lightweight theme for Testnook, a collection of free browser-based hardware tests (keyboard, mouse, controller, screen, audio, camera). Tool pages are generated from files in the theme's content/ folder.
+Version: 0.1.0
+Requires at least: 6.4
+Requires PHP: 7.4
+License: GPLv2 or later
+Text Domain: testnook
+*/
+
+/* The real stylesheet is assets/css/main.css, inlined into <head> by inc/assets.php. */

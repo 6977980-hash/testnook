@@ -1,0 +1,20 @@
+/* Headphone test */
+.tool-stage.hp-stage { display: grid; gap: 18px; align-content: start; justify-items: stretch; padding: 16px; min-height: 0; }
+.hp-group h3 { margin: 0 0 4px; font-size: .95rem; }
+.hp-group p { margin: 0 0 10px; font-size: .88rem; color: var(--muted); }
+.hp-channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.hp-ch {
+	display: grid; gap: 6px; place-items: center; padding: 14px 8px; min-height: 84px;
+	border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text);
+	font: 600 .9rem/1.2 var(--font); cursor: pointer; touch-action: manipulation;
+}
+.hp-ch:hover { border-color: var(--brand); }
+.hp-ch-ico { font-size: 1.4rem; color: var(--brand); letter-spacing: -2px; }
+[data-hp].is-active { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+[data-hp].is-active .hp-ch-ico { color: var(--brand-ink); }
+.hp-vu { display: grid; grid-template-columns: auto 1fr auto 1fr; gap: 8px; align-items: center; margin-top: 10px; font: 700 .75rem var(--font); color: var(--muted); }
+.hp-vu .meter { background: var(--surface); }
+.hp-foot { display: flex; flex-wrap: wrap; gap: 14px; align-items: end; }
+.hp-vol { flex: 1 1 200px; max-width: 360px; }
+@media (max-width: 480px) { .hp-channels { grid-template-columns: 1fr; } .hp-ch { min-height: 56px; grid-auto-flow: column; justify-content: start; } }
+.hp-pan { margin-top: 10px; }

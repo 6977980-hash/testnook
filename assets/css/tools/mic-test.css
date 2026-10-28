@@ -1,0 +1,25 @@
+/* Mic test */
+.mc-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 240px; }
+.tool-stage.mc-stage { display: block; place-items: normal; padding: 14px; min-height: 0; }
+.mc-level { position: relative; margin: 4px 0 6px; }
+.mc-level .meter { height: 22px; background: var(--surface); }
+.mc-level .meter > span { background: linear-gradient(90deg, var(--ok) 0 70%, var(--warn) 70% 90%, var(--bad) 90%); background-size: 100vw 100%; transition: width .05s linear; }
+.mc-level .meter > span.is-hot { box-shadow: inset -4px 0 0 var(--bad); }
+.mc-peak { position: absolute; top: 0; bottom: 0; width: 2px; left: 0; background: var(--text); opacity: .7; }
+.mc-scale { position: relative; height: 14px; font: 600 .7rem var(--mono); color: var(--muted); margin-bottom: 12px; }
+.mc-scale span { position: absolute; top: 0; transform: translateX(-50%); }
+.mc-scale span:nth-child(1) { left: 0; transform: none; }
+.mc-scale span:nth-child(2) { left: 33.3%; }
+.mc-scale span:nth-child(3) { left: 66.7%; }
+.mc-scale span:nth-child(4) { left: 90%; }
+.mc-scale span:nth-child(5) { left: 100%; transform: translateX(-100%); }
+.mc-scope { display: block; width: 100%; height: 150px; border-radius: var(--radius-sm); }
+.mc-view { margin: 10px 0 0; }
+.mc-opts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 12px 0 0; font-size: .9rem; }
+.mc-opts label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.mc-rec { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 14px; }
+.mc-rec select { width: auto; min-height: 40px; padding: 6px 10px; }
+.mc-rec audio { flex: 1 1 240px; max-width: 100%; height: 40px; }
+.mc-rec audio[hidden], .mc-rec a[hidden] { display: none; }
+#mc-rec.is-rec { background: var(--bad); border-color: var(--bad); color: #fff; }
+.mc-name { font-size: .95rem; overflow-wrap: anywhere; }

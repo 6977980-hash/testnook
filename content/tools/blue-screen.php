@@ -6,7 +6,7 @@ $tool = require __DIR__ . '/_colour-screen.php';
 return array(
 	'title'        => 'Blue Screen',
 	'seo_title'    => 'Blue Screen: Full Screen Solid Blue Page for Any Display',
-	'description'  => 'Free full-screen blue screen. Test blue subpixels for dead or stuck pixels, check OLED blue ageing and tint, or use a calm blue light. Not the Windows error screen.',
+	'description'  => 'Free full-screen blue screen. Test blue subpixels for dead or stuck pixels, check OLED blue ageing, or use a calm blue light. Not the Windows error screen.',
 	'intro'        => 'Turn your whole screen solid blue with one click. Use it to test the blue subpixels of a monitor, laptop or phone, to look for blue fading on an older OLED, or as a calm blue light. This page is a plain colour, not the Windows "blue screen of death" error.',
 	'device'       => 'any',
 	'ads'          => 'none',

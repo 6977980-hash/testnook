@@ -69,6 +69,6 @@ return array(
 		array( 'Can a black screen help with burn-in?', 'It does not repair burn-in, but a black screen gives temporary image retention time to fade. Use our burn-in test to tell the two apart.' ),
 		array( 'Is this black screen page free?', 'Yes. It runs in your browser, has no ads inside the full screen and nothing is downloaded or uploaded.' ),
 	),
-	'related'      => array( 'white-screen', 'dead-pixel-test', 'stuck-pixel-fixer', 'burn-in-test', 'refresh-rate-test', 'fps-test' ),
+	'related'      => array( 'white-screen', 'grey-screen', 'dead-pixel-test', 'stuck-pixel-fixer', 'burn-in-test', 'blue-screen', 'red-screen', 'fps-test' ),
 	'updated'      => '2026-10-28',
 );

@@ -6,7 +6,7 @@ $tool = require __DIR__ . '/_colour-screen.php';
 return array(
 	'title'        => 'Orange Screen',
 	'seo_title'    => 'Orange Screen: Full Screen Solid Orange Page for Any Display',
-	'description'  => 'Free full-screen orange screen. Make a warm sunset or candle-like light, add a golden glow to photos and video calls, or check how evenly your display shows colour.',
+	'description'  => 'Free full-screen orange screen. Make a warm sunset-style light, add a golden glow to photos and video calls, or check how evenly your display shows colour.',
 	'intro'        => 'Turn your whole screen solid orange with one click. Use it as a warm, sunset-style light in the evening, a golden fill light for photos and video calls, or a quick check that your monitor or phone shows colour evenly across the panel.',
 	'device'       => 'any',
 	'ads'          => 'none',

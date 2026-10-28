@@ -20,6 +20,7 @@ inc/routing.php      picks the template for tool / hub / static pages, embed mod
 inc/assets.php       inlines CSS, loads JS, favicons
 inc/seo.php          title, description, OG, JSON-LD schema
 inc/ads.php          ad slot rules, ads.txt
+inc/indexnow.php     IndexNow key file and pings after a content sync
 inc/helpers.php      breadcrumbs, cards, FAQ, related tools, HTML allow-list
 inc/icons.php        inline SVG icons
 content/catalog.php  the 8 hubs and the full list of planned tools, in launch order
@@ -31,7 +32,8 @@ templates/           tool.php, hub.php, static.php, embed.php
 assets/css/main.css  the stylesheet (plus assets/css/tools/*.css per tool)
 assets/js/site.js    theme toggle, nav, search, fullscreen, lazy ads, analytics
 assets/js/tools/     one script per tool
-assets/img/          favicons, logo, share images
+assets/img/          favicons, logo, share images (assets/img/og/<slug>.jpg per tool and hub)
+bin/make-og-images.py  regenerates the share images from the catalog (run locally, commit the output)
 docs/                content format and phase handoff notes
 ```
 

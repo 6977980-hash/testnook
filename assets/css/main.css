@@ -109,7 +109,7 @@ code { font-family: var(--mono); font-size: .9em; }
 .theme-toggle .icon-moon, [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: inline; }
 .nav-toggle { display: none; }
-@media (max-width: 1000px) {
+@media (max-width: 1180px) {
 	.nav-toggle { display: inline-grid; margin-left: auto; }
 	.main-nav {
 		display: none; position: absolute; top: 60px; left: 0; right: 0;

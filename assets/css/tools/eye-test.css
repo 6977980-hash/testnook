@@ -1,0 +1,17 @@
+/* Eye test (tumbling E and letter chart) */
+.et-bar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.et-bar label { display: inline-flex; gap: 6px; align-items: center; font-weight: 600; font-size: .9rem; }
+.et-bar select { min-height: 40px; }
+.tool-stage.et-stage { display: block; place-items: normal; padding: 0; min-height: 0; height: 380px; background: #fff; overflow: hidden; position: relative; }
+.et-stage canvas { display: block; }
+.et-stage.is-pseudo-fs, .et-stage:fullscreen { height: 100vh; height: 100dvh; }
+.et-line { margin: 8px 0 0; font: 600 .9rem var(--font); color: var(--muted); text-align: center; }
+.et-answers { display: grid; grid-template-columns: repeat(3, minmax(0, 76px)); grid-template-areas: ". up ." "left none right" ". down ."; gap: 6px; justify-content: center; margin: 10px 0 0; }
+.et-answers[hidden] { display: none; }
+.et-answers .btn { width: 100%; justify-content: center; font-size: 1.3rem; min-height: 52px; }
+.et-answers [data-et="up"] { grid-area: up; }
+.et-answers [data-et="down"] { grid-area: down; }
+.et-answers [data-et="left"] { grid-area: left; }
+.et-answers [data-et="right"] { grid-area: right; }
+.et-answers [data-et="none"] { grid-area: none; font-size: .8rem; }
+.et-results { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 10px; margin: 12px 0 0; }

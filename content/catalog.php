@@ -21,6 +21,7 @@ return array(
 		'phone'      => array( 'name' => 'Phone', 'title' => 'Phone Tests', 'icon' => 'phone', 'blurb' => 'Touch screen, speaker, camera and display tests for phones.' ),
 		'memory-test' => array( 'name' => 'Memory', 'title' => 'Memory Tests & Games', 'icon' => 'memory', 'blurb' => 'Chimp test, number, visual, sequence and verbal memory, and a memory game.' ),
 		'typing-test' => array( 'name' => 'Typing', 'title' => 'Typing Tests', 'icon' => 'typing', 'blurb' => 'Words per minute and accuracy on words or real sentences, 15 seconds to 5 minutes.' ),
+		'vision-test' => array( 'name' => 'Eyes', 'title' => 'Eye & Vision Tests', 'icon' => 'eye', 'blurb' => 'Colour blindness, eye chart, astigmatism and blind spot screening checks.' ),
 	),
 
 	// slug => name, card blurb, primary hub, extra hubs it is listed in.
@@ -101,5 +102,15 @@ return array(
 		'30-second-click-test'    => array( 'name' => '30 Second Click Test', 'blurb' => 'Half a minute of clicking to test your click endurance.', 'hub' => 'benchmark', 'also' => array() ),
 		'60-second-click-test'    => array( 'name' => '60 Second Click Test', 'blurb' => 'How many clicks can you make in one full minute?', 'hub' => 'benchmark', 'also' => array() ),
 		'100-second-click-test'   => array( 'name' => '100 Second Click Test', 'blurb' => 'The long click stamina challenge: one hundred seconds.', 'hub' => 'benchmark', 'also' => array() ),
+		'red-green-color-blind-test' => array( 'name' => 'Red-Green Color Blind Test', 'blurb' => 'Twelve dot plates that screen for protan and deutan colour blindness.', 'hub' => 'vision-test', 'also' => array() ),
+		'color-vision-test'       => array( 'name' => 'Color Vision Test', 'blurb' => 'Put 15 coloured caps in order to check colour vision around the whole hue circle.', 'hub' => 'vision-test', 'also' => array() ),
+		'eye-test'                => array( 'name' => 'Eye Test', 'blurb' => 'A calibrated tumbling E chart that estimates your visual acuity, one eye at a time.', 'hub' => 'vision-test', 'also' => array() ),
+		'astigmatism-test'        => array( 'name' => 'Astigmatism Test', 'blurb' => 'A clock dial chart: lines that look darker point to astigmatism and its axis.', 'hub' => 'vision-test', 'also' => array() ),
+		'blind-spot-test'         => array( 'name' => 'Blind Spot Test', 'blurb' => 'Find the blind spot in each eye and measure where it starts and ends.', 'hub' => 'vision-test', 'also' => array() ),
+		'screen-resolution'       => array( 'name' => 'Screen Resolution', 'blurb' => 'What is my screen resolution? Native pixels, scaling, viewport and pixel ratio.', 'hub' => 'screen', 'also' => array( 'phone' ) ),
+		'screen-size'             => array( 'name' => 'Screen Size', 'blurb' => 'Measure your screen size in inches with a bank card, or work it out from the diagonal.', 'hub' => 'screen', 'also' => array( 'phone' ) ),
+		'screen-ratio'            => array( 'name' => 'Screen Ratio', 'blurb' => 'Find your screen\'s aspect ratio, such as 16:9, 16:10 or 19.5:9.', 'hub' => 'screen', 'also' => array() ),
+		'aspect-ratio-calculator' => array( 'name' => 'Aspect Ratio Calculator', 'blurb' => 'Work out the missing width or height for any ratio, and simplify a ratio.', 'hub' => 'screen', 'also' => array() ),
+		'ppi-calculator'          => array( 'name' => 'PPI Calculator', 'blurb' => 'Pixels per inch, dot pitch and size from a screen\'s resolution and diagonal.', 'hub' => 'screen', 'also' => array() ),
 	),
 );

@@ -1,0 +1,8 @@
+/* Blind spot test */
+.bs-bar label { display: inline-flex; gap: 6px; align-items: center; font-weight: 600; font-size: .9rem; }
+.bs-bar select { min-height: 40px; }
+.tool-stage.bs-stage { display: block; place-items: normal; padding: 0; min-height: 0; height: 260px; background: #fff; overflow: hidden; }
+.bs-stage canvas { display: block; }
+.bs-stage.is-pseudo-fs, .bs-stage:fullscreen { height: 100vh; height: 100dvh; }
+.bs-mark-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 12px 0 0; }
+.bs-mark-row .btn { min-width: 200px; justify-content: center; min-height: 52px; font-size: 1.05rem; }

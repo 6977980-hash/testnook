@@ -17,6 +17,7 @@ function tn_icon( $name, $size = 24 ) {
 		'phone'      => '<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/>',
 		'memory'     => '<path d="M9 3a4 4 0 0 0-4 4 3 3 0 0 0-1 5.5A3 3 0 0 0 6 18a3 3 0 0 0 6 0V7a4 4 0 0 0-3-4z"/><path d="M15 3a4 4 0 0 1 4 4 3 3 0 0 1 1 5.5A3 3 0 0 1 18 18a3 3 0 0 1-6 0"/><path d="M12 7v11"/>',
 		'typing'     => '<rect x="2" y="7" width="20" height="12" rx="2"/><path d="M7 15h10M6 11h.01M10 11h.01M14 11h.01M18 11h.01"/><path d="M8 3h8M12 3v4"/>',
+		'eye'        => '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
 		'sun'        => '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
 		'moon'       => '<path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/>',
 		'menu'       => '<path d="M3 6h18M3 12h18M3 18h18"/>',

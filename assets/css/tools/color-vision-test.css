@@ -1,0 +1,31 @@
+/* Color vision test (15-cap hue arrangement) */
+.tool-stage.cv-stage { display: block; place-items: normal; padding: 16px; min-height: 0; background: #6e6e6e; color: #fff; }
+.cv-stage .seg button { min-height: 36px; }
+.cv-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.cv-label { margin: 12px 0 6px; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #e8e8e8; }
+.cv-row, .cv-tray { display: flex; flex-wrap: wrap; gap: 8px; min-height: 52px; }
+.cv-row { padding: 8px; border-radius: 12px; background: #5c5c5c; }
+.cv-cap { width: 44px; height: 44px; border-radius: 50%; border: 2px solid rgba(0, 0, 0, .25); padding: 0; cursor: pointer; flex: 0 0 auto; }
+.cv-cap:hover { transform: scale(1.06); }
+.cv-cap:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.cv-ref { cursor: default; box-shadow: 0 0 0 3px #fff; }
+.cv-ref:hover { transform: none; }
+.cv-slot { width: 44px; height: 44px; border-radius: 50%; border: 2px dashed rgba(255, 255, 255, .35); box-sizing: border-box; flex: 0 0 auto; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.cv-result { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin: 12px 0 0; padding: 12px 14px; border-radius: var(--radius-sm); border-left: 4px solid var(--brand); background: var(--surface); color: var(--text); }
+.cv-result[hidden] { display: none; }
+.cv-result.is-ok { border-color: var(--ok); }
+.cv-result.is-warn { border-color: var(--warn); }
+.cv-result.is-bad { border-color: var(--bad); }
+.cv-result > div { flex: 1 1 240px; min-width: 0; }
+.cv-result strong { font-size: 1.1rem; }
+.cv-result p { margin: 6px 0 0; }
+.cv-detail { font-size: .85rem; color: var(--muted); }
+.cv-diagram { width: 220px; max-width: 100%; height: auto; flex: 0 0 auto; background: #6e6e6e; border-radius: 50%; }
+.cv-diagram line { stroke: #fff; stroke-width: 2; }
+.cv-diagram .cv-major { stroke: #ffd54a; stroke-width: 2.5; }
+.cv-diagram text { font: 700 9px var(--font); fill: #111; text-anchor: middle; }
+@media (max-width: 480px) {
+	.cv-cap, .cv-slot { width: 38px; height: 38px; }
+	.cv-row, .cv-tray { gap: 6px; }
+}

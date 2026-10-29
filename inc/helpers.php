@@ -16,7 +16,7 @@ function tn_embed_code( $def, $width = '100%', $height = 620, $theme = '' ) {
 		$src = add_query_arg( 'theme', $theme, $src );
 	}
 	return sprintf(
-		'<iframe src="%1$s" width="%2$s" height="%3$d" style="border:0;max-width:100%%" title="%4$s" allow="camera; microphone; gamepad; fullscreen; autoplay" loading="lazy"></iframe>' . "\n" . '<p><a href="%5$s">%4$s</a> by %6$s</p>',
+		'<iframe src="%1$s" width="%2$s" height="%3$d" style="border:0;max-width:100%%" title="%4$s" allow="camera; microphone; gamepad; fullscreen; autoplay; accelerometer; gyroscope; magnetometer; geolocation" loading="lazy"></iframe>' . "\n" . '<p><a href="%5$s">%4$s</a> by %6$s</p>',
 		esc_url( $src ),
 		esc_attr( $width ),
 		(int) $height,

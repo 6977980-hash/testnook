@@ -65,6 +65,6 @@ return array(
 		array( 'Is this page safe to use?', 'Yes. It only reads what the browser shares with every website. Nothing is sent to a server or saved.' ),
 		array( 'Does it work on tablets?', 'Yes. Android tablets report their model the same way as phones. iPads hide the model, so the page only says it is an iPad.' ),
 	),
-	'related'        => array( 'device-info', 'what-is-my-user-agent', 'touch-screen-test', 'vibration-test', 'camera-test', 'dead-pixel-test' ),
+	'related'        => array( 'device-info', 'what-is-my-user-agent', 'phone-sensor-test', 'touch-screen-test', 'vibration-test', 'camera-test', 'dead-pixel-test' ),
 	'updated'        => '2026-10-29',
 );

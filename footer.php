@@ -11,7 +11,7 @@ $tn_hub_list = array_keys( tn_hubs() );
 		<div class="footer-grid">
 			<div class="footer-about">
 				<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php get_template_part( 'templates/parts/logo-mark' ); ?><span><?php echo esc_html( TN_SITE_NAME ); ?></span></a>
-				<p>Free hardware tests that run in your browser. Your camera, microphone and inputs are processed on your own device and never uploaded.</p>
+				<p>Free hardware tests that run in your browser. Your camera, microphone and keystrokes never leave your device; a few tests share only your final score, anonymously, and you can turn that off.</p>
 			</div>
 			<div>
 				<h2>Tests</h2>
@@ -33,7 +33,7 @@ $tn_hub_list = array_keys( tn_hubs() );
 				<h2><?php echo esc_html( TN_SITE_NAME ); ?></h2>
 				<ul>
 					<?php
-					foreach ( array( 'about' => 'About', 'contact' => 'Contact', 'guides' => 'Guides', 'leaderboards' => 'Leaderboards', 'embed-tools' => 'Embed our tools', 'privacy-policy' => 'Privacy Policy', 'terms' => 'Terms of Use' ) as $tn_slug => $tn_label ) :
+					foreach ( array( 'about' => 'About', 'how-we-test' => 'How we test', 'contact' => 'Contact', 'guides' => 'Guides', 'leaderboards' => 'Leaderboards', 'embed-tools' => 'Embed our tools', 'privacy-policy' => 'Privacy Policy', 'terms' => 'Terms of Use' ) as $tn_slug => $tn_label ) :
 						if ( tn_get_def( 'page:' . $tn_slug ) ) :
 							?>
 						<li><a href="<?php echo esc_url( home_url( '/' . $tn_slug . '/' ) ); ?>"><?php echo esc_html( $tn_label ); ?></a></li>

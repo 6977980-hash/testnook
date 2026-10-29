@@ -49,7 +49,7 @@ return array(
 	),
 	'fixes'          => array(
 		array( 'Xbox controller not detected on PC', 'Press a button after connecting. Try a different USB cable or port, since some cables only charge. If Steam is open, its Xbox configuration support can hide the controller from other apps; close Steam and reload this page.' ),
-		array( 'Bluetooth keeps disconnecting', 'Only Xbox One S and newer controllers have Bluetooth; the original Xbox One pad needs a cable or the Wireless Adapter. Update the controller firmware in the Xbox Accessories app, keep it within a few metres of the computer, and remove other Bluetooth devices that crowd the signal.' ),
+		array( 'Bluetooth keeps disconnecting', 'Only Xbox One S and newer controllers have Bluetooth; the original Xbox One pad needs a cable or the Wireless Adapter. Update the controller firmware in the Xbox Accessories app, keep it within a few meters of the computer, and remove other Bluetooth devices that crowd the signal.' ),
 		array( 'Vibration does not work', 'Rumble from web pages works in Chrome and Edge. Check the batteries: an Xbox controller turns rumble off when the batteries are low. In the Xbox Accessories app, make sure vibration is not set to zero.' ),
 		array( 'Buttons are mixed up', 'The browser reports "Non-standard" mapping. This happens with some third-party pads in their "D-input" mode; switch them to "X-input" (often a switch on the back) and reload the page.' ),
 	),

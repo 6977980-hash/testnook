@@ -13,7 +13,7 @@ return array(
 	'scripts'        => array( 'mouse-tester' ),
 	'embed_height'   => 640,
 	'tool'           => '<div class="tool-bar">
-	<span class="mt-hint">Keep the pointer inside the grey area while you test.</span>
+	<span class="mt-hint">Keep the pointer inside the gray area while you test.</span>
 	<button type="button" class="btn btn-sm" id="mt-reset">Reset</button>
 </div>
 <div class="tool-stage mt-stage" id="mt-stage" tabindex="0" aria-describedby="mt-status">
@@ -41,7 +41,7 @@ return array(
 </div>
 <p class="tool-status" id="mt-status" aria-live="polite">Waiting for your first click.</p>',
 	'howto'          => array(
-		'Move the pointer over the grey test area.',
+		'Move the pointer over the gray test area.',
 		'Click the <strong>left</strong>, <strong>right</strong> and <strong>middle</strong> (wheel) buttons one at a time. Each part of the picture turns blue while held and green once it has worked.',
 		'Roll the scroll wheel <strong>up</strong> and <strong>down</strong> a few notches each way. The page will not scroll while the pointer is over the test area.',
 		'Press the <strong>side buttons</strong> (back and forward, also called buttons 4 and 5) if your mouse has them. The tester blocks them from leaving the page.',
@@ -67,7 +67,7 @@ return array(
 		array( 'Left click sometimes double clicks or drops a drag', 'This is switch bounce, usually from a worn or dirty micro switch. Blow compressed air around the button edge, update the mouse firmware, and if your mouse software has a "debounce time" setting, raise it a little. If it keeps happening, the switch needs replacing or the mouse should go back under warranty.' ),
 		array( 'Right click or a side button does nothing', 'Open your mouse software (Logitech G Hub, Razer Synapse, SteelSeries GG and so on) and check the button is not remapped or disabled. On Windows, also check Settings > Bluetooth & devices > Mouse > "Primary mouse button" is set as you expect.' ),
 		array( 'Scroll wheel jumps or scrolls the wrong way', 'Dust in the wheel encoder causes skipped or reversed steps. Spin the wheel hard in both directions while blowing compressed air into the gap. For wireless mice, also replace the battery, because low power can make the wheel erratic.' ),
-		array( 'Side buttons go back a page', 'Back and forward are blocked while the pointer is inside the test area. If your browser still navigates, keep the pointer inside the grey box, or test in Chrome or Edge, which honour the block reliably.' ),
+		array( 'Side buttons go back a page', 'Back and forward are blocked while the pointer is inside the test area. If your browser still navigates, keep the pointer inside the gray box, or test in Chrome or Edge, which honor the block reliably.' ),
 	),
 	'faq'            => array(
 		array( 'How do I test my mouse buttons?', 'Hover over the test area and press each button once. Each one that turns green works. Check that the counters match the number of presses.' ),

@@ -92,7 +92,7 @@ return array(
 		array( 'I hear nothing, even at 8 kHz', 'Check the system volume and that the browser is not muted. Tap the 8 k button to hear a test tone. Pure tones above 8 kHz are quiet on small speakers, so use headphones.' ),
 		array( 'The result is lower than expected', 'Try better headphones: many cheap earphones and Bluetooth speakers roll off above 15 kHz. Test in a quiet room, raise the volume a little (not loud) and try again. A low result on good headphones at normal volume is worth a professional check.' ),
 		array( 'One ear hears less than the other', 'Swap the earphones between ears and repeat. If the weaker side moves with the earphone, the earphone is at fault. If it stays with the ear, mention it to a doctor.' ),
-		array( 'I hear a click or buzz but no tone', 'Some earphones and Bluetooth links distort at high frequencies and produce artefacts. Lower the volume. If you only hear a click when each tone starts, the tone itself is above your range.' ),
+		array( 'I hear a click or buzz but no tone', 'Some earphones and Bluetooth links distort at high frequencies and produce artifacts. Lower the volume. If you only hear a click when each tone starts, the tone itself is above your range.' ),
 	),
 	'faq'          => array(
 		array( 'How does the hearing frequency test work?', 'A pure tone plays at 8 kHz and rises 1 kHz at a time. You press a button while you can hear it; the last tone you heard is your upper limit.' ),

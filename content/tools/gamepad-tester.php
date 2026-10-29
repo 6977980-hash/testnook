@@ -76,7 +76,7 @@ return array(
 		'Connect your controller with a USB cable or pair it by Bluetooth, then <strong>press any button</strong>. Browsers only reveal a controller after a button press.',
 		'Press every button one by one: face buttons, D-pad, bumpers, the menu buttons and both sticks (click them in). Each one lights up while held and turns green once it has worked.',
 		'Squeeze both triggers slowly. The bar should fill smoothly from 0 to 100%. A trigger that jumps or stops short is worn or dirty.',
-		'Move both sticks in full circles. The dots should reach the edge in every direction and return to the centre. For a detailed drift check, use the <a href="/stick-drift-test/">stick drift test</a>.',
+		'Move both sticks in full circles. The dots should reach the edge in every direction and return to the center. For a detailed drift check, use the <a href="/stick-drift-test/">stick drift test</a>.',
 		'Press <strong>Test vibration</strong> to check the rumble motors, and read the raw list below the diagram for exact values.',
 	),
 	'howto_title'    => 'How to test your controller',
@@ -84,13 +84,13 @@ return array(
 <li><strong>A button never turns green:</strong> it is not registering. Press it firmly a few times; sticky or dead buttons are usually dirt under the button or a worn contact.</li>
 <li><strong>A button lights up without being pressed:</strong> a stuck or shorted button, or a damaged ribbon cable.</li>
 <li><strong>Trigger stops below 100%:</strong> the trigger sensor is worn, or a game\'s trigger setting limits it. Many triggers top out at 95-99%, which is fine.</li>
-<li><strong>Stick dot does not return to the centre:</strong> stick drift. Run the dedicated drift test for a measurement.</li>
+<li><strong>Stick dot does not return to the center:</strong> stick drift. Run the dedicated drift test for a measurement.</li>
 <li><strong>Mapping says Non-standard:</strong> the browser does not know this controller\'s layout, so the diagram may show the wrong buttons. The raw list is always correct: use it to check each input.</li>
 </ul>',
 	'extra'          => array(
 		array(
 			'Which controllers work with this gamepad tester?',
-			'<p>Any controller your browser can read: PS5 DualSense and DualSense Edge, PS4 DualShock 4, Xbox One, Series X|S and Elite controllers, Xbox 360 pads, the Switch Pro Controller, 8BitDo and most generic USB or Bluetooth gamepads. The diagram uses the browser\'s standard layout and switches the labels to PlayStation or Nintendo symbols when it recognises the controller. There are dedicated pages with model-specific tips for the <a href="/ps5-controller-test/">PS5 controller</a>, <a href="/xbox-controller-test/">Xbox controller</a> and <a href="/ps4-controller-test/">PS4 controller</a>.</p>
+			'<p>Any controller your browser can read: PS5 DualSense and DualSense Edge, PS4 DualShock 4, Xbox One, Series X|S and Elite controllers, Xbox 360 pads, the Switch Pro Controller, 8BitDo and most generic USB or Bluetooth gamepads. The diagram uses the browser\'s standard layout and switches the labels to PlayStation or Nintendo symbols when it recognizes the controller. There are dedicated pages with model-specific tips for the <a href="/ps5-controller-test/">PS5 controller</a>, <a href="/xbox-controller-test/">Xbox controller</a> and <a href="/ps4-controller-test/">PS4 controller</a>.</p>
 <p>Chrome and Edge give the best support, including vibration. Firefox and Safari show buttons and sticks but may not support vibration from a web page.</p>',
 			'controllers',
 		),

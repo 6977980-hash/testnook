@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require dirname( __DIR__ ) . '/tools/_bands.php';
+
 return array(
 	'title'       => 'Typing Tests',
 	'seo_title'   => 'Typing Test: Check Your Typing Speed in WPM (Free Online)',
@@ -17,13 +19,13 @@ return array(
 <li><strong>Accuracy:</strong> correct characters as a share of all characters typed. Job tests usually require 95% or better.</li>
 <li><strong>Errors:</strong> wrong, missing and extra characters in the words you completed.</li>
 </ul>
-<p>A best score is saved in your browser for each test and length, but only when accuracy is 90% or better, so a fast run full of mistakes does not become your benchmark.</p>
+<p>A best score is saved in your browser for each test and length, but only when accuracy is 90% or better, so a fast run full of mistakes does not become your benchmark. The anonymous site averages and the leaderboards accept results from 85% accuracy.</p>
 
 <h2>What is a good typing speed?</h2>
-<p>The adult average is about <strong>40 WPM</strong>. 50-60 is good and what most jobs that list typing want; 70-100 is fast, the range of programmers, writers and transcriptionists; above 100 is very fast, and competitive typists exceed 150. On sentences with punctuation, scores run 5-10 WPM lower than on plain words, so compare like with like. Accuracy matters more than speed: 60 WPM at 98% is better typing than 75 WPM at 90%.</p>
+<p>The adult average is about <strong>40 WPM</strong>; jobs that test typing usually ask for 40 to 60.</p>' . $bands['wpm'] . '<p> On sentences with punctuation, scores run 5-10 WPM lower than on plain words, so compare like with like. Accuracy matters more than speed: 60 WPM at 98% is better typing than 75 WPM at 90%.</p>
 
 <h2>How to type faster</h2>
-<p>Learn touch typing: fingers on the home row, each key always struck by the same finger, eyes on the screen. Two-finger typing stalls around 50 WPM; touch typing goes past 100. Practise for ten minutes a day rather than an hour once a week, and practise accuracy first, since speed follows once the finger movements are automatic. Keep wrists straight and floating, use a light touch, and make sure the keyboard itself is not dropping or doubling keys, which you can check with the <a href="/keyboard-tester/">keyboard tester</a>.</p>
+<p>Learn touch typing: fingers on the home row, each key always struck by the same finger, eyes on the screen. Two-finger typing stalls around 50 WPM; touch typing goes past 100. Practice for ten minutes a day rather than an hour once a week, and practice accuracy first, since speed follows once the finger movements are automatic. Keep wrists straight and floating, use a light touch, and make sure the keyboard itself is not dropping or doubling keys, which you can check with the <a href="/keyboard-tester/">keyboard tester</a>.</p>
 
 <h2>Related tests</h2>
 <p>The <a href="/spacebar-clicker/">spacebar clicker</a> measures how fast you can press one key, and the <a href="/reaction-time-test/">reaction time test</a> measures how fast you respond. Both live in the <a href="/benchmark/">benchmarks</a> hub, alongside the <a href="/memory-test/">memory tests</a>.</p>',

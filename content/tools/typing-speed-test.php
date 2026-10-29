@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 $tool = require __DIR__ . '/_typing-test.php';
 
 return array(
@@ -30,20 +32,12 @@ return array(
 <li><strong>Accuracy:</strong> correct characters as a percentage of all characters typed.</li>
 <li><strong>Errors:</strong> wrong, missing and extra characters across all the words you completed.</li>
 </ul>
-<div class="table-scroll"><table>
-<thead><tr><th>WPM</th><th>Level</th><th>Who types this fast</th></tr></thead>
-<tbody>
-<tr><td>Under 30</td><td>Beginner</td><td>Two-finger or hunt-and-peck typists.</td></tr>
-<tr><td>30-50</td><td>Average</td><td>Most adults. The average is about 40 WPM.</td></tr>
-<tr><td>50-70</td><td>Good</td><td>Office workers and students who type every day. Typing jobs usually ask for 50-60.</td></tr>
-<tr><td>70-100</td><td>Fast</td><td>Programmers, writers, transcriptionists.</td></tr>
-<tr><td>Over 100</td><td>Very fast</td><td>Competitive typists. The top of the leaderboards is above 200.</td></tr>
-</tbody></table></div>
+' . $bands['wpm'] . '
 <p>Accuracy matters more than speed. A fast typist with 92% accuracy spends a lot of time correcting, and in this test every error is subtracted from the net score, so 60 WPM at 98% beats 70 WPM at 90%.</p>',
 	'extra'          => array(
 		array(
 			'How to type faster',
-			'<p>Speed comes from touch typing: all ten fingers on the home row (A S D F and J K L ;), each key hit by the same finger every time, eyes on the screen rather than the keyboard. If you already type with a few fingers, the first weeks of switching feel slower, but the ceiling is far higher: two-finger typing tops out around 50 WPM, touch typing at over 100. Practise short sessions daily rather than long ones weekly, and practise accuracy first; speed follows automatically once the finger movements are reliable. Sit with your wrists straight and floating, not resting on the desk, and keep the keyboard low enough that your elbows are at a right angle.</p>
+			'<p>Speed comes from touch typing: all ten fingers on the home row (A S D F and J K L ;), each key hit by the same finger every time, eyes on the screen rather than the keyboard. If you already type with a few fingers, the first weeks of switching feel slower, but the ceiling is far higher: two-finger typing tops out around 50 WPM, touch typing at over 100. Practice short sessions daily rather than long ones weekly, and practice accuracy first; speed follows automatically once the finger movements are reliable. Sit with your wrists straight and floating, not resting on the desk, and keep the keyboard low enough that your elbows are at a right angle.</p>
 <p>The words here are the 500 most common English words, which is what most typing tests use because they reflect ordinary writing. For a test with real sentences, capital letters and punctuation, take the <a href="/typing-test-english/">English typing test</a>. For a fixed length, there are dedicated <a href="/1-minute-typing-test/">1 minute</a> and <a href="/5-minute-typing-test/">5 minute</a> tests, and the <a href="/wpm-test/">WPM test</a> explains the formula in detail.</p>',
 			'type-faster',
 		),
@@ -65,7 +59,7 @@ return array(
 		array( 'Why is my raw WPM higher than my WPM?', 'Raw WPM counts every character you typed, including mistakes. WPM counts only correct characters, so each error lowers it. Improve accuracy and the two numbers converge.' ),
 		array( 'Does the test work on a phone?', 'Yes. A text box appears under the words and the keyboard opens when you tap it. Phone scores are lower than keyboard scores and the two should not be compared.' ),
 		array( 'Can I take the test in another language?', 'The words are English. The English sentences test uses full passages with punctuation. Other languages are not available yet.' ),
-		array( 'Is my result saved?', 'Your best WPM for each test length is stored in this browser only, and only when accuracy is 90% or better. Nothing is uploaded.' ),
+		array( 'Is my result saved?', 'Your best score for each length is saved in this browser when accuracy is 90% or better. Your keystrokes stay in this browser; only your final WPM and accuracy are shared anonymously for the site averages, unless you turn sharing off under the tool. A result needs at least 85% accuracy to count in the site averages and the leaderboard.' ),
 	),
 	'related'        => array( '1-minute-typing-test', '5-minute-typing-test', 'wpm-test', 'typing-test-english', 'keyboard-tester', 'spacebar-clicker' ),
 	'updated'        => '2026-10-29',

@@ -36,6 +36,12 @@ return array(
 <p>Expect your one second score to be one or two clicks higher than your 5 second CPS: nobody slows down inside a single second. If it is much higher than that, your speed falls off quickly and a <a href="/10-second-cps-test/">10 second test</a> will show where.</p>',
 	'extra'          => array(
 		array(
+			'The first click and the burst',
+			'<p>In a one second test the first press starts the clock and counts, so your score is one click plus every press that lands in the next 1,000 milliseconds. That makes the gap between presses the whole story. A steady gap of 125 ms gives 8 clicks (the starting click and seven more at 125, 250 ... 875 ms); tighten it to 100 ms and you land 10, because the tenth press arrives at 900 ms. One press arriving a few milliseconds after the deadline is the difference between two scores, which is why this length jumps around more than any other.</p>
+<p>The start matters as much as the speed. If your second click comes 200 ms after the first while you get going, you have already lost a click. Begin the finger movement before the first press, so the run is at full speed from the start. The <a href="#leaderboard">leaderboard on this page</a> ranks 1 second scores only, so you are compared with other burst runs and not with five or ten second results.</p>',
+			'first-click',
+		),
+		array(
 			'Why a one second test is tricky',
 			'<p>At this length one click either way changes your score by a whole CPS, so the result jumps between tries. Reaction matters too: the timer starts on your first press, so a hesitant second click wastes part of the second. Start already moving, as if you were in the middle of a run, and the score settles.</p>
 <p>The mouse plays a bigger role here than in long tests. A switch with a short reset and a light press lets the finger cycle faster, while a heavy or mushy switch caps you at a lower rate however fast you are. If two mice give very different one second scores, the switch is the reason.</p>',
@@ -58,7 +64,7 @@ return array(
 		array( 'Why is my 1 second score higher than my 5 second score?', 'You do not tire in one second and you can hold your breath for the whole test. Over five seconds the finger slows slightly, so the average drops.' ),
 		array( 'Does the first click count?', 'Yes. The first click starts the timer and counts as click number one.' ),
 		array( 'Can I use both mouse buttons?', 'Tick "Count right clicks too" and alternate left and right. That is how butterfly-style scores above 10 are reached.' ),
-		array( 'Is my best score saved?', 'Yes, in this browser only. It is shared with the 1 second option of the main CPS test.' ),
+		array( 'Is my best score saved?', 'Yes, in this browser, and it is the same best as the 1 second option of the main CPS test. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '5-second-cps-test', '10-second-cps-test', 'cps-test', 'jitter-click-test', 'double-click-test', 'reaction-time-test' ),
 	'updated'        => '2026-10-29',

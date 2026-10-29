@@ -82,7 +82,7 @@ return array(
 		array( 'Does an online dog whistle really work?', 'Yes, if your speaker can play the frequency. A browser can produce tones up to about 22 kHz, inside the classic dog whistle range. Phone speakers are usually fine up to 16-18 kHz.' ),
 		array( 'What frequency is a dog whistle?', 'Most dog whistles are between 16 and 22 kHz. Adjustable training whistles start lower, around 5-12 kHz, where people can hear them too.' ),
 		array( 'Why can I not hear the dog whistle?', 'Human hearing usually tops out at 15-20 kHz and falls with age. Above that you hear nothing even though a dog can.' ),
-		array( 'Can a dog whistle stop barking?', 'Only as part of training. Use the whistle as a cue for a behaviour, such as coming to you, and reward it. A loud sound used to startle a dog is not recommended.' ),
+		array( 'Can a dog whistle stop barking?', 'Only as part of training. Use the whistle as a cue for a behavior, such as coming to you, and reward it. A loud sound used to startle a dog is not recommended.' ),
 		array( 'Is the dog whistle harmful to dogs?', 'Not at sensible volume and short use. Do not play it loudly next to a dog\'s ears or for long periods, and stop if your dog seems distressed.' ),
 		array( 'Does it work on iPhone and Android?', 'Yes. Tap and hold the button. If nothing plays on iPhone, turn off silent mode and turn the media volume up.' ),
 	),

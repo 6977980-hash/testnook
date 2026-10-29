@@ -44,8 +44,8 @@ return array(
 			'<p>The screen is the most expensive part to replace, so test it carefully:</p>
 <ol>
 <li><strong>Look for cracks and lifting</strong> at an angle under light. A screen that sits raised at one edge can mean a swollen battery underneath, which is a serious red flag.</li>
-<li><strong>Dead and stuck pixels.</strong> Open the <a href="/dead-pixel-test/">dead pixel test</a> full screen and step through the colours. Look for dots that stay black or one colour.</li>
-<li><strong>Burn-in.</strong> On OLED phones (most recent iPhones and many Androids), open the <a href="/burn-in-test/">burn-in test</a> on a grey screen and look for ghost outlines of the keyboard or navigation bar.</li>
+<li><strong>Dead and stuck pixels.</strong> Open the <a href="/dead-pixel-test/">dead pixel test</a> full screen and step through the colors. Look for dots that stay black or one color.</li>
+<li><strong>Burn-in.</strong> On OLED phones (most recent iPhones and many Androids), open the <a href="/burn-in-test/">burn-in test</a> on a gray screen and look for ghost outlines of the keyboard or navigation bar.</li>
 <li><strong>Touch.</strong> Run the <a href="/touch-screen-test/">touch screen test</a>, fill the grid with your finger and check every square lights up, especially the corners and edges. Then test multi-touch with several fingers.</li>
 <li><strong>Brightness and True Tone.</strong> Slide brightness from min to max and check it changes smoothly. An iPhone that shows an "Unknown Part" message, or says it cannot verify a genuine Apple display, has had a screen fitted from another source.</li>
 </ol>',
@@ -93,11 +93,11 @@ return array(
 		),
 	),
 	'faq'         => array(
-		array( 'How do I check if a used phone is stolen?', 'Get the IMEI by dialling *#06# and check it with your carrier or a national IMEI blacklist service. Make sure it matches the box and the SIM tray.' ),
+		array( 'How do I check if a used phone is stolen?', 'Get the IMEI by dialing *#06# and check it with your carrier or a national IMEI blacklist service. Make sure it matches the box and the SIM tray.' ),
 		array( 'What battery health is acceptable on a used iPhone?', '85% or more is good. 80 to 84% is usable but will need a new battery soon. Below 80% the price should cover a battery replacement.' ),
 		array( 'Can I test a phone without a SIM card?', 'Mostly yes. Use Wi-Fi to run the browser tests. You need a SIM only to check calls, mobile data and whether the phone is carrier locked.' ),
 		array( 'What is Activation Lock?', 'An iPhone security feature that ties the phone to the owner\'s Apple ID. If it is on, you cannot use the phone after a reset without the owner\'s password. Never buy a phone with it on.' ),
-		array( 'How can I tell if the screen was replaced?', 'On recent iPhones, Settings > General > About shows parts and service history. On any phone, look for a raised edge, uneven gaps, poor colours or touch problems at the edges.' ),
+		array( 'How can I tell if the screen was replaced?', 'On recent iPhones, Settings > General > About shows parts and service history. On any phone, look for a raised edge, uneven gaps, poor colors or touch problems at the edges.' ),
 		array( 'Should I factory reset a used phone after buying?', 'Yes. Reset it and set it up as new, so nothing from the previous owner is left and you know no account is still attached.' ),
 	),
 );

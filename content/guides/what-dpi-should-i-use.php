@@ -43,7 +43,7 @@ return array(
 		array(
 			'eDPI and cm/360: the numbers that matter in games',
 			'<p>In games your aim speed is DPI multiplied by the game\'s sensitivity setting. That product is <strong>eDPI</strong>. 800 DPI at 0.5 sensitivity and 400 DPI at 1.0 sensitivity both give an eDPI of 400 and feel the same in that game.</p>
-<p>eDPI only compares within one game, because each game scales sensitivity differently. To compare across games, use <strong>cm/360</strong>: how many centimetres you move the mouse to turn a full circle. Many tactical shooter players sit somewhere between 25 and 50 cm/360; fast arena shooters are often lower, around 15 to 30 cm.</p>
+<p>eDPI only compares within one game, because each game scales sensitivity differently. To compare across games, use <strong>cm/360</strong>: how many centimeters you move the mouse to turn a full circle. Many tactical shooter players sit somewhere between 25 and 50 cm/360; fast arena shooters are often lower, around 15 to 30 cm.</p>
 <p>A simple way to find your own: set a sensitivity, stand in front of a clear object in the game and move the mouse across the pad in one smooth swipe. If you overshoot targets often, lower the sensitivity by about 10%. If you run out of mousepad during a turn, raise it. Repeat over a few sessions until both feel natural, then stop changing it so muscle memory can build.</p>',
 			'edpi',
 		),
@@ -58,7 +58,7 @@ return array(
 		array(
 			'How to check and set your DPI',
 			'<ol>
-<li><strong>Find the current setting</strong> in the mouse software or from the DPI button, which usually cycles through preset steps shown by a colour light.</li>
+<li><strong>Find the current setting</strong> in the mouse software or from the DPI button, which usually cycles through preset steps shown by a color light.</li>
 <li><strong>Measure the real DPI</strong> with the <a href="/dpi-analyzer/">DPI analyzer</a>: move the mouse a known distance along a ruler and the tool counts what it receives. A deviation of a few percent is normal.</li>
 <li><strong>Pick one value</strong> from the table above and set the in-game sensitivity to taste.</li>
 <li><strong>Check your aim</strong> on the <a href="/mouse-accuracy-test/">mouse accuracy test</a>. Try the same mode and target size before and after a change and compare accuracy and time per target, not just the score.</li>
@@ -71,7 +71,7 @@ return array(
 		'boards' => array( 'aim-static-28' ),
 		'title'  => 'How people aim on Testnook',
 		'after'  => 'check-and-set',
-		'html'   => '<p>On the mouse accuracy test in its standard mode (static targets, 28 px), the median score over the last 30 days was <strong>{median:aim-static-28}</strong> and the top 10% scored <strong>{top10:aim-static-28}</strong> or more, from {count:aim-static-28} runs. Use it as a reference when you try a new DPI: the score combines accuracy, speed and how close to the centre you click. The best named runs are on the <a href="/leaderboards/">leaderboards</a>.</p>',
+		'html'   => '<p>On the mouse accuracy test in its standard mode (static targets, 28 px), the median score over the last 30 days was <strong>{median:aim-static-28}</strong> and the top 10% scored <strong>{top10:aim-static-28}</strong> or more, from {count:aim-static-28} runs. Use it as a reference when you try a new DPI: the score combines accuracy, speed and how close to the center you click. The best named runs are on the <a href="/leaderboards/">leaderboards</a>.</p>',
 	),
 	'faq'         => array(
 		array( 'Is 800 or 1600 DPI better?', 'Neither is better. 1600 DPI with half the in-game sensitivity feels the same as 800 DPI. 1600 makes the desktop a little quicker; 800 is the most common choice among shooter players.' ),

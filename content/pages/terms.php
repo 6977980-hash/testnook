@@ -12,7 +12,7 @@ return array(
 <h2>No warranty</h2>
 <p>The tools are provided "as is". Browser tests depend on your device, operating system, drivers and browser, and results can differ from manufacturer diagnostics. We do our best to keep every tool accurate, but we do not guarantee that results are complete or error-free, and they should not be the only basis for a purchase, return or repair decision.</p>
 <h2>Sound, light and flashing content</h2>
-<p>Some tools play tones or show rapidly changing colours. Start with a low volume and keep headphones away from your ears when a tone starts. Do not use flashing tools if you have photosensitive epilepsy or are sensitive to flashing lights. Tools that play low tones to clear water from speakers are used at your own risk.</p>
+<p>Some tools play tones or show rapidly changing colors. Start with a low volume and keep headphones away from your ears when a tone starts. Do not use flashing tools if you have photosensitive epilepsy or are sensitive to flashing lights. Tools that play low tones to clear water from speakers are used at your own risk.</p>
 <h2>Health-related tests</h2>
 <p>Any hearing or vision checks on Testnook are for general information and curiosity only. They are not medical tests and do not replace an examination by a qualified professional.</p>
 <h2>Limitation of liability</h2>

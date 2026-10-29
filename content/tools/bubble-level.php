@@ -35,7 +35,7 @@ return array(
 		'Tap <strong>Hold reading</strong> to freeze the numbers when you cannot see the screen, such as on a high shelf.',
 	),
 	'howto_title'    => 'How to use the bubble level',
-	'results'        => '<p>The angle is how far the surface tilts from level, in degrees. As a rule of thumb, 1&deg; is a rise of about 1.7 cm over a metre (or 0.2 inches per foot).</p>
+	'results'        => '<p>The angle is how far the surface tilts from level, in degrees. As a rule of thumb, 1&deg; is a rise of about 1.7 cm over a meter (or 0.2 inches per foot).</p>
 <ul>
 <li><strong>Under 0.3&deg;:</strong> level for any household job: shelves, pictures, a washing machine, a fridge.</li>
 <li><strong>0.3 to 1&deg;:</strong> visibly off over a long shelf or a wide picture frame. Adjust the low side.</li>

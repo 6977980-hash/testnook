@@ -49,7 +49,7 @@ return array(
 			'<p>Crumbs, hair and dried spills are the number one cause of a single dead or stiff key.</p>
 <ol>
 <li>Unplug the keyboard (or shut the laptop down).</li>
-<li><strong>Mechanical and most desktop keyboards:</strong> pull the keycap straight up with a keycap puller or two fingernails. Wide keys (space, Shift, Enter) have a wire stabiliser; lift one side gently first.</li>
+<li><strong>Mechanical and most desktop keyboards:</strong> pull the keycap straight up with a keycap puller or two fingernails. Wide keys (space, Shift, Enter) have a wire stabilizer; lift one side gently first.</li>
 <li><strong>Laptop and low-profile scissor keys:</strong> slide a thin plastic card under one edge and lift carefully until the scissor clips release. These break easily; if the key is stiff rather than dead, try compressed air first and skip removal.</li>
 <li>Blow out debris with compressed air, then wipe the switch top and the keycap stem with a cotton swab and a little isopropyl alcohol. For a sticky key after a sugary spill, the switch itself may need alcohol worked into it and a minute of pressing.</li>
 <li>Press the cap back on straight until it clicks, and test again.</li>

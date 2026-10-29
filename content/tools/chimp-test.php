@@ -23,7 +23,7 @@ return array(
 <p class="tool-status" id="cm-status" aria-live="polite">Press Start. The first round has 4 numbers.</p>',
 	'howto'          => array(
 		'Press <strong>Start</strong>. Four numbers appear at random positions on the grid.',
-		'Memorise where each number is. Take as long as you want; the clock is not running.',
+		'Memorize where each number is. Take as long as you want; the clock is not running.',
 		'Click <strong>1</strong>. All other numbers turn into blank squares at once.',
 		'Click the squares in order: 2, 3, 4 and so on. A correct square disappears; a wrong one flashes red and costs a strike.',
 		'Finish the round and the next one has one more number. The game ends after three strikes, and the number of squares in your last round is your score.',
@@ -43,7 +43,7 @@ return array(
 		array(
 			'The science behind the chimp test',
 			'<p>The experiment was published in 2007 by Tetsuro Matsuzawa and Sana Inoue at the Primate Research Institute of Kyoto University. Chimpanzees were taught to touch the numerals 1 to 9 in ascending order on a touch screen. In the memory version, the numbers were replaced by white squares as soon as the first one was touched. Ayumu, then five years old, was faster and more accurate than any of the human university students tested, and his performance held up when the numbers were shown for only 210 ms, which is roughly the time of one eye movement.</p>
-<p>Researchers link this to <strong>eidetic</strong> or photographic memory, which some young children show and which fades with age. Later work found that humans who practised for months could approach Ayumu\'s scores, so the gap is partly experience. This page gives you unlimited viewing time, which makes it a test of how many positions you can hold rather than how fast you can capture them.</p>',
+<p>Researchers link this to <strong>eidetic</strong> or photographic memory, which some young children show and which fades with age. Later work found that humans who practiced for months could approach Ayumu\'s scores, so the gap is partly experience. This page gives you unlimited viewing time, which makes it a test of how many positions you can hold rather than how fast you can capture them.</p>',
 			'science',
 		),
 		array(
@@ -56,7 +56,7 @@ return array(
 		array( 'The numbers disappear before I am ready', 'They hide only when you click 1. Look as long as you like first; nothing is timed.' ),
 		array( 'I clicked a blank square and nothing happened', 'Only the squares that held numbers react. Blank squares that never had a number are ignored, so a click there is neither right nor wrong.' ),
 		array( 'The grid is tiny on my phone', 'Turn the phone sideways. The grid is 8 squares wide and uses the full width of the screen.' ),
-		array( 'The game ended with lives still showing', 'A third strike ends the game immediately and the last heart is greyed out on the final screen. Press Start to play again.' ),
+		array( 'The game ended with lives still showing', 'A third strike ends the game immediately and the last heart is grayed out on the final screen. Press Start to play again.' ),
 	),
 	'faq'            => array(
 		array( 'What is the chimp test?', 'A memory test from a 2007 Kyoto University study. Numbers appear on a grid, hide when you touch 1, and you touch the rest in order. Each round adds a number. Your score is the highest number of squares you managed before three strikes.' ),

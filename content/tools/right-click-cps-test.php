@@ -50,7 +50,7 @@ return array(
 <tbody>
 <tr><td>Under 4</td><td>Turtle</td><td>Careful single right clicks.</td></tr>
 <tr><td>4-6</td><td>Rabbit</td><td>Normal fast clicking with the middle finger.</td></tr>
-<tr><td>6-8</td><td>Fox</td><td>Practised players who block and place with the right button.</td></tr>
+<tr><td>6-8</td><td>Fox</td><td>Practiced players who block and place with the right button.</td></tr>
 <tr><td>8-10</td><td>Cheetah</td><td>Jitter clicking on the right button.</td></tr>
 <tr><td>Over 10</td><td>Lightning</td><td>Butterfly or drag clicking on the right button.</td></tr>
 </tbody></table></div>
@@ -76,7 +76,7 @@ return array(
 	),
 	'faq'            => array(
 		array( 'What is a good right click CPS?', 'Around 5 right clicks per second is good for normal clicking, 7-8 is fast, and 10 or more means jitter or butterfly clicking. Most people score about one CPS lower than with the left button.' ),
-		array( 'Why is right clicking slower than left clicking?', 'The index finger is stronger and more practised than the middle finger, and on many mice the right switch has a slightly heavier feel. The difference shrinks with a few rounds of practice.' ),
+		array( 'Why is right clicking slower than left clicking?', 'The index finger is stronger and more practiced than the middle finger, and on many mice the right switch has a slightly heavier feel. The difference shrinks with a few rounds of practice.' ),
 		array( 'Does the right click CPS test count left clicks?', 'No. Inside the box only button 2, the right button, is counted. Left and middle clicks are ignored so the score reflects the right button only.' ),
 		array( 'Does right click CPS matter in Minecraft?', 'Yes. Placing blocks, bridging, eating and shield blocking all use right click, so a faster right button means faster bridging and quicker reactions in PvP.' ),
 		array( 'Can I take this test on a touchpad?', 'Yes, if the touchpad has a right click zone or two-finger tap enabled. Two-finger taps are slower than a mouse button, so expect a lower score.' ),

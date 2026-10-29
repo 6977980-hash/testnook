@@ -26,7 +26,7 @@ return array(
 <li><strong>Less motion blur.</strong> On a sample-and-hold display (every LCD and OLED) each frame stays on screen until the next one, and your eye smears it as it moves. Shorter frames mean shorter smears. The <a href="/ufo-test/">UFO test</a> shows this directly: the UFO is readable at 144Hz where it is a blur at 60Hz.</li>
 <li><strong>Lower latency.</strong> A click can only be shown at the next refresh. On average that wait is half a frame: 8.3 ms at 60Hz, 3.5 ms at 144Hz. Add the frame your GPU is rendering and the total chain is often 10 to 20 ms shorter at 144Hz.</li>
 </ul>
-<p>What it does not change: image quality. Colour, contrast, resolution and viewing angles come from the panel type, not the refresh rate.</p>',
+<p>What it does not change: image quality. Color, contrast, resolution and viewing angles come from the panel type, not the refresh rate.</p>',
 			'what-changes',
 		),
 		array(
@@ -44,7 +44,7 @@ return array(
 <tr><td>Single-player games, strategy, RPGs</td><td>Clearly smoother, less essential</td><td>Small</td></tr>
 <tr><td>Desktop use, browsing, coding</td><td>Scrolling and window drags feel smoother; many people never go back</td><td>Barely noticeable</td></tr>
 <tr><td>Video and films</td><td>None: content is 24 to 60 fps</td><td>None</td></tr>
-<tr><td>Photo and video editing</td><td>Timeline scrubbing is smoother; colour accuracy matters more</td><td>None</td></tr>
+<tr><td>Photo and video editing</td><td>Timeline scrubbing is smoother; color accuracy matters more</td><td>None</td></tr>
 <tr><td>Consoles</td><td>PS5 and Xbox Series output 120Hz in supported games; 144Hz adds nothing on console</td><td>None</td></tr>
 </tbody></table></div>',
 			'who-benefits',
@@ -69,7 +69,8 @@ return array(
 <li><strong>Monitor menu:</strong> some monitors have an "overclock" or "DisplayPort 1.2" toggle that must be on for the full rate.</li>
 <li><strong>Laptops:</strong> the internal screen often drops to 60Hz on battery to save power. Check the power settings or plug in.</li>
 <li><strong>Browser:</strong> Chrome on Windows sometimes locks to 60 fps on a secondary monitor; drag the window to the fast monitor and reload the test.</li>
-</ol>',
+</ol>
+<p><strong>iPhone and iPad:</strong> a 120 Hz ProMotion screen will still read about 60 Hz in a browser test, because Safari renders web pages near 60 fps by default. Turn off <strong>Prefer Page Rendering Updates near 60fps</strong> in Settings &gt; Apps &gt; Safari &gt; Advanced &gt; Feature Flags and reload. Low Power Mode caps the screen at 60 Hz too, on iPhones and on MacBooks.</p>',
 			'check-settings',
 		),
 		array(
@@ -80,7 +81,7 @@ return array(
 <li><strong>240Hz</strong> makes sense for competitive players with a PC that reaches 200+ fps in their game, and now costs little more at 1080p.</li>
 <li><strong>360Hz and above</strong> is for esports; the gain is measurable in tracking tests but small.</li>
 </ul>
-<p>Between a 240Hz panel with poor contrast and a 144Hz panel with better colours, response time and an adaptive sync range that works, the 144Hz one is the better monitor for almost everyone. Check pixel response too: a slow panel smears regardless of refresh rate, which the UFO test will show as a trail behind the UFO.</p>',
+<p>Between a 240Hz panel with poor contrast and a 144Hz panel with better colors, response time and an adaptive sync range that works, the 144Hz one is the better monitor for almost everyone. Check pixel response too: a slow panel smears regardless of refresh rate, which the UFO test will show as a trail behind the UFO.</p>',
 			'where-to-stop',
 		),
 	),

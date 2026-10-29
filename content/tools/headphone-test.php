@@ -5,7 +5,7 @@ return array(
 	'title'        => 'Headphone Test',
 	'seo_title'    => 'Headphone Test: Left Right, Stereo and Bass Check Online',
 	'description'  => 'Free online headphone test. Check left and right channels, stereo imaging, bass down to 20 Hz and polarity for wired, Bluetooth and wireless headphones.',
-	'intro'        => 'Put on your headphones and check that the left and right sides are correct, that stereo sounds centred and that the bass goes deep. Every sound is generated in your browser, so it works on any device.',
+	'intro'        => 'Put on your headphones and check that the left and right sides are correct, that stereo sounds centered and that the bass goes deep. Every sound is generated in your browser, so it works on any device.',
 	'device'       => 'any',
 	'ads'          => 'standard',
 	'styles'       => array( 'headphone-test' ),
@@ -17,7 +17,7 @@ return array(
 		<p>Each sound should be heard only on the side it names.</p>
 		<div class="hp-channels">
 			<button type="button" class="hp-ch" data-hp="left"><span class="hp-ch-ico">&#9664;</span>Left ear</button>
-			<button type="button" class="hp-ch" data-hp="centre"><span class="hp-ch-ico">&#9664;&#9654;</span>Both (centre)</button>
+			<button type="button" class="hp-ch" data-hp="centre"><span class="hp-ch-ico">&#9664;&#9654;</span>Both (center)</button>
 			<button type="button" class="hp-ch" data-hp="right"><span class="hp-ch-ico">&#9654;</span>Right ear</button>
 		</div>
 		<div class="hp-vu"><span>L</span><div class="meter"><span id="hp-vu-l"></span></div><span>R</span><div class="meter"><span id="hp-vu-r"></span></div></div>
@@ -51,23 +51,23 @@ return array(
 <p class="tool-status" id="hp-status" aria-live="polite">Turn your volume down first, put your headphones on, then press a button.</p>',
 	'howto'        => array(
 		'Turn your device volume <strong>low</strong>, connect your headphones or earbuds and put them on the right way round (look for the L and R marks).',
-		'Press <strong>Left ear</strong>. You should hear the tone only in your left ear. Then press <strong>Right ear</strong>, and <strong>Both</strong>, which should sound centred inside your head.',
+		'Press <strong>Left ear</strong>. You should hear the tone only in your left ear. Then press <strong>Right ear</strong>, and <strong>Both</strong>, which should sound centered inside your head.',
 		'Press <strong>Left &harr; right pan</strong>. The sound should travel smoothly from ear to ear and back with no gap or jump.',
 		'Try the <strong>bass</strong> tones from 120 Hz down to 30 Hz, and the bass sweep. Note where the sound fades or starts to rattle.',
-		'Play <strong>In phase</strong> and then <strong>Out of phase</strong>. If "out of phase" sounds more centred than "in phase", one side of your headphones is wired with reversed polarity.',
+		'Play <strong>In phase</strong> and then <strong>Out of phase</strong>. If "out of phase" sounds more centered than "in phase", one side of your headphones is wired with reversed polarity.',
 	),
 	'howto_title'  => 'How to test your headphones',
 	'results'      => '<ul>
 <li><strong>Left and right are swapped:</strong> you are wearing the headphones backwards, or the left and right channels are swapped in software or wiring. Check the L/R marks first.</li>
 <li><strong>Sound in both ears for the Left or Right button:</strong> your system is set to mono audio, or the headphones are in a mono or "spatial" mode. Turn mono off in accessibility settings and disable virtual surround while testing.</li>
-<li><strong>One side quieter than the other:</strong> check the balance slider in your sound settings. If balance is centred, earwax in the mesh, a damaged cable or a failing driver are the usual causes.</li>
+<li><strong>One side quieter than the other:</strong> check the balance slider in your sound settings. If balance is centered, earwax in the mesh, a damaged cable or a failing driver are the usual causes.</li>
 <li><strong>Bass fades at 50 Hz or 80 Hz:</strong> normal for small earbuds and open headphones, especially without a good seal. Try larger ear tips. Rattling or buzzing on the bass tones at a sensible volume points to a damaged driver.</li>
 <li><strong>The pan jumps or has a silent gap:</strong> a loose connection or a cable that cuts out when it moves.</li>
 </ul>',
 	'extra'        => array(
 		array(
 			'What the polarity (phase) test shows',
-			'<p>Each headphone driver pushes air forward and back. If one driver is wired the other way round, it moves backwards while the other moves forwards, and your brain cannot place the sound properly. The <strong>in phase</strong> button sends the same rumble to both ears, so it should feel solid and centred. The <strong>out of phase</strong> button inverts the right channel on purpose, so it should feel wide, hollow and hard to locate. If your headphones make the two sound the other way round, they have a polarity fault. This is rare in new headphones but common in repaired or home-made cables.</p>',
+			'<p>Each headphone driver pushes air forward and back. If one driver is wired the other way round, it moves backwards while the other moves forwards, and your brain cannot place the sound properly. The <strong>in phase</strong> button sends the same rumble to both ears, so it should feel solid and centered. The <strong>out of phase</strong> button inverts the right channel on purpose, so it should feel wide, hollow and hard to locate. If your headphones make the two sound the other way round, they have a polarity fault. This is rare in new headphones but common in repaired or home-made cables.</p>',
 			'polarity',
 		),
 		array(
@@ -79,7 +79,7 @@ return array(
 	'fixes'        => array(
 		array( 'Only one side of the headphones works', 'Push the plug fully into the jack: a half-inserted 3.5 mm plug plays one side only. Clean the jack, wiggle the cable near the plug and the earcup while the pan plays to find a break, and check the balance slider (Windows: Settings > System > Sound > your device > Left/Right; Mac: System Settings > Sound > Balance). For true wireless earbuds, put both back in the case, reset them and pair again.' ),
 		array( 'Headphones play mono', 'Windows: Settings > Accessibility > Audio > Mono audio off. Mac: System Settings > Accessibility > Audio > Play stereo audio as mono off. iPhone: Settings > Accessibility > Audio/Visual > Mono Audio off. Android: Settings > Accessibility > Mono audio off.' ),
-		array( 'Weak or no bass', 'Get a better seal: try a larger ear tip or adjust the headband. Turn off any "bass reduction" equaliser preset, and on Bluetooth turn off battery-saving codecs. Weak bass that used to be strong can also mean a torn earcup cushion or a damaged driver.' ),
+		array( 'Weak or no bass', 'Get a better seal: try a larger ear tip or adjust the headband. Turn off any "bass reduction" equalizer preset, and on Bluetooth turn off battery-saving codecs. Weak bass that used to be strong can also mean a torn earcup cushion or a damaged driver.' ),
 		array( 'Bluetooth headphones sound tinny', 'Your computer is using the hands-free (call) profile. Pick the "Stereo" output in sound settings, or close apps that are holding the microphone, such as a meeting app.' ),
 	),
 	'faq'          => array(

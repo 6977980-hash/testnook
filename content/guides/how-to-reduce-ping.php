@@ -31,7 +31,7 @@ return array(
 		),
 		array(
 			'1 and 2: Fix the Wi-Fi or skip it',
-			'<p><strong>1. Use an Ethernet cable.</strong> It is the most reliable fix for gaming. Wi-Fi shares the air with every other device and neighbour, has to retry lost frames, and briefly pauses to scan for networks, which shows up as spikes. A cable avoids all of that. If the router is in another room, a long flat cable or a pair of <strong>powerline adapters</strong> (network over the mains wiring) is still usually steadier than Wi-Fi; mesh systems with a wired backhaul are the next best thing.</p>
+			'<p><strong>1. Use an Ethernet cable.</strong> It is the most reliable fix for gaming. Wi-Fi shares the air with every other device and neighbor, has to retry lost frames, and briefly pauses to scan for networks, which shows up as spikes. A cable avoids all of that. If the router is in another room, a long flat cable or a pair of <strong>powerline adapters</strong> (network over the mains wiring) is still usually steadier than Wi-Fi; mesh systems with a wired backhaul are the next best thing.</p>
 <p><strong>2. If you must use Wi-Fi, make it as clean as possible.</strong> Connect to the 5 GHz or 6 GHz band rather than 2.4 GHz, keep the router high and in the open, and avoid playing through several walls. Turn off other devices you are not using. Some laptops pause Wi-Fi now and then to scan for other networks, which shows up as regular spikes; updating the Wi-Fi driver often helps. Test again after each change.</p>',
 			'wifi',
 		),
@@ -39,7 +39,7 @@ return array(
 			'3 and 4: Stop other traffic from causing lag',
 			'<p><strong>3. Pause the heavy users.</strong> A game update on a console, a phone backing up photos, a 4K stream or a large upload can all fill the line. Game consoles and PC launchers also download updates in the background; schedule them for the night. Cloud backup apps (OneDrive, Google Drive, iCloud) usually have a setting to limit upload speed.</p>
 <p><strong>4. Turn on SQM or QoS in the router.</strong> Bufferbloat happens when the router holds large queues of packets while the line is busy, so your small game packets wait behind them. Smart Queue Management (SQM, often using the fq_codel or CAKE algorithms) keeps those queues short. Many routers call it QoS, Adaptive QoS, Smart Queue or Gaming mode. Set the limits to about 85 to 95% of the speeds you measured; you give up a little bandwidth and gain steady ping. After turning it on, the bufferbloat grade in the speed test should improve to A or B.</p>
-<p>Device prioritisation ("put my console first") helps a bit on some routers but does not fix bufferbloat on its own; SQM is the setting that does.</p>',
+<p>Device prioritization ("put my console first") helps a bit on some routers but does not fix bufferbloat on its own; SQM is the setting that does.</p>',
 			'traffic',
 		),
 		array(
@@ -53,7 +53,7 @@ return array(
 			'8 to 10: The connection itself',
 			'<p><strong>8. Restart the modem and router.</strong> Unplug both for 30 seconds. It clears overheating, memory leaks and stuck connections, which can cause random spikes. Update the router firmware while you are at it.</p>
 <p><strong>9. Check cables and the line.</strong> A damaged Ethernet cable, a loose coax connector or a noisy phone line causes packet loss. If the ping test shows lost requests on a cable with nothing else running, swap the cable first, then contact your provider with screenshots taken at different times. They can test the line from their side.</p>
-<p><strong>10. Consider the connection type.</strong> If you are on DSL, mobile or older satellite, the technology itself sets a floor for ping. Fibre gives the lowest and steadiest latency, followed by cable. A 5G home connection can be fine but varies with signal and tower load.</p>',
+<p><strong>10. Consider the connection type.</strong> If you are on DSL, mobile or older satellite, the technology itself sets a floor for ping. Fiber gives the lowest and steadiest latency, followed by cable. A 5G home connection can be fine but varies with signal and tower load.</p>',
 			'connection',
 		),
 		array(

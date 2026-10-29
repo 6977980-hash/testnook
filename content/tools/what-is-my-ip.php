@@ -22,7 +22,7 @@ return array(
 		<dt>Network owner</dt><dd id="ip-net">-</dd>
 		<dt>Address block</dt><dd id="ip-block" data-ip-blur>-</dd>
 		<dt>Time zone</dt><dd id="ip-tz">-</dd>
-		<dt>Nearest data centre</dt><dd id="ip-colo">-</dd>
+		<dt>Nearest data center</dt><dd id="ip-colo">-</dd>
 	</dl>
 	<div class="sy-verdict" id="ip-vpn"><strong>Checking for a VPN or proxy...</strong><p>This takes a second.</p></div>
 	<p class="sy-label">Look up another IP address</p>
@@ -42,7 +42,7 @@ return array(
 <li><strong>Public IP address</strong> is the one the internet sees. At home it belongs to your router, so every phone and laptop on the same Wi-Fi shares it. On mobile data it often changes when you reconnect.</li>
 <li><strong>IPv4</strong> addresses look like <code>203.0.113.45</code>. <strong>IPv6</strong> addresses look like <code>2001:db8:85a3::8a2e:370:7334</code>. When both work, browsers usually prefer IPv6, so the address at the top can be either.</li>
 <li><strong>Network owner</strong> comes from the regional internet registry (ARIN, RIPE, APNIC, LACNIC or AFRINIC) that hands out address blocks. For a home line it names your provider or its parent company; the AS number identifies the network on the internet.</li>
-<li><strong>Location</strong> is where the IP is registered or routed, often the nearest big city of your provider, not your street. It can be hundreds of kilometres off, and is wrong on purpose with a VPN.</li>
+<li><strong>Location</strong> is where the IP is registered or routed, often the nearest big city of your provider, not your street. It can be hundreds of kilometers off, and is wrong on purpose with a VPN.</li>
 <li><strong>Time zone</strong> compares the zone of the IP (when available) with the clock on this device. A mismatch is a common sign of a VPN.</li>
 </ul>',
 	'extra'          => array(
@@ -60,7 +60,7 @@ return array(
 		),
 	),
 	'fixes'          => array(
-		array( 'My VPN is on but my real IP shows', 'The VPN is not routing browser traffic. Reconnect it, check that it is not in "split tunnelling" mode for your browser, and turn on its kill switch. Then run the <a href="/webrtc-leak-test/">WebRTC leak test</a> as well.' ),
+		array( 'My VPN is on but my real IP shows', 'The VPN is not routing browser traffic. Reconnect it, check that it is not in "split tunneling" mode for your browser, and turn on its kill switch. Then run the <a href="/webrtc-leak-test/">WebRTC leak test</a> as well.' ),
 		array( 'The location is in the wrong city', 'IP locations come from databases that map address blocks to places, and providers often route a whole region through one city. It does not affect your internet. If a website shows the wrong country, contact your provider or the website.' ),
 		array( 'No IPv6 connection', 'Your provider or router does not give out IPv6 addresses, or it is turned off in the router. IPv4 alone works fine for almost everything today. Look for an IPv6 setting in the router\'s WAN or internet settings if you need it.' ),
 		array( 'The page says it cannot reach the lookup servers', 'A strict ad blocker, a firewall or a work or school network may block them. Allow speed.cloudflare.com and api.ipify.org, or try another network.' ),

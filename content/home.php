@@ -7,13 +7,13 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'seo_title'   => 'Testnook: Free Online Hardware Tests (Keyboard, Mouse, Mic, Camera)',
-	'description' => 'Test your keyboard, mouse, controller, screen, speakers, microphone and webcam online. Free browser tools, no download, nothing uploaded.',
+	'description' => 'Test your keyboard, mouse, controller, screen, speakers, microphone and webcam online. Free browser tools, no download; camera and mic never leave your device.',
 	'h1'          => 'Free online hardware tests',
-	'intro'       => 'Check your keyboard, mouse, controller, screen, speakers, microphone and webcam in seconds. Every test runs in your browser, so there is nothing to install and nothing leaves your device.',
+	'intro'       => 'Check your keyboard, mouse, controller, screen, speakers, microphone and webcam in seconds. Every test runs in your browser, so there is nothing to install. Your camera, microphone and keystrokes never leave your device; a few tests share only your final score, anonymously, and you can turn that off.',
 
 	'features'    => array(
 		array( 'No download', 'Open a test and it starts. Works in Chrome, Edge, Firefox and Safari on Windows, Mac, Linux, Android and iPhone.' ),
-		array( 'Private by design', 'Camera, microphone and input tests are processed on your device. We never record, upload or store them.' ),
+		array( 'Private by design', 'Camera, microphone and input tests are processed on your device. We never record, upload or store them. Click, reaction, typing and aim tests share only the final score, anonymously.' ),
 		array( 'Real answers', 'Each test explains what the result means and how to fix the most common problems, so you know what to do next.' ),
 		array( 'Always free', 'No account, no trial and no limits. Use the tests as often as you like, at home or at a shop before you buy.' ),
 	),

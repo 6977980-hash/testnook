@@ -72,13 +72,13 @@ return array(
 	'fixes'          => array(
 		array( 'The cards do not flip', 'Press Start first to deal the board. During the short pause after a wrong guess, clicks are ignored so both cards can turn back; wait for them to flip and try again.' ),
 		array( 'The board is too small on my phone', 'Turn the phone sideways for the 8x6 board, or pick 4x4 or 6x4, which keep the cards large enough to tap in portrait.' ),
-		array( 'The pictures are not showing', 'The picture set uses standard emoji. On a very old system without colour emoji the cards may show empty boxes: switch to Numbers or Letters.' ),
+		array( 'The pictures are not showing', 'The picture set uses standard emoji. On a very old system without color emoji the cards may show empty boxes: switch to Numbers or Letters.' ),
 		array( 'My best score disappeared', 'Best scores are stored in this browser only. Clearing site data, private browsing or switching browsers starts fresh.' ),
 	),
 	'faq'            => array(
 		array( 'How does the memory game work?', 'Every card has one matching twin on the board. Flip two cards per move; matching pairs stay face up and mismatches turn back. The round ends when all pairs are found, and you are scored on moves, accuracy and time.' ),
 		array( 'What is a good score in the memory game?', 'Divide your moves by the number of pairs. Under 1.5 is excellent, under 2 is good, 2 to 3 is average. On a 4x4 board that means about 12 moves is good and 16 is typical.' ),
-		array( 'Is the memory game good for kids?', 'Yes. The picture set on a 4x3 or 4x4 board suits children from about four years old. Matching games are a standard way to practise attention and working memory at that age.' ),
+		array( 'Is the memory game good for kids?', 'Yes. The picture set on a 4x3 or 4x4 board suits children from about four years old. Matching games are a standard way to practice attention and working memory at that age.' ),
 		array( 'Does playing memory games improve memory?', 'You get better at the game itself within a few rounds. Evidence that it improves memory in daily life is weak; think of it as practice for attention and a few minutes of focus rather than a treatment.' ),
 		array( 'Can I play the memory game on a phone?', 'Yes, it works with taps on any phone or tablet. Smaller boards fit portrait screens; use landscape for 6x6 and 8x6.' ),
 		array( 'Is my result saved or shared?', 'Your best moves and time for each board size are kept in this browser only. Nothing is uploaded and there is no account.' ),

@@ -130,7 +130,7 @@ def render(title, subtitle, kicker, path):
         y += 42
 
     # Footer line.
-    d.text((PAD, H - 78), 'Free  ·  No download  ·  Nothing uploaded', font=font('medium', 26), fill=(190, 228, 222))
+    d.text((PAD, H - 78), 'Free  ·  No download  ·  Runs in your browser', font=font('medium', 26), fill=(190, 228, 222))
 
     img.save(path, 'JPEG', quality=82, optimize=True, progressive=True)
 

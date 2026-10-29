@@ -7,7 +7,7 @@ return array(
 	'title'          => 'LCD Test',
 	'seo_title'      => 'LCD Test: Check for Backlight Bleed, IPS Glow and Clouding',
 	'description'    => 'Free online LCD test. Full-screen patterns reveal backlight bleed, IPS glow, clouding, dead pixels, inversion flicker and viewing angle shift on LED screens.',
-	'intro'          => 'LCD screens, including every "LED" monitor and TV, light the picture with a backlight behind the panel. These patterns show the faults that come with that design: light leaking at the edges, glow in the corners, cloudy patches, pixel inversion flicker and colour shift at an angle, plus the usual dead pixel check.',
+	'intro'          => 'LCD screens, including every "LED" monitor and TV, light the picture with a backlight behind the panel. These patterns show the faults that come with that design: light leaking at the edges, glow in the corners, cloudy patches, pixel inversion flicker and color shift at an angle, plus the usual dead pixel check.',
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'monitor-test' ),
@@ -17,7 +17,7 @@ return array(
 		array(
 			'black'         => array( 'Black (backlight bleed)', 'Look at the edges and corners. Light spilling in from the edge is backlight bleed; a milky glow in the corners that changes as you move your head is IPS glow. Use the brightness you normally use, in a dim room.' ),
 			'grey5',
-			'grey20'        => array( '20% grey (clouding)', 'Look for brighter blotches, bands or a cloudy look across the dark grey. That is clouding from uneven backlight, common on edge-lit LCDs.' ),
+			'grey20'        => array( '20% gray (clouding)', 'Look for brighter blotches, bands or a cloudy look across the dark gray. That is clouding from uneven backlight, common on edge-lit LCDs.' ),
 			'grey50',
 			'white',
 			'red',
@@ -35,7 +35,7 @@ return array(
 	'howto'          => array(
 		'Let the screen warm up for 10 minutes, set the brightness you normally use and dim the room lights. Bleed looks far worse at 100% brightness in a dark room than in daily use.',
 		'Set the browser zoom to 100% (<strong>Ctrl + 0</strong> or <strong>Cmd + 0</strong>) so the inversion and sharpness patterns are drawn pixel for pixel.',
-		'Press <strong>Start full-screen LCD test</strong> and sit at your usual distance, centred on the screen.',
+		'Press <strong>Start full-screen LCD test</strong> and sit at your usual distance, centered on the screen.',
 		'On the black screen, look at the edges first, then move your head slightly left and right: glow that moves is IPS glow, light that stays put is bleed.',
 		'Step through the remaining patterns with a click, tap or the arrow keys, and read each tip.',
 	),
@@ -46,15 +46,15 @@ return array(
 <tbody>
 <tr><td>Light leaking from one edge or corner, fixed in place</td><td>Backlight bleed: pressure on the panel or a loose frame</td><td>A little is normal; bright patches visible on dark scenes are a fault</td></tr>
 <tr><td>Silvery or orange glow in corners that changes with your head position</td><td>IPS glow</td><td>Yes, on all IPS panels. Sitting further back reduces it</td></tr>
-<tr><td>Brighter blotches on dark grey</td><td>Clouding (uneven backlight)</td><td>Mild clouding is common on edge-lit LCDs and TVs</td></tr>
-<tr><td>Darker corners or bands on 50% grey</td><td>Poor uniformity</td><td>Up to about 10-15% variation is typical</td></tr>
-<tr><td>A band of the inversion pattern flickers or crawls</td><td>Pixel inversion artefact</td><td>Common on cheaper and older panels, usually harmless</td></tr>
-<tr><td>Colours change or invert when viewed from below</td><td>TN panel viewing angles</td><td>Normal for TN; IPS barely shifts</td></tr>
+<tr><td>Brighter blotches on dark gray</td><td>Clouding (uneven backlight)</td><td>Mild clouding is common on edge-lit LCDs and TVs</td></tr>
+<tr><td>Darker corners or bands on 50% gray</td><td>Poor uniformity</td><td>Up to about 10-15% variation is typical</td></tr>
+<tr><td>A band of the inversion pattern flickers or crawls</td><td>Pixel inversion artifact</td><td>Common on cheaper and older panels, usually harmless</td></tr>
+<tr><td>Colors change or invert when viewed from below</td><td>TN panel viewing angles</td><td>Normal for TN; IPS barely shifts</td></tr>
 </tbody></table></div>',
 	'extra'          => array(
 		array(
 			'LCD, LED, IPS, VA and TN: what is the difference?',
-			'<p>An "LED monitor" or "LED TV" is an LCD with an LED backlight: the liquid crystal panel makes the image, the LEDs behind it make the light. That is why bleed and glow happen: the panel can never block all of the light. <strong>IPS</strong> panels have the best colours and viewing angles but show glow; <strong>VA</strong> panels have deep blacks and little glow but can smear in dark scenes; <strong>TN</strong> panels are fast and cheap but shift colour at an angle. Mini-LED screens split the backlight into many zones, which helps black levels but can show halos (blooming) around bright objects on black.</p>
+			'<p>An "LED monitor" or "LED TV" is an LCD with an LED backlight: the liquid crystal panel makes the image, the LEDs behind it make the light. That is why bleed and glow happen: the panel can never block all of the light. <strong>IPS</strong> panels have the best colors and viewing angles but show glow; <strong>VA</strong> panels have deep blacks and little glow but can smear in dark scenes; <strong>TN</strong> panels are fast and cheap but shift color at an angle. Mini-LED screens split the backlight into many zones, which helps black levels but can show halos (blooming) around bright objects on black.</p>
 <p>OLED screens have no backlight at all, so none of the faults above apply to them. Use the <a href="/oled-test/">OLED test</a> for those, and the <a href="/dead-pixel-test/">dead pixel test</a> for pixel faults on any screen.</p>',
 			'lcd-types',
 		),
@@ -66,7 +66,7 @@ return array(
 	),
 	'fixes'          => array(
 		array( 'Reduce backlight bleed', 'Lower the brightness, add some light behind or around the monitor (bias lighting), and check the frame is not twisted on the stand. Some people loosen the screws on the back slightly to relieve pressure, but that can void the warranty, so try it only on an old monitor.' ),
-		array( 'Reduce IPS glow', 'Sit further back and centred, lower the brightness, and keep some light on in the room. Glow is an angle effect, so a monitor that sits higher or lower than your eyes shows more of it.' ),
+		array( 'Reduce IPS glow', 'Sit further back and centered, lower the brightness, and keep some light on in the room. Glow is an angle effect, so a monitor that sits higher or lower than your eyes shows more of it.' ),
 		array( 'The inversion pattern flickers', 'Make sure the monitor runs at its native resolution and the browser zoom is 100%. Changing the refresh rate or the overdrive setting sometimes changes the flicker. It rarely shows in normal content, so it is not a reason to return the screen by itself.' ),
 	),
 	'faq'            => array(

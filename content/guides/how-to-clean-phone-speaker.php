@@ -50,7 +50,7 @@ return array(
 <li><strong>For grease</strong> on the earpiece, dampen (do not soak) the tip of a soft brush with a little isopropyl alcohol, 70% or stronger, brush lightly and let it dry for a few minutes.</li>
 <li><strong>For the charging port,</strong> which often fills with lint on phones with bottom speakers, use a wooden or plastic toothpick very gently along the walls, never metal.</li>
 </ol>
-<p>Things to avoid: pins, needles and SIM tools (they puncture the mesh), cotton buds (they leave fibres), compressed air at close range (it forces dirt and moisture past the seals) and any liquid sprayed on the phone.</p>',
+<p>Things to avoid: pins, needles and SIM tools (they puncture the mesh), cotton buds (they leave fibers), compressed air at close range (it forces dirt and moisture past the seals) and any liquid sprayed on the phone.</p>',
 			'dust',
 		),
 		array(

@@ -47,8 +47,8 @@ return array(
 	'extra'          => array(
 		array(
 			'What a user agent is used for',
-			'<p>Websites read the user agent to send a mobile or desktop layout, to warn about an outdated browser, to offer the right download (Windows, Mac or Android), and to count visitors by browser in analytics. Developers ask for it in bug reports because the same page can behave differently in Safari and Chrome. Crawlers such as Googlebot send their own user agent so sites can recognise them.</p>
-<p>Because it is easy to change, a user agent proves nothing about who is visiting. Browser developer tools can switch it to any phone or browser, and some privacy extensions randomise it.</p>',
+			'<p>Websites read the user agent to send a mobile or desktop layout, to warn about an outdated browser, to offer the right download (Windows, Mac or Android), and to count visitors by browser in analytics. Developers ask for it in bug reports because the same page can behave differently in Safari and Chrome. Crawlers such as Googlebot send their own user agent so sites can recognize them.</p>
+<p>Because it is easy to change, a user agent proves nothing about who is visiting. Browser developer tools can switch it to any phone or browser, and some privacy extensions randomize it.</p>',
 			'used-for',
 		),
 		array(

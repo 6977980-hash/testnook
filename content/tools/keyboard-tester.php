@@ -39,7 +39,7 @@ return array(
 		'Press every key, one at a time, including Shift, Ctrl, Alt, the function keys and the arrows. Each key lights up while held and turns green once it has registered.',
 		'Hold several keys together and read <strong>Max at once</strong>. Most keyboards register at least 6 keys (6-key rollover); gaming keyboards with NKRO register all of them.',
 		'Type a sentence in the typing area. Watch for letters that appear twice, appear late or do not appear at all.',
-		'Any key still grey after you have pressed it is a dead key. A key that lights up on its own is stuck.',
+		'Any key still gray after you have pressed it is a dead key. A key that lights up on its own is stuck.',
 	),
 	'howto_title'    => 'How to test your keyboard',
 	'results'        => '<ul>
@@ -70,7 +70,7 @@ return array(
 		array( 'Wrong characters appear', 'Your system keyboard layout does not match the printed keys. Windows: Settings > Time & language > Language & region > choose the right layout. Mac: System Settings > Keyboard > Input Sources. Also check that Num Lock is on if the number pad types nothing.' ),
 	),
 	'faq'            => array(
-		array( 'How do I test if my keyboard keys are working?', 'Click the diagram and press every key. Keys that work turn green; keys that stay grey after you press them are dead.' ),
+		array( 'How do I test if my keyboard keys are working?', 'Click the diagram and press every key. Keys that work turn green; keys that stay gray after you press them are dead.' ),
 		array( 'Why does a key not light up even though it types?', 'Some keys, such as Fn, media keys and the Windows key in some games, are handled by the system and never reach the browser. If the key does its job elsewhere, it works.' ),
 		array( 'How many keys should I be able to press at once?', 'At least 6 on most keyboards. Gaming keyboards with N-key rollover register every key at the same time.' ),
 		array( 'Can I test a laptop keyboard here?', 'Yes. Pick the TKL or 60% layout to match your laptop. The number pad block only applies to full-size keyboards.' ),

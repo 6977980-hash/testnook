@@ -20,9 +20,9 @@ return array(
 	<div class="cs-swatches" aria-label="Shades">
 		<button type="button" class="cs-swatch" data-cs-color="#000000" style="background:#000000" aria-label="Black" aria-pressed="true"></button>
 		<button type="button" class="cs-swatch" data-cs-color="#0a0a0a" style="background:#0a0a0a" aria-label="Near black 4%"></button>
-		<button type="button" class="cs-swatch" data-cs-color="#1a1a1a" style="background:#1a1a1a" aria-label="Dark grey 10%"></button>
-		<button type="button" class="cs-swatch" data-cs-color="#333333" style="background:#333333" aria-label="Grey 20%"></button>
-		<button type="button" class="cs-swatch" data-cs-color="#808080" style="background:#808080" aria-label="50% grey"></button>
+		<button type="button" class="cs-swatch" data-cs-color="#1a1a1a" style="background:#1a1a1a" aria-label="Dark gray 10%"></button>
+		<button type="button" class="cs-swatch" data-cs-color="#333333" style="background:#333333" aria-label="Gray 20%"></button>
+		<button type="button" class="cs-swatch" data-cs-color="#808080" style="background:#808080" aria-label="50% gray"></button>
 		<button type="button" class="cs-swatch" data-cs-color="#000033" style="background:#000033" aria-label="Deep blue"></button>
 		<button type="button" class="cs-swatch" data-cs-color="#330000" style="background:#330000" aria-label="Deep red"></button>
 	</div>
@@ -56,14 +56,13 @@ return array(
 		),
 	),
 	'fixes'        => array(
-		array( 'The whole screen glows grey instead of black', 'That is normal for LCD monitors: the backlight never switches fully off. Lower the brightness and check that the monitor is not in a bright "vivid" picture mode. Only OLED and mini-LED local dimming get close to true black.' ),
+		array( 'The whole screen glows gray instead of black', 'That is normal for LCD monitors: the backlight never switches fully off. Lower the brightness and check that the monitor is not in a bright "vivid" picture mode. Only OLED and mini-LED local dimming get close to true black.' ),
 		array( 'The corners glow', 'Backlight bleed. Gently loosening a tight bezel sometimes helps, but usually it is a panel property. Compare with the manufacturer\'s return policy if the monitor is new.' ),
 		array( 'I can see the previous page faintly on black', 'Image retention on an OLED or VA panel. Leave the black screen on for 10-20 minutes; temporary retention fades. If it never fades, it is burn-in.' ),
 		array( 'The screen turns off after a minute', 'Your operating system\'s screen saver or sleep timer kicked in. Move the mouse, or raise the sleep timer in your power settings while you test.' ),
 	),
 	'faq'          => array(
-		array( 'How do I make my screen completely black?', 'Press "Open full black screen" on this page. The browser fills your entire screen with pure black (#000000). Press Esc or tap to exit.' ),
-		array( 'Why is my black screen not completely black?', 'On an LCD the backlight shines through the pixels a little, so black looks dark grey in a dim room. OLED screens switch the pixels off and show true black.' ),
+		array( 'Why is my black screen not completely black?', 'On an LCD the backlight shines through the pixels a little, so black looks dark gray in a dim room. OLED screens switch the pixels off and show true black.' ),
 		array( 'What is backlight bleed?', 'Light leaking around the edges of an LCD panel, visible as bright patches on a black screen. Small amounts are normal; large bright areas are a panel defect.' ),
 		array( 'Does a black screen save battery?', 'On OLED phones and laptops, yes: black pixels are off and draw almost no power. On LCD screens the backlight stays on, so the saving is tiny.' ),
 		array( 'Can a black screen help with burn-in?', 'It does not repair burn-in, but a black screen gives temporary image retention time to fade. Use our burn-in test to tell the two apart.' ),

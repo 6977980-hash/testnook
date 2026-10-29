@@ -39,7 +39,7 @@ return array(
 		array(
 			'Android: Google Maps calibration',
 			'<p>Google Maps shows how sure it is of your direction with the width of the blue beam around your location dot. A wide beam means low accuracy. Tap the blue dot and, on most versions, a <strong>Calibrate</strong> button opens an animation showing the figure 8 motion; Maps tells you when the accuracy is high. Keep Settings &gt; Location &gt; Location services &gt; Google Location Accuracy turned on, which helps Maps combine the compass with Wi-Fi and GPS.</p>
-<p>Some Android phones also have a sensor test menu. On Samsung, dialling <code>*#0*#</code> and tapping Sensor shows a magnetic sensor self test and a heading readout that you can calibrate with the same motion.</p>',
+<p>Some Android phones also have a sensor test menu. On Samsung, dialing <code>*#0*#</code> and tapping Sensor shows a magnetic sensor self test and a heading readout that you can calibrate with the same motion.</p>',
 			'android',
 		),
 		array(

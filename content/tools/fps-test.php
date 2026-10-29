@@ -67,6 +67,7 @@ return array(
 		array( 'FPS is stuck at 60 on a 120 Hz or 144 Hz monitor', 'On Windows open Settings > System > Display > Advanced display and choose the highest refresh rate. On a Mac open System Settings > Displays > Refresh rate. Use a DisplayPort or HDMI 2.0+ cable, and make sure the browser window is on the high refresh monitor.' ),
 		array( 'FPS is low or keeps dropping', 'Plug in your laptop and turn off battery saver, close heavy tabs and apps, and check that hardware acceleration is on in your browser settings (Chrome: Settings > System > Use graphics acceleration when available).' ),
 		array( 'FPS is capped at 30', 'Low power mode on iPhone and power saving on many Android phones limit browsers to 30 FPS. Turn it off and test again. Remote desktop and screen sharing can also cap the rate.' ),
+		array( 'iPhone or iPad shows 60 Hz in Safari', 'Safari on iPhone and iPad draws web pages near 60 fps by default, even on ProMotion screens that run at 120 Hz everywhere else. To let the test see 120 Hz, open Settings &gt; Apps &gt; Safari &gt; Advanced &gt; Feature Flags, turn off <strong>Prefer Page Rendering Updates near 60fps</strong> and reload the page. Low Power Mode also caps the screen at 60 Hz, so turn it off first. iPhones without ProMotion have 60 Hz screens, so 60 is the right answer there.' ),
 	),
 	'faq'          => array(
 		array( 'What is a good FPS?', '60 FPS feels smooth for everyday use and most games. Competitive gamers aim for 120-240 FPS on a matching high refresh rate monitor. Below 30 FPS looks choppy.' ),
@@ -75,6 +76,7 @@ return array(
 		array( 'What are dropped frames?', 'Frames that took much longer than normal to draw, so the image stuttered. The test counts any frame that takes more than one and a half times the usual frame time.' ),
 		array( 'Can I check my FPS on a phone?', 'Yes. Most phones show 60 FPS, and newer phones with 90 or 120 Hz screens show more when power saving is off.' ),
 		array( 'Does the FPS test work in every browser?', 'Yes, it works in Chrome, Edge, Firefox and Safari. Some browsers limit background or low-power tabs, so keep the tab active while testing.' ),
+		array( 'Why does my iPhone Pro show 60 Hz in Safari?', 'Safari renders web pages near 60 fps by default to save battery, so every browser test reads about 60 on a 120 Hz ProMotion iPhone or iPad. Turn off <strong>Prefer Page Rendering Updates near 60fps</strong> in Settings &gt; Apps &gt; Safari &gt; Advanced &gt; Feature Flags, make sure Low Power Mode is off, and reload.' ),
 	),
 	'related'      => array( 'refresh-rate-test', 'ufo-test', 'dead-pixel-test', 'reaction-time-test', 'mouse-polling-rate-test', 'stuck-pixel-fixer', 'gamepad-tester', 'cps-test' ),
 	'updated'      => '2026-10-28',

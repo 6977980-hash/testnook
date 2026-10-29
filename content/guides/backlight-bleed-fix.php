@@ -32,8 +32,8 @@ return array(
 <li><strong>Dim the room</strong>, but not to pitch black. A dark room shows everything, including bleed you would never see in use.</li>
 <li><strong>Use your normal brightness.</strong> Bleed at 100% brightness is always worse; judge it at the level you actually use.</li>
 <li><strong>Open a full-screen black image.</strong> The <a href="/black-screen/">black screen</a> or the dark patterns in the <a href="/lcd-test/">LCD test</a> work well. Press F11 or use the fullscreen button so no taskbar is visible.</li>
-<li><strong>Sit at your normal distance</strong> and look at the centre of the screen, straight on.</li>
-<li><strong>Then check dark grey,</strong> about 10% grey, and a real dark scene from a film or game. If bleed only shows on pure black in a dark room, most people never notice it.</li>
+<li><strong>Sit at your normal distance</strong> and look at the center of the screen, straight on.</li>
+<li><strong>Then check dark gray,</strong> about 10% gray, and a real dark scene from a film or game. If bleed only shows on pure black in a dark room, most people never notice it.</li>
 </ol>
 <p>Do not judge from a phone photo. Phone cameras raise exposure on dark scenes and make mild bleed look dramatic. If you want a photo for a return, set the camera to manual exposure so it matches what you see.</p>',
 			'test',
@@ -49,7 +49,7 @@ return array(
 <tr><td>Local dimming bloom</td><td>Halos around bright objects on a dark background</td><td>Only on mini-LED and full-array screens, follows the bright object</td></tr>
 </tbody></table></div>
 <p>IPS glow is a property of IPS panels and is the same on every unit of a model, so exchanging the screen will not remove it. Bleed and clouding vary from unit to unit, which is why an exchange can help.</p>
-<p>The <a href="/monitor-test/">monitor test</a> has uniformity patterns (grey and colour fields) that make clouding easier to judge than pure black.</p>',
+<p>The <a href="/monitor-test/">monitor test</a> has uniformity patterns (gray and color fields) that make clouding easier to judge than pure black.</p>',
 			'bleed-vs-glow',
 		),
 		array(

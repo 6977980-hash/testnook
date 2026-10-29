@@ -63,7 +63,7 @@ return array(
 	'extra'          => array(
 		array(
 			'How this browser ping test works',
-			'<p>Browsers are not allowed to send the "ping" (ICMP) packets that the command line tool uses, so the page sends a tiny web request over an open connection and times the reply. With <strong>Nearest server</strong> it talks to the closest Cloudflare data centre and uses the browser\'s own precise timing, minus the server\'s processing time, so the result is very close to a real ping. The <strong>Google</strong> option times a tiny request to Google\'s servers from start to finish, which adds a millisecond or two of browser overhead.</p>
+			'<p>Browsers are not allowed to send the "ping" (ICMP) packets that the command line tool uses, so the page sends a tiny web request over an open connection and times the reply. With <strong>Nearest server</strong> it talks to the closest Cloudflare data center and uses the browser\'s own precise timing, minus the server\'s processing time, so the result is very close to a real ping. The <strong>Google</strong> option times a tiny request to Google\'s servers from start to finish, which adds a millisecond or two of browser overhead.</p>
 <p>Your ping in a game also depends on where the game server is. A server in another country adds the distance: roughly 1 ms for every 100 km of cable each way, plus the routing in between. That is why a game can show 120 ms when this test shows 15 ms. To check your connection, use this test; to choose a region, use the ping shown in the game.</p>',
 			'how-it-works',
 		),
@@ -83,7 +83,7 @@ return array(
 		array( 'What is a good ping?', 'Under 20 ms is excellent, 20 to 50 ms is good, 50 to 100 ms is fine for most uses, and over 100 ms starts to feel slow in fast games. Read more in our guide <a href="/what-is-a-good-ping/">what is a good ping</a>.' ),
 		array( 'What is jitter?', 'Jitter is how much the ping changes from one reading to the next. Steady ping with low jitter feels smooth; jitter over 30 ms makes calls choppy and characters jump in games, even when the average ping is low.' ),
 		array( 'What is packet loss and how much is too much?', 'Packet loss is data that never arrives. Games and calls need almost none: 0% is normal, 1% is noticeable and over 2% causes stutter and dropouts. This test counts requests that got no reply within 1.5 seconds.' ),
-		array( 'Why is my ping higher in games than here?', 'This test talks to the nearest data centre, usually in your own city or country. A game server further away adds travel time, about 1 ms per 100 km each way, plus the routing in between.' ),
+		array( 'Why is my ping higher in games than here?', 'This test talks to the nearest data center, usually in your own city or country. A game server further away adds travel time, about 1 ms per 100 km each way, plus the routing in between.' ),
 		array( 'Does download speed affect ping?', 'Not directly. Ping depends on distance, routing and how busy the line is. But a full line can raise ping a lot if the router queues data badly (bufferbloat), so a download on another device can make your game lag.' ),
 		array( 'How do I lower my ping?', 'Use a cable instead of Wi-Fi, stop downloads and streams on other devices while you play, turn on QoS or SQM in the router, and choose the closest game server. Our guide on <a href="/how-to-reduce-ping/">how to reduce ping</a> covers each step.' ),
 	),

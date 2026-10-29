@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 $tool = require __DIR__ . '/_typing-test.php';
 
 return array(
@@ -24,20 +26,12 @@ return array(
 	),
 	'howto_title'    => 'How to take the 5 minute typing test',
 	'results'        => '<p>Scores on a five minute test run 5-15% lower than on a one minute test for the same typist, because fatigue, the occasional awkward word and small lapses of concentration all have time to show up. That is the point: the five minute figure is the speed you can rely on for a page of work.</p>
-<div class="table-scroll"><table>
-<thead><tr><th>WPM over 5 minutes</th><th>Level</th></tr></thead>
-<tbody>
-<tr><td>Under 30</td><td>Beginner.</td></tr>
-<tr><td>30-45</td><td>Average adult.</td></tr>
-<tr><td>45-65</td><td>Good. Meets most office and data entry requirements.</td></tr>
-<tr><td>65-90</td><td>Fast. Professional typist territory.</td></tr>
-<tr><td>Over 90</td><td>Very fast over a sustained passage.</td></tr>
-</tbody></table></div>
+' . $bands['wpm'] . '
 <p><strong>WPM</strong> counts only correct characters (five per word); <strong>raw WPM</strong> counts everything; <strong>accuracy</strong> is the share of characters typed correctly. In five minutes a 50 WPM typist produces about 250 words and 1,250 characters, so a handful of errors barely moves the accuracy figure, while a run of mistakes in one difficult sentence does.</p>',
 	'extra'          => array(
 		array(
 			'Why a longer test is a fairer test',
-			'<p>A one minute test rewards a sprint. A five minute test rewards technique, because the things that let you sustain speed, touch typing without looking down, a light touch, relaxed shoulders, correct finger assignment, are exactly the things that fail under fatigue. Typing certificates issued by secretarial colleges and the tests used by courts and government offices are usually five minutes for that reason, and some are ten. If your five minute score is far below your one minute score, the difference is usually concentration rather than fingers: practise typing a full page without stopping, and notice where your eyes go when you lose the thread. For a quick check, the <a href="/1-minute-typing-test/">1 minute test</a> is on a separate page, and the <a href="/typing-speed-test/">typing speed test</a> lets you choose the length.</p>',
+			'<p>A one minute test rewards a sprint. A five minute test rewards technique, because the things that let you sustain speed, touch typing without looking down, a light touch, relaxed shoulders, correct finger assignment, are exactly the things that fail under fatigue. Typing certificates issued by secretarial colleges and the tests used by courts and government offices are usually five minutes for that reason, and some are ten. If your five minute score is far below your one minute score, the difference is usually concentration rather than fingers: practice typing a full page without stopping, and notice where your eyes go when you lose the thread. For a quick check, the <a href="/1-minute-typing-test/">1 minute test</a> is on a separate page, and the <a href="/typing-speed-test/">typing speed test</a> lets you choose the length.</p>',
 			'longer-test',
 		),
 		array(
@@ -58,7 +52,7 @@ return array(
 		array( 'Do typing certificates use 5 minute tests?', 'Most do. Secretarial colleges, courts and many government offices test for five or ten minutes on prose, scored as net WPM with a minimum accuracy.' ),
 		array( 'Can I pause the test?', 'No. The clock runs for five minutes once you start, and hiding the tab resets it. Set aside five quiet minutes before you begin.' ),
 		array( 'Does the test include punctuation?', 'Yes. The sentences have capitals, commas, full stops and apostrophes, as a real passage does.' ),
-		array( 'Is my result saved?', 'Your best score is stored in this browser only, when accuracy is at least 90%. Nothing is uploaded.' ),
+		array( 'Is my result saved?', 'Your best score for each length is saved in this browser when accuracy is 90% or better. Your keystrokes stay in this browser; only your final WPM and accuracy are shared anonymously for the site averages, unless you turn sharing off under the tool. A result needs at least 85% accuracy to count in the site averages and the leaderboard.' ),
 	),
 	'related'        => array( '1-minute-typing-test', 'typing-speed-test', 'wpm-test', 'typing-test-english', 'keyboard-tester', 'stroop-test' ),
 	'updated'        => '2026-10-29',

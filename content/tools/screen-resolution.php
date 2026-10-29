@@ -19,7 +19,7 @@ return array(
 		<div class="stat"><span class="stat-label">Pixel ratio</span><span class="stat-value" data-si="dpr">-</span></div>
 		<div class="stat"><span class="stat-label">Browser window</span><span class="stat-value" data-si="viewport">-</span></div>
 		<div class="stat"><span class="stat-label">Available area</span><span class="stat-value" data-si="avail">-</span></div>
-		<div class="stat"><span class="stat-label">Colour depth</span><span class="stat-value" data-si="depth">-</span></div>
+		<div class="stat"><span class="stat-label">Color depth</span><span class="stat-value" data-si="depth">-</span></div>
 		<div class="stat"><span class="stat-label">Total pixels</span><span class="stat-value" data-si="megapixels">-</span></div>
 		<div class="stat"><span class="stat-label">Orientation</span><span class="stat-value" data-si="orientation">-</span></div>
 	</div>
@@ -39,7 +39,7 @@ return array(
 <li><strong>Scaled (CSS) size</strong> is the size in the pixels that apps and websites lay out for. Windows calls it the result of "Scale", Macs call it "Looks like".</li>
 <li><strong>Display scaling</strong> and <strong>pixel ratio</strong> are the same thing written two ways: 1.25 is 125%, 2 is 200%. Browser zoom changes them too, so press Ctrl+0 (Cmd+0 on a Mac) for a clean reading.</li>
 <li><strong>Browser window</strong> is the space inside this tab. <strong>Available area</strong> is the screen minus the taskbar or dock.</li>
-<li><strong>Colour depth</strong> is usually 24-bit (8 bits per colour). 30-bit appears on some HDR or 10-bit setups.</li>
+<li><strong>Color depth</strong> is usually 24-bit (8 bits per color). 30-bit appears on some HDR or 10-bit setups.</li>
 </ul>
 <h3>Common screen resolutions</h3>
 <div class="table-scroll"><table class="si-res-table" id="si-res-table">

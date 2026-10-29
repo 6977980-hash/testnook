@@ -1,17 +1,17 @@
 <?php
 /**
- * Shared tool markup for the solid colour screen pages (red, green, blue...).
+ * Shared tool markup for the solid color screen pages (red, green, blue...).
  * Not a tool page itself: it is not in the catalog. Returns a function that
  * builds the markup for colour-screen.js. The first swatch is the page's
- * main colour.
+ * main color.
  *
- * @param string $colour   Colour name for the button, e.g. "red".
+ * @param string $color   Color name for the button, e.g. "red".
  * @param array  $swatches hex => label.
  * @param string $status   Hint shown under the tool.
  */
 defined( 'ABSPATH' ) || exit;
 
-return function ( $colour, $swatches, $status ) {
+return function ( $color, $swatches, $status ) {
 	$buttons = '';
 	$first   = true;
 	foreach ( $swatches as $hex => $label ) {
@@ -24,7 +24,7 @@ return function ( $colour, $swatches, $status ) {
 		$first = false;
 	}
 	return '<div class="tool-bar cs-bar">
-	<button type="button" class="btn btn-primary" id="cs-start">Open full ' . $colour . ' screen</button>
+	<button type="button" class="btn btn-primary" id="cs-start">Open full ' . $color . ' screen</button>
 	<label class="cs-timer">Auto close <select id="cs-timer"><option value="0">never</option><option value="1">after 1 min</option><option value="5">after 5 min</option><option value="15">after 15 min</option><option value="60">after 1 hour</option></select></label>
 </div>
 <div class="tool-stage cs-stage">

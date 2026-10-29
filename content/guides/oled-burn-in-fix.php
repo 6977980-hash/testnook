@@ -13,7 +13,7 @@ return array(
 	'intro'       => 'A faint logo, a taskbar outline or a news ticker that stays on screen after the content changes is the OLED owner\'s nightmare. Often it is temporary. Here is how to tell, what the built-in tools do, and how to stop it getting worse.',
 	'summary'     => array(
 		'<strong>Image retention</strong> fades within minutes to hours of showing varied content. <strong>Burn-in</strong> is uneven wear of the organic pixels and does not fade.',
-		'Check with a <strong>uniform grey screen</strong>: burn-in shows as a darker ghost of the static element, because worn pixels are dimmer.',
+		'Check with a <strong>uniform gray screen</strong>: burn-in shows as a darker ghost of the static element, because worn pixels are dimmer.',
 		'Run the TV or monitor\'s <strong>pixel refresh / panel refresh</strong> once; it re-measures and compensates the pixels. Run it rarely, not weekly, as it also consumes panel life.',
 		'True burn-in cannot be reversed at home. Prevention: hide static elements, use dark modes, avoid hours of one channel at high brightness, and leave the panel\'s automatic protections on.',
 	),
@@ -22,14 +22,14 @@ return array(
 			'Image retention or burn-in? How to tell',
 			'<p>Both show a ghost of something that was on screen. The difference is whether it goes away.</p>
 <p><strong>Image retention</strong> is a temporary charge imbalance in the pixels after a static image. It fades within minutes or, at most, a few hours of normal mixed content. LCDs get it too. Phones that show a keyboard outline for a minute after a long typing session are a classic case.</p>
-<p><strong>Burn-in</strong> is permanent. Organic light-emitting pixels dim as they age, and they age in proportion to how hard and how long they are driven. A pixel that has displayed a bright white logo for a thousand hours has aged more than its neighbours, so it is dimmer forever. The ghost is a shadow of the static element.</p>
-<p>To tell them apart, run the <a href="/burn-in-test/">burn-in test</a>. It shows full-screen uniform colours and greys; the 5 to 20% greys are the most revealing. Note what you see, then watch varied content (a film, not a news channel) for two hours and look again. A ghost that has faded or shrunk is retention; one that looks the same is burn-in.</p>',
+<p><strong>Burn-in</strong> is permanent. Organic light-emitting pixels dim as they age, and they age in proportion to how hard and how long they are driven. A pixel that has displayed a bright white logo for a thousand hours has aged more than its neighbors, so it is dimmer forever. The ghost is a shadow of the static element.</p>
+<p>To tell them apart, run the <a href="/burn-in-test/">burn-in test</a>. It shows full-screen uniform colors and grays; the 5 to 20% grays are the most revealing. Note what you see, then watch varied content (a film, not a news channel) for two hours and look again. A ghost that has faded or shrunk is retention; one that looks the same is burn-in.</p>',
 			'retention-vs-burn-in',
 		),
 		array(
 			'Step 1: give retention time to clear',
 			'<p>If the ghost appeared after a long static session (a game HUD for six hours, a day of spreadsheets), do nothing drastic. Play two or three hours of varied full-screen video at normal brightness, or simply turn the screen off for a few hours. Most retention is gone by the next day.</p>
-<p>Full-screen colour cycling (white, then each primary, then greys) for 20 to 30 minutes can speed this up on LCDs and does no harm on OLEDs at moderate brightness. Avoid the "burn-in fix" videos on YouTube that run noise at full brightness for hours: on OLED, that is just extra wear.</p>',
+<p>Full-screen color cycling (white, then each primary, then grays) for 20 to 30 minutes can speed this up on LCDs and does no harm on OLEDs at moderate brightness. Avoid the "burn-in fix" videos on YouTube that run noise at full brightness for hours: on OLED, that is just extra wear.</p>',
 			'clear-retention',
 		),
 		array(
@@ -48,7 +48,7 @@ return array(
 <li><strong>Burn-in "fixer" videos at maximum brightness</strong> for hours. On OLED these age the whole panel; the ghost does not get better, the rest gets worse until, eventually, it matches. That is not a fix.</li>
 <li><strong>Burning in the opposite image.</strong> Some people display an inverted version of the ghost to even things out. In theory it ages the surrounding pixels to match; in practice it is impossible to do precisely and it just adds wear.</li>
 <li><strong>Repeated manual pixel refreshes.</strong> One is the treatment; ten shorten the panel\'s life.</li>
-<li><strong>Third-party apps and screensavers that claim to repair burn-in.</strong> They show moving colours, which is harmless for retention and useless for burn-in.</li>
+<li><strong>Third-party apps and screensavers that claim to repair burn-in.</strong> They show moving colors, which is harmless for retention and useless for burn-in.</li>
 </ul>
 <p>When the ghost is real burn-in that compensation cannot hide, the fix is a panel replacement. Some makers cover burn-in under warranty for a few years (LG\'s OLED monitors and several monitor brands state it explicitly; most TV warranties exclude it). Check your exact terms.</p>',
 			'what-does-not-work',
@@ -64,7 +64,7 @@ return array(
 <li><strong>Let the panel run its cycles.</strong> Use standby, not the mains switch, and leave the TV plugged in overnight sometimes.</li>
 <li><strong>Phones:</strong> dark mode, auto-brightness, a short screen timeout, and avoid leaving navigation or a game open for hours at full brightness in a car mount.</li>
 </ol>
-<p>Then check once in a while: the <a href="/oled-test/">OLED test</a> has near-black and grey patterns designed for exactly this, and takes a minute.</p>',
+<p>Then check once in a while: the <a href="/oled-test/">OLED test</a> has near-black and gray patterns designed for exactly this, and takes a minute.</p>',
 			'prevention',
 		),
 	),

@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'        => 'Online Metronome',
 	'seo_title'    => 'Online Metronome: Free Metronome 20-300 BPM with Tap Tempo',
-	'description'  => 'Free online metronome. Set any tempo from 20 to 300 BPM, pick a time signature and subdivision, tap the tempo, accent the first beat and practise to a click.',
+	'description'  => 'Free online metronome. Set any tempo from 20 to 300 BPM, pick a time signature and subdivision, tap the tempo, accent the first beat and practice to a click.',
 	'intro'        => 'A precise metronome in your browser, with nothing to install. Type a tempo or drag the slider, pick a time signature, add eighth-note or triplet subdivisions, tap along to find a tempo, and press Space to start and stop. The click is scheduled by the audio engine, so it stays steady even when the page is busy.',
 	'device'       => 'any',
 	'ads'          => 'content',
@@ -95,8 +95,8 @@ return array(
 <p>In 6/8 and 7/8 the click counts eighth notes, so set the BPM for the eighth note (a 6/8 piece felt in two at 60 BPM is 180 BPM here). Most pop and rock sits between 100 and 130 BPM, hip hop around 85-100, house 120-128, drum and bass 170-175. If you have a song and want its tempo, use the <a href="/tap-bpm/">tap BPM counter</a>.</p>',
 	'extra'        => array(
 		array(
-			'How to practise with a metronome',
-			'<p>Start slower than you think you need: pick a tempo at which you can play the passage perfectly, then raise it by 3-5 BPM each time you get three clean repetitions. Use subdivisions to lock in fast passages, and switch them off once the pulse is internal. For rhythm training, set the accent off and try to feel the click on beats 2 and 4, or halve the tempo so the click lands only on beat 1 and you fill the rest yourself. Drummers often practise with the click on the off-beat; set 2/4 at half tempo and count the click as the "and".</p>
+			'How to practice with a metronome',
+			'<p>Start slower than you think you need: pick a tempo at which you can play the passage perfectly, then raise it by 3-5 BPM each time you get three clean repetitions. Use subdivisions to lock in fast passages, and switch them off once the pulse is internal. For rhythm training, set the accent off and try to feel the click on beats 2 and 4, or halve the tempo so the click lands only on beat 1 and you fill the rest yourself. Drummers often practice with the click on the off-beat; set 2/4 at half tempo and count the click as the "and".</p>
 <p>A metronome is a reference, not a cage: once a piece is steady, play it without the click and record yourself to check that the tempo holds. Short daily sessions with the metronome beat long occasional ones.</p>',
 			'practice',
 		),
@@ -114,7 +114,7 @@ return array(
 	),
 	'faq'          => array(
 		array( 'Is this metronome accurate?', 'Yes. Clicks are scheduled on the Web Audio clock, which is sample-accurate, rather than with a JavaScript timer. Any delay from Bluetooth audio is constant and does not change the tempo.' ),
-		array( 'What tempo should I practise at?', 'Slow enough to play every note correctly, which is often 50-70% of the final tempo. Raise it in small steps only when the passage is clean.' ),
+		array( 'What tempo should I practice at?', 'Slow enough to play every note correctly, which is often 50-70% of the final tempo. Raise it in small steps only when the passage is clean.' ),
 		array( 'Can I use the metronome on my phone?', 'Yes. It works in any mobile browser. Keep the screen on, because some phones pause audio from a browser tab when the screen locks.' ),
 		array( 'What is 6/8 time on a metronome?', 'Six eighth notes per bar, usually felt in two groups of three. Set 6/8 here and the accent falls on beat 1 of each group of six; choose the BPM of the eighth note, or set 2/4 with triplet subdivision to feel it in two.' ),
 		array( 'What do the Italian words mean?', 'They are the traditional tempo markings used in sheet music: Largo is slow, Andante a walking pace, Allegro fast, Presto very fast. The ranges overlap and are a guide, not a rule.' ),

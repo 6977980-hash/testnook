@@ -7,7 +7,7 @@ return array(
 	'title'          => 'What Is My Screen Size',
 	'seo_title'      => 'What Is My Screen Size? Measure It in Inches Online',
 	'description'    => 'Find your screen size in inches. Match a bank card to measure the diagonal, width and height of a laptop, monitor or phone, or calculate it from the diagonal.',
-	'intro'          => 'A browser knows how many pixels your screen has, but not how big it is. Hold a bank card against the screen and match it once, and the page measures your screen\'s diagonal, width and height in inches and centimetres. There is also a calculator for width and height from any diagonal and ratio.',
+	'intro'          => 'A browser knows how many pixels your screen has, but not how big it is. Hold a bank card against the screen and match it once, and the page measures your screen\'s diagonal, width and height in inches and centimeters. There is also a calculator for width and height from any diagonal and ratio.',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'screen-cal', 'screen-info' ),
@@ -36,7 +36,7 @@ return array(
 	'howto'          => array(
 		'Set the browser zoom to 100% (Ctrl+0, or Cmd+0 on a Mac).',
 		'In <strong>Calibrate to your screen</strong>, hold a bank, ID or loyalty card flat against the screen. Drag the slider until the dashed box is exactly as wide as the card, then press <strong>Use this size</strong>. On a phone in portrait, match the card\'s short side.',
-		'Read the diagonal at the top, with the width and height in inches and centimetres.',
+		'Read the diagonal at the top, with the width and height in inches and centimeters.',
 		'To find the size of a screen you are not using, enter its diagonal and ratio in the <strong>Screen size calculator</strong>.',
 	),
 	'howto_title'    => 'How to measure your screen size',
@@ -46,7 +46,7 @@ return array(
 	'extra'          => array(
 		array(
 			'Other ways to find your screen size',
-			'<p><strong>Measure with a tape:</strong> from the bottom left corner of the picture to the top right, not including the frame, and divide centimetres by 2.54 for inches. <strong>Check the model:</strong> on Windows, Settings > System > About shows the model name, and a search for it gives the size; on a Mac, Apple menu > About This Mac shows the size in the model name (for example "MacBook Pro 14-inch"); on a monitor or TV, the model number usually contains the size, such as 27 in "S27..." or 55 in "...55...". <strong>Phones:</strong> the <a href="/what-phone-do-i-have/">what phone do I have</a> page names your model.</p>',
+			'<p><strong>Measure with a tape:</strong> from the bottom left corner of the picture to the top right, not including the frame, and divide centimeters by 2.54 for inches. <strong>Check the model:</strong> on Windows, Settings > System > About shows the model name, and a search for it gives the size; on a Mac, Apple menu > About This Mac shows the size in the model name (for example "MacBook Pro 14-inch"); on a monitor or TV, the model number usually contains the size, such as 27 in "S27..." or 55 in "...55...". <strong>Phones:</strong> the <a href="/what-phone-do-i-have/">what phone do I have</a> page names your model.</p>',
 			'other-ways',
 		),
 		array(

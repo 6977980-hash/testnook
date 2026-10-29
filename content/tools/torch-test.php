@@ -45,18 +45,18 @@ return array(
 	'extra'          => array(
 		array(
 			'Which phones and browsers can control the torch',
-			'<p>Websites switch the flash through the camera\'s "torch" setting. Chrome, Edge, Samsung Internet and Opera on Android support it on most phones. Firefox on Android does not. On iPhone, support depends on the iOS version and is limited, so if the page says "Not available" use the torch button in Control Centre to check the LED. Laptops and webcams have no flash, which is why the screen light is offered as a fallback.</p>
+			'<p>Websites switch the flash through the camera\'s "torch" setting. Chrome, Edge, Samsung Internet and Opera on Android support it on most phones. Firefox on Android does not. On iPhone, support depends on the iOS version and is limited, so if the page says "Not available" use the torch button in Control Center to check the LED. Laptops and webcams have no flash, which is why the screen light is offered as a fallback.</p>
 <p>Some phones put the LED on one specific back camera. The test tries each back camera until it finds the one with a torch, which is why the camera name may say "camera2 0" or "back camera 1".</p>',
 			'support',
 		),
 		array(
 			'If the flashlight does not work',
-			'<p>First rule out software: restart the phone, close the camera and any app that uses the flash, and turn off power saving. If the torch tile in quick settings is greyed out, the camera service is stuck; a restart usually clears it. On Android, clearing the storage of the Camera app helps when the flash works in the torch but not in photos. If the LED never lights in this test, in the quick setting or in the camera, the LED or its cable has failed and needs a repair. Check the rest of the camera with the <a href="/camera-test/">camera test</a>.</p>',
+			'<p>First rule out software: restart the phone, close the camera and any app that uses the flash, and turn off power saving. If the torch tile in quick settings is grayed out, the camera service is stuck; a restart usually clears it. On Android, clearing the storage of the Camera app helps when the flash works in the torch but not in photos. If the LED never lights in this test, in the quick setting or in the camera, the LED or its cable has failed and needs a repair. Check the rest of the camera with the <a href="/camera-test/">camera test</a>.</p>',
 			'not-working',
 		),
 	),
 	'fixes'          => array(
-		array( 'The torch says "Not available"', 'Your browser cannot control the flash. Open the page in Chrome on Android. On iPhone, test the LED from Control Centre instead.' ),
+		array( 'The torch says "Not available"', 'Your browser cannot control the flash. Open the page in Chrome on Android. On iPhone, test the LED from Control Center instead.' ),
 		array( 'Camera permission was blocked', 'Tap the lock or camera icon in the address bar, allow the camera for this site and reload. The camera picture is only shown to you.' ),
 		array( 'The torch turns off by itself', 'Phones switch the torch off when they overheat or the battery is low, and browsers turn it off when you leave the page. Keep the page open and let the phone cool.' ),
 		array( 'The flash works here but not in photos', 'The LED is fine. Clear the Camera app\'s cache or data, check the flash setting in the camera app, and update the phone.' ),
@@ -64,7 +64,7 @@ return array(
 	'faq'            => array(
 		array( 'How do I test my phone flashlight online?', 'Open this page on the phone, tap Start torch test, allow the camera and tap Turn torch on. If the LED lights, the flashlight works.' ),
 		array( 'Why does a torch test need the camera?', 'The flash LED belongs to the camera, and browsers only let a page switch it while it has the camera open. The picture is shown only to you and nothing is recorded or uploaded.' ),
-		array( 'Does the torch test work on iPhone?', 'Often not, because Safari limits torch control. If it says Not available, use Control Centre to check the LED, or the screen light for light.' ),
+		array( 'Does the torch test work on iPhone?', 'Often not, because Safari limits torch control. If it says Not available, use Control Center to check the LED, or the screen light for light.' ),
 		array( 'Can the strobe damage the LED?', 'No. A few seconds of strobe is far less than normal use. Phones also limit the LED automatically when it gets hot.' ),
 		array( 'How fast can the strobe go?', 'Up to 10 flashes per second. Each change has to go through the camera system, so some phones cannot keep up above 4 or 5.' ),
 		array( 'Is the SOS pattern real Morse code?', 'Yes: three short flashes, three long, three short, then a pause, repeated until you stop it.' ),

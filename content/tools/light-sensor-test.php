@@ -46,7 +46,7 @@ return array(
 		'Read the verdict, then the fixes below if the screen did not follow the light.',
 	),
 	'howto_title'    => 'How to test the light sensor',
-	'results'        => '<p>The ambient light sensor measures how much light falls on the front of the phone, in lux. The phone uses it to set the screen brightness and, on some models, the keyboard backlight and the colour tone of the display.</p>
+	'results'        => '<p>The ambient light sensor measures how much light falls on the front of the phone, in lux. The phone uses it to set the screen brightness and, on some models, the keyboard backlight and the color tone of the display.</p>
 <div class="table-scroll"><table>
 <thead><tr><th>Lux</th><th>Typical place</th></tr></thead>
 <tbody>

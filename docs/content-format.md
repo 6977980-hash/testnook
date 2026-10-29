@@ -61,6 +61,17 @@ Files whose name starts with `_` (`_gamepad-diagram.php`, `_colour-screen.php`, 
 are shared helpers `require`d by several tool files, not pages; keep them out
 of the catalog.
 
+`content/tools/_bands.php` holds the one CPS scale (5 s ranks, matching
+`cps-test.js`) and the one WPM scale used site-wide (`cps`, `cps_methods`,
+`cps_short`, `wpm`, `wpm_short`). Tool, hub and guide files that show a band
+table `require` it (`$bands = require __DIR__ . '/_bands.php';` from tools,
+`dirname( __DIR__ ) . '/tools/_bands.php'` from hubs and guides) instead of
+writing their own, so the numbers cannot drift apart.
+
+Site copy is **en-US** (color, gray, center, meter, practice as a verb).
+Slugs, CSS classes, data attributes and pattern ids keep their old spelling
+(`grey-screen`, `types-of-colour-blindness`, `colour-screen`, `grey50`).
+
 ### Ads modes
 
 - `standard`: slot under the tool, one in the content, one after the FAQ.

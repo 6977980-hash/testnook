@@ -58,7 +58,7 @@ return array(
 	'extra'          => array(
 		array(
 			'How to learn jitter clicking',
-			'<p>Start with the grip. Many jitter clickers use a claw grip with the palm slightly raised and the wrist resting on the pad, so the vibration travels into the finger instead of the mouse body. Tense the forearm as if you were squeezing a stress ball without closing the hand, and let the tremor start. At first the clicks come in bursts; the goal is a steady hum. Practise in 10 second rounds with a minute of rest between them, and check the graph: flat bars mean you are holding the rate.</p>
+			'<p>Start with the grip. Many jitter clickers use a claw grip with the palm slightly raised and the wrist resting on the pad, so the vibration travels into the finger instead of the mouse body. Tense the forearm as if you were squeezing a stress ball without closing the hand, and let the tremor start. At first the clicks come in bursts; the goal is a steady hum. Practice in 10 second rounds with a minute of rest between them, and check the graph: flat bars mean you are holding the rate.</p>
 <p>A light mouse with a low click force makes a big difference. Heavy clicks damp the vibration, and tall buttons with a lot of pre-travel miss presses. Lower your sensitivity slightly in game, because the shaking hand also moves the pointer.</p>',
 			'learn',
 		),

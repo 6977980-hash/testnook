@@ -5,7 +5,7 @@ return array(
 	'title'          => 'Astigmatism Test',
 	'seo_title'      => 'Astigmatism Test: Free Online Clock Dial Chart (Each Eye)',
 	'description'    => 'Free online astigmatism test. Look at the clock dial with one eye: if some lines look darker or sharper than others, you may have astigmatism. Shows the axis.',
-	'intro'          => 'A quick home check for astigmatism. Cover one eye and look at the dot in the centre of the clock dial. With normal focus every line looks equally black; with astigmatism, the lines in one direction look darker and sharper, and the others greyer or blurred. Tap the darkest lines to note the direction.',
+	'intro'          => 'A quick home check for astigmatism. Cover one eye and look at the dot in the center of the clock dial. With normal focus every line looks equally black; with astigmatism, the lines in one direction look darker and sharper, and the others grayer or blurred. Tap the darkest lines to note the direction.',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'astigmatism-test' ),
@@ -32,7 +32,7 @@ return array(
 	'howto'          => array(
 		'Take off your glasses or contact lenses to check your eyes on their own, or keep them on to check that they still correct you well.',
 		'Sit about 50 cm (an arm\'s length) from the screen, or a little further on a big monitor. Make sure the page is at 100% zoom.',
-		'Cover your left eye with your palm, without pressing, and look at the dot in the centre with your right eye.',
+		'Cover your left eye with your palm, without pressing, and look at the dot in the center with your right eye.',
 		'If the lines in one direction look darker, sharper or more black than the others, tap them. If every line looks the same, press <strong>All look the same</strong>.',
 		'Choose <strong>Left eye</strong>, cover your right eye and repeat. Try the <strong>Fan chart</strong> too: it has single lines every 15 degrees and can show smaller differences.',
 	),
@@ -54,8 +54,8 @@ return array(
 		),
 	),
 	'fixes'          => array(
-		array( 'All the lines look grey', 'Raise the screen brightness and zoom the page to 100%. On a small phone screen, hold it a little further away so the lines are not too thin to see.' ),
-		array( 'The darkest lines change when I look again', 'That happens when the eye refocuses. Look at the centre dot only, blink, and go with your first impression. Changing results usually mean little or no astigmatism.' ),
+		array( 'All the lines look gray', 'Raise the screen brightness and zoom the page to 100%. On a small phone screen, hold it a little further away so the lines are not too thin to see.' ),
+		array( 'The darkest lines change when I look again', 'That happens when the eye refocuses. Look at the center dot only, blink, and go with your first impression. Changing results usually mean little or no astigmatism.' ),
 		array( 'I see a difference even with my glasses on', 'Your prescription may have changed, or the glasses may be bent so the lenses sit at the wrong angle. Have them checked and book an eye examination.' ),
 	),
 	'faq'            => array(

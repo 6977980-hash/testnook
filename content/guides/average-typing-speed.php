@@ -1,5 +1,7 @@
 <?php
 defined( 'ABSPATH' ) || exit;
+
+$bands = require dirname( __DIR__ ) . '/tools/_bands.php';
 return array(
 	'title'       => 'Average Typing Speed by Age and Job (WPM Explained)',
 	'seo_title'   => 'Average Typing Speed: WPM by Age, Job and Skill Level',
@@ -12,7 +14,7 @@ return array(
 	'updated'     => '2026-10-29',
 	'intro'       => 'The average person types around 40 words per minute. Touch typists reach 60 to 80, professionals pass 100. Here is what the numbers mean, how they change with age and practice, and what actually makes you faster.',
 	'summary'     => array(
-		'The average typing speed for adults is <strong>about 40 WPM</strong>; the median in a large online study was 52 WPM, because people who take typing tests are a little faster than average.',
+		'The average typing speed for adults is <strong>about 40 WPM</strong>; the mean in a large online study was 52 WPM, because people who take typing tests are faster than average. <strong>50 to 70 WPM</strong> is good.',
 		'<strong>60 to 80 WPM</strong> is a good speed for office work. <strong>Over 100 WPM</strong> is professional level; the fastest typists exceed 150 WPM for a minute.',
 		'A "word" is five characters, including spaces. Accuracy matters: most tests subtract uncorrected errors, so slower and accurate beats fast and messy.',
 		'Speed peaks between about 20 and 40 and falls slowly after. Touch typing, not finger speed, is what separates 40 from 80 WPM.',
@@ -27,18 +29,8 @@ return array(
 		),
 		array(
 			'Average typing speed by skill level',
-			'<div class="table-scroll"><table>
-<thead><tr><th>Net WPM</th><th>Level</th><th>Who types this fast</th></tr></thead>
-<tbody>
-<tr><td>Under 25</td><td>Beginner</td><td>Two-finger "hunt and peck" typing, looking at the keys.</td></tr>
-<tr><td>25 to 40</td><td>Average</td><td>Most adults who type a little every day without formal training.</td></tr>
-<tr><td>40 to 60</td><td>Above average</td><td>Regular computer users; many self-taught typists plateau here.</td></tr>
-<tr><td>60 to 80</td><td>Good</td><td>Touch typists; typical of office staff, students who write a lot, programmers.</td></tr>
-<tr><td>80 to 100</td><td>Fast</td><td>Writers, journalists, transcriptionists, people who have practised deliberately.</td></tr>
-<tr><td>100 to 130</td><td>Professional</td><td>Court reporters on a normal keyboard, competitive typists, some secretaries.</td></tr>
-<tr><td>Over 130</td><td>Elite</td><td>Typing competition level. The best sustain 150 to 200 WPM for a minute.</td></tr>
-</tbody></table></div>
-<p>The most detailed public study of real typing (168,000 volunteers, 136 million keystrokes, 2018) found an average of 52 WPM with a long tail: the fastest 1% typed over 120 WPM. Those volunteers chose to take a typing test, so the true population average is lower, which is where the common "40 WPM" figure comes from.</p>',
+			$bands['wpm'] . '
+<p>The most detailed public study of real typing (168,000 volunteers, 136 million keystrokes, 2018) found a mean of 52 WPM with a long tail: the fastest 1% typed over 120 WPM. Those volunteers chose to take a typing test, so the true population average is lower, which is where the common "40 WPM" figure comes from.</p>',
 			'by-level',
 		),
 		array(
@@ -73,7 +65,7 @@ return array(
 			'How to type faster',
 			'<ol>
 <li><strong>Learn touch typing properly.</strong> Home row (ASDF JKL;), each finger owning its keys, eyes on the screen. Expect your speed to drop for two or three weeks and then pass your old peak. This single change is worth more than everything else combined.</li>
-<li><strong>Accuracy first, speed follows.</strong> Practise at a pace where you make almost no errors; speed comes from fewer corrections, not from faster fingers.</li>
+<li><strong>Accuracy first, speed follows.</strong> Practice at a pace where you make almost no errors; speed comes from fewer corrections, not from faster fingers.</li>
 <li><strong>Short daily sessions.</strong> Ten to fifteen minutes a day beats an hour once a week. Most people gain 5 to 10 WPM a month in the first few months.</li>
 <li><strong>Type real text.</strong> Random words train finger movement; sentences and paragraphs train the rhythm and the common letter pairs that make up most of what you type. Our <a href="/typing-test-english/">English typing test</a> uses both.</li>
 <li><strong>Check the keyboard.</strong> A key that registers late or needs a second press costs more time than it seems. If your accuracy is oddly low on one letter, run the <a href="/keyboard-tester/">keyboard tester</a>.</li>
@@ -89,12 +81,12 @@ return array(
 		'html'   => '<p>Real numbers from the 1 minute typing tests on this site over the last 30 days: the median was <strong>{median:typing-60}</strong> and the fastest 10% typed <strong>{top10:typing-60}</strong> or more. A net speed of 60 WPM beats {beats:typing-60:60} of results here. The quickest named runs are on the <a href="/leaderboards/">leaderboards</a>.</p>',
 	),
 	'faq'         => array(
-		array( 'What is a good typing speed?', 'Anything above 40 WPM is above average. 60 to 80 WPM is good for almost any job, and 100 WPM or more is professional level.' ),
-		array( 'Is 50 WPM fast?', 'It is a little above the average adult, and about the median for people who take online typing tests. For office work it is adequate; most jobs that test typing ask for 40 to 60.' ),
+		array( 'What is a good typing speed?', 'About 40 WPM is average. 50 to 70 WPM is good and enough for almost any job, 70 to 100 is fast, and over 100 WPM is very fast.' ),
+		array( 'Is 50 WPM fast?', 'It is a little above the average adult, and close to the mean of 52 WPM for people who take online typing tests. For office work it is adequate; most jobs that test typing ask for 40 to 60.' ),
 		array( 'What is the fastest typing speed ever?', 'Sustained records on a standard keyboard are around 216 WPM over 50 minutes (Stella Pajunas, 1946, on an electric typewriter) and over 200 WPM in short modern competition runs. On a stenotype, court reporters exceed 300 WPM in bursts.' ),
 		array( 'How many keystrokes per hour is 40 WPM?', 'About 12,000 KPH, since a word is five keystrokes: 40 x 5 x 60. Data entry jobs that ask for 8,000 KPH want roughly 27 WPM; 10,000 KPH is about 33 WPM.' ),
 		array( 'Does the keyboard matter?', 'A little. Low-profile laptop keys and mechanical keyboards with light switches help some people by a few WPM; a layout you are used to matters more. Phone typing is slower for almost everyone, about 35 to 40 WPM with two thumbs.' ),
-		array( 'Why is my accuracy good but my speed low?', 'Usually because you look at the keys, or you pause before uncommon letters. Both are signs that touch typing is not yet automatic. Keep practising at your comfortable pace; the pauses shrink first, then the speed rises.' ),
+		array( 'Why is my accuracy good but my speed low?', 'Usually because you look at the keys, or you pause before uncommon letters. Both are signs that touch typing is not yet automatic. Keep practicing at your comfortable pace; the pauses shrink first, then the speed rises.' ),
 	),
 	'sources'     => array(
 		array( 'Dhakal V, Feit AM, Kristensson PO, Oulasvirta A, "Observations on Typing from 136 Million Keystrokes", CHI 2018', 'https://userinterfaces.aalto.fi/136Mkeystrokes/' ),

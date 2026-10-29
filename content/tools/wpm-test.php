@@ -35,9 +35,9 @@ return array(
 <div class="table-scroll"><table>
 <thead><tr><th>WPM</th><th>CPM</th><th>Level</th></tr></thead>
 <tbody>
-<tr><td>30</td><td>150</td><td>Slow; hunt-and-peck.</td></tr>
+<tr><td>30</td><td>150</td><td>Bottom of the average range.</td></tr>
 <tr><td>40</td><td>200</td><td>Average adult.</td></tr>
-<tr><td>60</td><td>300</td><td>Good; typical office requirement.</td></tr>
+<tr><td>60</td><td>300</td><td>Good; meets most job requirements.</td></tr>
 <tr><td>80</td><td>400</td><td>Fast.</td></tr>
 <tr><td>100</td><td>500</td><td>Very fast.</td></tr>
 <tr><td>150+</td><td>750+</td><td>Competitive.</td></tr>
@@ -66,7 +66,7 @@ return array(
 		array( 'What is the difference between WPM and raw WPM?', 'Raw WPM counts everything you typed, mistakes included. WPM (net) counts only correct characters. The gap between them is the cost of your errors.' ),
 		array( 'How do I convert WPM to CPM?', 'Multiply by five. 60 WPM is 300 characters per minute.' ),
 		array( 'Does a 15 second test give the same WPM as a 60 second one?', 'Usually a little higher, because you can sprint for 15 seconds. Use 60 seconds for a figure to compare with published averages.' ),
-		array( 'Is my result saved?', 'Your best WPM for each length is stored in this browser only, when accuracy is 90% or better. Nothing is uploaded.' ),
+		array( 'Is my result saved?', 'Your best score for each length is saved in this browser when accuracy is 90% or better. Your keystrokes stay in this browser; only your final WPM and accuracy are shared anonymously for the site averages, unless you turn sharing off under the tool. A result needs at least 85% accuracy to count in the site averages and the leaderboard.' ),
 	),
 	'related'        => array( 'typing-speed-test', '1-minute-typing-test', '5-minute-typing-test', 'typing-test-english', 'keyboard-tester', 'cps-test' ),
 	'updated'        => '2026-10-29',

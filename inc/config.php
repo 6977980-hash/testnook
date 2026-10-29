@@ -35,6 +35,8 @@ define( 'TN_INDEXNOW_KEY', '00f5e7841c724dd298a04e4d3648544a' );
 // Founder / publisher identity (About page, Organization + Person schema).
 define( 'TN_FOUNDER_NAME', 'Ali Ahmad' );
 define( 'TN_FOUNDER_URL', 'https://www.linkedin.com/in/ali-ahmad-chaudhry-12777486/' );
+// Short bio for the author box under every guide (plain text, one or two sentences).
+define( 'TN_FOUNDER_BIO', 'Ali Ahmad founded Testnook and runs it. He has worked in IT and with computer hardware, repairs hardware himself and is a keen gamer. He plans every tool and guide, checks each release as described on the How we test page, and corrects pages when readers report a device that behaves differently.' );
 
 // Testnook's own social profiles (full URLs), added to the Organization schema
 // as sameAs. Empty until the brand has accounts; the founder's LinkedIn is above.

@@ -36,8 +36,14 @@ return array(
 <p>The gap between your <strong>peak</strong> second and your average is your fade. Under 1.5 CPS is very good at this length. Consistency above 80% over thirty seconds is a steady clicker.</p>',
 	'extra'          => array(
 		array(
+			'Compare your two halves',
+			'<p>Thirty seconds is long enough to split in two. Add up the bars for seconds 1 to 15 and for 16 to 30: the drop from the first half to the second is your fade, and it is the most useful number this length gives. Under 10% is very steady; 10 to 20% is normal; over 20% means you started at sprint pace or your grip tightened half way.</p>
+<p>The consistency score folds the same information into one figure, but the halves tell you <em>when</em> you slowed, which tells you what to change. Losing speed in the first five seconds after a fast start is pacing; a steady first half and a slide in the second is endurance, which improves with practice at this length. The <a href="#leaderboard">leaderboard on this page</a> ranks 30 second scores only.</p>',
+			'halves',
+		),
+		array(
 			'Building click endurance',
-			'<p>Endurance comes from relaxation, not strength. Watch the graph: if the bars fall from second five onwards, your forearm is tensing. Drop the shoulder, loosen the grip and click from the fingertip. Some players alternate the index and middle finger every few seconds, which keeps the rate up without any special technique. Practise at this length a few times a week and the curve flattens.</p>
+			'<p>Endurance comes from relaxation, not strength. Watch the graph: if the bars fall from second five onwards, your forearm is tensing. Drop the shoulder, loosen the grip and click from the fingertip. Some players alternate the index and middle finger every few seconds, which keeps the rate up without any special technique. Practice at this length a few times a week and the curve flattens.</p>
 <p>Take care with jitter clicking at thirty seconds. Holding forearm tension that long is the main cause of sore wrists among clickers. If you feel pain, tingling or numbness, stop and rest for several days.</p>',
 			'endurance',
 		),
@@ -53,7 +59,7 @@ return array(
 		array( 'Is a 30 second click test bad for my hand?', 'Normal clicking for thirty seconds is fine. Jitter clicking for that long strains the forearm; keep tries short and stop if it hurts.' ),
 		array( 'Why does my CPS fall over 30 seconds?', 'Finger and forearm fatigue. The fade is normal; the graph shows how much and when.' ),
 		array( 'Can I switch fingers during the test?', 'Yes. Every press inside the box counts, whichever finger makes it.' ),
-		array( 'Is my best score saved?', 'Your best 30 second CPS is saved in this browser only, shared with the main CPS test.' ),
+		array( 'Is my best score saved?', 'Your best 30 second CPS is saved in this browser and is the same best as the 30 second option of the main CPS test. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '60-second-click-test', '15-second-click-test', '10-second-cps-test', 'cps-test', 'jitter-click-test', 'spacebar-clicker' ),
 	'updated'        => '2026-10-29',

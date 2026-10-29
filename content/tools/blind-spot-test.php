@@ -37,7 +37,7 @@ return array(
 <div class="stats">
 	<div class="stat"><span class="stat-label">Dot vanished</span><span class="stat-value" id="bs-start-deg">-</span></div>
 	<div class="stat"><span class="stat-label">Dot came back</span><span class="stat-value" id="bs-end-deg">-</span></div>
-	<div class="stat"><span class="stat-label">Centre</span><span class="stat-value" id="bs-mid-deg">-</span></div>
+	<div class="stat"><span class="stat-label">Center</span><span class="stat-value" id="bs-mid-deg">-</span></div>
 	<div class="stat"><span class="stat-label">Width</span><span class="stat-value" id="bs-width-deg">-</span></div>
 </div>
 <p class="tool-status" id="bs-status" aria-live="polite">Calibrate the screen, sit at the chosen distance, cover your left eye and press Start measuring.</p>
@@ -53,15 +53,15 @@ return array(
 	'results'        => '<p>The page shows where the dot vanished and came back, as an angle from the point you were looking at. In a typical eye:</p>
 <ul>
 <li>the blind spot starts at about <strong>12 to 13 degrees</strong> from where you look, towards the ear;</li>
-<li>it ends at about <strong>18 degrees</strong>, so its centre is near <strong>15 degrees</strong>;</li>
+<li>it ends at about <strong>18 degrees</strong>, so its center is near <strong>15 degrees</strong>;</li>
 <li>it is about <strong>5 to 6 degrees wide</strong> and a little taller than it is wide, roughly the size of your fist at arm\'s length seen 15 degrees off to the side.</li>
 </ul>
 <p>A result a degree or two away from these numbers is usually a wrong distance, a missing calibration, a wandering eye or a late press. Repeat the test once or twice and take the average. The <strong>Classic</strong> mode shows the textbook picture: a dot placed at 15.5 degrees that vanishes when you are at the right distance. <strong>Fill-in</strong> shows a line with a gap at the blind spot that looks unbroken, because the brain fills the hole with what surrounds it.</p>',
 	'extra'          => array(
 		array(
 			'Why we have a blind spot',
-			'<p>The light-sensitive cells of the retina sit behind a layer of nerve fibres. All those fibres leave the eye together through one hole, the optic disc, to form the optic nerve, and there is no room for rods or cones there. The disc is about 1.5 mm across and lies about 15 degrees to the nose side of the centre of the retina, so in what you see the blind spot falls about 15 degrees to the ear side.</p>
-<p>You never notice it for two reasons. With both eyes open, each eye covers the other\'s blind spot. And with one eye closed, the brain fills the gap with the colour and pattern around it, which is why the fill-in demo looks like an unbroken line. The French physicist Edme Mariotte first described the blind spot in 1660.</p>',
+			'<p>The light-sensitive cells of the retina sit behind a layer of nerve fibers. All those fibers leave the eye together through one hole, the optic disc, to form the optic nerve, and there is no room for rods or cones there. The disc is about 1.5 mm across and lies about 15 degrees to the nose side of the center of the retina, so in what you see the blind spot falls about 15 degrees to the ear side.</p>
+<p>You never notice it for two reasons. With both eyes open, each eye covers the other\'s blind spot. And with one eye closed, the brain fills the gap with the color and pattern around it, which is why the fill-in demo looks like an unbroken line. The French physicist Edme Mariotte first described the blind spot in 1660.</p>',
 			'why',
 		),
 		array(
@@ -77,8 +77,8 @@ return array(
 	),
 	'faq'            => array(
 		array( 'Does everyone have a blind spot?', 'Yes. Every healthy eye has one, where the optic nerve leaves the eye. It is normal and not a sign of disease.' ),
-		array( 'Why can\'t I see my blind spot normally?', 'The other eye covers it, and the brain fills in the missing patch with the surrounding colour and pattern.' ),
-		array( 'Where is the blind spot?', 'About 15 degrees from the centre of vision, towards the ear, and slightly below the horizontal.' ),
+		array( 'Why can\'t I see my blind spot normally?', 'The other eye covers it, and the brain fills in the missing patch with the surrounding color and pattern.' ),
+		array( 'Where is the blind spot?', 'About 15 degrees from the center of vision, towards the ear, and slightly below the horizontal.' ),
 		array( 'How big is the blind spot?', 'About 5 to 6 degrees wide and 7 to 8 degrees tall, which is the size of a fist at arm\'s length.' ),
 		array( 'Can the blind spot get bigger?', 'It can, for example with glaucoma or swelling of the optic nerve. A larger blind spot needs a proper visual field test to measure it.' ),
 		array( 'Is the blind spot the same in both eyes?', 'Yes, it is a mirror image: to the right of where you look for the right eye and to the left for the left eye.' ),

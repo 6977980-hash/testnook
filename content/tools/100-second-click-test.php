@@ -36,6 +36,12 @@ return array(
 <p>Over 100 seconds a consistency score above 70% is very steady. Dips in the graph are the moments you rested or changed fingers.</p>',
 	'extra'          => array(
 		array(
+			'What 100 seconds shows that a minute does not',
+			'<p>Past the one minute mark the curve changes. Many people reach a low point between 60 and 80 seconds and then recover a little once they switch fingers or relax the shoulder, a second wind that a 60 second test never shows. The total is a stamina score more than a speed score: holding 4.5 CPS for the whole run beats sprinting at 7 and fading to 3.</p>
+<p>Look at the hundred bars in groups of ten. If each group is within half a click of the one before, your pacing is close to ideal. If one group is far below the rest, that is where you rested or changed fingers; plan the change for a fixed moment, such as every 25 seconds, so it costs less. The <a href="#leaderboard">leaderboard on this page</a> ranks 100 second runs only.</p>',
+			'second-wind',
+		),
+		array(
 			'Strategy for 100 seconds',
 			'<p>Treat it like a long run, not a sprint. Start at about three quarters of your 5 second speed and keep it there. Alternate the index and middle finger every ten or fifteen seconds to share the load. Keep breathing and keep the shoulder down. People who sprint the first ten seconds usually finish with fewer clicks than people who start slower.</p>
 <p>A 100 second run is also a good stress test for a mouse. Hundreds of presses in a row can expose a switch that starts to double click when warm; if late seconds in the graph are much taller than the rest, run the <a href="/double-click-test/">double click test</a>. To test an auto clicker instead of your hand, use the <a href="/auto-clicker-test/">auto clicker test</a>, which also measures the gap between clicks.</p>',
@@ -53,7 +59,7 @@ return array(
 		array( 'Why is my CPS so much lower than in 5 seconds?', 'Nobody holds sprint speed for 100 seconds. A drop of one to two clicks per second is normal.' ),
 		array( 'Can I rest during the test?', 'Yes, the timer keeps running, so a rest lowers your total. The graph shows where you paused.' ),
 		array( 'Is it safe to click for 100 seconds?', 'Normal clicking is fine for most people. Stop if you feel pain or tingling, and avoid jitter clicking for this length.' ),
-		array( 'Is my best saved?', 'Your best 100 second CPS is stored in this browser only and shared with the main CPS test.' ),
+		array( 'Is my best saved?', 'Your best 100 second CPS is saved in this browser and is the same best as the 100 second option of the main CPS test. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '60-second-click-test', '30-second-click-test', 'cps-test', 'auto-clicker-test', 'double-click-test', 'mouse-tester' ),
 	'updated'        => '2026-10-29',

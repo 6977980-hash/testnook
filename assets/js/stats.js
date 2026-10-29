@@ -5,6 +5,7 @@
  * it ends; the server answers with the percentile, shown under the tool as
  * "Faster than 64% of 18,240 tests this month". Nothing is sent in embed mode,
  * or after the visitor turns sharing off (localStorage 'tn-share-off').
+ * Fires 'tn:begin' and 'tn:result' events on document for leaderboard.js.
  */
 (function () {
 	'use strict';
@@ -57,6 +58,7 @@
 		begin: function (board) {
 			if (!enabled()) { tickets[board] = null; return; }
 			show('');
+			document.dispatchEvent(new CustomEvent('tn:begin', { detail: { board: board } }));
 			tickets[board] = post('start', { board: board }).then(function (j) { return j.ticket; }).catch(function () { return null; });
 		},
 		/** Send the final score. Resolves with the server answer or null when nothing was sent. */
@@ -79,6 +81,11 @@
 				} else {
 					show('Shared anonymously. Site averages appear once enough people have taken this test.', '');
 				}
+				j.board = board;
+				j.value = value;
+				j.extra = extra || 0;
+				// leaderboard.js listens: a result with an id and claim can get a nickname.
+				document.dispatchEvent(new CustomEvent('tn:result', { detail: j }));
 				return j;
 			}).catch(function () { return null; });
 		}

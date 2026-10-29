@@ -326,3 +326,37 @@ body.has-pseudo-fs { overflow: hidden; }
 .embed-list details { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; margin: 0 0 8px; background: var(--surface); }
 .embed-list summary { cursor: pointer; font-weight: 600; }
 .embed-list textarea { width: 100%; margin: 10px 0 8px; min-height: 84px; }
+
+/* ---------- Leaderboards (Phase 13b) ---------- */
+.lb-claim { margin: 12px 0 0; }
+.lb-claim__form { margin-top: 8px; max-width: 420px; }
+.lb-claim__form label { display: block; font-weight: 600; margin-bottom: 4px; }
+.lb-claim__row { display: flex; gap: 8px; }
+.lb-claim__row input { flex: 1; min-width: 0; }
+.lb-claim__hint { font-size: .85rem; color: var(--muted); margin: 6px 0 0; }
+.lb-claim__msg { margin: 8px 0 0; font-weight: 600; color: var(--muted); }
+.lb-claim__msg.is-ok { color: var(--ok); }
+.lb-claim__msg.is-err { color: var(--warn); }
+.lb { margin: 1.6em 0 0; max-width: var(--prose); }
+.lb__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.lb__head h2 { margin: 0; }
+.lb__pick select { min-height: 34px; }
+.lb__intro { margin: .6em 0 0; color: var(--muted); }
+.lb__tabs { display: flex; gap: 6px; margin: 12px 0; }
+.lb__tabs button { min-height: 34px; padding: 6px 12px; font: inherit; font-size: .875rem; font-weight: 600; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; cursor: pointer; }
+.lb__tabs button[aria-selected="true"] { color: #fff; background: var(--brand); border-color: var(--brand); }
+.lb__wrap { overflow-x: auto; }
+.lb__table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.lb__table th, .lb__table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.lb__table th { background: var(--surface-2); font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.lb__rank { width: 2.5em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lb__table tr:nth-child(-n+3) .lb__rank { color: var(--brand); font-weight: 700; }
+.lb__name { font-weight: 600; max-width: 12em; overflow: hidden; text-overflow: ellipsis; }
+.lb__score { font-variant-numeric: tabular-nums; font-weight: 600; }
+.lb__extra, .lb__date { color: var(--muted); }
+.lb__table tr.is-me td { background: var(--brand-soft); }
+.lb.is-loading .lb__table { opacity: .5; }
+.lb__empty { margin: 10px 0 0; color: var(--muted); }
+.lb__foot { font-size: .85rem; color: var(--muted); margin: 10px 0 0; max-width: var(--prose); }
+.static-page .lb { margin-top: 2em; }
+@media (max-width: 520px) { .lb__table th:last-child, .lb__date { display: none; } }

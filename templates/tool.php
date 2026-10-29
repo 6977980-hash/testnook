@@ -37,6 +37,7 @@ get_header();
 				<noscript><p class="notice notice--warn">This tool needs JavaScript. Please enable it in your browser settings.</p></noscript>
 				<?php if ( $def['stats'] ) : ?>
 					<p class="share-line" data-tn-share-line hidden></p>
+					<?php tn_leaderboard_claim( $def ); ?>
 				<?php endif; ?>
 			</section>
 			<?php if ( $def['stats'] ) : ?>
@@ -45,6 +46,8 @@ get_header();
 					<span data-tn-share-off hidden>Score sharing is off for this browser. <button type="button" class="link-btn" data-tn-share-set="on">Turn on</button></span>
 				</p>
 			<?php endif; ?>
+
+			<?php tn_leaderboard_section( $def ); ?>
 
 			<?php tn_ad_slot( 'below-tool' ); ?>
 

@@ -16,6 +16,12 @@ get_header();
 				<p class="updated">Last updated <time datetime="<?php echo esc_attr( $def['updated'] ); ?>"><?php echo esc_html( mysql2date( 'j F Y', $def['updated'] ) ); ?></time></p>
 			<?php endif; ?>
 			<?php tn_html( $def['body'] ); ?>
+			<?php
+			// Pages with live parts (the /leaderboards/ tables) name a theme function to print after the body.
+			if ( ! empty( $def['render'] ) && is_callable( $def['render'] ) ) {
+				call_user_func( $def['render'] );
+			}
+			?>
 		</article>
 	</div>
 </main>

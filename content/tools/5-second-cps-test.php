@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 $tool = require __DIR__ . '/_click-test.php';
 
 return array(
@@ -24,17 +26,15 @@ return array(
 	),
 	'howto_title'    => 'How to take the 5 second CPS test',
 	'results'        => '<p>Your CPS is your total clicks divided by five. Thirty clicks is 6 CPS, which is a good score for normal clicking.</p>
-<div class="table-scroll"><table>
-<thead><tr><th>CPS (5 s)</th><th>Rank</th><th>Typical of</th></tr></thead>
-<tbody>
-<tr><td>Under 4</td><td>Turtle</td><td>Careful single clicking.</td></tr>
-<tr><td>4-6</td><td>Rabbit</td><td>Normal fast clicking with one finger.</td></tr>
-<tr><td>6-8</td><td>Fox</td><td>Practised gamers with a light mouse.</td></tr>
-<tr><td>8-10</td><td>Cheetah</td><td>Jitter clicking or two fingers alternating.</td></tr>
-<tr><td>Over 10</td><td>Lightning</td><td>Butterfly or drag clicking.</td></tr>
-</tbody></table></div>
+' . $bands['cps'] . '
 <p>The graph is the useful part. Five even bars mean you held your pace; a tall first bar that shrinks means you start too hard. Most people lose one or two clicks between the first and the last second.</p>',
 	'extra'          => array(
+		array(
+			'Reading your five bars',
+			'<p>The graph after a 5 second test has one bar per second, and its shape tells you more than the average. Most people produce a high first or second bar and a fifth bar that is half a click to a click lower: that is ordinary fatigue, and it is why your <strong>peak</strong> is usually above your average. A flat row of five bars means you held your speed, and the next gain will come from technique or a lighter switch rather than pacing. A low first bar means a slow start; a single tall bar in the middle with lower bars around it usually means one burst of tension that you could not keep.</p>
+<p>Because five seconds is the length most people quote, the <a href="#leaderboard">5 second leaderboard on this page</a> is the main board, and the site averages for this length fill up first. Your result is compared only with other 5 second runs.</p>',
+			'five-bars',
+		),
 		array(
 			'Why 5 seconds is the standard',
 			'<p>One second is too noisy, because a single click moves the score a whole CPS, and a minute mostly measures stamina. Five seconds is long enough that one lucky click barely matters and short enough that everyone can go flat out. That is why click speed rankings, Minecraft PvP practice and most CPS sites use it, and why a "my CPS" claim without a length usually means five seconds.</p>',
@@ -42,12 +42,12 @@ return array(
 		),
 		array(
 			'How to raise your 5 second score',
-			'<p>Click with the tip of the finger, not the whole finger, and keep the movement small: the button only needs to travel a millimetre or two. Rest the heel of your hand so the arm does not move. Breathe out and stay loose; tension in the shoulder slows the finger. A lighter mouse with a short-travel switch adds one or two CPS on its own. For more, learn <a href="/jitter-click-test/">jitter clicking</a> or tick "Count right clicks too" and alternate both buttons.</p>',
+			'<p>Click with the tip of the finger, not the whole finger, and keep the movement small: the button only needs to travel a millimeter or two. Rest the heel of your hand so the arm does not move. Breathe out and stay loose; tension in the shoulder slows the finger. A lighter mouse with a short-travel switch adds one or two CPS on its own. For more, learn <a href="/jitter-click-test/">jitter clicking</a> or tick "Count right clicks too" and alternate both buttons.</p>',
 			'improve',
 		),
 	),
 	'fixes'          => array(
-		array( 'The timer does not start', 'It starts on your first click inside the box, not on page load. Click the grey area. If nothing happens, check that JavaScript is not blocked by an extension.' ),
+		array( 'The timer does not start', 'It starts on your first click inside the box, not on page load. Click the gray area. If nothing happens, check that JavaScript is not blocked by an extension.' ),
 		array( 'Clicks are missing', 'Clicks outside the box are ignored. If the counter stalls while you click inside it, the switch may be failing; try the <a href="/mouse-tester/">mouse tester</a> or another mouse.' ),
 		array( 'Right click opens a menu', 'The menu is blocked inside the box. Click once in the box first so the page has focus, or untick "Count right clicks too".' ),
 	),
@@ -57,7 +57,7 @@ return array(
 		array( 'How many clicks is 10 CPS in 5 seconds?', 'Fifty clicks. Multiply the CPS by five, or divide your clicks by five to get the CPS.' ),
 		array( 'Is this the same as the main CPS test?', 'It is the same counter fixed at five seconds, and it shares the saved 5 second best with the <a href="/cps-test/">CPS test</a>, where you can also pick other lengths.' ),
 		array( 'Can I take it on a phone?', 'Yes, taps count the same way. Phone scores are usually a little lower, so compare them with other phone scores.' ),
-		array( 'Is my score sent anywhere?', 'No. Your best score is stored in this browser only.' ),
+		array( 'Is my score sent anywhere?', 'Your best score is saved in this browser. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '1-second-cps-test', '10-second-cps-test', 'cps-test', 'jitter-click-test', 'right-click-cps-test', 'spacebar-clicker' ),
 	'updated'        => '2026-10-29',

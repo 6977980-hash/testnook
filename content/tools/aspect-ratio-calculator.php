@@ -74,7 +74,7 @@ return array(
 		array( 'What is the aspect ratio of 1080 x 1350?', '4:5, the portrait size Instagram uses for posts.' ),
 		array( 'Is 1920 x 1080 the same as 16:9?', 'Yes. 1920 x 1080 is a 16:9 size, called Full HD.' ),
 		array( 'What is the formula for the new height?', 'New height = new width x original height / original width. For 16:9 and a width of 1000, that is 1000 x 9 / 16 = 562.5.' ),
-		array( 'Can I use this for print sizes?', 'Yes. Turn off rounding and enter sizes in centimetres or inches instead of pixels; the maths is the same.' ),
+		array( 'Can I use this for print sizes?', 'Yes. Turn off rounding and enter sizes in centimeters or inches instead of pixels; the maths is the same.' ),
 	),
 	'related'        => array( 'screen-ratio', 'ppi-calculator', 'screen-resolution', 'screen-size', 'online-ruler', 'device-info' ),
 	'updated'        => '2026-10-29',

@@ -51,7 +51,7 @@ return array(
 	'howto'          => array(
 		'Close Zoom, Teams, Meet and any other app that might be using the camera, so the browser can open it.',
 		'Press <strong>Start camera and mic</strong> and allow both when the browser asks. If you have more than one camera or microphone, pick the one you will use in Zoom from the menus.',
-		'Look at the preview: you should be centred, at eye level, with light on your face. The lighting check tells you if the picture is too dark or the window is behind you.',
+		'Look at the preview: you should be centered, at eye level, with light on your face. The lighting check tells you if the picture is too dark or the window is behind you.',
 		'Speak normally and watch the microphone bar move. Press <strong>Record 5 s and play back</strong> to hear how you sound.',
 		'Press <strong>Play test sound</strong> and answer whether you heard the chime. When all four checks are green, you are ready to join.',
 	),
@@ -59,7 +59,7 @@ return array(
 	'results'        => '<p>The checklist turns green item by item:</p>
 <ul>
 <li><strong>Camera:</strong> the browser opened the camera and shows a picture. A resolution of 1280 x 720 or more is HD, which is what Zoom sends when HD video is enabled. A frame rate under about 15 fps looks choppy, usually because of low light or a busy computer.</li>
-<li><strong>Lighting:</strong> the brightness of the centre of the picture, where your face usually is. Between about 25% and 85% is fine. A bright background with a dark centre means a window behind you.</li>
+<li><strong>Lighting:</strong> the brightness of the center of the picture, where your face usually is. Between about 25% and 85% is fine. A bright background with a dark center means a window behind you.</li>
 <li><strong>Microphone:</strong> the bar should jump to about half way when you talk at a normal volume. If it hits the end, you are clipping; if it barely moves, raise the input volume or move closer.</li>
 <li><strong>Speakers:</strong> you heard the chime from the device you will use in the meeting.</li>
 </ul>

@@ -56,7 +56,7 @@ return array(
 			'How to type code faster',
 			'<ol>
 <li><strong>Learn touch typing first.</strong> Fingers on the home row, eyes on the screen. A few weeks of 10 to 15 minutes a day on the <a href="/typing-speed-test/">typing speed test</a> gets most people there.</li>
-<li><strong>Practise punctuation and capitals.</strong> The <a href="/typing-test-english/">English typing test</a> uses real sentences with capitals and punctuation, which is closer to code than lists of short words.</li>
+<li><strong>Practice punctuation and capitals.</strong> The <a href="/typing-test-english/">English typing test</a> uses real sentences with capitals and punctuation, which is closer to code than lists of short words.</li>
 <li><strong>Drill the symbol keys.</strong> Type lines of brackets, braces and operators on purpose until you stop looking down. Shift with the opposite hand to the key.</li>
 <li><strong>Use your editor.</strong> Learn the shortcuts for multi-cursor editing, line moves, word jumps and autocomplete. They save more time than any WPM gain.</li>
 <li><strong>Keep accuracy above 97%.</strong> A typo in prose is a typo; in code it is an error to hunt down. Slow down until you rarely press Backspace, then let speed come back.</li>
@@ -67,7 +67,7 @@ return array(
 		array(
 			'Typing tests in developer job interviews',
 			'<p>Some employers ask for a typing test, mostly for support, data or administrative roles, and occasionally for junior developer jobs at large companies. A common minimum is 40 to 50 WPM with 90% or higher accuracy on a one to five minute test. Senior developer roles almost never test typing speed.</p>
-<p>If you have to take one, practise on the same length and type of text. The <a href="/1-minute-typing-test/">1 minute typing test</a> uses real sentences with capitals and punctuation, like most job tests, and the <a href="/5-minute-typing-test/">5 minute test</a> shows whether your speed holds up.</p>',
+<p>If you have to take one, practice on the same length and type of text. The <a href="/1-minute-typing-test/">1 minute typing test</a> uses real sentences with capitals and punctuation, like most job tests, and the <a href="/5-minute-typing-test/">5 minute test</a> shows whether your speed holds up.</p>',
 			'job-tests',
 		),
 	),

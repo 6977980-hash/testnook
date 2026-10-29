@@ -36,7 +36,7 @@ return array(
 	'extra'          => array(
 		array(
 			'DualSense stick drift: what it is and what to do',
-			'<p>Stick drift means a stick reports movement when nobody touches it, so your character walks or the camera turns on its own. On the DualSense it is caused by wear inside the analog stick module: the carbon tracks of its potentiometers wear down and dust gets in, so the resting position no longer reads as the centre. It usually starts small, a reading of 0.06 to 0.15 at rest, and grows over months.</p>
+			'<p>Stick drift means a stick reports movement when nobody touches it, so your character walks or the camera turns on its own. On the DualSense it is caused by wear inside the analog stick module: the carbon tracks of its potentiometers wear down and dust gets in, so the resting position no longer reads as the center. It usually starts small, a reading of 0.06 to 0.15 at rest, and grows over months.</p>
 <p>Before you open the controller, try the easy steps: update the controller in the PS5 settings (Accessories, Controllers, Wireless Controller Device Software), blow compressed air around the base of the stick while rotating it, and reset the controller with a pin in the small hole on the back for five seconds. If drift stays above 0.10, the stick module needs replacing. Sony repairs it under warranty in the first year, and the DualSense Edge has swappable stick modules for exactly this reason.</p>',
 			'drift',
 		),

@@ -36,6 +36,12 @@ return array(
 <p>A consistency score above 85% means you held your pace. A graph that drops in steps every few seconds is the sign of a grip that tightens; loosen it and try again.</p>',
 	'extra'          => array(
 		array(
+			'How the consistency score works',
+			'<p>Fifteen seconds gives fifteen bars, enough for the consistency score to mean something. The score is 100% minus your coefficient of variation: the standard deviation of the clicks in each second divided by your average. A run of 6, 6, 7, 6, 6 ... scores in the high 90s; a run that starts at 9 and ends at 4 drops to around 75% even if the average looks good.</p>
+<p>Use it to compare techniques at the same length. If jitter clicking gives you a higher average but a consistency under 75%, it is not yet a technique you can rely on in a longer fight; normal clicking at a slightly lower average and 90% consistency is the stronger result. Scores here are ranked on their own <a href="#leaderboard">15 second leaderboard</a>, separate from the shorter tests.</p>',
+			'consistency',
+		),
+		array(
 			'What 15 seconds tells you',
 			'<p>At fifteen seconds the test stops being about your fastest finger and starts being about technique. A good normal clicker keeps the same rate from start to finish. A jitter clicker often holds ten seconds and then the vibration breaks up. Use this length to check a technique that feels fast in a <a href="/5-second-cps-test/">5 second test</a> before you rely on it in a game, and step up to the <a href="/30-second-click-test/">30 second click test</a> when the graph stays flat.</p>',
 			'tells',
@@ -52,7 +58,7 @@ return array(
 		array( 'How do I turn my clicks into CPS?', 'Divide by fifteen. The page does it for you and shows the CPS live while you click.' ),
 		array( 'Why do I lose speed in a 15 second test?', 'The small muscles that move the finger tire, and most people tense up when they notice. A relaxed grip loses less.' ),
 		array( 'Can I click with two fingers?', 'Yes. Alternate two fingers on the left button, or tick "Count right clicks too" and alternate both buttons.' ),
-		array( 'Is my best saved?', 'Your best 15 second CPS is stored in this browser only. Nothing is sent to a server.' ),
+		array( 'Is my best saved?', 'Your best 15 second CPS is saved in this browser. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '10-second-cps-test', '30-second-click-test', '5-second-cps-test', 'jitter-click-test', 'cps-test', 'mouse-tester' ),
 	'updated'        => '2026-10-29',

@@ -12,7 +12,7 @@ return array(
 <p>To help us reproduce the issue, please include:</p>
 <ul>
 <li>the page address (URL) of the test,</li>
-<li>your device and operating system, for example "Windows 11 laptop" or "iPhone 15, iOS 19",</li>
+<li>your device and operating system, for example "Windows 11 laptop" or "iPhone 15, iOS 26",</li>
 <li>your browser and its version,</li>
 <li>the hardware you were testing (brand and model), and</li>
 <li>what you expected to happen and what happened instead.</li>

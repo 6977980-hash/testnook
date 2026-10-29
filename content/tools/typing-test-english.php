@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 $tool = require __DIR__ . '/_typing-test.php';
 
 return array(
@@ -24,15 +26,7 @@ return array(
 	),
 	'howto_title'    => 'How to take the English typing test',
 	'results'        => '<p>The test scores net <strong>words per minute</strong> (correct characters divided by 5 and by the minutes), <strong>raw WPM</strong> (all characters typed), <strong>accuracy</strong> and the number of <strong>errors</strong>. Because the sentences include punctuation and capitals, scores run 5-10 WPM below a plain word test; that is the realistic figure for typing emails, essays and documents.</p>
-<div class="table-scroll"><table>
-<thead><tr><th>WPM on sentences</th><th>Level</th><th>Typical requirement</th></tr></thead>
-<tbody>
-<tr><td>Under 30</td><td>Beginner</td><td>-</td></tr>
-<tr><td>30-45</td><td>Average</td><td>General office work often asks for 40.</td></tr>
-<tr><td>45-65</td><td>Good</td><td>Data entry, administration, customer support.</td></tr>
-<tr><td>65-85</td><td>Fast</td><td>Transcription, legal secretarial work.</td></tr>
-<tr><td>Over 85</td><td>Very fast</td><td>Medical transcription, professional typing.</td></tr>
-</tbody></table></div>
+' . $bands['wpm'] . '
 <p>Most job tests set a minimum accuracy, usually 95% or higher, as well as a speed. If your accuracy is below that, the speed figure will not help; slow down until the errors stop, then build speed back up.</p>',
 	'extra'          => array(
 		array(
@@ -58,7 +52,7 @@ return array(
 		array( 'Is this the same as a government or exam typing test?', 'It is the same format: timed English prose, scored as net WPM and accuracy. The minimum speed and accuracy vary by exam, so check the one you are preparing for.' ),
 		array( 'Why is my score lower than on a words-only test?', 'Shift, punctuation and reading real text slow everyone down by 5-10 WPM. Compare sentence scores with sentence scores.' ),
 		array( 'Can I take the test in Urdu or Hindi?', 'Not yet. Only English passages are available at the moment; other languages are planned.' ),
-		array( 'Is my result saved?', 'Your best score for each length is stored in this browser only, when accuracy is at least 90%. Nothing is uploaded.' ),
+		array( 'Is my result saved?', 'Your best score for each length is saved in this browser when accuracy is 90% or better. Your keystrokes stay in this browser; only your final WPM and accuracy are shared anonymously for the site averages, unless you turn sharing off under the tool. A result needs at least 85% accuracy to count in the site averages and the leaderboard.' ),
 	),
 	'related'        => array( '1-minute-typing-test', '5-minute-typing-test', 'typing-speed-test', 'wpm-test', 'keyboard-tester', 'spacebar-clicker' ),
 	'updated'        => '2026-10-29',

@@ -43,7 +43,7 @@ return array(
 		'Turn the phone sideways and compare <strong>Sensor says</strong> with <strong>Screen is</strong> to see whether an auto-rotate problem is the sensor or a setting.',
 	),
 	'howto_title'    => 'How to test your phone\'s accelerometer',
-	'results'        => '<p>An accelerometer measures acceleration in metres per second squared (m/s&sup2;) along three axes. Even lying still it feels gravity, so a phone flat on a table should read about <strong>X 0, Y 0, Z 9.81</strong>, which is 1 g in total.</p>
+	'results'        => '<p>An accelerometer measures acceleration in meters per second squared (m/s&sup2;) along three axes. Even lying still it feels gravity, so a phone flat on a table should read about <strong>X 0, Y 0, Z 9.81</strong>, which is 1 g in total.</p>
 <ul>
 <li><strong>Gravity check within 0.35 of 9.81:</strong> accurate. Phone sensors are often a few percent off, and up to 0.7 is still normal.</li>
 <li><strong>X or Y above 0.5 while flat:</strong> the surface is not level, or the sensor has an offset. A level table and a second run tell the two apart.</li>
@@ -67,8 +67,8 @@ return array(
 	),
 	'fixes'          => array(
 		array( 'No data on the phone', 'In Chrome on Android, tap the lock icon by the address, open Permissions and allow Motion sensors. On iPhone, close Safari fully and reopen the page so the Allow prompt appears again. Battery saver modes on some Android phones also pause sensors in the browser.' ),
-		array( 'Auto-rotate does not work but the sensor does', 'If "Sensor says" changes when you turn the phone, the accelerometer is fine. Turn on Auto-rotate (Android quick settings) or turn off Portrait Orientation Lock (iPhone Control Centre). Some apps and home screens never rotate.' ),
-		array( 'The values are frozen or jump wildly', 'Restart the phone. If the gravity check still fails flat on a table, try the sensor test menu: Samsung phones open it by dialling *#0*# and tapping Sensor. A sensor that fails there too needs a repair.' ),
+		array( 'Auto-rotate does not work but the sensor does', 'If "Sensor says" changes when you turn the phone, the accelerometer is fine. Turn on Auto-rotate (Android quick settings) or turn off Portrait Orientation Lock (iPhone Control Center). Some apps and home screens never rotate.' ),
+		array( 'The values are frozen or jump wildly', 'Restart the phone. If the gravity check still fails flat on a table, try the sensor test menu: Samsung phones open it by dialing *#0*# and tapping Sensor. A sensor that fails there too needs a repair.' ),
 		array( 'Steps or shake gestures are not counted', 'Check the app has the physical activity permission (Android) or Motion & Fitness access (iPhone Settings > Privacy & Security). If the shake counter here works, the sensor is fine.' ),
 	),
 	'faq'            => array(

@@ -43,7 +43,7 @@ return array(
 			'Ayumu, the chimp behind the test',
 			'<p>In 2007, researchers at Kyoto University\'s Primate Research Institute published a study with young chimpanzees, including one called Ayumu. The chimps saw the numbers 1 to 9 scattered on a touch screen. After touching the first, the rest were covered by white squares, and the chimp had to touch them in order.</p>
 <p>The surprise was the speed. In one version the numbers were shown for only about 0.2 seconds before being covered. Ayumu kept a high accuracy at that speed, while university students tested on the same task did much worse. The result made headlines as "chimps beat humans at memory".</p>
-<p>Later work showed the picture is more balanced. People who practise the task for a long time get far closer to Ayumu\'s level, and the chimps had trained on it for years. The test online is also easier than the original: you can look at the numbers for as long as you like, so it measures how many positions you can hold, not how much you can take in at a glance.</p>',
+<p>Later work showed the picture is more balanced. People who practice the task for a long time get far closer to Ayumu\'s level, and the chimps had trained on it for years. The test online is also easier than the original: you can look at the numbers for as long as you like, so it measures how many positions you can hold, not how much you can take in at a glance.</p>',
 			'ayumu',
 		),
 		array(
@@ -51,10 +51,10 @@ return array(
 			'<ol>
 <li><strong>Remember the path, not the numbers.</strong> Before clicking 1, trace a line through the squares from 1 to the last number with your eyes, and rehearse the shape of that line.</li>
 <li><strong>Chunk.</strong> Group the squares into sets of three or four that form a simple shape: a triangle, an L, a diagonal. Remembering four shapes is easier than twelve points.</li>
-<li><strong>Say it to yourself.</strong> Above about 10 numbers, naming the positions ("top left, centre, bottom right") brings in verbal memory as a second store.</li>
+<li><strong>Say it to yourself.</strong> Above about 10 numbers, naming the positions ("top left, center, bottom right") brings in verbal memory as a second store.</li>
 <li><strong>Take your time before the first click.</strong> The numbers stay until you click 1. Use that time to rehearse the path two or three times.</li>
 <li><strong>Look ahead.</strong> While clicking one square, move your eyes to the next, so you never stop and lose your place.</li>
-<li><strong>Practise little and often.</strong> Five games a day for a week builds the method faster than an hour once.</li>
+<li><strong>Practice little and often.</strong> Five games a day for a week builds the method faster than an hour once.</li>
 </ol>',
 			'improve',
 		),

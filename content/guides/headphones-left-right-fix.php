@@ -20,7 +20,7 @@ return array(
 	'sections'    => array(
 		array(
 			'Step 1: test each side',
-			'<p>Put the headphones on the right way round (look for the small L and R marks) and open the <a href="/headphone-test/">headphone test</a>. Play the left, right and centre sounds.</p>
+			'<p>Put the headphones on the right way round (look for the small L and R marks) and open the <a href="/headphone-test/">headphone test</a>. Play the left, right and center sounds.</p>
 <div class="table-scroll"><table>
 <thead><tr><th>What you hear</th><th>Likely cause</th></tr></thead>
 <tbody>
@@ -28,7 +28,7 @@ return array(
 <tr><td>Both sounds in both ears equally</td><td>Mono audio is on, or a mono adapter or headset port</td></tr>
 <tr><td>One side silent for every sound</td><td>Balance setting, a bad plug contact, a broken wire or a dead driver</td></tr>
 <tr><td>One side much quieter</td><td>Balance setting, earwax on the mesh, or a damaged driver</td></tr>
-<tr><td>Centre sounds thin or hollow, voices quiet</td><td>One driver wired backwards (out of phase)</td></tr>
+<tr><td>Center sounds thin or hollow, voices quiet</td><td>One driver wired backwards (out of phase)</td></tr>
 </tbody></table></div>
 <p>The <a href="/stereo-test/">stereo test</a> adds a pan sweep and a phase check, and the <a href="/mono-test/">mono test</a> tells you in seconds whether your device is sending stereo at all.</p>',
 			'test-each-side',
@@ -40,7 +40,7 @@ return array(
 <li><strong>iPhone:</strong> Settings > Accessibility > Audio & Visual. Turn Mono Audio off and set the Balance slider to the middle.</li>
 <li><strong>Android:</strong> Settings > Accessibility > Audio (or Hearing enhancements). Check Mono audio and the left/right balance slider.</li>
 <li><strong>Windows:</strong> Settings > System > Sound > your output device > Properties. Check that the left and right levels match, and that Mono audio is off under Settings > Accessibility > Audio.</li>
-<li><strong>Mac:</strong> System Settings > Sound > Output, select the headphones and centre the Balance slider. Mono is under Accessibility > Audio.</li>
+<li><strong>Mac:</strong> System Settings > Sound > Output, select the headphones and center the Balance slider. Mono is under Accessibility > Audio.</li>
 </ul>
 <p>Also check the app you are using. Some music players, games and video calls have their own balance or "spatial audio" options, and some headsets have a mic monitoring or sidetone setting that can make one side seem louder.</p>',
 			'settings',
@@ -72,7 +72,7 @@ return array(
 			'When it is a hardware fault',
 			'<p>If one side stays silent or distorted on two different devices, after the settings check, cleaning and a reset, the driver or the wiring inside the headphones has failed. Signs of a dead driver: a rattle or buzz at bass, no sound at all at any volume, or crackle that does not change when you move the cable.</p>
 <p>Check the warranty first; one-sided failure is a common claim and many makers replace a single earbud. Repairing a driver in a sealed earbud is rarely practical. In over-ear headphones with a removable cable, a new cable fixes most one-sided faults.</p>
-<p>Out-of-phase sound (thin centre, voices that seem to come from inside your head or nowhere) after a home repair means one driver is wired with plus and minus reversed. Swap the two wires on that driver.</p>',
+<p>Out-of-phase sound (thin center, voices that seem to come from inside your head or nowhere) after a home repair means one driver is wired with plus and minus reversed. Swap the two wires on that driver.</p>',
 			'hardware',
 		),
 	),

@@ -56,7 +56,7 @@ return array(
 		array(
 			'Step 4: operating system and browser permissions',
 			'<h3>Windows 10 and 11</h3>
-<p>Settings &gt; Privacy &amp; security &gt; Camera. "Camera access" must be on, "Let apps access your camera" must be on, and the switch next to the app you are using must be on. Desktop apps (Zoom, Chrome, OBS) are grouped under "Let desktop apps access your camera" at the bottom; that switch must be on too. On a work laptop, a greyed-out setting means a policy set by your IT team.</p>
+<p>Settings &gt; Privacy &amp; security &gt; Camera. "Camera access" must be on, "Let apps access your camera" must be on, and the switch next to the app you are using must be on. Desktop apps (Zoom, Chrome, OBS) are grouped under "Let desktop apps access your camera" at the bottom; that switch must be on too. On a work laptop, a grayed-out setting means a policy set by your IT team.</p>
 <h3>macOS</h3>
 <p>System Settings &gt; Privacy &amp; Security &gt; Camera. Turn on the app. If the app is not in the list it has never asked; quit it fully and open it again. Screen recording and meeting apps may also need Microphone and Screen Recording permission here.</p>
 <h3>Browsers</h3>

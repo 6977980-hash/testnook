@@ -51,15 +51,15 @@ return array(
 	'extra'          => array(
 		array(
 			'What the spacebar counter is good for',
-			'<p>The spacebar is the most pressed key on any keyboard, so it is the first to fail. Stabilisers rattle, the switch wears, crumbs collect underneath, and on laptops the membrane loses its click. A spacebar counter shows three faults quickly: presses that do not register, one press that counts as two (chatter), and a bar that only works when pressed in the middle.</p>
-<p>Gamers use the spacebar speed test for bunny hopping, rhythm games and Minecraft, where fast and reliable jumps matter. Typists use it to check that the key keeps up with their pace. Try pressing at the left edge, the centre and the right edge: a bar with worn stabilisers counts the centre but misses the edges.</p>',
+			'<p>The spacebar is the most pressed key on any keyboard, so it is the first to fail. Stabilizers rattle, the switch wears, crumbs collect underneath, and on laptops the membrane loses its click. A spacebar counter shows three faults quickly: presses that do not register, one press that counts as two (chatter), and a bar that only works when pressed in the middle.</p>
+<p>Gamers use the spacebar speed test for bunny hopping, rhythm games and Minecraft, where fast and reliable jumps matter. Typists use it to check that the key keeps up with their pace. Try pressing at the left edge, the center and the right edge: a bar with worn stabilizers counts the center but misses the edges.</p>',
 			'what-it-checks',
 		),
 	),
 	'fixes'          => array(
 		array( 'Presses are not counted', 'Click inside the test box first so it has keyboard focus. If presses still vanish, the key is missing. Pull the keycap on a mechanical keyboard and clean under it, or test with another keyboard to rule out the key.' ),
 		array( 'One press counts as two', 'That is switch chatter. Blow compressed air into the switch, or on a hot-swap keyboard replace the spacebar switch. Some keyboard software has a debounce setting that hides light chatter.' ),
-		array( 'The spacebar only works in the middle', 'The stabiliser wires are bent or unclipped. Remove the keycap, re-seat the stabiliser and add a little grease. On laptops, a bent keycap clip has the same effect and needs the cap replaced.' ),
+		array( 'The spacebar only works in the middle', 'The stabilizer wires are bent or unclipped. Remove the keycap, re-seat the stabilizer and add a little grease. On laptops, a bent keycap clip has the same effect and needs the cap replaced.' ),
 		array( 'The page scrolls when I press Space', 'Space is captured inside the test box. Click the box first; if the page still scrolls, a browser extension may be intercepting keys.' ),
 	),
 	'faq'            => array(

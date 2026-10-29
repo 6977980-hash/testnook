@@ -15,7 +15,7 @@ return array(
 		'Battery health (or <strong>maximum capacity</strong>) is today\'s full charge as a share of the original. 85% means a full charge holds 85% of what it did when new.',
 		'Lithium-ion batteries wear with <strong>charge cycles</strong>, heat and time. Most phones are designed to keep about <strong>80% after 500 to 1000 full cycles</strong>.',
 		'Below <strong>80%</strong>, runtime gets noticeably shorter and some phones slow down or shut off at low charge. That is the usual point to replace the battery.',
-		'Heat is the biggest enemy. Avoid charging in a hot car or under a pillow, and use the phone\'s <strong>optimised or limited charging</strong> option if you keep it plugged in for long.',
+		'Heat is the biggest enemy. Avoid charging in a hot car or under a pillow, and use the phone\'s <strong>optimized or limited charging</strong> option if you keep it plugged in for long.',
 	),
 	'sections'    => array(
 		array(
@@ -59,14 +59,14 @@ return array(
 <li>The phone slows down under load. Some phones limit performance on a worn battery to avoid shutdowns.</li>
 <li>The battery is swollen: a lifting screen, a bulging back or a trackpad that no longer clicks. <strong>Stop using and charging it</strong> and get it replaced, because swollen lithium-ion cells can catch fire.</li>
 </ul>
-<p>A battery swap at an authorised repair shop costs much less than a new phone and usually brings runtime back to new. Cheap unbranded batteries are often lower capacity than claimed; use a reputable shop.</p>',
+<p>A battery swap at an authorized repair shop costs much less than a new phone and usually brings runtime back to new. Cheap unbranded batteries are often lower capacity than claimed; use a reputable shop.</p>',
 			'replace',
 		),
 		array(
 			'How to make a battery last longer',
 			'<ol>
 <li><strong>Keep it cool.</strong> Heat speeds up wear more than anything else. Do not leave a phone in a hot car or sun, and take it out of a thick case if it gets hot while charging or gaming.</li>
-<li><strong>Use optimised or limited charging.</strong> iPhones have Optimized Charging and an 80% limit option on newer models; many Android phones have "protect battery" or adaptive charging; many laptops can stop at 80% when plugged in all day.</li>
+<li><strong>Use optimized or limited charging.</strong> iPhones have Optimized Charging and an 80% limit option on newer models; many Android phones have "protect battery" or adaptive charging; many laptops can stop at 80% when plugged in all day.</li>
 <li><strong>Avoid sitting at 0% or 100% for long.</strong> Short top-ups between about 20% and 80% are gentler than full cycles, but there is no need to obsess: modern phones manage this well.</li>
 <li><strong>Use a decent charger.</strong> Fast charging is safe on phones designed for it, but cheap uncertified chargers can overheat.</li>
 <li><strong>Store at about half charge</strong> if you put a device away for weeks, and charge it every few months.</li>
@@ -78,7 +78,7 @@ return array(
 	'faq'         => array(
 		array( 'What is a good battery health percentage?', 'Above 80% is good for a phone or laptop in daily use. 90% or more is typical for the first year; below 80% is the usual point to think about a replacement.' ),
 		array( 'How fast does battery health drop?', 'Typically a few percent in the first months and then about 1 percent a month with daily charging, so most phones are in the 80s after two years. Heat speeds it up.' ),
-		array( 'Is it bad to charge my phone overnight?', 'Not much on modern phones. They stop charging at 100%, and optimised charging holds the battery at about 80% until shortly before you wake up. Avoid doing it under a pillow where it gets hot.' ),
+		array( 'Is it bad to charge my phone overnight?', 'Not much on modern phones. They stop charging at 100%, and optimized charging holds the battery at about 80% until shortly before you wake up. Avoid doing it under a pillow where it gets hot.' ),
 		array( 'Does fast charging damage the battery?', 'Not noticeably on phones designed for it. The heat it makes is what matters, so avoid fast charging in a hot place or while gaming.' ),
 		array( 'Can battery health go back up?', 'Not really. The number can rise a point or two after recalibration, but lost capacity does not come back. Only a new battery restores it.' ),
 		array( 'Why does my phone die at 20%?', 'A worn battery cannot deliver enough power under load when its charge is low, so the phone shuts down early. It is a common sign that the battery needs replacing.' ),

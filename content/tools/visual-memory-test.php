@@ -48,12 +48,12 @@ return array(
 		),
 		array(
 			'Tips for a higher score',
-			'<p>Fix your eyes on the centre of the grid and take in the whole pattern at once; scanning tile by tile loses the edges. Describe the pattern to yourself in shapes ("a diagonal from the top left, and a pair in the bottom right"). Click the tiles you are sure of first; the ones you are unsure of often come back once the shape is partly rebuilt on screen. Avoid guessing when you are down to one or two uncertain tiles, since three misses cost a life; a slower careful click is cheaper than a quick wrong one. For a version that tests order as well as position, try the <a href="/sequence-memory-test/">sequence memory test</a>, and for numbers on a grid the <a href="/chimp-test/">chimp test</a>.</p>',
+			'<p>Fix your eyes on the center of the grid and take in the whole pattern at once; scanning tile by tile loses the edges. Describe the pattern to yourself in shapes ("a diagonal from the top left, and a pair in the bottom right"). Click the tiles you are sure of first; the ones you are unsure of often come back once the shape is partly rebuilt on screen. Avoid guessing when you are down to one or two uncertain tiles, since three misses cost a life; a slower careful click is cheaper than a quick wrong one. For a version that tests order as well as position, try the <a href="/sequence-memory-test/">sequence memory test</a>, and for numbers on a grid the <a href="/chimp-test/">chimp test</a>.</p>',
 			'tips',
 		),
 	),
 	'fixes'          => array(
-		array( 'The tiles light up too briefly', 'The display lasts one second plus 0.12 seconds per tile, which is the same for everyone. Focus on the centre of the grid before the pattern appears so you see all of it.' ),
+		array( 'The tiles light up too briefly', 'The display lasts one second plus 0.12 seconds per tile, which is the same for everyone. Focus on the center of the grid before the pattern appears so you see all of it.' ),
 		array( 'Nothing happens when I click', 'Clicks are ignored while the pattern is shown and during the short pause between levels. Wait until the tiles go dark.' ),
 		array( 'I clicked a correct tile and it turned red', 'Each tile only counts once. If a tile is already green and you click it again, nothing happens; red always means the tile was not part of the pattern.' ),
 		array( 'The grid is cramped on a phone', 'Later levels use up to a 10x10 grid. Landscape orientation keeps the tiles large enough to tap accurately.' ),
@@ -61,7 +61,7 @@ return array(
 	'faq'            => array(
 		array( 'What is the visual memory test?', 'A test of visuospatial short-term memory. A pattern of tiles is shown briefly and you reproduce it by clicking the tiles that were lit. Each level adds a tile; three misses in a level cost one of three lives.' ),
 		array( 'What is a good visual memory score?', 'Most people reach level 6 to 9. Level 10 and above is above average; 14 and above is excellent.' ),
-		array( 'How can I improve my visual memory?', 'See the pattern as shapes rather than single tiles, look at the centre of the grid, and click the certain tiles first. Scores improve quickly over a few sessions as you learn to chunk.' ),
+		array( 'How can I improve my visual memory?', 'See the pattern as shapes rather than single tiles, look at the center of the grid, and click the certain tiles first. Scores improve quickly over a few sessions as you learn to chunk.' ),
 		array( 'Is the visual memory test the same as the Corsi block test?', 'Similar idea, different format. Corsi shows blocks tapped in sequence and you repeat the order. This test shows a static pattern and ignores order. The sequence memory test on this site is closer to Corsi.' ),
 		array( 'Does the test work on a phone?', 'Yes. Tap the tiles. Use landscape for the larger grids on later levels.' ),
 		array( 'Is my result saved?', 'Your best level is stored in this browser only. Nothing is sent to a server.' ),

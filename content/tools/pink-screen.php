@@ -37,7 +37,7 @@ return array(
 <ul>
 <li><strong>A green or white dot on magenta</strong>: the green subpixel there is stuck on. Try the <a href="/stuck-pixel-fixer/">stuck pixel fixer</a>.</li>
 <li><strong>A red or blue dot on magenta</strong>: the other channel is dead at that spot. <strong>A black dot</strong> is a fully dead pixel.</li>
-<li><strong>Uneven pink</strong>, with some areas warmer or more purple: colour shift across the panel, or a tinted viewing angle.</li>
+<li><strong>Uneven pink</strong>, with some areas warmer or more purple: color shift across the panel, or a tinted viewing angle.</li>
 </ul>
 <p>For a full single-colour sweep, use the <a href="/dead-pixel-test/">dead pixel test</a>.</p>',
 	'extra'        => array(
@@ -55,12 +55,10 @@ return array(
 		array( 'Full screen does not work on my iPhone', 'iPhone Safari does not allow websites to go fully full screen, so the pink fills the browser window instead. Rotate to landscape or add the page to your home screen.' ),
 	),
 	'faq'          => array(
-		array( 'How do I make my screen pink?', 'Open this page and press "Open full pink screen". The browser fills your entire screen with pink (#FFC0CB). Press Esc or tap to exit.' ),
 		array( 'Why is pink light flattering?', 'Pink light adds warmth to skin and softens shadows and blemishes, so faces look healthier and smoother than under cold white light.' ),
-		array( 'What is the difference between pink and magenta?', 'Pink is a light red that uses all three subpixels. Magenta (#FF00FF) is full red plus full blue with no green, a much stronger colour.' ),
+		array( 'What is the difference between pink and magenta?', 'Pink is a light red that uses all three subpixels. Magenta (#FF00FF) is full red plus full blue with no green, a much stronger color.' ),
 		array( 'Can I use a pink screen as a ring light?', 'Yes, in a small way. A screen at full brightness is a soft, wide light that works well at close range for selfies and calls, though a real ring light is much brighter.' ),
 		array( 'Can a pink screen find stuck pixels?', 'The magenta shade can: a stuck green subpixel shows as a green or white dot because green should be fully off.' ),
-		array( 'Is this pink screen free?', 'Yes. It runs in your browser, has no ads inside the full screen and nothing is downloaded or uploaded.' ),
 	),
 	'related'      => array( 'purple-screen', 'red-screen', 'orange-screen', 'white-screen', 'online-mirror', 'stuck-pixel-fixer' ),
 	'updated'      => '2026-10-28',

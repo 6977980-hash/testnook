@@ -48,7 +48,7 @@ return array(
 		),
 		array(
 			'How to score higher',
-			'<p>Give each new word a quick <strong>image</strong>: a lantern, a falcon, a copper kettle. Images are recognised more reliably than letter strings, and the half-second it takes is paid back many times over. Link the current word to the previous one in a small scene so the words form a chain. Answer at a steady pace rather than racing, because false alarms come from reacting to familiarity before checking it. And trust your first instinct on genuinely old words: a word you saw thirty words ago usually does produce a small flash of recognition. For recall rather than recognition, try the <a href="/number-memory-test/">number memory test</a>; for positions, the <a href="/visual-memory-test/">visual memory test</a>.</p>',
+			'<p>Give each new word a quick <strong>image</strong>: a lantern, a falcon, a copper kettle. Images are recognized more reliably than letter strings, and the half-second it takes is paid back many times over. Link the current word to the previous one in a small scene so the words form a chain. Answer at a steady pace rather than racing, because false alarms come from reacting to familiarity before checking it. And trust your first instinct on genuinely old words: a word you saw thirty words ago usually does produce a small flash of recognition. For recall rather than recognition, try the <a href="/number-memory-test/">number memory test</a>; for positions, the <a href="/visual-memory-test/">visual memory test</a>.</p>',
 			'tips',
 		),
 	),

@@ -19,7 +19,7 @@ return array(
 	'title'          => 'Joy-Con Drift Test',
 	'seo_title'      => 'Joy-Con Drift Test: Check Switch Joy-Con Stick Drift Online',
 	'description'    => 'Free Joy-Con drift test. Pair a Nintendo Switch Joy-Con with your PC or phone by Bluetooth, see the stick live and measure drift at rest with a dead zone tip.',
-	'intro'          => 'Find out if your Nintendo Switch Joy-Con has stick drift. Pair the Joy-Con with your computer or phone by Bluetooth, open this page in Chrome or Edge and press a button: the stick appears live, and a 3-second check measures how far it sits off centre when nobody touches it.',
+	'intro'          => 'Find out if your Nintendo Switch Joy-Con has stick drift. Pair the Joy-Con with your computer or phone by Bluetooth, open this page in Chrome or Edge and press a button: the stick appears live, and a 3-second check measures how far it sits off center when nobody touches it.',
 	'device'         => 'gamepad',
 	'device_message' => 'This browser cannot read game controllers. Use an up-to-date Chrome or Edge on a computer or Android phone.',
 	'ads'            => 'standard',
@@ -43,12 +43,12 @@ return array(
 	'howto'          => array(
 		'Pair the Joy-Con with your computer or Android phone: hold the small round sync button on the rail of the Joy-Con until the lights run, then choose "Joy-Con (L)" or "Joy-Con (R)" in the Bluetooth settings.',
 		'Open this page in Chrome or Edge and press any button on the Joy-Con. If both Joy-Cons are connected, pick one in the menu that appears.',
-		'Move the stick around. A single Joy-Con shows in the first circle, turned sideways as if you held it horizontally. Let go and watch whether the dot returns to the centre.',
+		'Move the stick around. A single Joy-Con shows in the first circle, turned sideways as if you held it horizontally. Let go and watch whether the dot returns to the center.',
 		'Put the Joy-Con down on a table and press <strong>Check drift</strong>. Do not touch it during the 3-second countdown and the 3-second measurement.',
 		'Rotate the stick slowly around its edge a few times to draw the outer range, then repeat the test for the other Joy-Con.',
 	),
 	'howto_title'    => 'How to test a Joy-Con for drift',
-	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the centre when untouched, as a percentage of full tilt:</p>
+	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the center when untouched, as a percentage of full tilt:</p>
 <ul>
 <li><strong>Under 5%:</strong> no drift. The Switch\'s own dead zone hides this.</li>
 <li><strong>5-12%:</strong> early drift. You may see slow movement in menus or the camera creeping in some games.</li>
@@ -58,12 +58,12 @@ return array(
 	'extra'          => array(
 		array(
 			'Why Joy-Cons drift',
-			'<p>The original Joy-Con sticks use a small potentiometer: a contact slides over a carbon track to read the stick position. Over time the track wears and dust gets in, so the reading at rest moves away from the centre. That is why drift appears after months of use and why cleaning sometimes helps for a while. Nintendo offers free Joy-Con drift repairs in many regions, including the US, the UK and the EU, regardless of warranty; check Nintendo Support for your country. The Switch 2 Joy-Con use new sticks, and many third-party replacement sticks now use Hall effect sensors, which do not wear in the same way.</p>',
+			'<p>The original Joy-Con sticks use a small potentiometer: a contact slides over a carbon track to read the stick position. Over time the track wears and dust gets in, so the reading at rest moves away from the center. That is why drift appears after months of use and why cleaning sometimes helps for a while. Nintendo offers free Joy-Con drift repairs in many regions, including the US, the UK and the EU, regardless of warranty; check Nintendo Support for your country. The Switch 2 Joy-Con use new sticks, and many third-party replacement sticks now use Hall effect sensors, which do not wear in the same way.</p>',
 			'why-drift',
 		),
 		array(
 			'Testing on the Switch itself',
-			'<p>On the console, open System Settings > Controllers and Sensors > Calibrate Control Sticks, press the stick you want to test and watch the cross: if it moves away from the centre without you touching it, the stick drifts, and you can recalibrate it there. This page gives you a number to compare and works when the Switch is not to hand. For Pro Controllers and other gamepads, use the <a href="/stick-drift-test/">stick drift test</a> and the <a href="/gamepad-tester/">gamepad tester</a>; to check rumble, try the <a href="/controller-vibration-test/">controller vibration test</a>.</p>',
+			'<p>On the console, open System Settings > Controllers and Sensors > Calibrate Control Sticks, press the stick you want to test and watch the cross: if it moves away from the center without you touching it, the stick drifts, and you can recalibrate it there. This page gives you a number to compare and works when the Switch is not to hand. For Pro Controllers and other gamepads, use the <a href="/stick-drift-test/">stick drift test</a> and the <a href="/gamepad-tester/">gamepad tester</a>; to check rumble, try the <a href="/controller-vibration-test/">controller vibration test</a>.</p>',
 			'on-switch',
 		),
 	),
@@ -75,7 +75,7 @@ return array(
 	),
 	'faq'            => array(
 		array( 'How do I test my Joy-Con for drift online?', 'Pair the Joy-Con with your PC or Android phone by Bluetooth, open this page in Chrome or Edge, press a button, then press Check drift with the stick untouched. Over 12% at rest means clear drift.' ),
-		array( 'Can I test Joy-Cons on a PC?', 'Yes. Windows, macOS and Linux can pair Joy-Cons by Bluetooth. Chrome and Edge read their sticks as analogue controllers, which this test needs.' ),
+		array( 'Can I test Joy-Cons on a PC?', 'Yes. Windows, macOS and Linux can pair Joy-Cons by Bluetooth. Chrome and Edge read their sticks as analog controllers, which this test needs.' ),
 		array( 'Why does my Joy-Con show in the left circle?', 'A single Joy-Con counts as a small sideways controller, so its one stick is reported as the left stick. Both circles are used when the browser combines a pair into one controller.' ),
 		array( 'Does Nintendo fix Joy-Con drift for free?', 'In many regions, yes, including the US, UK and EU, even out of warranty. Check the Nintendo Support site for your country.' ),
 		array( 'Can Joy-Con drift fix itself?', 'Sometimes it fades for a while after cleaning or as dust moves, but worn sticks usually get worse. Recalibrating hides mild drift.' ),

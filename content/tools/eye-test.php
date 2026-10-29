@@ -84,7 +84,7 @@ return array(
 	),
 	'fixes'          => array(
 		array( 'The letters look too big or too small', 'Calibrate with a bank card and keep browser zoom at 100% (Ctrl+0 or Cmd+0). Measure the distance from your eyes to the screen with a tape, not by guessing.' ),
-		array( 'I cannot reach the keyboard from 3 metres', 'Ask a helper to press the arrows while you call out the direction, use a wireless keyboard, or use the phone setting at 40 cm.' ),
+		array( 'I cannot reach the keyboard from 3 meters', 'Ask a helper to press the arrows while you call out the direction, use a wireless keyboard, or use the phone setting at 40 cm.' ),
 		array( 'The smallest lines are skipped', 'Your screen does not have enough pixels for them at this distance. Move further away and choose the longer distance, or use a screen with a higher resolution.' ),
 		array( 'My result is worse than at the optician', 'Screen glare, low brightness, a dirty screen, tired eyes or the wrong distance all lower the score. Test in a well lit room with the screen at full brightness.' ),
 	),

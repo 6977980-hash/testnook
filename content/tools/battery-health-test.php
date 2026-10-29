@@ -71,7 +71,7 @@ return array(
 		),
 		array(
 			'Make your battery last longer',
-			'<p>Lithium-ion batteries wear fastest when they are hot, kept at 100% for long periods or run down to 0%. Turn on the optimised or limited charging option your device offers (Optimised Battery Charging on Apple, Adaptive Charging on Pixel, Protect Battery on Samsung, or an 80% charge limit in many laptop apps), keep the device out of the sun and off soft surfaces while it works hard, and avoid gaming while fast charging. A few full cycles are fine; there is no need to "calibrate" a modern battery often. For other phone checks, see the <a href="/device-info/">device info</a> page and the <a href="/phone/">phone tests</a>.</p>',
+			'<p>Lithium-ion batteries wear fastest when they are hot, kept at 100% for long periods or run down to 0%. Turn on the optimized or limited charging option your device offers (Optimized Battery Charging on Apple, Adaptive Charging on Pixel, Protect Battery on Samsung, or an 80% charge limit in many laptop apps), keep the device out of the sun and off soft surfaces while it works hard, and avoid gaming while fast charging. A few full cycles are fine; there is no need to "calibrate" a modern battery often. For other phone checks, see the <a href="/device-info/">device info</a> page and the <a href="/phone/">phone tests</a>.</p>',
 			'battery-tips',
 		),
 	),

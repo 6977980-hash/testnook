@@ -21,7 +21,7 @@ return array(
 		array(
 			'What ping actually measures',
 			'<p>Ping is the <strong>round-trip time</strong>: how long a small message takes to travel from your device to a server and back, in milliseconds (ms). The name comes from the command-line tool that sends these test messages, which was named after the sound of sonar. "Latency" means the same delay; "lag" is what you feel when it is high or uneven.</p>
-<p>Ping has almost nothing to do with download speed. Speed is how much data fits through the pipe each second; ping is how long each piece takes to get through. A 1,000 Mbps fibre line can have 5 ms ping and a 1,000 Mbps satellite line can have 600 ms. That is why games, which send small updates many times a second, care about ping and hardly about Mbps.</p>',
+<p>Ping has almost nothing to do with download speed. Speed is how much data fits through the pipe each second; ping is how long each piece takes to get through. A 1,000 Mbps fiber line can have 5 ms ping and a 1,000 Mbps satellite line can have 600 ms. That is why games, which send small updates many times a second, care about ping and hardly about Mbps.</p>',
 			'what',
 		),
 		array(
@@ -46,7 +46,7 @@ return array(
 		),
 		array(
 			'Why your ping in a game is higher than on a test',
-			'<p>A browser ping test talks to the nearest data centre, often in your own city. A game server may be in another country. Light in fibre covers about 200 km per millisecond, so every 1,000 km of cable adds roughly 10 ms of round trip, and real routes are rarely straight. As a rough guide from Western Europe, a server in the same country gives 10 to 30 ms, one on the US East Coast 80 to 100 ms, and one in Asia 200 ms or more.</p>
+			'<p>A browser ping test talks to the nearest data center, often in your own city. A game server may be in another country. Light in fiber covers about 200 km per millisecond, so every 1,000 km of cable adds roughly 10 ms of round trip, and real routes are rarely straight. As a rough guide from Western Europe, a server in the same country gives 10 to 30 ms, one on the US East Coast 80 to 100 ms, and one in Asia 200 ms or more.</p>
 <p>So if the ping test shows 15 ms and the game shows 90 ms, your connection is fine and the server is far away: pick a closer region in the game settings. If both show high ping, or the test shows big spikes, the problem is on your side: Wi-Fi, a busy line or the provider.</p>',
 			'game-vs-test',
 		),
@@ -55,7 +55,7 @@ return array(
 			'<ul>
 <li><strong>Wi-Fi.</strong> Wireless adds a few milliseconds at best and large spikes at worst, especially through walls or on the crowded 2.4 GHz band. A cable is the single biggest improvement for gaming.</li>
 <li><strong>A busy line (bufferbloat).</strong> When someone streams or uploads, a poorly managed router queues data and your game packets wait behind it. Ping can jump from 20 to 300 ms. The <a href="/internet-speed-test/">internet speed test</a> grades this.</li>
-<li><strong>The type of connection.</strong> Fibre is lowest (often 5 to 15 ms to nearby servers), then cable and DSL (10 to 40 ms), then 4G and 5G mobile (20 to 60 ms, more variable), then satellite. Low-orbit satellite such as Starlink is typically 25 to 60 ms; older geostationary satellite is 600 ms or more.</li>
+<li><strong>The type of connection.</strong> Fiber is lowest (often 5 to 15 ms to nearby servers), then cable and DSL (10 to 40 ms), then 4G and 5G mobile (20 to 60 ms, more variable), then satellite. Low-orbit satellite such as Starlink is typically 25 to 60 ms; older geostationary satellite is 600 ms or more.</li>
 <li><strong>Distance and routing.</strong> The physical path to the server, and sometimes a provider that routes traffic the long way round.</li>
 <li><strong>VPNs and proxies.</strong> An extra stop usually adds latency, unless the VPN happens to have a better route.</li>
 </ul>

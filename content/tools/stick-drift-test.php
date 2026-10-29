@@ -5,7 +5,7 @@ return array(
 	'title'          => 'Stick Drift Test',
 	'seo_title'      => 'Stick Drift Test: Check Controller Joystick Drift Online',
 	'description'    => 'Free stick drift test for PS5, PS4, Xbox, Switch Pro and PC controllers. See both joysticks live, measure resting drift in percent and find the right dead zone.',
-	'intro'          => 'Find out if your controller has joystick drift. Connect it, leave the sticks alone and press Check drift: the test measures how far each stick sits from centre and tells you the dead zone you need.',
+	'intro'          => 'Find out if your controller has joystick drift. Connect it, leave the sticks alone and press Check drift: the test measures how far each stick sits from center and tells you the dead zone you need.',
 	'device'         => 'gamepad',
 	'device_message' => 'This browser cannot read game controllers. Use an up-to-date Chrome, Edge, Firefox or Safari on a computer, or a phone with a Bluetooth controller connected.',
 	'ads'            => 'standard',
@@ -48,13 +48,13 @@ return array(
 <p class="tool-status" id="sd-status" aria-live="polite">No controller found yet. Connect it by USB or Bluetooth, then press any button on it.</p>',
 	'howto'          => array(
 		'Connect your controller by USB cable or Bluetooth, then <strong>press any button</strong> on it. Browsers only show a controller after a button press.',
-		'Move both sticks. The dots should follow smoothly and return to the centre cross when you let go.',
+		'Move both sticks. The dots should follow smoothly and return to the center cross when you let go.',
 		'Put the controller down on a table and press <strong>Check drift</strong>. After a 3-second countdown the test measures both sticks for 3 seconds while nobody touches them.',
 		'Read <strong>At rest</strong> for each stick and the result line. Then slowly rotate each stick around its outer edge a few times to draw the green <strong>outer range</strong> circle.',
 		'Use the <strong>Dead zone ring</strong> slider to see how large a dead zone would hide any drift you found.',
 	),
 	'howto_title'    => 'How to test for stick drift',
-	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the centre while untouched, as a percentage of full tilt. Every stick has a little noise, so small numbers are normal:</p>
+	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the center while untouched, as a percentage of full tilt. Every stick has a little noise, so small numbers are normal:</p>
 <ul>
 <li><strong>Under 5%:</strong> no drift. Default game dead zones hide this completely.</li>
 <li><strong>5-12%:</strong> minor drift. You may notice slow camera creep in some games. A slightly larger dead zone or cleaning usually solves it.</li>
@@ -64,7 +64,7 @@ return array(
 	'extra'          => array(
 		array(
 			'What causes stick drift?',
-			'<p>Most controllers measure stick position with small potentiometers: a wiper sliding over a resistive track. Over time the track wears, and dust, skin oils and debris get inside. The reading at rest then no longer matches the true centre, so the console thinks you are pushing the stick slightly. PS5 DualSense, PS4 DualShock 4, Xbox, Switch Joy-Con and Pro controllers can all develop drift, usually after a year or more of heavy use. Newer Hall effect and TMR sticks use magnets instead and are far less prone to wear.</p>',
+			'<p>Most controllers measure stick position with small potentiometers: a wiper sliding over a resistive track. Over time the track wears, and dust, skin oils and debris get inside. The reading at rest then no longer matches the true center, so the console thinks you are pushing the stick slightly. PS5 DualSense, PS4 DualShock 4, Xbox, Switch Joy-Con and Pro controllers can all develop drift, usually after a year or more of heavy use. Newer Hall effect and TMR sticks use magnets instead and are far less prone to wear.</p>',
 			'causes',
 		),
 		array(
@@ -80,7 +80,7 @@ return array(
 		array( 'Repair or replace', 'If cleaning does not help, the stick module is worn. Check the warranty first. Replacing the module needs soldering on most controllers; Hall effect replacement sticks fix drift for good on many models.' ),
 	),
 	'faq'            => array(
-		array( 'How do I know if my controller has stick drift?', 'Put the controller down, press Check drift and wait six seconds. A resting value over about 12% means drift. You may also see the dot sit away from the centre cross.' ),
+		array( 'How do I know if my controller has stick drift?', 'Put the controller down, press Check drift and wait six seconds. A resting value over about 12% means drift. You may also see the dot sit away from the center cross.' ),
 		array( 'Why does my controller not show up?', 'Press a button after connecting: browsers hide controllers until then. Also check that the cable carries data, not only charge, and that no other app has taken over the controller.' ),
 		array( 'Can stick drift fix itself?', 'Sometimes dust works its way out and drift fades, but worn sticks usually get worse. Cleaning helps in many cases.' ),
 		array( 'What dead zone should I use?', 'A few percent above the At rest value. Most games default to 5-15%. Too large a dead zone makes small aiming movements feel unresponsive.' ),

@@ -1,5 +1,6 @@
 <?php
 defined( 'ABSPATH' ) || exit;
+$bands = require dirname( __DIR__ ) . '/tools/_bands.php';
 return array(
 	'title'       => 'What Is a Good CPS? Click Speed Explained',
 	'seo_title'   => 'What Is a Good CPS? Average Click Speed and Records',
@@ -27,22 +28,14 @@ return array(
 		array(
 			'Typical CPS scores by click method',
 			'<p>The biggest single factor is technique. These ranges are for a 5 second test, the most common benchmark:</p>
-<div class="table-scroll"><table>
-<thead><tr><th>Method</th><th>Typical CPS</th><th>How it works</th></tr></thead>
-<tbody>
-<tr><td>Normal clicking</td><td>4 to 7</td><td>One finger, a normal press and release.</td></tr>
-<tr><td>Fast regular clicking</td><td>7 to 8</td><td>One finger, a tense, rapid tap. Most players top out here.</td></tr>
-<tr><td>Jitter clicking</td><td>8 to 12</td><td>Tensing the forearm so the hand vibrates over the button.</td></tr>
-<tr><td>Butterfly clicking</td><td>12 to 20</td><td>Two fingers tapping the same button in turn; many mice register extra clicks.</td></tr>
-<tr><td>Drag clicking</td><td>15 to 30+</td><td>Dragging a fingertip across the button so the switch bounces. Depends on the mouse surface.</td></tr>
-</tbody></table></div>
+' . $bands['cps_methods'] . '
 <p>So "good" has two answers. For normal clicking, anything from <strong>6 CPS</strong> up is good and <strong>8 CPS</strong> is excellent. With jitter or butterfly technique, competitive players aim for 10 to 14 CPS. Scores above 15 on a 5 second test are rare and tied to specific mice and drag clicking.</p>
-<p>The ranks on our <a href="/cps-test/">CPS test</a> follow the same scale: Rabbit (4-6), Fox (6-8), Cheetah (8-10) and Lightning (over 10).</p>',
+<p>The <a href="/cps-test/">CPS test</a> on this site gives every 5 second result a rank on the same scale:</p>' . $bands['cps'],
 			'by-method',
 		),
 		array(
 			'How test length changes your score',
-			'<p>The shorter the test, the higher the number. In a <a href="/1-second-cps-test/">1 second test</a> you can sprint without tiring, so 9 or 10 CPS with normal clicking is common. Over a <a href="/10-second-cps-test/">10 second test</a> most people fade by about one click per second, and on a <a href="/60-second-click-test/">60 second test</a> the drop is often 2 or 3 CPS, because the small muscles of the forearm fill with lactate and the tapping rhythm breaks down.</p>
+			'<p>The shorter the test, the higher the number. In a <a href="/1-second-cps-test/">1 second test</a> you can sprint without tiring, so most people score one or two CPS above their 5 second result. Over a <a href="/10-second-cps-test/">10 second test</a> most people fade by about one click per second, and on a <a href="/60-second-click-test/">60 second test</a> the drop is often 2 or 3 CPS, because the forearm muscles tire, the grip tightens and the tapping rhythm breaks down.</p>
 <p>That is why scores are only comparable at the same length. A friend who brags about 11 CPS on a 1 second test has not necessarily beaten your 8 CPS on 10 seconds. Our leaderboards keep one board per length for exactly this reason.</p>
 <p>The per-second graph after each test shows where you slowed down. A flat line means steady clicking; a line that falls after second three or four is normal fatigue; sudden gaps usually mean the finger lost its rhythm or the mouse missed a click.</p>',
 			'test-length',
@@ -50,7 +43,7 @@ return array(
 		array(
 			'What a CPS score means in games',
 			'<p>In Minecraft PvP, the place most people meet CPS tests, attack speed and knockback rules decide how much clicking helps. In versions before the 1.9 combat update every click could attack, so high CPS mattered a lot and 10 to 14 CPS was competitive. From 1.9 on, an attack cooldown means timing beats raw speed, and around 6 to 8 well-timed clicks per second is plenty.</p>
-<p>Many servers cap accepted clicks between 15 and 20 CPS and flag anything steadier or faster as an auto clicker. Butterfly and drag clicking are banned on some servers for the same reason, so check the rules before you practise a technique.</p>
+<p>Many servers cap accepted clicks between 15 and 20 CPS and flag anything steadier or faster as an auto clicker. Butterfly and drag clicking are banned on some servers for the same reason, so check the rules before you practice a technique.</p>
 <p>Outside games, a high CPS has no real use, but the test is a quick health check for a mouse: if your count stops rising while your finger keeps moving, the switch is missing clicks.</p>',
 			'in-games',
 		),
@@ -60,7 +53,7 @@ return array(
 <ol>
 <li><strong>Use your fingertip, not the pad of the finger.</strong> A short, light tap near the front of the button needs less travel than pressing with a flat finger.</li>
 <li><strong>Rest the wrist and let the finger do the work.</strong> Gripping the mouse hard slows the finger down. Keep the palm or wrist on the desk and move only the clicking finger.</li>
-<li><strong>Practise short bursts.</strong> Five rounds of 5 seconds with a pause between them train speed better than one long minute, which mostly trains fatigue.</li>
+<li><strong>Practice short bursts.</strong> Five rounds of 5 seconds with a pause between them train speed better than one long minute, which mostly trains fatigue.</li>
 <li><strong>Try jitter clicking carefully.</strong> Tense the forearm until the hand vibrates, and keep the wrist off the desk. Stop if it hurts; it is a strain on tendons, and the tool page on <a href="/jitter-click-test/">jitter clicking</a> explains the safe way.</li>
 <li><strong>Check the mouse.</strong> A light, clicky switch with a short pre-travel helps. If your score jumps or skips oddly, run the <a href="/double-click-test/">double click test</a>: a worn switch can double click (inflating CPS) or miss clicks (lowering it).</li>
 </ol>

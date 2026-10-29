@@ -36,8 +36,14 @@ return array(
 <p><strong>Consistency</strong> is 100% when every second had the same number of clicks. Above 85% is steady; below 70% means you came in bursts or faded badly. Your peak second minus your average shows how much speed you lose to fatigue.</p>',
 	'extra'          => array(
 		array(
+			'Finding a rhythm you can hold',
+			'<p>Ten seconds is where rhythm starts to beat raw speed. A steady 8 CPS is a press every 125 ms; at 7 CPS it is about every 143 ms. Many clickers find it easier to hold a pace when they count it, so try clicking in time with a beat: two clicks per beat at 240 BPM is 8 CPS, and the <a href="/metronome/">metronome</a> on this site can play that tempo while you practice.</p>
+<p>The <strong>consistency</strong> score measures exactly this. It is 100% minus the spread of your per-second counts relative to your average (the coefficient of variation), so ten bars of 7 clicks score 100%, and bars that wander between 5 and 9 score around 80%. Raise consistency first, then speed: a rhythm that holds at 7 CPS can be pushed to 8, but a burst that collapses after four seconds cannot. The <a href="#leaderboard">leaderboard on this page</a> ranks 10 second scores only.</p>',
+			'rhythm',
+		),
+		array(
 			'Pacing a 10 second test',
-			'<p>The common mistake is a sprint start. The arm tightens after three or four seconds and the last seconds collapse, which shows in the graph as a falling staircase. Start at about 90% of your top speed and keep it. You will usually finish with more clicks and a higher consistency score. If you are learning <a href="/jitter-click-test/">jitter clicking</a>, ten seconds is the length to practise, because it shows whether the vibration lasts.</p>',
+			'<p>The common mistake is a sprint start. The arm tightens after three or four seconds and the last seconds collapse, which shows in the graph as a falling staircase. Start at about 90% of your top speed and keep it. You will usually finish with more clicks and a higher consistency score. If you are learning <a href="/jitter-click-test/">jitter clicking</a>, ten seconds is the length to practice, because it shows whether the vibration lasts.</p>',
 			'pacing',
 		),
 		array(
@@ -57,7 +63,7 @@ return array(
 		array( 'What does consistency mean?', 'It compares the click count of each second with the others. 100% is a perfectly even rate; the lower it is, the more your pace changed.' ),
 		array( 'Why is my 10 second CPS lower than 5 seconds?', 'Fatigue. The finger and forearm tire after a few seconds of maximum effort, so the second half of the test is slower.' ),
 		array( 'Is this good practice for Minecraft PvP?', 'Yes. Fights last several seconds, so holding a rate for ten seconds is closer to real play than a one second burst.' ),
-		array( 'Is my best score saved?', 'Yes, in this browser only, and it is shared with the 10 second option of the main CPS test.' ),
+		array( 'Is my best score saved?', 'Yes, in this browser, and it is the same best as the 10 second option of the main CPS test. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '5-second-cps-test', '15-second-click-test', 'jitter-click-test', 'cps-test', '30-second-click-test', 'double-click-test' ),
 	'updated'        => '2026-10-29',

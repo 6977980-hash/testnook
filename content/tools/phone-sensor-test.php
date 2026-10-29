@@ -52,7 +52,7 @@ return array(
 	'extra'          => array(
 		array(
 			'Which sensors does a phone have?',
-			'<p>Almost every smartphone has an accelerometer, a proximity sensor, a light sensor and GPS. Most mid-range and flagship phones add a gyroscope and a magnetometer (compass); some budget phones leave them out to save cost, which is why some games, AR apps and Google Maps live view do not work on them. Flagships also add a barometer for altitude, a fingerprint sensor and sometimes a colour temperature sensor. Browsers cannot read the barometer or fingerprint sensor, so this page does not list them.</p>',
+			'<p>Almost every smartphone has an accelerometer, a proximity sensor, a light sensor and GPS. Most mid-range and flagship phones add a gyroscope and a magnetometer (compass); some budget phones leave them out to save cost, which is why some games, AR apps and Google Maps live view do not work on them. Flagships also add a barometer for altitude, a fingerprint sensor and sometimes a color temperature sensor. Browsers cannot read the barometer or fingerprint sensor, so this page does not list them.</p>',
 			'which',
 		),
 		array(

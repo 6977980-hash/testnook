@@ -87,7 +87,7 @@ return array(
 		),
 		array(
 			'Frequency ranges to try',
-			'<p><strong>20-60 Hz</strong>: sub-bass; feel it more than hear it. <strong>60-250 Hz</strong>: bass; kick drums and bass guitar. <strong>250 Hz-2 kHz</strong>: midrange; most of the voice. <strong>2-6 kHz</strong>: presence; speech clarity and sibilance. <strong>6-20 kHz</strong>: brilliance; cymbals and air. A speaker that sounds even across a slow sweep is well balanced; one that jumps in loudness at certain spots is colouring the sound.</p>',
+			'<p><strong>20-60 Hz</strong>: sub-bass; feel it more than hear it. <strong>60-250 Hz</strong>: bass; kick drums and bass guitar. <strong>250 Hz-2 kHz</strong>: midrange; most of the voice. <strong>2-6 kHz</strong>: presence; speech clarity and sibilance. <strong>6-20 kHz</strong>: brilliance; cymbals and air. A speaker that sounds even across a slow sweep is well balanced; one that jumps in loudness at certain spots is coloring the sound.</p>',
 			'ranges',
 		),
 	),

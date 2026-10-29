@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 $tool = require __DIR__ . '/_typing-test.php';
 
 return array(
@@ -24,15 +26,7 @@ return array(
 	),
 	'howto_title'    => 'How to take the 1 minute typing test',
 	'results'        => '<p>In one minute an average adult types about 40 words, a good office typist 60 and a professional 80 or more. The sentences include punctuation and capitals, which typically cost 5-10 WPM compared with a plain word test, because the shift key and the symbol keys are slower than letters.</p>
-<div class="table-scroll"><table>
-<thead><tr><th>WPM in 1 minute</th><th>Level</th></tr></thead>
-<tbody>
-<tr><td>Under 30</td><td>Beginner. Usually two or three fingers and looking at the keys.</td></tr>
-<tr><td>30-50</td><td>Average adult.</td></tr>
-<tr><td>50-70</td><td>Good. The range most typing jobs require.</td></tr>
-<tr><td>70-100</td><td>Fast. Daily typists with full touch typing.</td></tr>
-<tr><td>Over 100</td><td>Very fast.</td></tr>
-</tbody></table></div>
+' . $bands['wpm'] . '
 <p><strong>WPM</strong> is correct characters divided by five; <strong>raw WPM</strong> includes mistakes; <strong>accuracy</strong> is the share of characters you typed correctly. Only results with accuracy of 90% or better are saved as a best, because a fast run full of errors is not a useful benchmark.</p>',
 	'extra'          => array(
 		array(
@@ -42,7 +36,7 @@ return array(
 		),
 		array(
 			'Typing tests for jobs',
-			'<p>Employers that test typing usually ask for 40-60 WPM for general office work, 60-80 for data entry, transcription and legal secretarial roles, and 80 or more for medical transcription and court reporting (which often use shorthand machines instead). Most job tests are 1-5 minutes on prose with punctuation, like this page, and set a minimum accuracy of 95% or higher; some count only net WPM, which is what the WPM figure here is. Practise on the same kind of text: sentences with capitals, commas and numbers, not just lowercase words.</p>',
+			'<p>Employers that test typing usually ask for 40-60 WPM for general office work, 60-80 for data entry, transcription and legal secretarial roles, and 80 or more for medical transcription and court reporting (which often use shorthand machines instead). Most job tests are 1-5 minutes on prose with punctuation, like this page, and set a minimum accuracy of 95% or higher; some count only net WPM, which is what the WPM figure here is. Practice on the same kind of text: sentences with capitals, commas and numbers, not just lowercase words.</p>',
 			'jobs',
 		),
 	),
@@ -58,7 +52,7 @@ return array(
 		array( 'Does punctuation count?', 'Yes. The sentences include commas, full stops, apostrophes and capital letters, and each has to be typed for the word to count as correct.' ),
 		array( 'Can I take the test again with different text?', 'Yes. Every restart picks a new random set of sentences from the pool, so you cannot learn the text.' ),
 		array( 'Is this the same as a typing test for a job?', 'It is the same format: timed prose with punctuation, scored as net WPM and accuracy. Employers set their own minimums, often 40-60 WPM at 95% accuracy.' ),
-		array( 'Is my result saved?', 'Your best score is stored in this browser only, when accuracy is at least 90%. Nothing is uploaded.' ),
+		array( 'Is my result saved?', 'Your best score for each length is saved in this browser when accuracy is 90% or better. Your keystrokes stay in this browser; only your final WPM and accuracy are shared anonymously for the site averages, unless you turn sharing off under the tool. A result needs at least 85% accuracy to count in the site averages and the leaderboard.' ),
 	),
 	'related'        => array( 'typing-speed-test', '5-minute-typing-test', 'wpm-test', 'typing-test-english', 'keyboard-tester', 'reaction-time-test' ),
 	'updated'        => '2026-10-29',

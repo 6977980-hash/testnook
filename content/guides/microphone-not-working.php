@@ -50,7 +50,7 @@ return array(
 		),
 		array(
 			'Step 3: permissions',
-			'<p><strong>Windows 10 and 11:</strong> Settings &gt; Privacy &amp; security &gt; Microphone. "Microphone access" on, "Let apps access your microphone" on, the switch next to your app on, and "Let desktop apps access your microphone" on at the bottom (Zoom, Chrome, Discord and OBS count as desktop apps). A greyed-out switch means a company policy.</p>
+			'<p><strong>Windows 10 and 11:</strong> Settings &gt; Privacy &amp; security &gt; Microphone. "Microphone access" on, "Let apps access your microphone" on, the switch next to your app on, and "Let desktop apps access your microphone" on at the bottom (Zoom, Chrome, Discord and OBS count as desktop apps). A grayed-out switch means a company policy.</p>
 <p><strong>macOS:</strong> System Settings &gt; Privacy &amp; Security &gt; Microphone. Turn the app on. If it is missing, quit it fully and open it again so it asks.</p>
 <p><strong>Browsers:</strong> the lock or tune icon left of the address bar &gt; Microphone &gt; Allow, then reload. Chrome and Edge list blocked sites under Settings &gt; Privacy and security &gt; Site settings &gt; Microphone, where you can also choose the default device. Microphone access needs HTTPS.</p>
 <p><strong>Phones:</strong> iPhone, Settings &gt; Privacy &amp; Security &gt; Microphone; Android, Settings &gt; Apps &gt; the app &gt; Permissions &gt; Microphone.</p>',

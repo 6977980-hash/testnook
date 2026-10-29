@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$bands = require __DIR__ . '/_bands.php';
+
 return array(
 	'title'          => 'CPS Test',
 	'seo_title'      => 'CPS Test: Clicks Per Second Speed Test (1 to 100 Seconds)',
@@ -46,21 +48,13 @@ return array(
 	),
 	'howto_title'    => 'How to take the CPS test',
 	'results'        => '<p>CPS means <strong>clicks per second</strong>: your total clicks divided by the test length. A 5 second test is the common benchmark, because almost everyone slows down over longer runs.</p>
-<div class="table-scroll"><table>
-<thead><tr><th>CPS (5 s)</th><th>Rank</th><th>Typical of</th></tr></thead>
-<tbody>
-<tr><td>Under 4</td><td>Turtle</td><td>Careful single clicking.</td></tr>
-<tr><td>4-6</td><td>Rabbit</td><td>Normal fast clicking with one finger.</td></tr>
-<tr><td>6-8</td><td>Fox</td><td>Practised gamers using a light mouse.</td></tr>
-<tr><td>8-10</td><td>Cheetah</td><td>Jitter clicking or two fingers alternating.</td></tr>
-<tr><td>Over 10</td><td>Lightning</td><td>Butterfly or drag clicking. Many games treat this as suspicious.</td></tr>
-</tbody></table></div>
+' . $bands['cps'] . '
 <p><strong>Peak CPS</strong> is your fastest single second. The graph shows your clicks in each second of the test, so you can see where you slowed down. If the count stops rising while you are clicking, your mouse or browser is missing clicks; try the <a href="/double-click-test/">double click test</a> to check the switch.</p>
 <p>Each length also has its own page with scores for that length: the <a href="/1-second-cps-test/">1 second</a>, <a href="/5-second-cps-test/">5 second</a> and <a href="/10-second-cps-test/">10 second CPS tests</a>, and the <a href="/15-second-click-test/">15</a>, <a href="/30-second-click-test/">30</a>, <a href="/60-second-click-test/">60</a> and <a href="/100-second-click-test/">100 second click tests</a>. Best scores are shared between them and this page.</p>',
 	'extra'          => array(
 		array(
 			'Clicking techniques explained',
-			'<p><strong>Normal clicking</strong> uses one finger and a full press each time: 4-7 CPS for most people. <strong>Jitter clicking</strong> tenses the forearm so the hand vibrates and taps the button very quickly, reaching 8-14 CPS, at the cost of accuracy and sore wrists. <strong>Butterfly clicking</strong> alternates two fingers on the same button, often 10-20 CPS. <strong>Drag clicking</strong> drags a finger across a textured button so the switch bounces many times per pass; it can show 30+ CPS, but only on mice with very light switches and rough coatings, and it wears the switch quickly.</p>
+			'<p><strong>Normal clicking</strong> uses one finger and a full press each time: 4-7 CPS for most people. <strong>Jitter clicking</strong> tenses the forearm so the hand vibrates and taps the button very quickly, reaching 8-12 CPS, at the cost of accuracy and sore wrists. <strong>Butterfly clicking</strong> alternates two fingers on the same button, often 12-20 CPS. <strong>Drag clicking</strong> drags a finger across a textured button so the switch bounces many times per pass; it can show 30+ CPS, but only on mice with very light switches and rough coatings, and it wears the switch quickly.</p>
 <p>Minecraft PvP players care most about CPS because hits land per click. Many servers cap or flag clicks above about 20 CPS, so a very high score is not always an advantage. Casual players and office workers never need more than 6-7.</p>',
 			'techniques',
 		),
@@ -73,7 +67,7 @@ return array(
 	'fixes'          => array(
 		array( 'Clicks are not counted', 'Keep the pointer inside the box; clicks elsewhere do not count. If some clicks vanish, your mouse may be missing presses or have a worn switch. Try another mouse to compare.' ),
 		array( 'Right click opens a menu', 'The context menu is blocked inside the box. If it still appears, click once inside the box first so the page has focus, or untick "Count right clicks too".' ),
-		array( 'The timer does not start', 'The countdown starts on your first click, not when you choose a length. Click inside the grey box. If the box never responds, check that JavaScript is enabled and no extension blocks scripts.' ),
+		array( 'The timer does not start', 'The countdown starts on your first click, not when you choose a length. Click inside the gray box. If the box never responds, check that JavaScript is enabled and no extension blocks scripts.' ),
 		array( 'My score is far below others', 'Most posted "20 CPS" scores use drag or butterfly clicking. For normal clicking, 5-7 CPS is good. Hold the mouse lightly, use your fingertip and warm up for a round or two.' ),
 	),
 	'faq'            => array(
@@ -82,7 +76,7 @@ return array(
 		array( 'What is the world record for clicks per second?', 'Claimed records with drag clicking go well above 50 CPS, but they depend heavily on the mouse. For honest single-finger clicking, a sustained 10+ CPS is exceptional.' ),
 		array( 'Does the CPS test count double clicks?', 'It counts every button press the browser receives. If your mouse double clicks on its own, the extra clicks inflate your score; use our double click test to check.' ),
 		array( 'Can I take the CPS test on a phone?', 'Yes, taps are counted the same way. Phone scores are usually a bit lower because the touch screen adds a small delay between taps.' ),
-		array( 'Is my best score saved?', 'Your best CPS for each test length is stored in this browser only. Nothing is sent anywhere.' ),
+		array( 'Is my best score saved?', 'Your best CPS for each test length is saved in this browser. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '5-second-cps-test', 'jitter-click-test', 'right-click-cps-test', '1-second-cps-test', '10-second-cps-test', 'auto-clicker-test' ),
 	'updated'        => '2026-10-28',

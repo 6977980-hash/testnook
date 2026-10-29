@@ -57,7 +57,7 @@ return array(
 			'Which apps need a gyroscope',
 			'<ul>
 <li><strong>Need only the accelerometer:</strong> auto-rotate, step counting, shake to undo, lift to wake, fall and crash detection, a <a href="/bubble-level/">bubble level</a>, simple tilt games.</li>
-<li><strong>Need the gyroscope:</strong> augmented reality (AR measuring apps, AR games, Google Maps Live View), VR headsets that use the phone, 360 degree and panorama photos, gyro aiming in shooters, camera stabilisation in some apps.</li>
+<li><strong>Need the gyroscope:</strong> augmented reality (AR measuring apps, AR games, Google Maps Live View), VR headsets that use the phone, 360 degree and panorama photos, gyro aiming in shooters, camera stabilization in some apps.</li>
 </ul>
 <p>If an AR app says "your device is not supported" or a panorama stitches badly, check for a gyroscope first.</p>',
 			'apps',

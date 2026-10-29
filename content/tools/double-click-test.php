@@ -46,14 +46,14 @@ return array(
 	'extra'          => array(
 		array(
 			'Why does a mouse double click on its own?',
-			'<p>Each mouse button has a tiny metal micro switch. Over hundreds of thousands of presses the spring contact wears and oxidises, and instead of one clean "on" it bounces: on, off, on in a few milliseconds. The mouse firmware normally filters bounce for a short window (debounce), but a worn switch bounces for longer than that window and the computer sees two clicks. Dust and static can cause the same thing on a nearly new mouse, which is why cleaning sometimes helps.</p>
+			'<p>Each mouse button has a tiny metal micro switch. Over hundreds of thousands of presses the spring contact wears and oxidizes, and instead of one clean "on" it bounces: on, off, on in a few milliseconds. The mouse firmware normally filters bounce for a short window (debounce), but a worn switch bounces for longer than that window and the computer sees two clicks. Dust and static can cause the same thing on a nearly new mouse, which is why cleaning sometimes helps.</p>
 <p>This double click test uses the browser\'s high resolution timer to measure the gap between every <em>mousedown</em> event, so it sees exactly what your games and apps see.</p>',
 			'why',
 		),
 	),
 	'fixes'          => array(
 		array( 'Raise the debounce time in the mouse software', 'Razer Synapse, Logitech G Hub and many other apps have a "debounce" or "click delay" setting. Raising it a few milliseconds hides light bounce. It is a workaround, not a repair, but it can buy months.' ),
-		array( 'Clean the switch', 'Unplug the mouse, hold the button half-pressed and blow compressed air into the gap at the front edge. A drop of contact cleaner on a cotton bud near the switch helps with oxidised contacts. Let it dry fully before plugging in.' ),
+		array( 'Clean the switch', 'Unplug the mouse, hold the button half-pressed and blow compressed air into the gap at the front edge. A drop of contact cleaner on a cotton bud near the switch helps with oxidized contacts. Let it dry fully before plugging in.' ),
 		array( 'Check Windows settings if the test shows no fault', 'If this test is clean but Windows still double clicks, open Settings > Bluetooth & devices > Mouse > Additional mouse settings and lower the "Double-click speed" slider. Also check File Explorer is not set to "Single-click to open an item".' ),
 		array( 'Replace the switch or the mouse', 'Micro switches cost very little and can be soldered in by a repair shop, or at home if you are handy. If the mouse is under warranty, claim it: double clicking is a well-known fault and most brands replace the mouse.' ),
 	),

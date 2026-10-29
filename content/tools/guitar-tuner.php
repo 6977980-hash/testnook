@@ -72,7 +72,7 @@ return array(
 	'extra'          => array(
 		array(
 			'How the tuner detects pitch',
-			'<p>The browser captures audio from your microphone and the tuner analyses about 90 milliseconds at a time. It uses a normalised autocorrelation method: the waveform is compared with delayed copies of itself, and the delay at which they match best is the period of the note. That approach is robust to the strong overtones of a plucked string, which is where simple spectrum-peak tuners go wrong by reporting the octave above. The last few readings are smoothed with a median, so a single noisy frame does not jerk the needle. Everything runs on your device; the audio is never sent anywhere.</p>
+			'<p>The browser captures audio from your microphone and the tuner analyzes about 90 milliseconds at a time. It uses a normalized autocorrelation method: the waveform is compared with delayed copies of itself, and the delay at which they match best is the period of the note. That approach is robust to the strong overtones of a plucked string, which is where simple spectrum-peak tuners go wrong by reporting the octave above. The last few readings are smoothed with a median, so a single noisy frame does not jerk the needle. Everything runs on your device; the audio is never sent anywhere.</p>
 <p>Low notes need a longer window, which is why a bass E (41 Hz) takes a fraction of a second longer to lock on than a guitar high E. Phone microphones roll off below about 80 Hz, so for bass guitar a laptop mic or an external mic usually tracks better, or tune the 12th-fret harmonic instead of the open string.</p>',
 			'how-it-works',
 		),
@@ -94,7 +94,7 @@ return array(
 		array( 'Does the online tuner work on a phone?', 'Yes, in Safari on iPhone and Chrome on Android. Allow the microphone when asked and keep the phone near the sound hole. Very low bass notes track better on a laptop microphone.' ),
 		array( 'Can I tune a bass, ukulele or violin with it?', 'Bass and ukulele have presets. For violin, mandolin, banjo or voice, pick Chromatic: it shows the nearest of all twelve notes and the cents, so you can tune to any pitch.' ),
 		array( 'What does 432 Hz tuning mean?', 'It sets the reference A4 to 432 Hz instead of the standard 440, about 32 cents lower. Type 432 in the Reference A4 box and every target note shifts accordingly.' ),
-		array( 'Is my microphone audio recorded?', 'No. The audio is analysed in your browser as it arrives and is never stored or sent to a server. Closing the page or pressing Stop releases the microphone.' ),
+		array( 'Is my microphone audio recorded?', 'No. The audio is analyzed in your browser as it arrives and is never stored or sent to a server. Closing the page or pressing Stop releases the microphone.' ),
 	),
 	'related'        => array( 'tone-generator', 'metronome', 'tap-bpm', 'mic-test', 'sound-test', 'headphone-test' ),
 	'updated'        => '2026-10-28',

@@ -105,6 +105,11 @@ get_header();
 					<p class="notice notice--warn"><?php tn_html( $def['disclaimer'] ); ?></p>
 				<?php endif; ?>
 
+				<aside class="section-box author-box" aria-label="About the author">
+					<p><strong>Written by <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php echo esc_html( TN_FOUNDER_NAME ); ?></a></strong></p>
+					<p><?php echo esc_html( TN_FOUNDER_BIO ); ?> Read <a href="<?php echo esc_url( home_url( '/how-we-test/' ) ); ?>">how we test and check our tools</a>, or send a correction to <a href="mailto:<?php echo esc_attr( TN_CONTACT_EMAIL ); ?>"><?php echo esc_html( TN_CONTACT_EMAIL ); ?></a>.</p>
+				</aside>
+
 				<?php tn_ad_slot( 'after-faq' ); ?>
 			</div>
 

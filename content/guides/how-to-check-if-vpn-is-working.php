@@ -15,7 +15,7 @@ return array(
 		'<strong>Compare your IP</strong> with the VPN off and on using <a href="/what-is-my-ip/">what is my IP</a>. With it on, the address, network owner and location should all be the VPN\'s.',
 		'Run the <a href="/webrtc-leak-test/">WebRTC leak test</a> with the VPN on. A different public IP through WebRTC is a leak, usually your real one.',
 		'Check <strong>IPv6</strong>: if the page shows your provider\'s IPv6 address with the VPN on, IPv6 bypasses the tunnel.',
-		'Fix leaks with the VPN\'s <strong>kill switch and leak protection</strong>, no split tunnelling for the browser, and IPv6 blocked or tunnelled. Test again after each change.',
+		'Fix leaks with the VPN\'s <strong>kill switch and leak protection</strong>, no split tunneling for the browser, and IPv6 blocked or tunneled. Test again after each change.',
 	),
 	'sections'    => array(
 		array(
@@ -26,7 +26,7 @@ return array(
 <li><strong>DNS leaks:</strong> your device keeps asking your provider\'s DNS server for website addresses, so the provider still sees every site name you visit.</li>
 <li><strong>IPv6 leaks:</strong> the VPN tunnels only IPv4, while your connection also has IPv6, so IPv6 traffic goes out directly with your real address.</li>
 </ul>
-<p>There is also the simplest failure: the VPN is connected but the browser is excluded by <strong>split tunnelling</strong>, or the tunnel dropped and there is no kill switch to stop traffic.</p>',
+<p>There is also the simplest failure: the VPN is connected but the browser is excluded by <strong>split tunneling</strong>, or the tunnel dropped and there is no kill switch to stop traffic.</p>',
 			'how-leaks',
 		),
 		array(
@@ -39,11 +39,11 @@ return array(
 			'<p>Connect the VPN, preferably to a server in another country so the difference is obvious, and reload the page. What you should see:</p>
 <ul>
 <li>A <strong>different IPv4 address</strong>.</li>
-<li>A <strong>network owner</strong> that is the VPN company or a hosting provider it rents servers from (names such as M247, Datacamp, Leaseweb or the VPN brand itself). The page\'s VPN check box will usually say "Looks like a VPN, proxy or data centre".</li>
+<li>A <strong>network owner</strong> that is the VPN company or a hosting provider it rents servers from (names such as M247, Datacamp, Leaseweb or the VPN brand itself). The page\'s VPN check box will usually say "Looks like a VPN, proxy or data center".</li>
 <li>A <strong>location</strong> matching the VPN server.</li>
 <li>Either <strong>no IPv6</strong>, or an IPv6 address that also belongs to the VPN.</li>
 </ul>
-<p>If your provider\'s name or your real IPv4 still shows, the browser is not going through the VPN at all. Reconnect, try another server, and check split tunnelling (step 5). If only the <strong>IPv6</strong> line still shows your provider\'s address, you have an IPv6 leak.</p>',
+<p>If your provider\'s name or your real IPv4 still shows, the browser is not going through the VPN at all. Reconnect, try another server, and check split tunneling (step 5). If only the <strong>IPv6</strong> line still shows your provider\'s address, you have an IPv6 leak.</p>',
 			'compare',
 		),
 		array(
@@ -61,7 +61,7 @@ return array(
 			'Step 4: Check for a DNS leak',
 			'<p>A DNS leak means that the VPN hides your traffic, but the questions "where is example.com?" still go to your internet provider. The surest check is in the VPN app itself: most have a "DNS leak protection" switch and show which DNS server they use. You can also check from the browser:</p>
 <ul>
-<li>Open <code>1.1.1.1/help</code> (Cloudflare\'s diagnostic page). It shows whether you are using Cloudflare\'s DNS and which data centre answers. If you set Cloudflare DNS but the VPN is supposed to use its own, it should say No.</li>
+<li>Open <code>1.1.1.1/help</code> (Cloudflare\'s diagnostic page). It shows whether you are using Cloudflare\'s DNS and which data center answers. If you set Cloudflare DNS but the VPN is supposed to use its own, it should say No.</li>
 <li>On a Windows PC, run <code>nslookup example.com</code> in Command Prompt. The "Server" line shows the resolver your system is using. With the VPN on, it should be the VPN\'s address, not your router (192.168.x.x) or your provider.</li>
 </ul>
 <p>The <a href="/dns-lookup/">DNS lookup</a> tool itself talks to Cloudflare or Google over HTTPS and does not use your system\'s DNS, so it is the right tool for checking records but not for spotting a DNS leak.</p>',
@@ -72,7 +72,7 @@ return array(
 			'<ul>
 <li><strong>Turn on the kill switch</strong> (sometimes called Network Lock). It blocks all internet traffic if the tunnel drops, so nothing goes out unprotected.</li>
 <li><strong>Turn on DNS leak protection</strong> and, if offered, the VPN\'s own DNS servers. On Android, set Private DNS to Automatic or Off while using a VPN that provides its own DNS.</li>
-<li><strong>Check split tunnelling.</strong> Make sure your browser is not on the list of apps that bypass the VPN.</li>
+<li><strong>Check split tunneling.</strong> Make sure your browser is not on the list of apps that bypass the VPN.</li>
 <li><strong>Handle IPv6.</strong> Turn on the VPN\'s IPv6 leak protection, or choose a VPN that tunnels IPv6. As a last resort, turn off IPv6 in the network adapter settings.</li>
 <li><strong>Block WebRTC leaks.</strong> Use the desktop app rather than only a browser extension, turn on the extension\'s WebRTC protection, or in Firefox set <code>media.peerconnection.enabled</code> to false in <code>about:config</code> (this turns off browser video calls). The WebRTC leak test page lists the setting for each browser.</li>
 <li><strong>Update the VPN app and switch protocol</strong> (WireGuard or OpenVPN) if a leak keeps returning.</li>
@@ -82,7 +82,7 @@ return array(
 		),
 		array(
 			'What a VPN does not hide',
-			'<p>Even a leak-free VPN hides only your IP address and your traffic from the local network and provider. Websites still recognise you when you log in, cookies and browser fingerprints still work, and your <a href="/what-is-my-browser/">browser</a> and <a href="/device-info/">device details</a> are visible to every site. A VPN also slows your connection a little: run the <a href="/internet-speed-test/">internet speed test</a> with it on and off to see the cost.</p>',
+			'<p>Even a leak-free VPN hides only your IP address and your traffic from the local network and provider. Websites still recognize you when you log in, cookies and browser fingerprints still work, and your <a href="/what-is-my-browser/">browser</a> and <a href="/device-info/">device details</a> are visible to every site. A VPN also slows your connection a little: run the <a href="/internet-speed-test/">internet speed test</a> with it on and off to see the cost.</p>',
 			'limits',
 		),
 	),

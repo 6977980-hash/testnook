@@ -36,6 +36,12 @@ return array(
 <p>Over a minute, a consistency score above 75% is good. The graph usually shows a fast first ten seconds, a long middle plateau and sometimes a final push. A long plateau is what to aim for.</p>',
 	'extra'          => array(
 		array(
+			'The fatigue curve over a minute',
+			'<p>A minute of clicking usually draws the same curve in the graph: a fast first five to ten seconds, a long plateau slightly below your 5 second speed, then a slow slide in the last twenty seconds as the small muscles of the hand tire, sometimes with a short push at the very end. The height of the plateau and how late the slide starts are your stamina.</p>
+<p>To measure your fatigue, compare the average of seconds 1 to 10 with seconds 51 to 60. A drop of one CPS or less is excellent stamina for normal clicking; two or three is typical. Gaps where a bar falls to almost nothing are the moments you shifted grip or changed fingers. The <a href="#leaderboard">leaderboard on this page</a> ranks full one minute runs only, so a fast first ten seconds does not count for more than a steady minute.</p>',
+			'fatigue-curve',
+		),
+		array(
 			'Clicks per minute and what it is used for',
 			'<p>Some idle and clicker games measure progress in clicks per minute, and a few game anti-cheat systems look at sustained rates rather than bursts. A one minute run also reveals mouse faults that short tests miss: a switch that starts to chatter when warm, or a button that sticks after a few hundred presses. If your graph has a spike of impossible seconds late in the run, check the mouse with the <a href="/double-click-test/">double click test</a>.</p>',
 			'cpm',
@@ -47,7 +53,7 @@ return array(
 		),
 	),
 	'fixes'          => array(
-		array( 'The test ended early', 'Switching tabs or minimising the window can pause the browser. Keep the page in front for the whole minute.' ),
+		array( 'The test ended early', 'Switching tabs or minimizing the window can pause the browser. Keep the page in front for the whole minute.' ),
 		array( 'My CPS keeps dropping', 'That is fatigue. Start slower, keep the wrist supported, and alternate two fingers on the button.' ),
 		array( 'The pointer leaves the box', 'Hold the mouse with the thumb and ring finger so the clicking finger does not push it. Clicks outside the box are not counted.' ),
 	),
@@ -57,7 +63,7 @@ return array(
 		array( 'What is a good CPM?', 'CPM is clicks per minute, the same as your total here. 300 CPM is good, 360 or more is very good.' ),
 		array( 'Can I take the 60 second test on a phone?', 'Yes, taps are counted. Rest the phone on a table and tap with two fingers in turn for the best score.' ),
 		array( 'Why does the graph show tall bars at the start?', 'Everyone starts faster than they can hold. The bars settle after about ten seconds.' ),
-		array( 'Is my best score saved?', 'Yes, your best 60 second CPS is stored in this browser and shared with the main CPS test.' ),
+		array( 'Is my best score saved?', 'Yes, your best 60 second CPS is saved in this browser and is the same best as the 60 second option of the main CPS test. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( '30-second-click-test', '100-second-click-test', 'cps-test', 'auto-clicker-test', 'double-click-test', 'spacebar-clicker' ),
 	'updated'        => '2026-10-29',

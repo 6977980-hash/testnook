@@ -13,7 +13,7 @@ return array(
 	'intro'       => 'The proximity sensor has one job: turn the screen off when the phone is against your ear, so your cheek does not mute or hang up the call. When it fails you either press buttons with your face, or the screen goes black during a call and will not come back. Both are usually fixable at home. Start with the two minute <a href="/proximity-sensor-test/">proximity sensor test</a>, then work through the fixes below.',
 	'summary'     => array(
 		'The most common cause is a <strong>screen protector or case</strong> covering the sensor near the earpiece. Peel the top back and test again.',
-		'<strong>Dirt, make-up and cracks</strong> over the sensor window come next. Clean the top of the screen with a dry microfibre cloth.',
+		'<strong>Dirt, make-up and cracks</strong> over the sensor window come next. Clean the top of the screen with a dry microfiber cloth.',
 		'A <strong>restart</strong>, a check of call settings (pocket mode, accidental touch protection) and a system update fix most software causes.',
 		'If the call test fails with a clean, bare screen, the sensor needs <strong>recalibration or repair</strong>, which is common after a screen replacement.',
 	),
@@ -32,7 +32,7 @@ return array(
 		),
 		array(
 			'2. Clean the sensor area',
-			'<p>Skin oil, make-up, sweat and dust build up in exactly the spot that touches your ear. Wipe the top of the screen with a dry microfibre cloth, or one very lightly dampened with water. Do not spray liquid at the phone or push anything into the earpiece grille. A crack across the top of the screen also scatters the infrared light; if the glass is cracked there, a new screen (or at least a new top protector) is the fix.</p>',
+			'<p>Skin oil, make-up, sweat and dust build up in exactly the spot that touches your ear. Wipe the top of the screen with a dry microfiber cloth, or one very lightly dampened with water. Do not spray liquid at the phone or push anything into the earpiece grille. A crack across the top of the screen also scatters the infrared light; if the glass is cracked there, a new screen (or at least a new top protector) is the fix.</p>',
 			'clean',
 		),
 		array(

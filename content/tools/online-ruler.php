@@ -4,8 +4,8 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'        => 'Online Ruler',
 	'seo_title'    => 'Online Ruler: Actual Size Ruler in cm, mm and Inches',
-	'description'  => 'Free online ruler at actual size. Measure in centimetres, millimetres or inches on any screen, calibrate with a bank card or screen size, and drag to measure.',
-	'intro'        => 'An actual-size ruler on your screen, in centimetres and inches. Calibrate it once with a bank card or your screen size and the marks match a real ruler. Drag along the ruler to measure anything you hold against the screen.',
+	'description'  => 'Free online ruler at actual size. Measure in centimeters, millimeters or inches on any screen, calibrate with a bank card or screen size, and drag to measure.',
+	'intro'        => 'An actual-size ruler on your screen, in centimeters and inches. Calibrate it once with a bank card or your screen size and the marks match a real ruler. Drag along the ruler to measure anything you hold against the screen.',
 	'device'       => 'any',
 	'ads'          => 'standard',
 	'styles'       => array( 'online-ruler' ),
@@ -66,7 +66,7 @@ return array(
 		'Your calibration is saved in this browser, so the ruler stays accurate next time.',
 	),
 	'howto_title'  => 'How to use the online ruler',
-	'results'      => '<p>Without calibration, the ruler uses the web standard of <strong>96 pixels per inch</strong>, which most desktop monitors are close to but phones, laptops and 4K screens are not. After calibration the ruler knows your real <strong>pixels per inch</strong> and the marks match a physical ruler to within about half a millimetre.</p>
+	'results'      => '<p>Without calibration, the ruler uses the web standard of <strong>96 pixels per inch</strong>, which most desktop monitors are close to but phones, laptops and 4K screens are not. After calibration the ruler knows your real <strong>pixels per inch</strong> and the marks match a physical ruler to within about half a millimeter.</p>
 <p><strong>Ruler length</strong> is how much of a real ruler fits on your screen at the current size; a 24 inch monitor shows about 50 cm in full screen, a phone around 6-7 cm in portrait. <strong>Measured</strong> is the length of your last drag.</p>
 <p>Accuracy depends on your calibration. A bank card is the easiest reference: every card is 85.60 mm by 53.98 mm. If you have a real ruler, the fine tune buttons get the last fraction of a percent.</p>',
 	'extra'        => array(
@@ -93,7 +93,7 @@ return array(
 		array( 'How do I calibrate the ruler without a card?', 'Enter your screen\'s diagonal size in inches, or hold any object you know the size of (a coin, a sheet of A4) against the ruler and use the fine tune buttons until it matches.' ),
 		array( 'How long is the ruler?', 'As long as your screen allows. The "Ruler length" box shows the current length. Full screen and Vertical modes give you the longest ruler your display can show.' ),
 		array( 'Does the online ruler work on a phone?', 'Yes. Phone screens show about 6-7 cm across in portrait and 12-15 cm in landscape. Calibrate with a bank card for best accuracy.' ),
-		array( 'Can I measure in millimetres?', 'Yes. The cm / mm mode has a mark every millimetre, with longer marks every 5 mm and numbers every centimetre. Inch mode shows sixteenths.' ),
+		array( 'Can I measure in millimeters?', 'Yes. The cm / mm mode has a mark every millimeter, with longer marks every 5 mm and numbers every centimeter. Inch mode shows sixteenths.' ),
 		array( 'Is my calibration saved?', 'It is stored in this browser on this device only. Nothing is sent to a server, and you can reset it any time.' ),
 	),
 	'related'      => array( 'dpi-analyzer', 'dead-pixel-test', 'white-screen', 'refresh-rate-test', 'touch-screen-test', 'online-mirror' ),

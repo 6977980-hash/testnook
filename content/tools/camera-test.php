@@ -44,7 +44,7 @@ return array(
 		'Press <strong>Start camera</strong> and choose <strong>Allow</strong> when the browser asks. The front camera opens first.',
 		'On a phone or tablet, press <strong>Switch front / back</strong> to test the back camera. On a laptop with more than one camera, pick each one from the camera list.',
 		'Read the <strong>Resolution</strong> and <strong>Frame rate</strong> for each camera. Point the camera at something bright and then something dark to see whether it focuses and adjusts exposure.',
-		'Press <strong>Take photo</strong> to save a still from the current camera and check it for blur, spots or a colour cast.',
+		'Press <strong>Take photo</strong> to save a still from the current camera and check it for blur, spots or a color cast.',
 		'Every camera you test is listed under the stats, so you can compare them. Press <strong>Stop</strong> when you are done.',
 	),
 	'howto_title'    => 'How to test your phone camera',

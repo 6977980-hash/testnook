@@ -31,7 +31,7 @@ return array(
 		),
 		array(
 			'Why a mouse starts double clicking',
-			'<p>Under each mouse button is a microswitch: a small plastic box with a metal leaf spring that snaps between two contacts. Over millions of clicks the spring loses tension and the contact surfaces oxidise and pit. Instead of a clean snap, the contact chatters for a moment on landing. The mouse controller is supposed to ignore this (debouncing), but it only waits a few milliseconds, so a worn switch that chatters longer gets read as two clicks.</p>
+			'<p>Under each mouse button is a microswitch: a small plastic box with a metal leaf spring that snaps between two contacts. Over millions of clicks the spring loses tension and the contact surfaces oxidize and pit. Instead of a clean snap, the contact chatters for a moment on landing. The mouse controller is supposed to ignore this (debouncing), but it only waits a few milliseconds, so a worn switch that chatters longer gets read as two clicks.</p>
 <p>Switches are rated for 10 to 80 million clicks, but the rating assumes a clean environment and a certain contact current. Many gaming mice run their switches at a lower voltage than the rating, which speeds oxidation; it is why some well-known mice develop the fault within a year. Humidity and dust make it worse.</p>',
 			'why',
 		),
@@ -63,7 +63,7 @@ return array(
 			'<ul>
 <li><strong>Warranty.</strong> Double clicking is a known fault and makers replace mice for it within the warranty period (usually two years in the EU and UK, one to two years elsewhere). Logitech and Razer have replaced out-of-warranty mice in some cases when asked.</li>
 <li><strong>Replace the switch.</strong> Omron D2FC and D2F series switches and their equivalents cost 1 to 3 dollars each. Replacement means desoldering three pins and soldering in the new switch; a repair shop charges 15 to 30 dollars. A few mice (some from Glorious, Lamzu, Endgame Gear and others) have hot-swap switch sockets, where it takes a minute and no tools beyond a puller.</li>
-<li><strong>Choose a mouse that cannot bounce.</strong> Optical switches (Razer\'s optical switches, Logitech Lightforce, Corsair Quickstrike, Roccat Titan Optical) use a light beam instead of metal contacts, so there is nothing to oxidise or chatter. If you have had two mice fail the same way, this is the long-term answer.</li>
+<li><strong>Choose a mouse that cannot bounce.</strong> Optical switches (Razer\'s optical switches, Logitech Lightforce, Corsair Quickstrike, Roccat Titan Optical) use a light beam instead of metal contacts, so there is nothing to oxidize or chatter. If you have had two mice fail the same way, this is the long-term answer.</li>
 </ul>
 <p>For a cheap office mouse, replacement is the practical choice. For a 100 dollar gaming mouse, a switch swap is well worth it.</p>',
 			'replace',

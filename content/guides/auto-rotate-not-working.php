@@ -12,7 +12,7 @@ return array(
 	'updated'     => '2026-10-29',
 	'intro'       => 'You turn the phone sideways to watch a video and the picture stays stubbornly upright. Most of the time the cause is a setting, not a broken part. Work through these checks in order; the sensor test near the end tells you in a few seconds whether the hardware is to blame.',
 	'summary'     => array(
-		'Most rotation problems are the <strong>rotation lock</strong>: Auto-rotate off on Android, Portrait Orientation Lock on in iPhone Control Centre.',
+		'Most rotation problems are the <strong>rotation lock</strong>: Auto-rotate off on Android, Portrait Orientation Lock on in iPhone Control Center.',
 		'Some screens and apps <strong>never rotate</strong>: the iPhone home screen on most models, many Android launchers, and apps that are built portrait-only.',
 		'If rotation works in some apps but not others, it is the app. If it works nowhere, run the <a href="/accelerometer-test/">accelerometer test</a>: if "Sensor says" changes when you turn the phone, the sensor is fine.',
 		'A sensor that reads nothing after a restart and a safe mode check usually needs a repair, often after a drop or water damage.',
@@ -21,7 +21,7 @@ return array(
 		array(
 			'1. Check the rotation lock',
 			'<p><strong>Android:</strong> swipe down twice from the top to open quick settings and look for <strong>Auto-rotate</strong> (on some phones it shows as Portrait or Landscape when locked). Tap it so it reads Auto-rotate. On Samsung phones it is in the same panel; when locked, a small rotate icon appears in the navigation bar when you turn the phone, and tapping it rotates once.</p>
-<p><strong>iPhone:</strong> swipe down from the top-right corner (or up from the bottom on iPhones with a Home button) to open Control Centre. If the padlock with a circular arrow is red or white, Portrait Orientation Lock is on. Tap it to turn it off.</p>
+<p><strong>iPhone:</strong> swipe down from the top-right corner (or up from the bottom on iPhones with a Home button) to open Control Center. If the padlock with a circular arrow is red or white, Portrait Orientation Lock is on. Tap it to turn it off.</p>
 <p><strong>iPad and tablets:</strong> the same lock exists, and on some iPads the side switch can be set to lock rotation instead of mute.</p>',
 			'lock',
 		),
@@ -50,7 +50,7 @@ return array(
 		),
 		array(
 			'5. Calibrate and update',
-			'<p>Some Android phones offer sensor calibration in Settings (search for "calibrat") or in a hardware test menu; Samsung phones show the sensors after dialling <code>*#0*#</code> and tapping Sensor. Lay the phone on a flat table for calibration. iPhones calibrate at the factory and have no option; a restart is the reset.</p>
+			'<p>Some Android phones offer sensor calibration in Settings (search for "calibrat") or in a hardware test menu; Samsung phones show the sensors after dialing <code>*#0*#</code> and tapping Sensor. Lay the phone on a flat table for calibration. iPhones calibrate at the factory and have no option; a restart is the reset.</p>
 <p>Install pending system updates too. Rotation bugs after an update are not rare, and they are usually fixed in the next one. If rotation broke right after an update and the sensor test passes, an update or a reset of settings (Android: Reset settings or Reset app preferences; iPhone: Settings &gt; General &gt; Transfer or Reset &gt; Reset &gt; Reset All Settings) clears it without deleting data.</p>',
 			'calibrate',
 		),

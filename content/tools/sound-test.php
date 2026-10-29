@@ -58,14 +58,14 @@ return array(
 		array(
 			'What this sound test checks',
 			'<p>This audio test covers the basics that break most often: whether any sound comes out at all, whether both channels work and are the right way round, and whether the speaker can reproduce low, middle and high frequencies without distortion. It works with laptop speakers, desktop speakers, a soundbar, a Bluetooth speaker, wired or wireless headphones and phone speakers. For headphones specifically, including a detailed left-right test and bass check, see the <a href="/headphone-test/">headphone test</a>.</p>
-<p>Everything you hear is synthesised in your browser with Web Audio, so nothing is downloaded and there is no video to buffer. The level meters show the signal being sent to each channel, which helps you tell a silent speaker apart from a silent page.</p>',
+<p>Everything you hear is synthesized in your browser with Web Audio, so nothing is downloaded and there is no video to buffer. The level meters show the signal being sent to each channel, which helps you tell a silent speaker apart from a silent page.</p>',
 			'what-it-checks',
 		),
 	),
 	'fixes'        => array(
 		array( 'No sound at all', 'Check the volume and mute on the device, in the browser tab (a muted tab shows a crossed speaker icon) and on the speakers themselves. On Windows click the speaker icon in the taskbar and pick the right output device; on a Mac use System Settings > Sound > Output. Bluetooth speakers must be connected, not just paired.' ),
-		array( 'Only one speaker works', 'Push the cable all the way in: a half-inserted 3.5 mm jack plays one side only. Check the balance slider in your sound settings is centred. Try the speakers or headphones on another device to see if the fault follows them.' ),
-		array( 'Sound is distorted or crackles', 'Lower the volume: distortion at high volume is normal for small speakers. Set the system "enhancements" or equaliser off, update the audio driver, and for USB or Bluetooth speakers try another port or re-pair.' ),
+		array( 'Only one speaker works', 'Push the cable all the way in: a half-inserted 3.5 mm jack plays one side only. Check the balance slider in your sound settings is centered. Try the speakers or headphones on another device to see if the fault follows them.' ),
+		array( 'Sound is distorted or crackles', 'Lower the volume: distortion at high volume is normal for small speakers. Set the system "enhancements" or equalizer off, update the audio driver, and for USB or Bluetooth speakers try another port or re-pair.' ),
 		array( 'Sound works here but not in a game or app', 'The app is using a different output device. Open the app\'s audio settings and select the same device that works in the browser. On Windows, Settings > System > Sound > Volume mixer lets you set the output per app.' ),
 	),
 	'faq'          => array(

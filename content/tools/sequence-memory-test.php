@@ -33,7 +33,7 @@ return array(
 		'Press <strong>Start again</strong> for a new sequence. Your best level is kept in this browser.',
 	),
 	'howto_title'    => 'How to take the sequence memory test',
-	'results'        => '<p>Your score is the length of the longest sequence you repeated correctly. It measures <strong>serial working memory</strong>: holding items in order, which is harder than holding them in any order because each extra step can be confused with its neighbours.</p>
+	'results'        => '<p>Your score is the length of the longest sequence you repeated correctly. It measures <strong>serial working memory</strong>: holding items in order, which is harder than holding them in any order because each extra step can be confused with its neighbors.</p>
 <div class="table-scroll"><table>
 <thead><tr><th>Level</th><th>Rating</th></tr></thead>
 <tbody>
@@ -52,7 +52,7 @@ return array(
 		),
 		array(
 			'How to get further',
-			'<p>Rehearse the sequence <strong>while</strong> it plays rather than waiting for it to finish; mouth the positions or tap your fingers in time. Group the steps into phrases of three or four, the way you would remember a phone number, and notice repeats within a phrase ("corner, corner, middle"). Give the tiles names (top left, centre, bottom right) and say the names, because a verbal label survives longer than a visual flash. When you click, go at the speed you rehearsed; rushing the end of a long sequence is the most common way to lose. For the unordered version, try the <a href="/visual-memory-test/">visual memory test</a>; for numbers on a grid, the <a href="/chimp-test/">chimp test</a>.</p>',
+			'<p>Rehearse the sequence <strong>while</strong> it plays rather than waiting for it to finish; mouth the positions or tap your fingers in time. Group the steps into phrases of three or four, the way you would remember a phone number, and notice repeats within a phrase ("corner, corner, middle"). Give the tiles names (top left, center, bottom right) and say the names, because a verbal label survives longer than a visual flash. When you click, go at the speed you rehearsed; rushing the end of a long sequence is the most common way to lose. For the unordered version, try the <a href="/visual-memory-test/">visual memory test</a>; for numbers on a grid, the <a href="/chimp-test/">chimp test</a>.</p>',
 			'tips',
 		),
 	),

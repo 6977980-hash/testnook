@@ -10,7 +10,7 @@ return array(
 	'tools'       => array( 'eye-test', 'blind-spot-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
-	'intro'       => 'Astigmatism is one of the most common reasons people need glasses, and most people with glasses have some. It blurs or stretches detail at every distance because the eye focuses light unevenly. Here is how it works, how to spot it, and what the numbers on a prescription mean.',
+	'intro'       => 'Astigmatism is one of the most common reasons people need glasses, and most people with glasses have some. It blurs or stretches detail at every distance because the eye focuses light unevenly. Here is how it works, how to spot it, and what the numbers on a prescription mean. The astigmatism test on this site is a screening check, not a diagnosis; only an eye exam by an optometrist or ophthalmologist can measure it.',
 	'summary'     => array(
 		'Astigmatism happens when the <strong>cornea or lens is shaped more like a rugby ball</strong> than a football, so light focuses at two points instead of one.',
 		'Typical signs: <strong>blur or ghosting at all distances</strong>, streaks around lights at night, squinting and eye strain or headaches after screen work.',
@@ -40,7 +40,7 @@ return array(
 		array(
 			'Causes and how common it is',
 			'<p>Most astigmatism is simply the shape you were born with and is often inherited. It may change a little over the years, and it commonly gets slightly stronger with age as the eyelids press on the cornea differently. It is not caused by reading in poor light, sitting close to screens or using a phone, although those can make the symptoms more noticeable.</p>
-<p>Some degree of astigmatism is present in a large share of people. Most of it is small, under 1 dioptre, and many people never need correction for it. It often comes together with short sight (myopia) or long sight (hyperopia).</p>
+<p>Some degree of astigmatism is present in a large share of people. Most of it is small, under 1 diopter, and many people never need correction for it. It often comes together with short sight (myopia) or long sight (hyperopia).</p>
 <p>Less common causes include eye injury or surgery that scars the cornea, and keratoconus, a condition where the cornea thins and bulges into a cone. Keratoconus usually shows up in the teens or twenties and gets worse over time, so astigmatism that keeps increasing in a young person needs an eye specialist.</p>',
 			'causes',
 		),
@@ -50,7 +50,7 @@ return array(
 <div class="table-scroll"><table>
 <thead><tr><th>Field</th><th>Example</th><th>Meaning</th></tr></thead>
 <tbody>
-<tr><td>SPH (sphere)</td><td>-2.00</td><td>Short sight (minus) or long sight (plus), in dioptres</td></tr>
+<tr><td>SPH (sphere)</td><td>-2.00</td><td>Short sight (minus) or long sight (plus), in diopters</td></tr>
 <tr><td>CYL (cylinder)</td><td>-1.25</td><td>The amount of astigmatism. Blank or 0 means none</td></tr>
 <tr><td>Axis</td><td>180</td><td>The direction of the astigmatism, from 1 to 180 degrees</td></tr>
 </tbody></table></div>
@@ -60,7 +60,7 @@ return array(
 		),
 		array(
 			'The clock dial test',
-			'<p>The <a href="/astigmatism-test/">astigmatism test</a> on this site uses a clock dial: lines radiate from the centre like the numbers on a clock. Cover one eye, look at the centre from a comfortable distance without your glasses, and check whether all lines look equally dark and sharp.</p>
+			'<p>The <a href="/astigmatism-test/">astigmatism test</a> on this site uses a clock dial: lines radiate from the center like the numbers on a clock. Cover one eye, look at the center from a comfortable distance without your glasses, and check whether all lines look equally dark and sharp.</p>
 <p>If some lines look darker, thicker or sharper than others, the eye focuses that direction differently, which is a sign of astigmatism. The test shows an approximate axis from the lines you pick. If all lines look the same, you may have little or no astigmatism, though very small amounts are easy to miss.</p>
 <p>Repeat with the other eye, and then with glasses on. If your glasses are correct, the lines should look even. Pair it with the <a href="/eye-test/">eye test</a> for a rough check of sharpness.</p>',
 			'clock-test',
@@ -82,7 +82,7 @@ return array(
 		array( 'Can astigmatism go away?', 'Not on its own, and eye exercises do not change the shape of the cornea. It can be corrected with lenses or surgery.' ),
 		array( 'Does astigmatism get worse with age?', 'It often changes slowly over a lifetime, and many people see a small increase after middle age. Large changes are not normal and need an exam.' ),
 		array( 'Can screens cause astigmatism?', 'No. Screens can cause eye strain, which makes existing astigmatism more noticeable, but they do not change the shape of the eye.' ),
-		array( 'What is a normal astigmatism number?', 'Small amounts, up to about 0.50 to 0.75 dioptres of cylinder, are very common and often left uncorrected. Most people with glasses have some.' ),
+		array( 'What is a normal astigmatism number?', 'Small amounts, up to about 0.50 to 0.75 diopters of cylinder, are very common and often left uncorrected. Most people with glasses have some.' ),
 		array( 'Why do lights have streaks at night?', 'Astigmatism spreads the image of a point of light in one direction, so headlights and street lights look streaked or star-shaped. Correct lenses usually reduce it.' ),
 	),
 	'sources'     => array(

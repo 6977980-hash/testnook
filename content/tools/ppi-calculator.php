@@ -5,7 +5,7 @@ return array(
 	'title'          => 'PPI Calculator',
 	'seo_title'      => 'PPI Calculator: Pixels Per Inch, Dot Pitch & Screen Size',
 	'description'    => 'Free PPI calculator. Enter a screen\'s resolution and diagonal to get pixels per inch, dot pitch, physical size and the distance at which pixels disappear.',
-	'intro'          => 'Work out the pixel density of any screen. Enter the resolution and the diagonal size, or pick a common monitor, laptop or phone, and the calculator gives pixels per inch (PPI), pixels per centimetre, dot pitch, the screen\'s width and height, and the viewing distance at which single pixels can no longer be seen.',
+	'intro'          => 'Work out the pixel density of any screen. Enter the resolution and the diagonal size, or pick a common monitor, laptop or phone, and the calculator gives pixels per inch (PPI), pixels per centimeter, dot pitch, the screen\'s width and height, and the viewing distance at which single pixels can no longer be seen.',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'screen-info' ),
@@ -48,14 +48,14 @@ return array(
 </div>',
 	'howto'          => array(
 		'Pick a screen from <strong>Common screens</strong>, or type the horizontal and vertical resolution in pixels.',
-		'Enter the diagonal size from the spec sheet, in inches or centimetres.',
+		'Enter the diagonal size from the spec sheet, in inches or centimeters.',
 		'Press <strong>Use my screen</strong> to fill in this device\'s resolution; add its diagonal (the <a href="/screen-size/">screen size</a> page can measure it).',
 		'Read the PPI and the other values; they update as you type.',
 	),
 	'howto_title'    => 'How to use the PPI calculator',
 	'results'        => '<p><strong>PPI</strong> (pixels per inch) is the diagonal in pixels divided by the diagonal in inches: <code>PPI = &radic;(width&sup2; + height&sup2;) / diagonal</code>. A 27 inch 2560 x 1440 monitor has &radic;(2560&sup2; + 1440&sup2;) = 2937 pixels across its diagonal, so 2937 / 27 = 108.8 PPI.</p>
 <ul>
-<li><strong>Dot pitch</strong> is the distance between the centres of two pixels, 25.4 / PPI in millimetres. Smaller is sharper.</li>
+<li><strong>Dot pitch</strong> is the distance between the centers of two pixels, 25.4 / PPI in millimeters. Smaller is sharper.</li>
 <li><strong>Pixels vanish beyond</strong> is the distance at which one pixel covers one arcminute, the detail limit of 20/20 vision. Further away than this, a person with normal sight cannot see single pixels. Apple\'s "Retina" idea is based on the same calculation.</li>
 <li><strong>Screen size</strong> is the width and height of the picture, worked out from the diagonal and the pixel ratio.</li>
 </ul>
@@ -72,7 +72,7 @@ return array(
 	'extra'          => array(
 		array(
 			'How much PPI do you need?',
-			'<p>It depends on how far away you sit. A desktop monitor at 60-70 cm looks sharp from about 110 PPI and very sharp from 160 PPI; that is why a 27 inch 1440p monitor is popular and 4K is the step up. Laptops sit closer, so 200 PPI and above looks clean. Phones are held at 25-30 cm and need 400 PPI or more for pixels to disappear. TVs are watched from 2-3 metres, where 70-80 PPI on a 4K set is already beyond what the eye can resolve; 8K adds little at normal distances.</p>
+			'<p>It depends on how far away you sit. A desktop monitor at 60-70 cm looks sharp from about 110 PPI and very sharp from 160 PPI; that is why a 27 inch 1440p monitor is popular and 4K is the step up. Laptops sit closer, so 200 PPI and above looks clean. Phones are held at 25-30 cm and need 400 PPI or more for pixels to disappear. TVs are watched from 2-3 meters, where 70-80 PPI on a 4K set is already beyond what the eye can resolve; 8K adds little at normal distances.</p>
 <p>High PPI is not free: it needs display scaling (often 150-200%) to keep text readable, and in games it needs a stronger graphics card. See your current scaling on the <a href="/screen-resolution/">screen resolution</a> page.</p>',
 			'how-much-ppi',
 		),
@@ -85,7 +85,7 @@ return array(
 	'fixes'          => array(
 		array( 'The PPI does not match the spec sheet', 'Spec sheets round the diagonal (a "27 inch" monitor is often 27.0 to 27.2 inches) and some round the PPI. A difference of 1-2% is normal.' ),
 		array( 'Use my screen gives the wrong resolution', 'The browser reports the screen this window is on, multiplied by the pixel ratio. Reset browser zoom to 100% (Ctrl+0) and make sure the window is on the right monitor.' ),
-		array( 'I only know the size in centimetres', 'Choose cm as the unit. The calculator converts it to inches for you.' ),
+		array( 'I only know the size in centimeters', 'Choose cm as the unit. The calculator converts it to inches for you.' ),
 	),
 	'faq'            => array(
 		array( 'How do I calculate PPI?', 'Square the width and height in pixels, add them, take the square root, and divide by the diagonal in inches. The calculator does it for you.' ),
@@ -93,7 +93,7 @@ return array(
 		array( 'What is the PPI of a 27 inch 4K monitor?', 'About 163 PPI. A 27 inch 1440p monitor is about 109 PPI and a 27 inch 1080p one about 82 PPI.' ),
 		array( 'What is Retina display PPI?', 'Apple calls a screen Retina when single pixels cannot be seen at the normal viewing distance. That is around 220 PPI for laptops and 300-460 PPI for phones.' ),
 		array( 'Is higher PPI always better?', 'Higher PPI gives sharper text and images but needs display scaling and more graphics power. Beyond the distance where pixels vanish, extra PPI makes little visible difference.' ),
-		array( 'What is dot pitch?', 'The distance between two pixel centres, in millimetres. A 24 inch 1080p monitor has a dot pitch of about 0.277 mm.' ),
+		array( 'What is dot pitch?', 'The distance between two pixel centers, in millimeters. A 24 inch 1080p monitor has a dot pitch of about 0.277 mm.' ),
 	),
 	'related'        => array( 'screen-size', 'screen-resolution', 'aspect-ratio-calculator', 'screen-ratio', 'online-ruler', 'dpi-analyzer' ),
 	'updated'        => '2026-10-29',

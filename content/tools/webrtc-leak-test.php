@@ -41,13 +41,13 @@ return array(
 		array(
 			'What WebRTC is and why it can leak',
 			'<p>WebRTC is the browser technology behind video calls, screen sharing and file transfer in the browser. To connect two people directly, the browser asks a <strong>STUN server</strong>: "what address do you see me coming from?". That question goes out over UDP, which some VPN apps do not route through the tunnel, or which the operating system sends out of the normal network card. The STUN server then sees your real public IP, and the web page can read the answer. No permission prompt is shown, which is why this leak surprised so many VPN users when it was found in 2015.</p>
-<p>Most good VPN apps now block it, and browsers have reduced it, but it still happens with browser VPN extensions that only proxy web traffic, with split tunnelling, and with some free VPNs.</p>',
+<p>Most good VPN apps now block it, and browsers have reduced it, but it still happens with browser VPN extensions that only proxy web traffic, with split tunneling, and with some free VPNs.</p>',
 			'what-is-webrtc',
 		),
 		array(
 			'How to stop a WebRTC leak',
 			'<ul>
-<li><strong>VPN app:</strong> turn on its leak protection or kill switch, turn off split tunnelling for the browser, and use the desktop app rather than only a browser extension.</li>
+<li><strong>VPN app:</strong> turn on its leak protection or kill switch, turn off split tunneling for the browser, and use the desktop app rather than only a browser extension.</li>
 <li><strong>Chrome and Edge:</strong> there is no built-in switch. Install the official <strong>WebRTC Network Limiter</strong> extension from Google, or your VPN\'s extension with "WebRTC leak protection" turned on.</li>
 <li><strong>Firefox:</strong> type <code>about:config</code> in the address bar, accept the warning, search <code>media.peerconnection.enabled</code> and set it to <strong>false</strong>. This turns WebRTC off completely.</li>
 <li><strong>Brave:</strong> Settings > Privacy and security > WebRTC IP handling policy > "Disable non-proxied UDP".</li>
@@ -58,7 +58,7 @@ return array(
 		),
 	),
 	'fixes'          => array(
-		array( 'Leak found with the VPN on', 'Turn on the VPN\'s leak protection or kill switch, make sure the browser is not excluded by split tunnelling, and add WebRTC protection in the browser as described above. Test again.' ),
+		array( 'Leak found with the VPN on', 'Turn on the VPN\'s leak protection or kill switch, make sure the browser is not excluded by split tunneling, and add WebRTC protection in the browser as described above. Test again.' ),
 		array( 'Both lines show my home IP even with the VPN on', 'The VPN is not routing the browser at all, which is a bigger problem than WebRTC. Reconnect the VPN, try another server, and check <a href="/what-is-my-ip/">what is my IP</a>.' ),
 		array( 'Video calls stopped working after the fix', 'Turning WebRTC off in Firefox or with an extension also blocks browser calls. Use the call app instead, or allow WebRTC only for the call site in the extension settings.' ),
 		array( 'The test shows no public IP at all', 'Your network or firewall blocks STUN (common on work and school networks), or the browser limits WebRTC. Nothing can leak in that case.' ),

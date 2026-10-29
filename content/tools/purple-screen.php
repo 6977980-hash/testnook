@@ -33,20 +33,20 @@ return array(
 		'Press <strong>Esc</strong>, or tap the screen on a phone, to come back to this page.',
 	),
 	'howto_title'  => 'How to use the purple screen',
-	'results'      => '<p>Purple (#800080) is red and blue at half power with green off. Because it mixes two channels at a middle level, purple shows how evenly the panel handles colour, and stuck green subpixels stand out against it:</p>
+	'results'      => '<p>Purple (#800080) is red and blue at half power with green off. Because it mixes two channels at a middle level, purple shows how evenly the panel handles color, and stuck green subpixels stand out against it:</p>
 <ul>
 <li><strong>A green or white dot</strong>: a green subpixel is stuck on. Try the <a href="/stuck-pixel-fixer/">stuck pixel fixer</a>.</li>
-<li><strong>Areas that look more blue or more pink</strong>: colour shift across the panel, often worse at the edges or from an angle.</li>
-<li><strong>Banding</strong> in large dark purple areas: low colour depth or an image "enhancement" mode. Turn off dynamic contrast.</li>
+<li><strong>Areas that look more blue or more pink</strong>: color shift across the panel, often worse at the edges or from an angle.</li>
+<li><strong>Banding</strong> in large dark purple areas: low color depth or an image "enhancement" mode. Turn off dynamic contrast.</li>
 </ul>
 <p>For a complete pixel check, run the <a href="/dead-pixel-test/">dead pixel test</a>.</p>',
 	'extra'        => array(
 		array(
 			'What a purple screen is used for',
-			'<p><strong>Gaming and streaming mood light.</strong> Purple is a favourite backlight colour for desks, streams and photos. An old tablet or second monitor showing bright purple behind you adds a coloured rim of light without any extra lamps. Pair it with the <a href="/blue-screen/">blue</a> or <a href="/pink-screen/">pink</a> screen on another device for a two-colour look.</p>
+			'<p><strong>Gaming and streaming mood light.</strong> Purple is a favorite backlight color for desks, streams and photos. An old tablet or second monitor showing bright purple behind you adds a colored rim of light without any extra lamps. Pair it with the <a href="/blue-screen/">blue</a> or <a href="/pink-screen/">pink</a> screen on another device for a two-colour look.</p>
 <p><strong>Soft calm light.</strong> Lavender is a pale, gentle purple that works as a quiet night light or a relaxing background while music plays. Keep the brightness low in the evening.</p>
 <p><strong>Not ultraviolet.</strong> A purple screen looks a little like a black light, but screens cannot produce UV. It will not make fluorescent paint glow or check banknotes.</p>
-<p><strong>Colour check.</strong> Purple tests the mix of red and blue at partial levels, a combination that pure single-colour screens do not cover.</p>',
+<p><strong>Color check.</strong> Purple tests the mix of red and blue at partial levels, a combination that pure single-colour screens do not cover.</p>',
 			'uses',
 		),
 	),
@@ -56,12 +56,10 @@ return array(
 		array( 'Full screen does not work on my iPhone', 'iPhone Safari does not let websites go fully full screen, so the purple fills the browser window instead. Rotate to landscape or add the page to your home screen.' ),
 	),
 	'faq'          => array(
-		array( 'How do I make my screen purple?', 'Open this page and press "Open full purple screen". The browser fills your entire screen with purple (#800080). Press Esc or tap to exit.' ),
-		array( 'What is the colour code for purple?', 'This page uses the web colour purple, #800080 (RGB 128, 0, 128). Bright purple, blue violet, indigo and lavender are available as extra shades.' ),
+		array( 'What is the color code for purple?', 'This page uses the web color purple, #800080 (RGB 128, 0, 128). Bright purple, blue violet, indigo and lavender are available as extra shades.' ),
 		array( 'Can a purple screen work as a black light?', 'No. A screen only emits visible light, so it cannot make UV-reactive paint or ink glow. It just looks purple.' ),
 		array( 'What is the difference between purple and violet?', 'On screens, purple is a mix of red and blue. True violet is a single short wavelength that screens can only imitate, so "blue violet" is the closest shade here.' ),
-		array( 'Can I use the purple screen for a stream background?', 'Yes. Put a tablet or spare monitor showing purple behind you, out of focus, for a coloured glow. Lower the brightness if it overpowers your face.' ),
-		array( 'Is this purple screen free?', 'Yes. It runs in your browser, has no ads inside the full screen and nothing is downloaded or uploaded.' ),
+		array( 'Can I use the purple screen for a stream background?', 'Yes. Put a tablet or spare monitor showing purple behind you, out of focus, for a colored glow. Lower the brightness if it overpowers your face.' ),
 	),
 	'related'      => array( 'pink-screen', 'blue-screen', 'red-screen', 'black-screen', 'stuck-pixel-fixer', 'dead-pixel-test' ),
 	'updated'      => '2026-10-28',

@@ -44,7 +44,7 @@ return array(
 <div class="table-scroll"><table>
 <thead><tr><th>Average</th><th>What it means</th></tr></thead>
 <tbody>
-<tr><td>Under 200 ms</td><td>Excellent. Typical of practised gamers and sprinters at the start line.</td></tr>
+<tr><td>Under 200 ms</td><td>Excellent. Typical of practiced gamers and sprinters at the start line.</td></tr>
 <tr><td>200-250 ms</td><td>Faster than most people.</td></tr>
 <tr><td>250-300 ms</td><td>Average. Most adults score here on a normal computer.</td></tr>
 <tr><td>300-400 ms</td><td>A bit slow. Often caused by tiredness, a slow screen or a laggy wireless mouse.</td></tr>
@@ -61,7 +61,7 @@ return array(
 		),
 		array(
 			'How to improve your reaction time',
-			'<p>Reaction time improves with practice up to a point, mostly because you learn to stay relaxed and focused. Warm up with a few rounds, keep your finger touching the button so it only has to press, look at the centre of the box rather than around it, and sit at a comfortable distance. Regular sleep and staying hydrated help more than any trick. Gamers also lower system latency: a wired mouse, a high refresh rate monitor, game mode on the TV and turning off V-Sync in games.</p>',
+			'<p>Reaction time improves with practice up to a point, mostly because you learn to stay relaxed and focused. Warm up with a few rounds, keep your finger touching the button so it only has to press, look at the center of the box rather than around it, and sit at a comfortable distance. Regular sleep and staying hydrated help more than any trick. Gamers also lower system latency: a wired mouse, a high refresh rate monitor, game mode on the TV and turning off V-Sync in games.</p>',
 			'improve',
 		),
 	),
@@ -77,7 +77,7 @@ return array(
 		array( 'Why is my first try slower?', 'You are still getting into rhythm. That is why the test averages several tries. Do a practice round, then press Reset and do a real one.' ),
 		array( 'Does a higher refresh rate monitor improve reaction time?', 'It lowers the delay before you see the green, by up to about 12 ms going from 60 Hz to 240 Hz. Your brain is not faster, but your measured time is.' ),
 		array( 'Can I take the reaction time test on a phone?', 'Yes. Tap the box when it turns green. Times are usually a little slower than on a desktop with a mouse because of touch screen delay.' ),
-		array( 'Is my best score saved?', 'Your best average is stored in this browser only, so you can try to beat it later. Nothing is sent to a server.' ),
+		array( 'Is my best score saved?', 'Your best average is saved in this browser, so you can try to beat it later. Your clicks stay in this browser; only your final average is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),
 	),
 	'related'        => array( 'f1-reaction-test', 'stroop-test', 'cps-test', 'spacebar-clicker', 'refresh-rate-test', 'fps-test' ),
 	'updated'        => '2026-10-28',

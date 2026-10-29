@@ -5,7 +5,7 @@ return array(
 	'title'          => 'Number Memory Test',
 	'seo_title'      => 'Number Memory Test: How Many Digits Can You Remember?',
 	'description'    => 'Free number memory test. A number flashes up for a few seconds, then you type it back. Each level adds a digit until you slip. Find your digit span.',
-	'intro'          => 'How long a number can you hold in your head? A number appears, you get a few seconds to memorise it, and then you type it back. Every level adds one digit. The average person manages about 7; the game ends on your first mistake and tells you your digit span.',
+	'intro'          => 'How long a number can you hold in your head? A number appears, you get a few seconds to memorize it, and then you type it back. Every level adds one digit. The average person manages about 7; the game ends on your first mistake and tells you your digit span.',
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'memory' ),
@@ -25,7 +25,7 @@ return array(
 <p class="tool-status" id="nm-status" aria-live="polite">Press Start. Level 1 is a single digit.</p>',
 	'howto'          => array(
 		'Press <strong>Start</strong>. A number appears with a shrinking bar under it that shows how long it stays.',
-		'Memorise it. The display time grows with the level: 2 seconds for short numbers, up to one second per digit later on.',
+		'Memorize it. The display time grows with the level: 2 seconds for short numbers, up to one second per digit later on.',
 		'When it disappears, type the number and press <strong>Submit</strong> or Enter. On a phone the numeric keypad opens automatically.',
 		'If you are right, press <strong>Next</strong> for a number one digit longer. If you are wrong, the digits you got wrong are underlined in red and your score is the last level you passed.',
 		'Play again to improve. Your best score is remembered in this browser.',
@@ -50,7 +50,7 @@ return array(
 		),
 		array(
 			'How to remember longer numbers',
-			'<p><strong>Chunk</strong> the digits into groups of two to four, the way phone numbers are written: 4817 2093 65 is three items, not ten. Say the chunks in a rhythm; rhythm is the cheapest memory aid there is. Look for patterns within chunks: a year, a known number, an ascending run, a repeated digit. Memory athletes go further and convert each pair of digits into a fixed image (a person, an object) and place the images along a familiar route, which is how 100-digit numbers get memorised, but chunking and rhythm alone will add two or three digits to most people\'s span within a few rounds. For the same skill with positions instead of digits, try the <a href="/chimp-test/">chimp test</a>; for words, the <a href="/verbal-memory-test/">verbal memory test</a>.</p>',
+			'<p><strong>Chunk</strong> the digits into groups of two to four, the way phone numbers are written: 4817 2093 65 is three items, not ten. Say the chunks in a rhythm; rhythm is the cheapest memory aid there is. Look for patterns within chunks: a year, a known number, an ascending run, a repeated digit. Memory athletes go further and convert each pair of digits into a fixed image (a person, an object) and place the images along a familiar route, which is how 100-digit numbers get memorized, but chunking and rhythm alone will add two or three digits to most people\'s span within a few rounds. For the same skill with positions instead of digits, try the <a href="/chimp-test/">chimp test</a>; for words, the <a href="/verbal-memory-test/">verbal memory test</a>.</p>',
 			'tips',
 		),
 	),

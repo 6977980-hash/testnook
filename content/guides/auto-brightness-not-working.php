@@ -43,7 +43,7 @@ return array(
 <ul>
 <li><strong>iPhone:</strong> turn Auto-Brightness off, restart the phone, then turn it on again. Then set the slider once to a comfortable level in normal light.</li>
 <li><strong>Google Pixel:</strong> Settings &gt; Apps &gt; See all apps &gt; Device Health Services &gt; Storage &amp; cache &gt; Clear storage &gt; Reset adaptive brightness.</li>
-<li><strong>Samsung and other Android phones:</strong> turn Adaptive brightness off, restart, turn it on again. On Samsung, clearing the data of the brightness learning is not exposed, but switching it off and on clears most odd behaviour.</li>
+<li><strong>Samsung and other Android phones:</strong> turn Adaptive brightness off, restart, turn it on again. On Samsung, clearing the data of the brightness learning is not exposed, but switching it off and on clears most odd behavior.</li>
 </ul>
 <p>After a reset, use the slider sparingly for a few days. Every correction teaches the phone your preference.</p>',
 			'reset',
@@ -55,7 +55,7 @@ return array(
 <li><strong>Battery saver or Low Power Mode</strong> lowers the maximum brightness on many phones.</li>
 <li><strong>Heat:</strong> phones dim the screen to protect themselves when hot, for example in direct sun or while charging and gaming. It recovers once the phone cools.</li>
 <li><strong>Extra dim, Reduce White Point and dark mode schedules</strong> make the screen look dimmer at any brightness. On iPhone, check Accessibility &gt; Display &amp; Text Size &gt; Reduce White Point; on Android, look for Extra dim in quick settings.</li>
-<li><strong>Night Light, Night Shift and Eye comfort</strong> change the colour, which can look dimmer, but not the actual brightness.</li>
+<li><strong>Night Light, Night Shift and Eye comfort</strong> change the color, which can look dimmer, but not the actual brightness.</li>
 </ul>',
 			'caps',
 		),

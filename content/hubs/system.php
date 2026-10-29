@@ -26,7 +26,7 @@ return array(
 </ul>
 
 <h2>Privacy</h2>
-<p>The tests run in your browser. The speed and ping tests exchange random data with Cloudflare\'s nearest data centre, the IP tools ask Cloudflare, ipify and the internet registries what address your connection uses, and DNS lookups go to Cloudflare or Google over HTTPS. These services see your IP address, as every website you visit does. Testnook does not receive or store any of the results; your speed test history stays in your own browser.</p>',
+<p>The tests run in your browser. The speed and ping tests exchange random data with Cloudflare\'s nearest data center, the IP tools ask Cloudflare, ipify and the internet registries what address your connection uses, and DNS lookups go to Cloudflare or Google over HTTPS. These services see your IP address, as every website you visit does. Testnook does not receive or store any of the results; your speed test history stays in your own browser.</p>',
 	'faq'         => array(
 		array( 'What is a good internet speed?', 'About 25 Mbps download is enough for one person to stream in 4K and make video calls. A busy household is comfortable from about 100 Mbps with 10 to 20 Mbps upload. Measure yours with the <a href="/internet-speed-test/">internet speed test</a>.' ),
 		array( 'What is a good ping?', 'Under 20 ms is excellent, 20 to 50 ms is good for any game, 50 to 100 ms is fine for most uses, and over 100 ms starts to feel slow. The <a href="/ping-test/">ping test</a> also shows jitter and spikes.' ),

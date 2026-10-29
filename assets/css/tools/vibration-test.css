@@ -24,4 +24,5 @@
 .vb-stage .stat-value.is-ok { color: var(--ok); }
 .vb-stage .stat-value.is-bad { color: var(--bad); }
 .vb-switch { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
-.vb-ios-row { margin-top: 12px; }
+.vb-ios-row { margin-bottom: 4px; }
+.vb-ios-row:not(:has(button:not([hidden]))) { display: none; }

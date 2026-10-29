@@ -14,6 +14,7 @@ return array(
 	'embed_height'   => 720,
 	'tool'           => '<div class="tool-stage vb-stage">
 	<div class="vb-top"><div class="vb-phone" id="vb-phone" aria-hidden="true"></div><div class="vb-line" id="vb-line" aria-hidden="true"></div></div>
+	<div class="btn-row vb-ios-row"><button type="button" class="btn btn-primary" id="vb-ios" hidden>iPhone haptic tick</button></div>
 	<p class="vb-label">Patterns</p>
 	<div class="vb-grid">
 		<button type="button" class="btn" data-vb="short" aria-pressed="false">Short</button>
@@ -35,7 +36,6 @@ return array(
 	<p class="vb-label">Custom length</p>
 	<div class="vb-custom"><input type="range" id="vb-len" min="50" max="3000" step="50" value="500" aria-label="Vibration length in milliseconds"><output id="vb-lenout" for="vb-len">500 ms</output><button type="button" class="btn" id="vb-custom">Buzz</button></div>
 	<div class="vb-ask" id="vb-ask" hidden><strong>Did you feel it?</strong><button type="button" class="btn btn-sm" id="vb-yes">Yes</button><button type="button" class="btn btn-sm" id="vb-no">No</button></div>
-	<div class="btn-row vb-ios-row"><button type="button" class="btn" id="vb-ios" hidden>iPhone haptic tick</button></div>
 	<div class="stats">
 		<div class="stat"><span class="stat-label">Vibration API</span><span class="stat-value" id="vb-support">Checking...</span></div>
 		<div class="stat"><span class="stat-label">Last pattern</span><span class="stat-value" id="vb-lastlen">-</span></div>

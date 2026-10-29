@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'Audio, Speaker & Mic Tests',
 	'seo_title'   => 'Audio Tests & Tools: Speaker, Mic, Tuner, Metronome (Free)',
-	'description' => 'Free online audio tests and tools. Check speakers, headphones and mic, clean a phone speaker, generate tones, test hearing, tune a guitar, keep time with a metronome.',
+	'description' => 'Free online audio tests: speakers, stereo, bass, headphones and mic, plus a voice recorder, speaker cleaner, tone generator, hearing test, tuner and metronome.',
 	'intro'       => 'Test every part of your sound setup in the browser: speaker and headphone channel checks, a microphone test with recording and playback, a water-ejecting speaker cleaner, a tone generator and a hearing frequency test. Musicians get a guitar tuner, a metronome and a tap BPM counter. Nothing is uploaded.',
 	'body'        => '<h2>Which audio test do you need?</h2>
 <p>No sound, or sound from only one side? The <a href="/sound-test/">sound test</a> plays tones through the left, right and both channels so you can tell a dead speaker from a balance setting. The <a href="/headphone-test/">headphone test</a> adds a left-right pan, a bass sweep and a polarity check for earphones and headsets.</p>

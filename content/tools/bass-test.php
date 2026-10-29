@@ -29,8 +29,8 @@ return array(
 	</div>
 	<p class="bt-label">Sweeps and beats</p>
 	<div class="bt-grid is-wide">
-		<button type="button" class="btn" data-bt="down" aria-pressed="false">Sweep down 200-15 Hz</button>
-		<button type="button" class="btn" data-bt="up" aria-pressed="false">Sweep up 15-200 Hz</button>
+		<button type="button" class="btn" data-bt="down" aria-pressed="false">Sweep down</button>
+		<button type="button" class="btn" data-bt="up" aria-pressed="false">Sweep up</button>
 		<button type="button" class="btn" data-bt="rattle" aria-pressed="false">Rattle check</button>
 		<button type="button" class="btn" data-bt="kick" aria-pressed="false">Kick drum</button>
 		<button type="button" class="btn" data-bt="808" aria-pressed="false">808 bass</button>
@@ -45,7 +45,7 @@ return array(
 	'howto'          => array(
 		'Turn your system volume down before you start. Bass needs more power than other sounds and can surprise you.',
 		'Press <strong>50 Hz</strong> and raise the volume slider until you hear or feel it clearly. That is your reference level.',
-		'Press <strong>Sweep down 200-15 Hz</strong> and press <strong>I can\'t hear it any more</strong> the moment the tone fades. The result is your setup\'s lowest usable bass.',
+		'Press <strong>Sweep down</strong> (200 to 15 Hz) and press <strong>I can\'t hear it any more</strong> the moment the tone fades. The result is your setup\'s lowest usable bass.',
 		'Run the <strong>Rattle check</strong> and listen for buzzing from the speaker, the room or loose objects.',
 		'Play the <strong>Kick drum</strong> and <strong>808 bass</strong> to judge punch and clarity with real music sounds.',
 	),

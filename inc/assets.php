@@ -54,7 +54,6 @@ add_action(
 			'window.TN=' . wp_json_encode(
 				array(
 					'ads'      => tn_ads_allowed_here() ? TN_ADSENSE_CLIENT : '',
-					'ga4'      => TN_GA4_ID,
 					'clarity'  => TN_CLARITY_ID,
 					'embed'    => tn_is_embed(),
 					'rest'     => esc_url_raw( rest_url( 'testnook/v1/' ) ),

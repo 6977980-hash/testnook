@@ -21,7 +21,7 @@ define( 'TN_ADS_ENABLED', false );
 define( 'TN_ADSENSE_CLIENT', '' );
 
 // Analytics ids. Empty means the tag is not printed.
-define( 'TN_GA4_ID', '' );      // e.g. G-XXXXXXXXXX
+define( 'TN_GA4_ID', 'G-RS6YGDD3HR' ); // inc/analytics.php; skipped outside production and in embeds
 define( 'TN_CLARITY_ID', '' );  // e.g. abcd1234ef
 
 // Google Search Console verification (the content= value of the meta tag).

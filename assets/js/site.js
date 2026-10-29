@@ -267,13 +267,7 @@
 	}
 
 	window.addEventListener('load', function () {
-		if (cfg.ga4) {
-			addScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(cfg.ga4));
-			window.dataLayer = window.dataLayer || [];
-			window.gtag = function () { window.dataLayer.push(arguments); };
-			window.gtag('js', new Date());
-			window.gtag('config', cfg.ga4);
-		}
+		// GA4 is printed in <head> by inc/analytics.php.
 		if (cfg.clarity) {
 			window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
 			addScript('https://www.clarity.ms/tag/' + encodeURIComponent(cfg.clarity));

@@ -34,7 +34,8 @@ content/pages/       about, contact, privacy, terms, guides, leaderboards, embed
 content/guides/      one file per guide (article)   -> /<slug>/
 templates/           tool.php, hub.php, guide.php, static.php, embed.php
 assets/css/main.css  the stylesheet (plus assets/css/tools/*.css per tool)
-assets/js/site.js    theme toggle, nav, search, fullscreen, lazy ads, analytics
+assets/js/site.js    theme toggle, nav, search, fullscreen, lazy ads, Clarity
+inc/analytics.php    GA4 gtag + Consent Mode defaults in <head> (production only, not in embeds or for admins)
 assets/js/tools/     one script per tool
 assets/img/          favicons, logo, share images (assets/img/og/<slug>.jpg per tool and hub)
 bin/make-og-images.py  regenerates the share images from the catalog and the guides (run locally, commit the output)
@@ -80,4 +81,4 @@ GitHub runs the lint part on every pull request and push to `main`
 3. Settings > Reading: leave "Your latest posts"; the theme serves its own homepage.
 4. When AdSense approves: set `TN_ADSENSE_CLIENT` and `TN_ADS_ENABLED` in
    `inc/config.php`. `ads.txt` is then served automatically.
-5. Set `TN_GA4_ID` and `TN_CLARITY_ID` in `inc/config.php` when the properties exist.
+5. GA4 (`TN_GA4_ID`) is set. Set `TN_CLARITY_ID` in `inc/config.php` if Clarity is added, and update the privacy policy when you do.

@@ -97,3 +97,25 @@ add_filter(
 	}
 );
 // Embed-mode URLs and drafts never belong in the sitemap; theme pages are all published pages already.
+
+/*
+ * Security headers (audit F-05). No X-Frame-Options or frame-ancestors: tools
+ * are meant to be embedded on other sites (?embed=1). Permissions-Policy keeps
+ * camera, microphone, location and motion sensors on our own origin, which the
+ * tools need (an embedding page must still grant them with allow="...").
+ * No interest-cohort: Chrome logs an "unrecognized feature" console error.
+ */
+add_action(
+	'send_headers',
+	function () {
+		if ( headers_sent() ) {
+			return;
+		}
+		if ( is_ssl() ) {
+			header( 'Strict-Transport-Security: max-age=31536000; includeSubDomains' );
+		}
+		header( 'X-Content-Type-Options: nosniff' );
+		header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+		header( 'Permissions-Policy: camera=(self), microphone=(self), geolocation=(self), gyroscope=(self), accelerometer=(self), magnetometer=(self)' );
+	}
+);

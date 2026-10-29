@@ -1,0 +1,11 @@
+# Theme internals (notes, scripts, config) are not for visitors (audit F-07).
+# style.css, assets/** and the share images stay public.
+<FilesMatch "\.(md|py|json|lock|sh|ya?ml)$|^\.gitignore$">
+	<IfModule mod_authz_core.c>
+		Require all denied
+	</IfModule>
+	<IfModule !mod_authz_core.c>
+		Order allow,deny
+		Deny from all
+	</IfModule>
+</FilesMatch>

@@ -32,6 +32,7 @@ get_header();
 			tn_ad_slot( 'after-faq' );
 			?>
 		</div>
+		<?php tn_guides_section( tn_guides_in_hub( $def['slug'] ), 'Guides' ); ?>
 		<?php if ( ! empty( $def['updated'] ) ) : ?>
 			<p class="updated">Last updated <time datetime="<?php echo esc_attr( $def['updated'] ); ?>"><?php echo esc_html( mysql2date( 'j F Y', $def['updated'] ) ); ?></time></p>
 		<?php endif; ?>

@@ -6,6 +6,7 @@
  *   tool:<slug>  content/tools/<slug>.php  (must also be listed in content/catalog.php)
  *   hub:<slug>   content/hubs/<slug>.php   (slug must be a hub in content/catalog.php)
  *   page:<slug>  content/pages/<slug>.php  (About, Privacy, Contact, Terms...)
+ *   guide:<slug> content/guides/<slug>.php (articles; see inc/guides.php)
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -96,6 +97,21 @@ function tn_get_def( $key ) {
 			array( 'faq' => array(), 'ads' => 'standard' ),
 			(array) require TN_DIR . '/content/hubs/' . $slug . '.php'
 		);
+	} elseif ( 'guide' === $type && preg_match( '/^[a-z0-9-]+$/', $slug ) && is_readable( TN_DIR . '/content/guides/' . $slug . '.php' ) ) {
+		$def = array_merge(
+			array(
+				'ads'      => 'standard',
+				'intro'    => '',
+				'summary'  => array(),
+				'sections' => array(),
+				'faq'      => array(),
+				'tools'    => array(),
+				'sources'  => array(),
+				'data'     => null,
+			),
+			(array) require TN_DIR . '/content/guides/' . $slug . '.php'
+		);
+		$def['name'] = $def['title'];
 	} elseif ( 'page' === $type && preg_match( '/^[a-z0-9-]+$/', $slug ) && is_readable( TN_DIR . '/content/pages/' . $slug . '.php' ) ) {
 		$def = array_merge( array( 'ads' => 'none' ), (array) require TN_DIR . '/content/pages/' . $slug . '.php' );
 	}
@@ -125,6 +141,9 @@ function tn_all_keys() {
 	foreach ( glob( TN_DIR . '/content/pages/*.php' ) as $file ) {
 		$keys[] = 'page:' . basename( $file, '.php' );
 	}
+	foreach ( glob( TN_DIR . '/content/guides/*.php' ) as $file ) {
+		$keys[] = 'guide:' . basename( $file, '.php' );
+	}
 	return $keys;
 }
 
@@ -134,6 +153,7 @@ function tn_content_files() {
 		array( TN_DIR . '/content/catalog.php' ),
 		glob( TN_DIR . '/content/tools/*.php' ),
 		glob( TN_DIR . '/content/hubs/*.php' ),
-		glob( TN_DIR . '/content/pages/*.php' )
+		glob( TN_DIR . '/content/pages/*.php' ),
+		glob( TN_DIR . '/content/guides/*.php' )
 	);
 }

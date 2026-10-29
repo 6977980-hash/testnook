@@ -553,9 +553,10 @@ function tn_fmt_value( $v, $def ) {
 /**
  * The "Testnook stats" section for a tool page. $boards is the tool's 'stats'
  * list. Printed from the hourly cache so the HTML (and Google) carries real
- * numbers; returns nothing while a board has under 20 results.
+ * numbers; returns nothing while a board has under 20 results. Guides pass
+ * their own heading, a lead paragraph (HTML) and a section id.
  */
-function tn_stats_block( $boards ) {
+function tn_stats_block( $boards, $heading = 'How other people score on Testnook', $lead = '', $id = 'site-stats' ) {
 	$all    = tn_boards();
 	$blocks = '';
 	foreach ( (array) $boards as $board ) {
@@ -616,7 +617,8 @@ function tn_stats_block( $boards ) {
 	if ( ! $blocks ) {
 		return;
 	}
-	echo '<section id="site-stats" class="site-stats"><h2>How other people score on Testnook</h2>'
+	echo '<section id="' . esc_attr( $id ) . '" class="site-stats"><h2>' . esc_html( $heading ) . '</h2>'
+		. ( $lead ? wp_kses( $lead, tn_allowed_html() ) : '' )
 		. '<p>Anonymous results from the last ' . esc_html( TN_RESULTS_WINDOW_DAYS ) . ' days on this site, updated hourly. The top and bottom 1% are left out of the average, and results that fail our checks are not counted.</p>'
 		. $blocks // phpcs:ignore WordPress.Security.EscapeOutput -- built above from escaped parts
 		. '</section>';

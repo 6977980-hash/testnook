@@ -241,7 +241,7 @@
 			var groups = (table.getAttribute('data-di-groups') || 'browser,system,screen,gpu,network,features').split(',');
 			table.innerHTML = '';
 			groups.forEach(function (k) {
-				var sec = document.createElement('div'), h = document.createElement('h3'), dl = document.createElement('dl');
+				var sec = document.createElement('div'), h = document.createElement('h2'), dl = document.createElement('dl');
 				sec.className = 'di-group';
 				h.textContent = TITLES[k];
 				data[k].forEach(function (row) {

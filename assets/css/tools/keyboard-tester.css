@@ -1,9 +1,10 @@
-/* Keyboard tester */
-.tool-stage.kb-stage { display: block; place-items: normal; padding: 12px; min-height: 0; overflow-x: auto; }
-.kb-board { --u: clamp(26px, calc((100vw - 80px) / 23.5), 46px); display: flex; gap: calc(var(--u) * .4); justify-content: center; outline: none; width: max-content; margin: 0 auto; }
+/* Keyboard tester. --u (the key unit) is set by the script so the board fits the stage. */
+.kb-bar { flex-wrap: wrap; gap: 8px; }
+.kb-bar .seg button { padding: 6px 10px; min-height: 36px; font-size: .85rem; }
+.tool-stage.kb-stage { display: block; place-items: normal; padding: 12px; min-height: 0; overflow-x: auto; position: relative; }
+.tool-stage.kb-stage.is-scroll { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+.kb-board { --u: 40px; display: flex; gap: calc(var(--u) * .4); justify-content: center; outline: none; width: max-content; margin: 0 auto; }
 .kb-board:focus-visible { box-shadow: 0 0 0 3px var(--focus); border-radius: var(--radius-sm); }
-.kb-tkl { --u: clamp(26px, calc((100vw - 80px) / 19.5), 46px); }
-.kb-sixty { --u: clamp(26px, calc((100vw - 60px) / 15.5), 48px); }
 .kb-block { display: grid; gap: 4px; align-content: start; }
 .kb-row { display: flex; gap: 4px; height: var(--u); }
 .kb-row:empty { height: calc(var(--u) * .5); }
@@ -18,7 +19,14 @@
 .kb-key[style*="--h"] { z-index: 2; }
 .kb-key.is-done { border-color: var(--ok); color: var(--ok); background: color-mix(in srgb, var(--ok) 14%, var(--surface)); }
 .kb-key.is-down { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); transform: translateY(2px); border-bottom-width: 1px; }
+.kb-hint { margin: 6px 0 0; font-size: .85rem; color: var(--muted); }
 .kb-typing { margin-top: 12px; min-height: 70px; font: 1rem/1.4 var(--mono); }
 .kb-stats { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
 .kb-stats .stat-value { font-size: 1.1rem; overflow-wrap: anywhere; }
-@media (max-width: 760px) { .kb-full .kb-block-2 { display: none; } }
+.kb-log { margin-top: 12px; }
+.kb-log summary { cursor: pointer; font-weight: 600; }
+.kb-log table { width: 100%; border-collapse: collapse; margin: 8px 0; font: .85rem/1.3 var(--mono); }
+.kb-log th, .kb-log td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); }
+.kb-log th { background: var(--surface-2); font-family: var(--font); }
+.kb-log tbody:empty::after { content: "Press a key to fill the log."; display: block; padding: 6px 8px; color: var(--muted); font-family: var(--font); }
+@media (max-width: 560px) { .tool-stage.kb-stage { padding: 6px; } }

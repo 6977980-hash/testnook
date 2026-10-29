@@ -7,6 +7,7 @@ return array(
 	'title'       => 'Typing Tests',
 	'seo_title'   => 'Typing Test: Check Your Typing Speed in WPM (Free Online)',
 	'description' => 'Free online typing tests: a typing speed test on common words, 1 and 5 minute tests on real sentences, a WPM test and an English typing test.',
+	'pick'        => 'Pick a test below: each one runs right here in your browser.',
 	'intro'       => 'Measure your typing speed and accuracy. Choose a quick test on common words, the standard one minute test, a five minute stamina test or an English sentence test with punctuation, like the ones used for jobs and exams. Every result shows net words per minute, raw speed, accuracy and errors, with the average scores to compare with.',
 	'body'        => '<h2>Which typing test should you take?</h2>
 <p>The <a href="/typing-speed-test/">typing speed test</a> is the general one: common English words, 30 seconds to 5 minutes, your choice. The <a href="/1-minute-typing-test/">1 minute typing test</a> is the standard length used by typing courses and most published averages, on real sentences with capitals and punctuation. The <a href="/5-minute-typing-test/">5 minute typing test</a> uses the same sentences for the length of a typing certificate or job test and shows the speed you can actually sustain.</p>

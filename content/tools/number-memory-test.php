@@ -16,7 +16,7 @@ return array(
 	<button type="button" class="btn btn-primary btn-sm" id="nm-start">Start</button>
 </div>
 <div class="tool-stage mm-stage" id="nm-stage" aria-label="Number memory test">
-	<div class="mm-intro" id="nm-intro"><h3>Remember the number</h3><p>A number appears for a few seconds. When it disappears, type it back. Each level is one digit longer.</p></div>
+	<div class="mm-intro" id="nm-intro"><h2>Remember the number</h2><p>A number appears for a few seconds. When it disappears, type it back. Each level is one digit longer.</p></div>
 	<div id="nm-show" hidden><div class="nm-number" id="nm-number" aria-live="polite"></div><div class="nm-track" aria-hidden="true"><span id="nm-bar"></span></div></div>
 	<div class="nm-form" id="nm-form" hidden><label for="nm-input">What was the number?</label><input type="text" inputmode="numeric" pattern="[0-9]*" id="nm-input" autocomplete="off" enterkeyhint="done"><button type="button" class="btn btn-primary" id="nm-submit">Submit</button></div>
 	<div id="nm-result" hidden><p class="mm-big" id="nm-verdict"></p><p>Number: <span class="nm-diff" id="nm-want"></span></p><p>Your answer: <span class="nm-diff" id="nm-got"></span></p><button type="button" class="btn btn-primary" id="nm-next">Next</button></div>

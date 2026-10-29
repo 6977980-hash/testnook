@@ -1,6 +1,6 @@
 /* Stick drift test */
 .tool-stage.sd-stage { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; place-items: stretch; padding: 16px; min-height: 0; }
-.sd-stick h3 { margin: 0 0 8px; font-size: .95rem; text-align: center; }
+.sd-stick h2, .sd-stick h3 { margin: 0 0 8px; font-size: .95rem; text-align: center; }
 .sd-stick canvas { display: block; width: 100%; max-width: 280px; aspect-ratio: 1; margin: 0 auto; }
 .sd-stick .stats { grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 6px; }
 .sd-stick .stat { background: var(--surface); padding: 8px 10px; }
@@ -11,3 +11,10 @@
 .sd-warn { color: var(--warn); }
 .sd-bad { color: var(--bad); }
 @media (max-width: 560px) { .sd-stage { grid-template-columns: 1fr; } }
+.sd-tiers-wrap { margin-top: 12px; }
+.sd-tiers { width: 100%; border-collapse: collapse; font-size: .875rem; }
+.sd-tiers caption { text-align: left; font-weight: 600; padding: 0 0 6px; }
+.sd-tiers th, .sd-tiers td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.sd-tiers th { background: var(--surface-2); }
+.sd-tiers tr.is-hit td { background: var(--brand-soft); font-weight: 600; }
+.sd-tiers tr.is-hit td:first-child { box-shadow: inset 4px 0 0 var(--brand); }

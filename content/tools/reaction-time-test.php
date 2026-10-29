@@ -20,7 +20,7 @@ return array(
 	</div>
 	<button type="button" class="btn btn-sm" data-tn-fullscreen="#rt-stage">Full screen</button>
 </div>
-<div class="tool-stage rt-stage is-idle" id="rt-stage" tabindex="0" role="button" aria-label="Reaction test area">
+<div class="tool-stage rt-stage is-idle" id="rt-stage" tabindex="0" role="button">
 	<div class="rt-msg"><strong id="rt-big">Click to start</strong><span id="rt-small">When the box turns red, wait. Click the moment it turns green.</span></div>
 </div>
 <div class="stats">

@@ -1,6 +1,6 @@
 /* Sound test */
 .st-stage { display: grid; gap: 18px; align-content: start; justify-items: stretch; padding: 16px; min-height: 0; }
-.st-group h3 { margin: 0 0 10px; font-size: .95rem; }
+.st-group h2, .st-group h3 { margin: 0 0 10px; font-size: .95rem; }
 .st-channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .st-ch {
 	display: grid; gap: 6px; place-items: center; padding: 14px 8px; min-height: 84px;

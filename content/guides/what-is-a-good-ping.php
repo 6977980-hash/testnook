@@ -26,14 +26,14 @@ return array(
 		),
 		array(
 			'Good ping ranges for each use',
-			'<table><thead><tr><th>Ping</th><th>Competitive games (shooters, fighting, MOBA)</th><th>Casual and turn-based games</th><th>Video calls</th></tr></thead><tbody>
+			'<div class="table-scroll"><table><thead><tr><th>Ping</th><th>Competitive games (shooters, fighting, MOBA)</th><th>Casual and turn-based games</th><th>Video calls</th></tr></thead><tbody>
 <tr><td>Under 20 ms</td><td>Excellent</td><td>Excellent</td><td>Excellent</td></tr>
 <tr><td>20 to 50 ms</td><td>Good, no real disadvantage</td><td>Excellent</td><td>Excellent</td></tr>
 <tr><td>50 to 100 ms</td><td>Playable, slight delay</td><td>Good</td><td>Good</td></tr>
 <tr><td>100 to 150 ms</td><td>Noticeable, shots land late</td><td>Fine</td><td>Good</td></tr>
 <tr><td>150 to 300 ms</td><td>Frustrating</td><td>Playable</td><td>Some talking over each other</td></tr>
 <tr><td>Over 300 ms</td><td>Unplayable</td><td>Slow</td><td>Hard to hold a conversation</td></tr>
-</tbody></table>
+</tbody></table></div>
 <p>For calls, the ITU-T recommendation G.114 says that for most applications the one-way delay should stay under 150 ms; a round-trip ping is two one-way trips, so under about 300 ms is acceptable, and conversation feels most natural well below that. Streaming video and downloads hardly care about ping at all, because they buffer ahead.</p>',
 			'ranges',
 		),

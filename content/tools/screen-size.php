@@ -24,7 +24,7 @@ return array(
 	<p class="si-note" id="sz-note"></p>
 </div>
 ' . $cal( true ) . '
-<h3 class="si-sub">Screen size calculator</h3>
+<h2 class="si-sub">Screen size calculator</h2>
 <div class="si-form">
 	<label>Diagonal (inches)<input type="number" id="sz-d" min="1" max="200" step="0.1" value="27" inputmode="decimal"></label>
 	<label>Ratio width<input type="number" id="sz-rw" min="1" step="0.1" value="16" inputmode="decimal"></label>

@@ -5,6 +5,7 @@ return array(
 	'title'       => 'Memory Tests & Games',
 	'seo_title'   => 'Memory Test: Chimp, Number, Visual, Sequence & Verbal (Free)',
 	'description' => 'Free online memory tests: chimp test, number memory, visual memory, sequence memory and verbal memory, plus a card matching memory game. No sign-up.',
+	'pick'        => 'Pick a test below: each one runs right here in your browser.',
 	'intro'       => 'Six short tests of short-term and working memory, each one a game that gets harder until you slip. Find your digit span, your visual span, how many positions you can hold, how long a sequence you can repeat and how many words you can keep track of, with the typical scores for comparison.',
 	'body'        => '<h2>Which memory test should you take?</h2>
 <p>Each test probes a different part of short-term memory. The <a href="/number-memory-test/">number memory test</a> is the classic digit span: a number appears for a few seconds and you type it back, one digit longer every level. Most adults manage about seven. The <a href="/chimp-test/">chimp test</a> comes from a Kyoto University study in which a chimpanzee beat students at remembering the positions of numbers on a grid; here the numbers hide when you click 1 and you tap the rest in order.</p>

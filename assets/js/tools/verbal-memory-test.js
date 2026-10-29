@@ -72,7 +72,7 @@
 		if (score > best) { try { localStorage.setItem(KEY, String(score)); } catch (e) { /* ignore */ } pb(); }
 		play.hidden = true;
 		intro.hidden = false;
-		intro.querySelector('h3').textContent = 'Score: ' + score + ' words';
+		intro.querySelector('h2').textContent = 'Score: ' + score + ' words';
 		intro.querySelector('p').textContent = msg;
 		startBtn.textContent = 'Start again';
 		U.status(statusEl, 'Game over with ' + score + ' correct answers over ' + shownCount + ' words. ' + msg, '');

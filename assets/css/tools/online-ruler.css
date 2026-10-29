@@ -14,7 +14,8 @@
 .rl-cal summary { cursor: pointer; font-weight: 600; }
 .rl-cal-state { font-weight: 400; color: var(--muted); font-size: .9rem; }
 .rl-cal-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; padding-top: 14px; }
-.rl-cal-opt h3 { margin: 0 0 6px; font-size: 1rem; }
+.rl-cal-opt h2, .rl-cal-opt h3 { margin: 0 0 6px; font-size: 1rem; }
+.rl-cal-opt > label { display: block; font-weight: 600; font-size: .9rem; margin: 0 0 6px; }
 .rl-cal-opt p { margin: 0 0 10px; font-size: .9rem; color: var(--muted); }
 .rl-card { width: 323px; height: 204px; max-width: 100%; border-radius: 12px; background: linear-gradient(135deg, var(--brand), var(--brand-strong)); color: var(--brand-ink); display: grid; place-items: center; font-weight: 600; margin: 0 0 10px; box-shadow: var(--shadow); }
 .rl-cal-opt input[type="range"] { margin-bottom: 10px; }

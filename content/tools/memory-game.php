@@ -28,7 +28,7 @@ return array(
 </div>
 <div class="tool-stage mm-stage" id="mg-stage" aria-label="Memory game board">
 	<div class="mm-hud"><span>Moves <strong id="mg-moves">0</strong></span><span>Time <strong id="mg-time">0 s</strong></span><span>Pairs <strong id="mg-pairs">0 / 8</strong></span><span>Accuracy <strong id="mg-acc">-</strong></span></div>
-	<div class="mm-intro" id="mg-intro"><h3>Match the pairs</h3><p>Pick a board size, press Start and flip two cards at a time. Matched pairs stay face up. The timer starts on your first flip.</p></div>
+	<div class="mm-intro" id="mg-intro"><h2>Match the pairs</h2><p>Pick a board size, press Start and flip two cards at a time. Matched pairs stay face up. The timer starts on your first flip.</p></div>
 	<div class="mm-board mg-board" id="mg-board" hidden></div>
 </div>
 <span class="mm-pb" id="mg-pb"></span>

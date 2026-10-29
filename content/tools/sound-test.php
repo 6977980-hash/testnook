@@ -13,7 +13,7 @@ return array(
 	'embed_height' => 640,
 	'tool'         => '<div class="tool-stage st-stage">
 	<div class="st-group">
-		<h3>Speaker channels</h3>
+		<h2>Speaker channels</h2>
 		<div class="st-channels">
 			<button type="button" class="st-ch" data-st="left"><span class="st-ch-ico">&#9664;</span>Left speaker</button>
 			<button type="button" class="st-ch" data-st="stereo"><span class="st-ch-ico">&#9664;&#9654;</span>Both (stereo)</button>
@@ -22,7 +22,7 @@ return array(
 		<div class="st-vu"><div class="meter"><span id="st-vu-l"></span></div><div class="meter"><span id="st-vu-r"></span></div></div>
 	</div>
 	<div class="st-group">
-		<h3>Test sounds</h3>
+		<h2>Test sounds</h2>
 		<div class="btn-row">
 			<button type="button" class="btn btn-sm" data-st="bass">Bass 60 Hz</button>
 			<button type="button" class="btn btn-sm" data-st="mid">Mid 1 kHz</button>

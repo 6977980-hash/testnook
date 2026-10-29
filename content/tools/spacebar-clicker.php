@@ -22,7 +22,7 @@ return array(
 	</div>
 	<button type="button" class="btn btn-sm" id="sb-reset">Reset</button>
 </div>
-<div class="tool-stage sb-stage" id="sb-stage" tabindex="0" role="button" aria-label="Spacebar test area">
+<div class="tool-stage sb-stage" id="sb-stage" tabindex="0" role="button">
 	<div class="sb-count" id="sb-count">0</div>
 	<div class="sb-key" id="sb-key"><span>Space</span></div>
 	<p class="sb-hint" id="sb-hint">Click here, then press the spacebar.</p>

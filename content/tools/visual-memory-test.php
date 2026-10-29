@@ -16,7 +16,7 @@ return array(
 	<button type="button" class="btn btn-primary btn-sm" id="vm-start">Start</button>
 </div>
 <div class="tool-stage mm-stage" id="vm-stage" aria-label="Visual memory test grid">
-	<div class="mm-intro" id="vm-intro"><h3>Remember the pattern</h3><p>Tiles light up, then go dark. Click the ones that were lit. Each level adds a tile. Three mistakes in a level cost a life.</p></div>
+	<div class="mm-intro" id="vm-intro"><h2>Remember the pattern</h2><p>Tiles light up, then go dark. Click the ones that were lit. Each level adds a tile. Three mistakes in a level cost a life.</p></div>
 	<div class="mm-board vm-board" id="vm-board" hidden></div>
 </div>
 <span class="mm-pb" id="vm-pb"></span>

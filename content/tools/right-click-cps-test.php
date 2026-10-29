@@ -23,7 +23,7 @@ return array(
 	</div>
 	<span class="cps-opt">Right button only</span>
 </div>
-<div class="tool-stage cps-stage" id="cps-stage" data-cps-mode="right" tabindex="0" role="button" aria-label="Right click area">
+<div class="tool-stage cps-stage" id="cps-stage" data-cps-mode="right" tabindex="0" role="button">
 	<div class="cps-ring" id="cps-ring"><span id="cps-timer">5.0</span><small>seconds</small></div>
 	<div class="cps-msg"><strong id="cps-big">Right click here to start</strong><span id="cps-small">The timer starts on your first right click.</span></div>
 </div>

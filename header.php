@@ -31,6 +31,9 @@ if ( $tn_def ) {
 				<?php foreach ( tn_hubs() as $tn_slug => $tn_hub ) : ?>
 					<li><a href="<?php echo esc_url( tn_hub_url( $tn_slug ) ); ?>"<?php echo $tn_slug === $tn_current_hub ? ' aria-current="true"' : ''; ?>><?php echo esc_html( $tn_hub['name'] ); ?></a></li>
 				<?php endforeach; ?>
+				<?php $tn_page_slug = ( $tn_def && 'page' === $tn_def['type'] ) ? $tn_def['slug'] : ''; ?>
+				<li class="nav-sep"><a href="<?php echo esc_url( home_url( '/guides/' ) ); ?>"<?php echo ( 'guides' === $tn_page_slug || ( $tn_def && 'guide' === $tn_def['type'] ) ) ? ' aria-current="true"' : ''; ?>>Guides</a></li>
+				<li class="nav-mobile"><a href="<?php echo esc_url( home_url( '/leaderboards/' ) ); ?>"<?php echo 'leaderboards' === $tn_page_slug ? ' aria-current="true"' : ''; ?>>Leaderboards</a></li>
 			</ul>
 		</nav>
 		<button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark mode">

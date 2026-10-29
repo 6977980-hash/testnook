@@ -16,6 +16,9 @@ get_header();
 			<?php if ( ! empty( $def['intro'] ) ) : ?>
 				<p class="lede"><?php tn_html( $def['intro'] ); ?></p>
 			<?php endif; ?>
+			<?php if ( ! empty( $def['pick'] ) ) : ?>
+				<p class="hub-pick"><?php echo esc_html( $def['pick'] ); ?></p>
+			<?php endif; ?>
 		</header>
 		<ul class="cards">
 			<?php foreach ( tn_tools_in_hub( $def['slug'] ) as $tool ) : ?>

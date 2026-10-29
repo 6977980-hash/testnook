@@ -16,7 +16,7 @@ return array(
 	<button type="button" class="btn btn-primary btn-sm" id="cm-start">Start</button>
 </div>
 <div class="tool-stage mm-stage" id="cm-stage" aria-label="Chimp test grid">
-	<div class="mm-intro" id="cm-intro"><h3>Are you smarter than a chimpanzee?</h3><p>Click the numbers in order. After you click 1, the others are hidden. Each round adds a number; three mistakes end the game.</p></div>
+	<div class="mm-intro" id="cm-intro"><h2>Are you smarter than a chimpanzee?</h2><p>Click the numbers in order. After you click 1, the others are hidden. Each round adds a number; three mistakes end the game.</p></div>
 	<div class="mm-board cm-board" id="cm-board" hidden></div>
 </div>
 <span class="mm-pb" id="cm-pb"></span>

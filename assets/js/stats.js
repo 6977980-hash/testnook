@@ -52,10 +52,33 @@
 		paintNote();
 	}
 
+	/* "Copy result" line for CPS, reaction and typing results (shown even when sharing is off). */
+	var copyBox = document.querySelector('[data-tn-copy-result]');
+	function resultText(board, value, extra) {
+		var where = location.host + location.pathname;
+		var m = /^cps-(\d+)$/.exec(board);
+		if (m) { return 'I got ' + Number(value).toFixed(1) + ' CPS on the ' + m[1] + ' second click test at ' + where; }
+		if (board === 'reaction') { return 'My average reaction time is ' + Math.round(value) + ' ms over 5 tries at ' + where; }
+		if (/^typing-/.test(board)) { return 'I type ' + Math.round(value) + ' WPM at ' + Math.round(extra) + '% accuracy, tested at ' + where; }
+		return '';
+	}
+	function showCopy(board, value, extra) {
+		if (!copyBox || cfg.embed) { return; }
+		var text = resultText(board, value, extra);
+		copyBox.querySelector('[data-tn-copy-text]').textContent = text;
+		copyBox.hidden = !text;
+	}
+	if (copyBox) {
+		copyBox.querySelector('button').addEventListener('click', function (e) {
+			window.TNUtil.copyText(copyBox.querySelector('[data-tn-copy-text]').textContent, e.currentTarget);
+		});
+	}
+
 	window.TNStats = {
 		enabled: enabled,
 		/** Fetch a ticket for a board when a test starts. Safe to call again: the newest ticket wins. */
 		begin: function (board) {
+			if (copyBox) { copyBox.hidden = true; }
 			if (!enabled()) { tickets[board] = null; return; }
 			show('');
 			document.dispatchEvent(new CustomEvent('tn:begin', { detail: { board: board } }));
@@ -65,6 +88,7 @@
 		submit: function (board, value, extra, cv) {
 			var t = tickets[board];
 			tickets[board] = null;
+			showCopy(board, value, extra);
 			if (!enabled() || !t) { return Promise.resolve(null); }
 			return t.then(function (ticket) {
 				if (!ticket) { return null; }

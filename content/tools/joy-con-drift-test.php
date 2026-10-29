@@ -1,19 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-$stick = function ( $i, $label ) {
-	return '<div class="sd-stick">
-		<h3 id="sd-h' . $i . '">' . $label . '</h3>
-		<canvas id="sd-c' . $i . '" aria-label="' . $label . ' position"></canvas>
-		<div class="stats">
-			<div class="stat"><span class="stat-label">X</span><span class="stat-value" id="sd-x' . $i . '">0.000</span></div>
-			<div class="stat"><span class="stat-label">Y</span><span class="stat-value" id="sd-y' . $i . '">0.000</span></div>
-			<div class="stat"><span class="stat-label">Distance</span><span class="stat-value" id="sd-d' . $i . '">0%</span></div>
-			<div class="stat"><span class="stat-label">At rest</span><span class="stat-value" id="sd-rest' . $i . '">-</span></div>
-			<div class="stat"><span class="stat-label">Outer range</span><span class="stat-value" id="sd-range' . $i . '">-</span></div>
-		</div>
-	</div>';
-};
+$sd    = require __DIR__ . '/_stick-drift.php';
+$stick = $sd['stick'];
 
 return array(
 	'title'          => 'Joy-Con Drift Test',
@@ -39,7 +28,8 @@ return array(
 	' . $stick( 0, 'Left stick' ) . '
 	' . $stick( 1, 'Right stick' ) . '
 </div>
-<p class="tool-status" id="sd-status" aria-live="polite">No Joy-Con found yet. Pair it by Bluetooth, then press any button on it.</p>',
+<p class="tool-status" id="sd-status" aria-live="polite">No Joy-Con found yet. Pair it by Bluetooth, then press any button on it.</p>
+' . $sd['tiers'],
 	'howto'          => array(
 		'Pair the Joy-Con with your computer or Android phone: hold the small round sync button on the rail of the Joy-Con until the lights run, then choose "Joy-Con (L)" or "Joy-Con (R)" in the Bluetooth settings.',
 		'Open this page in Chrome or Edge and press any button on the Joy-Con. If both Joy-Cons are connected, pick one in the menu that appears.',
@@ -50,10 +40,12 @@ return array(
 	'howto_title'    => 'How to test a Joy-Con for drift',
 	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the center when untouched, as a percentage of full tilt:</p>
 <ul>
-<li><strong>Under 5%:</strong> no drift. The Switch\'s own dead zone hides this.</li>
-<li><strong>5-12%:</strong> early drift. You may see slow movement in menus or the camera creeping in some games.</li>
-<li><strong>Over 12%:</strong> clear Joy-Con drift. Characters walk or menus scroll on their own.</li>
+<li><strong>1% or less, excellent:</strong> as good as new.</li>
+<li><strong>1-5%, normal:</strong> sensor noise. The Switch\'s own dead zone hides this.</li>
+<li><strong>5-10%, noticeable:</strong> early drift. You may see slow movement in menus or the camera creeping in some games.</li>
+<li><strong>Over 10%, needs attention:</strong> clear Joy-Con drift. Characters walk or menus scroll on their own.</li>
 </ul>
+<p>The table under the test marks the row your Joy-Con falls in, and <strong>Dead zone</strong> shows the smallest dead zone that hides the resting offset.</p>
 <p><strong>Outer range</strong> shows whether the stick reaches full tilt all the way round. Around 100% is ideal; a lower value in one direction means worn or dirty contacts. Drift often comes and goes, so test again after a few minutes of play if the first result is clean but you still see problems in games.</p>',
 	'extra'          => array(
 		array(
@@ -74,7 +66,7 @@ return array(
 		array( 'The Joy-Con does not show up', 'Make sure it is paired in the Bluetooth settings and not still connected to the Switch (turn the Switch off or put it in airplane mode). Press a button after the page loads, and use Chrome or Edge.' ),
 	),
 	'faq'            => array(
-		array( 'How do I test my Joy-Con for drift online?', 'Pair the Joy-Con with your PC or Android phone by Bluetooth, open this page in Chrome or Edge, press a button, then press Check drift with the stick untouched. Over 12% at rest means clear drift.' ),
+		array( 'How do I test my Joy-Con for drift online?', 'Pair the Joy-Con with your PC or Android phone by Bluetooth, open this page in Chrome or Edge, press a button, then press Check drift with the stick untouched. Over 10% at rest needs attention; 5-10% is noticeable drift.' ),
 		array( 'Can I test Joy-Cons on a PC?', 'Yes. Windows, macOS and Linux can pair Joy-Cons by Bluetooth. Chrome and Edge read their sticks as analog controllers, which this test needs.' ),
 		array( 'Why does my Joy-Con show in the left circle?', 'A single Joy-Con counts as a small sideways controller, so its one stick is reported as the left stick. Both circles are used when the browser combines a pair into one controller.' ),
 		array( 'Does Nintendo fix Joy-Con drift for free?', 'In many regions, yes, including the US, UK and EU, even out of warranty. Check the Nintendo Support site for your country.' ),

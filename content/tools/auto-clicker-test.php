@@ -20,7 +20,7 @@ return array(
 		<button type="button" data-cps-t="60" aria-pressed="false">60 s</button>
 	</div>
 </div>
-<div class="tool-stage cps-stage" id="cps-stage" data-cps-mode="auto" tabindex="0" role="button" aria-label="Auto clicker target area">
+<div class="tool-stage cps-stage" id="cps-stage" data-cps-mode="auto" tabindex="0" role="button">
 	<div class="cps-ring" id="cps-ring"><span id="cps-timer">10.0</span><small>seconds</small></div>
 	<div class="cps-msg"><strong id="cps-big">Start your auto clicker here</strong><span id="cps-small">The timer starts on the first click.</span></div>
 </div>

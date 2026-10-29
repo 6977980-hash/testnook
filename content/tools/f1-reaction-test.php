@@ -19,7 +19,7 @@ return array(
 	</div>
 	<button type="button" class="btn btn-sm" data-tn-fullscreen="#f1-stage">Full screen</button>
 </div>
-<div class="tool-stage f1-stage is-idle" id="f1-stage" tabindex="0" role="button" aria-label="F1 start lights reaction area">
+<div class="tool-stage f1-stage is-idle" id="f1-stage" tabindex="0" role="button">
 	<div class="f1-gantry" aria-hidden="true">
 		<div class="f1-col"><i></i><i></i><i></i></div>
 		<div class="f1-col"><i></i><i></i><i></i></div>

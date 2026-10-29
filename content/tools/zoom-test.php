@@ -26,11 +26,11 @@ return array(
 		<div class="zt-empty" id="zt-empty"><p><strong>Your camera preview appears here.</strong></p><p>Press Start and allow the camera and microphone. Nothing is recorded or uploaded unless you press Record, and that recording stays on this page.</p></div>
 	</div>
 	<div class="zt-side">
-		<h3>Microphone</h3>
+		<h2>Microphone</h2>
 		<div class="meter zt-meter" aria-hidden="true"><span id="zt-meter"></span></div>
 		<button type="button" class="btn btn-sm" id="zt-rec" disabled>Record 5 s and play back</button>
 		<audio id="zt-playback" controls hidden></audio>
-		<h3>Speakers</h3>
+		<h2>Speakers</h2>
 		<button type="button" class="btn btn-sm" id="zt-chime">Play test sound</button>
 		<div class="zt-heard" id="zt-heard" hidden>Did you hear the chime? <button type="button" class="btn btn-sm" data-zt-heard="1">Yes</button> <button type="button" class="btn btn-sm" data-zt-heard="0">No</button></div>
 	</div>

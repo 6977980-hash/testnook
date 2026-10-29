@@ -5,7 +5,7 @@
 .sc-cal.is-cal .sc-state { color: var(--ok); }
 .sc-body { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); padding: 0 14px 14px; }
 .sc-opt { min-width: 0; }
-.sc-opt h3 { margin: 4px 0 4px; font-size: .95rem; }
+.sc-opt h2, .sc-opt h3 { margin: 4px 0 4px; font-size: .95rem; }
 .sc-opt p { margin: 0 0 8px; font-size: .9rem; color: var(--muted); }
 .sc-card { max-width: 100%; border: 2px dashed var(--brand); border-radius: 10px; display: grid; place-items: center; color: var(--muted); font-size: .85rem; margin: 0 0 8px; box-sizing: border-box; }
 .sc-opt input[type="range"] { width: 100%; margin: 0 0 8px; }

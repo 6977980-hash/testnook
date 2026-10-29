@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+$sd = require __DIR__ . '/_stick-drift.php';
+
 return array(
 	'title'          => 'Stick Drift Test',
 	'seo_title'      => 'Stick Drift Test: Check Controller Joystick Drift Online',
@@ -22,30 +24,11 @@ return array(
 	<div class="field sd-dz"><label for="sd-dz">Dead zone ring <output id="sd-dzout" for="sd-dz">10%</output></label><input type="range" id="sd-dz" min="0" max="30" step="1" value="10"></div>
 </div>
 <div class="tool-stage sd-stage">
-	<div class="sd-stick">
-		<h3>Left stick</h3>
-		<canvas id="sd-c0" aria-label="Left stick position"></canvas>
-		<div class="stats">
-			<div class="stat"><span class="stat-label">X</span><span class="stat-value" id="sd-x0">0.000</span></div>
-			<div class="stat"><span class="stat-label">Y</span><span class="stat-value" id="sd-y0">0.000</span></div>
-			<div class="stat"><span class="stat-label">Distance</span><span class="stat-value" id="sd-d0">0%</span></div>
-			<div class="stat"><span class="stat-label">At rest</span><span class="stat-value" id="sd-rest0">-</span></div>
-			<div class="stat"><span class="stat-label">Outer range</span><span class="stat-value" id="sd-range0">-</span></div>
-		</div>
-	</div>
-	<div class="sd-stick">
-		<h3>Right stick</h3>
-		<canvas id="sd-c1" aria-label="Right stick position"></canvas>
-		<div class="stats">
-			<div class="stat"><span class="stat-label">X</span><span class="stat-value" id="sd-x1">0.000</span></div>
-			<div class="stat"><span class="stat-label">Y</span><span class="stat-value" id="sd-y1">0.000</span></div>
-			<div class="stat"><span class="stat-label">Distance</span><span class="stat-value" id="sd-d1">0%</span></div>
-			<div class="stat"><span class="stat-label">At rest</span><span class="stat-value" id="sd-rest1">-</span></div>
-			<div class="stat"><span class="stat-label">Outer range</span><span class="stat-value" id="sd-range1">-</span></div>
-		</div>
-	</div>
+' . $sd['stick']( 0, 'Left stick' ) . '
+	' . $sd['stick']( 1, 'Right stick' ) . '
 </div>
-<p class="tool-status" id="sd-status" aria-live="polite">No controller found yet. Connect it by USB or Bluetooth, then press any button on it.</p>',
+<p class="tool-status" id="sd-status" aria-live="polite">No controller found yet. Connect it by USB or Bluetooth, then press any button on it.</p>
+' . $sd['tiers'],
 	'howto'          => array(
 		'Connect your controller by USB cable or Bluetooth, then <strong>press any button</strong> on it. Browsers only show a controller after a button press.',
 		'Move both sticks. The dots should follow smoothly and return to the center cross when you let go.',
@@ -56,11 +39,13 @@ return array(
 	'howto_title'    => 'How to test for stick drift',
 	'results'        => '<p><strong>At rest</strong> is how far the stick reports itself from the center while untouched, as a percentage of full tilt. Every stick has a little noise, so small numbers are normal:</p>
 <ul>
-<li><strong>Under 5%:</strong> no drift. Default game dead zones hide this completely.</li>
-<li><strong>5-12%:</strong> minor drift. You may notice slow camera creep in some games. A slightly larger dead zone or cleaning usually solves it.</li>
-<li><strong>Over 12%:</strong> clear stick drift. Characters walk or the camera turns on its own. The stick module is worn or dirty.</li>
+<li><strong>1% or less, excellent:</strong> as good as new.</li>
+<li><strong>1-5%, normal:</strong> ordinary sensor noise. Default game dead zones hide this completely.</li>
+<li><strong>5-10%, noticeable:</strong> you may see slow camera creep in some games. A slightly larger dead zone or cleaning usually solves it.</li>
+<li><strong>Over 10%, needs attention:</strong> clear stick drift. Characters walk or the camera turns on its own. The stick module is worn or dirty.</li>
 </ul>
-<p><strong>Outer range</strong> is the average distance the stick reaches at full tilt. Around 100% (often 100-115% on the diagonals) is normal. Much lower than 100% in one direction means the stick cannot reach full tilt there, which feels like a sluggish turn in games. A dot that jitters or jumps while you hold the stick still is also a sign of a worn potentiometer.</p>',
+<p>The table under the test marks the row your worse stick falls in, <strong>Dead zone</strong> shows the smallest dead zone that hides its resting offset (2% above it), and the slider moves to that value so you can see the ring.</p>
+<p><strong>Outer range</strong> is the average distance the stick reaches at full tilt. Around 100% (often 100-115% on the diagonals) is normal. <strong>Circularity error</strong> appears once you have rotated the stick all the way round: it is the average gap between the green trace and the outer circle, which is the ideal full-tilt circle. Lower is rounder. Many pads read a little past 100% on the diagonals, which adds a few percent; a large number with a dent in the trace means the stick cannot reach full tilt in that direction. Much lower than 100% in one direction means the stick cannot reach full tilt there, which feels like a sluggish turn in games. A dot that jitters or jumps while you hold the stick still is also a sign of a worn potentiometer.</p>',
 	'extra'          => array(
 		array(
 			'What causes stick drift?',
@@ -80,7 +65,7 @@ return array(
 		array( 'Repair or replace', 'If cleaning does not help, the stick module is worn. Check the warranty first. Replacing the module needs soldering on most controllers; Hall effect replacement sticks fix drift for good on many models.' ),
 	),
 	'faq'            => array(
-		array( 'How do I know if my controller has stick drift?', 'Put the controller down, press Check drift and wait six seconds. A resting value over about 12% means drift. You may also see the dot sit away from the center cross.' ),
+		array( 'How do I know if my controller has stick drift?', 'Put the controller down, press Check drift and wait six seconds. A resting value over 5% is noticeable drift and over 10% needs attention. You may also see the dot sit away from the center cross.' ),
 		array( 'Why does my controller not show up?', 'Press a button after connecting: browsers hide controllers until then. Also check that the cable carries data, not only charge, and that no other app has taken over the controller.' ),
 		array( 'Can stick drift fix itself?', 'Sometimes dust works its way out and drift fades, but worn sticks usually get worse. Cleaning helps in many cases.' ),
 		array( 'What dead zone should I use?', 'A few percent above the At rest value. Most games default to 5-15%. Too large a dead zone makes small aiming movements feel unresponsive.' ),

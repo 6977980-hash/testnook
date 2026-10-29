@@ -1,0 +1,20 @@
+/* Guided monitor check (the pattern grid and viewer come from monitor-test.css) */
+.mc-steps { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 10px; }
+.mc-step { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; background: var(--surface); }
+.mc-step.is-pass { border-color: var(--ok); }
+.mc-step.is-problem { border-color: var(--bad); }
+.mc-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mc-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--surface-2); font-weight: 700; flex: none; }
+.mc-step.is-pass .mc-num { background: var(--ok); color: #fff; }
+.mc-step.is-problem .mc-num { background: var(--bad); color: #fff; }
+.mc-name { margin: 0; font-size: 1.05rem; flex: 1 1 auto; }
+.mc-state { font-size: .85rem; color: var(--muted); }
+.mc-look { margin: 8px 0 10px; font-size: .925rem; color: var(--muted); }
+.mc-step .seg button { min-height: 34px; padding: 6px 12px; font-size: .85rem; }
+.mc-step .seg button[data-mc-result="problem"][aria-pressed="true"] { background: var(--bad); }
+.mc-note { margin-top: 8px; }
+.mc-note[hidden] { display: none; }
+.mc-hz { font-weight: 700; }
+.mc-summary { display: grid; gap: 8px; margin: 0 0 16px; }
+.mc-summary textarea { min-height: 170px; }
+.mc-all-title { font-size: 1rem; margin: 8px 0 10px; }

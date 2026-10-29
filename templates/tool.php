@@ -37,7 +37,21 @@ get_header();
 				<noscript><p class="notice notice--warn">This tool needs JavaScript. Please enable it in your browser settings.</p></noscript>
 				<?php if ( $def['stats'] ) : ?>
 					<p class="share-line" data-tn-share-line hidden></p>
-					<p class="copy-result" data-tn-copy-result hidden><span data-tn-copy-text></span> <button type="button" class="btn btn-sm">Copy result</button></p>
+				<?php endif; ?>
+				<?php if ( ( $def['stats'] || $def['share'] ) && ! tn_is_embed() ) : ?>
+					<div class="share-result" data-tn-share hidden>
+						<p class="share-result__title">Share your score</p>
+						<p class="share-result__text" data-tn-share-text></p>
+						<div class="share-result__btns">
+							<button type="button" class="btn btn-sm btn-primary" data-tn-share-native hidden>Share</button>
+							<button type="button" class="btn btn-sm" data-tn-share-copy>Copy</button>
+							<?php foreach ( array( 'whatsapp' => 'WhatsApp', 'x' => 'X', 'facebook' => 'Facebook', 'reddit' => 'Reddit' ) as $net => $label ) : ?>
+								<a class="btn btn-sm" href="#" data-tn-share-to="<?php echo esc_attr( $net ); ?>" target="_blank" rel="noopener noreferrer nofollow"><span class="visually-hidden">Share on </span><?php echo esc_html( $label ); ?><span class="visually-hidden"> (opens in a new tab)</span></a>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endif; ?>
+				<?php if ( $def['stats'] ) : ?>
 					<?php tn_leaderboard_claim( $def ); ?>
 				<?php endif; ?>
 			</section>

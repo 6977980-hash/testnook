@@ -10,6 +10,7 @@ return array(
 	'device_message' => 'This test needs a mouse or a touchpad with a right button. On a touch screen a tap counts as a click, so the result is a tap test rather than a right click test. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
 	'styles'         => array( 'cps-test' ),
+	'share'          => true,
 	'scripts'        => array( 'cps-test' ),
 	'embed_height'   => 620,
 	'tool'           => '<div class="tool-bar">

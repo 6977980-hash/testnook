@@ -75,6 +75,7 @@
 		}
 		setState('done', fmt(avg) + ' average', rating(avg) + '. Click to race again.');
 		U.status(statusEl, msg, avg < 300 ? 'ok' : '');
+		if (window.TNShare) { TNShare.show('My F1 reaction time is ' + Math.round(avg) + ' ms (average of ' + times.length + ' starts) on Testnook'); }
 	}
 
 	function record(t) {
@@ -100,7 +101,7 @@
 		if (t - lastInput < 60) { return; }
 		lastInput = t;
 		if (state === 'idle' || state === 'result' || state === 'jump') { sequence(); return; }
-		if (state === 'done') { times = []; log.innerHTML = ''; countEl.textContent = countText(); sequence(); return; }
+		if (state === 'done') { if (window.TNShare) { TNShare.hide(); } times = []; log.innerHTML = ''; countEl.textContent = countText(); sequence(); return; }
 		if (state === 'wait') {
 			clearTimers();
 			setState('jump', 'Jump start!', 'You went before the lights went out. Click to line up again.');
@@ -119,6 +120,7 @@
 
 	function reset() {
 		clearTimers();
+		if (window.TNShare) { TNShare.hide(); }
 		times = [];
 		log.innerHTML = '';
 		setLights(0);

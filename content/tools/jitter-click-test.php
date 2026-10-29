@@ -10,6 +10,7 @@ return array(
 	'device_message' => 'Jitter clicking needs a mouse. Taps on a touch screen are counted, but that is a tap test, not a jitter click test. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
 	'styles'         => array( 'cps-test' ),
+	'share'          => true,
 	'scripts'        => array( 'cps-test' ),
 	'embed_height'   => 620,
 	'tool'           => '<div class="tool-bar">

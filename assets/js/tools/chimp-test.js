@@ -91,6 +91,7 @@
 		else if (score < 14) { msg += 'Above average.'; }
 		else { msg += 'Chimp level. Ayumu the chimpanzee manages 9 digits in under a second, so you are in good company.'; }
 		U.status(statusEl, msg + ' Press Start to play again.', '');
+		if (window.TNShare) { TNShare.show('I remembered ' + score + ' numbers on the Testnook chimp test'); }
 		startBtn.textContent = 'Start again';
 		board.hidden = true;
 		intro.hidden = false;
@@ -99,6 +100,7 @@
 	}
 
 	function start() {
+		if (window.TNShare) { TNShare.hide(); }
 		n = 4; lives = 3;
 		hearts();
 		bestEl.textContent = '-';

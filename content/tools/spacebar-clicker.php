@@ -10,6 +10,7 @@ return array(
 	'device_message' => 'This test needs a physical keyboard. On a phone or tablet you can tap the big button instead, but the result is a tap test, not a spacebar test. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
 	'styles'         => array( 'spacebar-clicker' ),
+	'share'          => true,
 	'scripts'        => array( 'spacebar-clicker' ),
 	'embed_height'   => 620,
 	'tool'           => '<div class="tool-bar">

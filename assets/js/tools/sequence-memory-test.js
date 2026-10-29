@@ -77,11 +77,13 @@
 				startBtn.textContent = 'Start again';
 			}, 700));
 			U.status(statusEl, 'Wrong tile at step ' + (pos + 1) + '. Game over at level ' + score + '. ' + msg, '');
+			if (window.TNShare && score) { TNShare.show('I reached level ' + score + ' on the Testnook sequence memory test'); }
 		}
 	}
 
 	cells.forEach(function (c) { c.addEventListener('pointerdown', onPress); });
 	startBtn.addEventListener('click', function () {
+		if (window.TNShare) { TNShare.hide(); }
 		clearTimers();
 		cells.forEach(function (c) { c.className = 'mm-cell'; });
 		seq = [];

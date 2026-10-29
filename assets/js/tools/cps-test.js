@@ -123,6 +123,7 @@
 		}
 		U.status(statusEl, msg, mode === 'auto' ? (rank(cps) === 'Automated' ? 'ok' : '') : (cps >= (mode === 'jitter' ? 9 : 6) ? 'ok' : ''));
 		if (window.TNStats && board() && !(rightOk && rightOk.checked)) { TNStats.submit(board(), Number(cps.toFixed(2)), 0, Math.round(spread().cv * 100)); }
+		else if (window.TNShare && mode !== 'auto' && count) { TNShare.show('I scored ' + U.fmt(cps, 1) + ' CPS on the Testnook ' + dur + ' second ' + (mode === 'left' ? '' : mode + ' ') + 'click test'); }
 	}
 
 	var BOARD = [1, 5, 10, 15, 30, 60, 100];
@@ -132,6 +133,7 @@
 		running = true;
 		start = t;
 		if (window.TNStats && board()) { TNStats.begin(board()); }
+		if (window.TNShare) { TNShare.hide(); }
 		count = 0;
 		perSec = [];
 		stamps = [];
@@ -183,6 +185,7 @@
 
 	function reset() {
 		running = false;
+		if (window.TNShare) { TNShare.hide(); }
 		endedAt = -1e9;
 		clearTimeout(lockTimer);
 		cancelAnimationFrame(raf);

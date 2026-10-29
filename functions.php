@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TN_VERSION', '0.7.3' );
+define( 'TN_VERSION', '0.7.4' );
 define( 'TN_DIR', get_template_directory() );
 define( 'TN_URI', get_template_directory_uri() );
 

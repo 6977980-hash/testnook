@@ -99,9 +99,11 @@
 		intro.querySelector('p').textContent = msg;
 		startBtn.textContent = 'Start again';
 		U.status(statusEl, 'Game over at level ' + score + '. ' + msg, '');
+		if (window.TNShare) { TNShare.show('I reached level ' + score + ' on the Testnook visual memory test'); }
 	}
 
 	startBtn.addEventListener('click', function () {
+		if (window.TNShare) { TNShare.hide(); }
 		level = 1; lives = 3;
 		hearts();
 		intro.hidden = true;

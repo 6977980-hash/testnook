@@ -5,11 +5,12 @@ return array(
 	'title'       => 'Controller & Gamepad Tests',
 	'seo_title'   => 'Controller Tests: Gamepad Tester, Stick Drift, PS5 & Xbox',
 	'description' => 'Free online controller tests. Check every button, trigger and stick on PS5, PS4, Xbox and PC gamepads, measure stick drift and find the right dead zone.',
-	'intro'       => 'Plug in or pair your controller and test it in the browser: a gamepad tester that lights up every button and trigger, a stick drift test that measures how far a resting stick wanders, and dedicated pages for DualSense, DualShock 4 and Xbox pads.',
+	'intro'       => 'Plug in or pair your controller and test it in the browser: a gamepad tester that lights up every button and trigger, a stick drift test that measures how far a resting stick wanders, a rumble motor test, a Joy-Con drift test, and dedicated pages for DualSense, DualShock 4 and Xbox pads.',
 	'body'        => '<h2>Which controller test do you need?</h2>
 <p>The <a href="/gamepad-tester/">gamepad tester</a> works with almost any controller your computer recognises: it draws the pad, lights up buttons as you press them, shows trigger pressure and stick position, and lists the raw button and axis values for anything not on the diagram. It also runs a rumble test on controllers that support it.</p>
 <p>If a character creeps or the camera spins on its own, the <a href="/stick-drift-test/">stick drift test</a> is the page you want. It measures how far each stick sits from centre while you are not touching it, grades the result and suggests a dead zone you can set in games or controller software.</p>
 <p>The <a href="/ps5-controller-test/">PS5 controller test</a>, <a href="/xbox-controller-test/">Xbox controller test</a> and <a href="/ps4-controller-test/">PS4 controller test</a> use the same tester with the right button names for each pad, plus pairing steps and the faults common to that model, such as DualSense drift, Xbox bumper wear or the DualShock 4 micro-USB port.</p>
+<p>The <a href="/controller-vibration-test/">controller vibration test</a> checks the rumble motors one at a time at any strength, with patterns and Xbox trigger rumble, and the <a href="/joy-con-drift-test/">Joy-Con drift test</a> measures Nintendo Switch Joy-Con drift on a PC or phone, with the fixes and Nintendo\'s repair options.</p>
 
 <h2>What the tests can find</h2>
 <ul>
@@ -33,6 +34,6 @@ return array(
 		array( 'Can the test fix stick drift?', 'No test can fix the hardware. For mild drift, set a larger dead zone in the game or controller app and clean around the stick base with compressed air. Severe drift needs a stick module or a repair under warranty.' ),
 		array( 'Does the rumble test work on every controller?', 'Chrome and Edge support rumble on Xbox, PS4, PS5 and many third-party pads. Firefox and Safari do not expose it yet, so the button does nothing there even if the motors work.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

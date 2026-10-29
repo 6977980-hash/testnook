@@ -1,0 +1,24 @@
+/* Zoom test */
+.zt-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 200px; }
+.zt-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.zt-stage { aspect-ratio: 16 / 9; min-height: 0; width: 100%; background: #0b0d10; color: #cfd6df; }
+.zt-stage video { width: 100%; height: 100%; object-fit: contain; display: block; transform: scaleX(-1); }
+.zt-stage video[hidden] { display: none; }
+.zt-empty { text-align: center; padding: 24px; max-width: 420px; }
+.zt-empty p { margin: 0 0 .4em; }
+.zt-side { display: grid; gap: 10px; align-content: start; }
+.zt-side h3 { margin: 4px 0 0; font-size: 1rem; }
+.zt-side audio { width: 100%; }
+.zt-side audio[hidden] { display: none; }
+.zt-meter { height: 16px; }
+.zt-heard { font-size: .92rem; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.zt-heard[hidden] { display: none; }
+.zt-checks { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.zt-check { margin: 0; padding: 10px 12px 10px 40px; border-radius: var(--radius-sm); background: var(--surface-2); position: relative; font-size: .95rem; }
+.zt-check::before { content: ""; position: absolute; left: 14px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; border: 2px solid var(--muted); }
+.zt-check.is-ok::before { background: var(--ok); border-color: var(--ok); }
+.zt-check.is-bad::before { background: var(--bad); border-color: var(--bad); }
+.zt-check b { margin-right: 4px; }
+@media (max-width: 760px) {
+	.zt-grid { grid-template-columns: 1fr; }
+}

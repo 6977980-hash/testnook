@@ -1,0 +1,15 @@
+/* White noise generator */
+.tool-stage.wn-stage { display: block; place-items: normal; padding: 20px; min-height: 0; }
+.wn-colours { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.wn-colour {
+	display: grid; gap: 2px; padding: 10px 12px; text-align: left; cursor: pointer;
+	background: var(--surface); color: var(--text); border: 2px solid var(--border); border-radius: var(--radius-sm); font: 600 .95rem/1.3 var(--font);
+}
+.wn-colour small { font-weight: 400; color: var(--muted); font-size: .8rem; }
+.wn-colour[aria-pressed="true"] { border-color: var(--brand); background: var(--brand-soft); }
+.wn-colour::before { content: ""; display: block; height: 6px; border-radius: 3px; margin-bottom: 6px; background: var(--wn-c, #ccc); }
+.wn-canvas { display: block; width: 100%; height: 110px; margin: 16px 0 0; }
+.wn-play { min-width: 140px; font-size: 1.05rem; }
+.wn-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 14px; align-items: end; }
+.wn-timer select { width: 100%; }
+.wn-left { color: var(--muted); font-size: .9rem; font-variant-numeric: tabular-nums; }

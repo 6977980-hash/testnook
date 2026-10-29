@@ -1,0 +1,20 @@
+/* Controller vibration test */
+.cv-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 260px; }
+.tool-stage.cv-stage { display: flex; align-items: center; justify-content: center; gap: 40px; padding: 24px; min-height: 220px; }
+.cv-motor { display: grid; justify-items: center; gap: 8px; font-size: .9rem; color: var(--muted); }
+.cv-motor i {
+	--cv-amp: 0;
+	display: block; width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--border);
+	background: radial-gradient(circle, var(--brand) 0 calc(var(--cv-amp) * 46%), transparent calc(var(--cv-amp) * 46% + 1%));
+	transition: background .1s;
+}
+.is-buzzing .cv-motor i { animation: cv-buzz .08s linear infinite; }
+@keyframes cv-buzz { 25% { transform: translate(calc(var(--cv-amp) * 3px), 0); } 75% { transform: translate(calc(var(--cv-amp) * -3px), 0); } }
+.cv-motor b { color: var(--text); }
+.cv-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 14px; }
+.cv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.cv-trig { display: none; }
+.has-trigger .cv-trig { display: inline-flex; }
+.cv-feel { margin-top: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: .95rem; }
+.cv-feel[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .is-buzzing .cv-motor i { animation: none; } }

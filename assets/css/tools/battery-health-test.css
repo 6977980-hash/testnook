@@ -1,0 +1,24 @@
+/* Battery health test */
+.tool-stage.bt-stage { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; min-height: 200px; padding: 24px; }
+.bt-battery {
+	position: relative; width: 200px; height: 96px; border: 6px solid var(--text); border-radius: 16px; padding: 6px;
+}
+.bt-battery::after { content: ""; position: absolute; right: -18px; top: 26px; width: 10px; height: 32px; background: var(--text); border-radius: 0 6px 6px 0; }
+.bt-fill { height: 100%; width: 0; border-radius: 8px; background: var(--ok); transition: width .4s; }
+.bt-fill.is-mid { background: var(--warn); }
+.bt-fill.is-low { background: var(--bad); }
+.bt-bolt { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-size: 40px; color: var(--text); }
+.is-charging .bt-bolt { display: flex; }
+.bt-read { display: grid; gap: 2px; }
+.bt-read strong { font: 800 3rem/1 var(--font); font-variant-numeric: tabular-nums; }
+.bt-read span { color: var(--muted); }
+.no-api .bt-battery { opacity: .35; }
+.bt-h { margin: 22px 0 8px; font-size: 1.05rem; }
+.bt-log { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; font-size: .85rem; color: var(--muted); }
+.bt-log li { background: var(--surface-2); border-radius: 999px; padding: 2px 10px; margin: 0; }
+.bt-calc { margin-top: 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; }
+.bt-calc summary { cursor: pointer; font-weight: 600; }
+.bt-calc-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 12px; align-items: end; }
+.bt-calc-body p { grid-column: 1 / -1; margin: 0; font-weight: 600; }
+.bt-good { color: var(--ok); }
+.bt-bad { color: var(--bad); }

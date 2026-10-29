@@ -1,0 +1,13 @@
+/* Keyboard ghosting test (keys come from keyboard-tester.css) */
+.gh-board { --u: clamp(22px, calc((100vw - 60px) / 15.5), 46px); }
+.gh-board:not(:focus) { opacity: .75; }
+.gh-focus-hint { margin: 10px 0 0; text-align: center; color: var(--muted); font-size: .9rem; }
+.is-focused .gh-focus-hint { visibility: hidden; }
+.gh-held { margin: 12px 0 0; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-2); font: 600 1rem/1.4 var(--mono); min-height: 2.8em; overflow-wrap: anywhere; }
+.gh-combos { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.gh-combos li { margin: 0; padding: 8px 12px 8px 36px; border-radius: var(--radius-sm); border: 1px solid var(--border); position: relative; font-size: .9rem; }
+.gh-combos li span { display: block; color: var(--muted); font-family: var(--mono); font-size: .82rem; }
+.gh-combos li::before { content: ""; position: absolute; left: 12px; top: 12px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--muted); }
+.gh-combos li.is-ok { border-color: var(--ok); }
+.gh-combos li.is-ok::before { background: var(--ok); border-color: var(--ok); }
+.gh-stats .stat-value { font-size: 1.1rem; overflow-wrap: anywhere; }

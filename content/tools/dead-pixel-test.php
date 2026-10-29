@@ -61,6 +61,6 @@ return array(
 		array( 'Does this dead pixel test work on phones?', 'Yes. It works on Android and iPhone. Tap to change colour. On iPhone the test fills the browser window, as Safari does not allow full screen for web pages.' ),
 		array( 'Can a dead pixel test damage my screen?', 'No. It only shows still, solid colours, the same as any image. It does not flash, so it is safe to use for as long as you like.' ),
 	),
-	'related'      => array( 'stuck-pixel-fixer', 'refresh-rate-test', 'white-screen', 'black-screen', 'burn-in-test', 'touch-screen-test', 'fps-test' ),
+	'related'      => array( 'stuck-pixel-fixer', 'monitor-test', 'refresh-rate-test', 'white-screen', 'black-screen', 'burn-in-test', 'touch-screen-test', 'fps-test' ),
 	'updated'      => '2026-10-28',
 );

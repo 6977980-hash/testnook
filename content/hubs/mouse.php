@@ -5,11 +5,12 @@ return array(
 	'title'       => 'Mouse Tests',
 	'seo_title'   => 'Mouse Tests: Buttons, Double Click, Scroll, DPI & Polling',
 	'description' => 'Free online mouse tests. Check every button, catch a mouse that double clicks on its own, test the scroll wheel, and measure real DPI and polling rate in Hz.',
-	'intro'       => 'Six browser tests for any wired, wireless or gaming mouse: buttons and side buttons, accidental double clicks, scroll wheel skipping, real DPI, polling rate in Hz and clicks per second. Nothing to install.',
+	'intro'       => 'Browser tests for any wired, wireless or gaming mouse: buttons and side buttons, accidental double clicks, scroll wheel skipping, real DPI, polling rate in Hz, cursor latency, aim accuracy and clicks per second. Nothing to install.',
 	'body'        => '<h2>Which mouse test do you need?</h2>
 <p>If a button feels unreliable, begin with the <a href="/mouse-tester/">mouse tester</a>. It lights up left, right, middle, side and extra buttons as you press them and shows scroll wheel movement, so a button that does not register or that registers late is obvious. If one click sometimes opens two things, run the <a href="/double-click-test/">double click test</a>: it counts clicks that arrive closer together than a human can click, which is the classic sign of a worn switch.</p>
 <p>The <a href="/scroll-test/">scroll test</a> looks at the wheel alone: skipped notches, double steps and wrong-way scrolls where the page jumps back a line while you scroll down. Those point to a dirty or worn encoder rather than a software setting.</p>
 <p>Gaming mice get two more pages. The <a href="/dpi-analyzer/">DPI analyzer</a> measures the sensor\'s real DPI by moving the mouse a known distance, and the <a href="/mouse-polling-rate-test/">polling rate test</a> reports how often the mouse sends its position, nearest to 125, 500, 1000 Hz or higher. The <a href="/cps-test/">CPS test</a> measures how fast you can click rather than the mouse itself, with a <a href="/right-click-cps-test/">right click version</a> for the other button and a <a href="/jitter-click-test/">jitter click test</a> for the technique.</p>
+<p>Two more pages look at you and the whole system rather than one part: the <a href="/mouse-accuracy-test/">mouse accuracy test</a> is a 30-target aim trainer that reports hit rate, time per target and which way your clicks drift, and the <a href="/mouse-latency-test/">mouse latency test</a> shows how far the drawn cursor lags your mouse and breaks the delay into polling, browser and refresh time.</p>
 
 <h2>What the tests can find</h2>
 <ul>
@@ -36,6 +37,6 @@ return array(
 		array( 'My scroll wheel jumps back while scrolling down. Is the mouse broken?', 'Usually the wheel encoder is dirty or worn. The scroll test counts those wrong-way scrolls. Cleaning the wheel with compressed air sometimes helps; a worn encoder needs replacing.' ),
 		array( 'Why does the DPI analyzer show a different number than my mouse software?', 'Small differences come from measurement error and acceleration settings. A large difference means the active profile does not match what you think, or the sensor is not running at its stated resolution. Turn off pointer acceleration and measure again.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

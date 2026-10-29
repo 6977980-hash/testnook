@@ -83,6 +83,6 @@ return array(
 		array( 'Why is my frame rate lower than 30 fps?', 'Most often because the room is dark, so the camera uses a longer exposure. A slow USB port, a busy computer or a high resolution can also reduce it.' ),
 		array( 'Can I test my phone camera here?', 'Yes, the page works in mobile browsers and uses the front camera by default. Pick the back camera from the camera list, or use the <a href="/camera-test/">camera test</a>, which switches between front and back cameras with one button.' ),
 	),
-	'related'        => array( 'online-mirror', 'camera-test', 'mic-test', 'sound-test', 'headphone-test', 'speaker-cleaner' ),
+	'related'        => array( 'zoom-test', 'online-mirror', 'camera-test', 'mic-test', 'sound-test', 'headphone-test', 'speaker-cleaner' ),
 	'updated'        => '2026-10-28',
 );

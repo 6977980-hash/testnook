@@ -1,0 +1,23 @@
+/* Mouse accuracy test */
+.tool-stage.ma-stage { position: relative; display: block; place-items: normal; height: 440px; min-height: 0; overflow: hidden; cursor: crosshair; touch-action: none; user-select: none; -webkit-user-select: none; }
+.ma-intro { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 20px; }
+.ma-intro[hidden] { display: none; }
+.ma-intro p { margin: 0; color: var(--muted); max-width: 440px; }
+.ma-target {
+	--r: 28px;
+	position: absolute; width: calc(var(--r) * 2); height: calc(var(--r) * 2); margin: calc(var(--r) * -1) 0 0 calc(var(--r) * -1);
+	border-radius: 50%; pointer-events: none;
+	background: radial-gradient(circle, #fff 0 12%, var(--bad) 12% 34%, #fff 34% 56%, var(--bad) 56%);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+}
+.ma-target[hidden] { display: none; }
+.ma-stage.is-miss { animation: ma-miss .25s; }
+@keyframes ma-miss { from { background-color: color-mix(in srgb, var(--bad) 18%, var(--surface-2)); } }
+.ma-opts { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.ma-result { display: grid; grid-template-columns: minmax(0, 1fr) 200px; gap: 16px; align-items: center; margin-top: 12px; }
+.ma-plot-wrap { text-align: center; font-size: .8rem; color: var(--muted); }
+.ma-plot { display: block; width: 180px; height: 180px; margin: 0 auto 4px; }
+@media (max-width: 640px) {
+	.tool-stage.ma-stage { height: 360px; }
+	.ma-result { grid-template-columns: 1fr; }
+}

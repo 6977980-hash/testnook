@@ -59,6 +59,6 @@ return array(
 		array( 'What is a user agent?', 'A short text your browser sends with every request, naming the browser, its version and the operating system. See and copy yours on the <a href="/what-is-my-user-agent/">what is my user agent</a> page.' ),
 		array( 'Can device info tell my location or IP address?', 'This page does not look up your IP address or location. It only shows the time zone set on the device.' ),
 	),
-	'related'        => array( 'what-is-my-user-agent', 'what-phone-do-i-have', 'refresh-rate-test', 'touch-screen-test', 'dead-pixel-test', 'online-ruler' ),
+	'related'        => array( 'what-is-my-user-agent', 'what-phone-do-i-have', 'battery-health-test', 'refresh-rate-test', 'touch-screen-test', 'dead-pixel-test', 'online-ruler' ),
 	'updated'        => '2026-10-29',
 );

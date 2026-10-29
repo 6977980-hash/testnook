@@ -114,6 +114,6 @@ return array(
 		array( 'What does Non-standard mapping mean?', 'The browser does not know where each button sits on your controller. All inputs still show in the raw list, but the diagram may not match.' ),
 		array( 'Can I test two controllers at once?', 'Yes. Connect both and pick one from the controller list. Switch between them to test each one.' ),
 	),
-	'related'        => array( 'stick-drift-test', 'ps5-controller-test', 'xbox-controller-test', 'ps4-controller-test', 'keyboard-tester', 'mouse-tester', 'fps-test' ),
+	'related'        => array( 'stick-drift-test', 'controller-vibration-test', 'ps5-controller-test', 'xbox-controller-test', 'ps4-controller-test', 'keyboard-tester', 'mouse-tester', 'fps-test' ),
 	'updated'        => '2026-10-28',
 );

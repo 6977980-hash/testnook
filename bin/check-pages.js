@@ -115,7 +115,9 @@ async function checkPage(browser, url, viewport) {
 	const worker = async () => {
 		while (next < jobs.length) {
 			const [u, vw] = jobs[next++];
-			const r = await checkPage(browser, u, vw);
+			let r = await checkPage(browser, u, vw);
+			// A busy shared host can drop a request now and then: retry a load failure or 5xx once.
+			if (r.errors.some((e) => /^(load failed|status (0|5\d\d))/.test(e))) r = await checkPage(browser, u, vw);
 			const path = new URL(u).pathname;
 			if (r.errors.length) {
 				failed++;

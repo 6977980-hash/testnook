@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Generates the Open Graph share images (1200x630 JPEG) for every tool and hub
-in content/catalog.php into assets/img/og/<slug>.jpg. The theme picks them up
+in content/catalog.php and every guide in content/guides/ into
+assets/img/og/<slug>.jpg. The theme picks them up
 automatically (inc/seo.php). Re-run after adding a tool or hub, then commit
 the new images; the live site never runs this script.
 
@@ -51,6 +52,17 @@ def catalog():
     code = (
         "define('ABSPATH', 1); echo json_encode(require '%s/content/catalog.php');"
         % ROOT.replace("'", "\\'")
+    )
+    return json.loads(subprocess.check_output(['php', '-r', code]))
+
+
+def guides():
+    """Title and hub of every guide in content/guides/ (keyed by slug)."""
+    code = (
+        "define('ABSPATH', 1); $out = array();"
+        "foreach (glob('%s/content/guides/*.php') as $f) {"
+        " $d = require $f; $out[basename($f, '.php')] = array('title' => $d['title'], 'hub' => $d['hub']); }"
+        "echo json_encode($out);" % ROOT.replace("'", "\\'")
     )
     return json.loads(subprocess.check_output(['php', '-r', code]))
 
@@ -132,6 +144,8 @@ def main():
         jobs.append((slug, hub['title'], hub['blurb'], 'Testnook hub'))
     for slug, tool in cat['tools'].items():
         jobs.append((slug, tool['name'], tool['blurb'], cat['hubs'][tool['hub']]['title']))
+    for slug, guide in guides().items():
+        jobs.append((slug, guide['title'], 'A Testnook guide', cat['hubs'][guide['hub']]['title'] + ' guide'))
     done = 0
     for slug, title, blurb, kicker in jobs:
         path = os.path.join(OUT, slug + '.jpg')

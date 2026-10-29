@@ -98,6 +98,49 @@ hidden entries are moderated at `Tools > Testnook leaderboards`. The
 Static pages (`content/pages/`) may set `'render' => 'callable'` to print
 theme output after the body.
 
+## Guide file
+
+Guides are long-form articles (`content/guides/<slug>.php`, page key
+`guide:<slug>`, template `templates/guide.php`, helpers in `inc/guides.php`).
+No catalog entry is needed: the file alone creates the page, lists it on
+`/guides/`, on its hub page, on the homepage (six newest) and on the tool
+pages it names ("Guides for this test").
+
+```php
+return array(
+	'title'       => 'What Is a Good CPS? Click Speed Explained',  // H1
+	'seo_title'   => '...',                 // <title>, 50-60 chars
+	'description' => '...',                 // 140-160 chars
+	'blurb'       => 'One line for the card.',
+	'hub'         => 'benchmark',           // hub slug: breadcrumb kicker, grouping on /guides/
+	'tool'        => 'cps-test',            // the tool the guide explains (card under the short answer)
+	'tools'       => array( '5-second-cps-test' ), // more tools that list this guide
+	'published'   => '2026-10-29',          // datePublished; newest first in lists
+	'updated'     => '2026-10-29',          // dateModified, shown in the byline
+	'intro'       => 'Lede under the H1.',
+	'summary'     => array( 'Point one.', 'Point two.' ),  // "The short answer" box (HTML ok)
+	'sections'    => array( array( 'Heading', '<p>HTML</p>', 'anchor-id' ) ),  // H2 sections, all three fields required
+	'data'        => array(                 // optional: live site numbers
+		'boards' => array( 'cps-5' ),       // boards for the stats block (tn_stats_block)
+		'title'  => 'What people actually score on Testnook',
+		'after'  => 'anchor-id',            // printed after this section
+		'html'   => '<p>The median is <strong>{median:cps-5}</strong> ...</p>',
+	),
+	'faq'         => array( array( 'Q?', 'A.' ) ),  // FAQPage schema
+	'sources'     => array( array( 'Label', 'https://...' ) ),  // optional
+	'disclaimer'  => 'Optional warning box after the sources.',
+	'ads'         => 'standard',            // in-content after the second section + after the FAQ
+);
+```
+
+The `data.html` tokens are `{median:<board>}`, `{mean:<board>}`,
+`{top10:<board>}`, `{count:<board>}` and `{beats:<board>:<value>}` (share of
+results that value beats). The whole data section is skipped while any board
+it names has fewer than 20 results in the last 30 days, so the surrounding
+text must read well without it. Guides get `Article` schema with the
+founder as author, `og:type` article, and an OG image from
+`bin/make-og-images.py` (which now reads `content/guides/` too).
+
 ### Tool markup conventions
 
 Use the shared classes so every tool looks the same:

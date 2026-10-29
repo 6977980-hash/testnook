@@ -27,6 +27,7 @@ function tn_icon( $name, $size = 24 ) {
 		'shield'     => '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
 		'code'       => '<path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>',
 		'info'       => '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+		'book'       => '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/>',
 	);
 	if ( ! isset( $paths[ $name ] ) ) {
 		return '';

@@ -40,6 +40,9 @@ function tn_breadcrumb_items( $def ) {
 		$items[] = array( $def['name'], tn_tool_url( $def['slug'] ) );
 	} elseif ( 'hub' === $def['type'] ) {
 		$items[] = array( $def['name'], tn_hub_url( $def['slug'] ) );
+	} elseif ( 'guide' === $def['type'] ) {
+		$items[] = array( 'Guides', home_url( '/guides/' ) );
+		$items[] = array( $def['title'], tn_guide_url( $def['slug'] ) );
 	} else {
 		$items[] = array( $def['title'], home_url( '/' . $def['slug'] . '/' ) );
 	}

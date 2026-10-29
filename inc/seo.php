@@ -107,8 +107,9 @@ add_action(
 			// WordPress prints rel=canonical for singular pages itself; add it for the homepage.
 			echo '<link rel="canonical" href="' . esc_url( $f['url'] ) . '">' . "\n";
 		}
-		$og = array(
-			'og:type'        => 'website',
+		$def = tn_current_def();
+		$og  = array(
+			'og:type'        => $def && 'guide' === $def['type'] ? 'article' : 'website',
 			'og:site_name'   => TN_SITE_NAME,
 			'og:title'       => $f['title'],
 			'og:description' => $f['description'],
@@ -292,6 +293,29 @@ function tn_schema_graph() {
 				'itemListElement' => $items,
 			),
 		) + $dates;
+	} elseif ( 'guide' === $def['type'] ) {
+		$graph[] = array(
+			'@type'            => 'Article',
+			'@id'              => $url . '#article',
+			'headline'         => $def['title'],
+			'description'      => $def['description'],
+			'url'              => $url,
+			'mainEntityOfPage' => $url,
+			'image'            => $fields['image'],
+			'inLanguage'       => 'en',
+			'datePublished'    => $def['published'],
+			'dateModified'     => $def['updated'],
+			'wordCount'        => tn_guide_words( $def ),
+			'author'           => array(
+				'@type' => 'Person',
+				'@id'   => home_url( '/#founder' ),
+				'name'  => TN_FOUNDER_NAME,
+				'url'   => home_url( '/about/' ),
+			),
+			'publisher'        => array( '@id' => home_url( '/#organization' ) ),
+			'isPartOf'         => array( '@id' => home_url( '/#website' ) ),
+			'breadcrumb'       => array( '@id' => $url . '#breadcrumb' ),
+		);
 	} else {
 		$types   = array(
 			'about'   => 'AboutPage',

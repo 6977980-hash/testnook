@@ -45,6 +45,19 @@ get_header();
 			</section>
 		<?php endforeach; ?>
 
+		<?php $tn_guides = array_slice( tn_guides(), 0, 6, true ); ?>
+		<?php if ( $tn_guides ) : ?>
+			<section class="hub-section" id="guides" aria-labelledby="h-guides">
+				<h2 id="h-guides"><?php echo tn_icon( 'book' ); // phpcs:ignore ?><a href="<?php echo esc_url( home_url( '/guides/' ) ); ?>">Guides</a></h2>
+				<p class="hub-blurb">Fixes and explainers for the tests: what a good score is, and what to do when hardware acts up.</p>
+				<ul class="cards">
+					<?php foreach ( $tn_guides as $tn_guide ) : ?>
+						<li><?php tn_guide_card( $tn_guide ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</section>
+		<?php endif; ?>
+
 		<h2>Why use <?php echo esc_html( TN_SITE_NAME ); ?></h2>
 		<div class="features">
 			<?php foreach ( $home['features'] as $feature ) : ?>

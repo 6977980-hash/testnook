@@ -33,7 +33,7 @@ add_filter(
 		if ( ! $def ) {
 			return $template;
 		}
-		$map  = array( 'tool' => 'tool', 'hub' => 'hub', 'page' => 'static' );
+		$map  = array( 'tool' => 'tool', 'hub' => 'hub', 'page' => 'static', 'guide' => 'guide' );
 		$file = tn_is_embed() ? 'embed' : $map[ $def['type'] ];
 		return TN_DIR . '/templates/' . $file . '.php';
 	}

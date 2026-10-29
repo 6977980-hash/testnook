@@ -360,3 +360,25 @@ body.has-pseudo-fs { overflow: hidden; }
 .lb__foot { font-size: .85rem; color: var(--muted); margin: 10px 0 0; max-width: var(--prose); }
 .static-page .lb { margin-top: 2em; }
 @media (max-width: 520px) { .lb__table th:last-child, .lb__date { display: none; } }
+
+/* ---------- Guides (templates/guide.php, inc/guides.php) ---------- */
+.byline { font-size: .9rem; color: var(--muted); margin: 0 0 1.2em; }
+.byline span { margin: 0 .35em; }
+.guide-top { display: grid; gap: 16px; max-width: var(--prose); margin: 0 0 1.6em; }
+.takeaways { background: var(--brand-soft); border-radius: var(--radius-sm); padding: 16px 20px; }
+.takeaways h2 { font-size: 1.05rem; margin: 0 0 .5em; }
+.takeaways ul { margin: 0; padding-left: 1.2em; }
+.takeaways li { margin-bottom: .35em; }
+.takeaways li:last-child { margin-bottom: 0; }
+.guide-cta__label { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 6px; }
+.toc { max-width: var(--prose); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 20px; margin: 0 0 1.8em; }
+.toc h2 { font-size: 1rem; margin: 0 0 .4em; }
+.toc ol { margin: 0; padding-left: 1.3em; columns: 2 260px; column-gap: 32px; }
+.toc li { margin-bottom: .3em; break-inside: avoid; }
+.guide-page .prose section { scroll-margin-top: 16px; }
+.guide-page .prose h3 { margin-top: 1.3em; }
+.sources ol { font-size: .9rem; }
+.sources a { overflow-wrap: anywhere; }
+.guides-group { margin-top: 2em; }
+.guides-group h2 { margin-bottom: .6em; }
+.guides-group__more { margin: 10px 0 0; font-size: .95rem; }

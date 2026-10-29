@@ -100,6 +100,8 @@ get_header();
 				<?php tn_ad_slot( 'after-faq' ); ?>
 			</div>
 
+			<?php tn_guides_section( tn_guides_for_tool( $def['slug'] ), 'Guides for this test' ); ?>
+
 			<?php $related = tn_related_tools( $def ); ?>
 			<?php if ( $related ) : ?>
 				<section class="related" aria-labelledby="related-title">

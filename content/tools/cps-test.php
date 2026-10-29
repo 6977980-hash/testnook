@@ -9,6 +9,7 @@ return array(
 	'device'         => 'desktop',
 	'device_message' => 'This CPS test is made for a mouse or touchpad. Taps on a touch screen are counted too, but compare only with other touch scores. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
+	'stats'          => array( 'cps-5', 'cps-10' ),
 	'styles'         => array( 'cps-test' ),
 	'scripts'        => array( 'cps-test' ),
 	'embed_height'   => 620,

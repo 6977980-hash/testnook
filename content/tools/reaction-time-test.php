@@ -8,6 +8,7 @@ return array(
 	'intro'          => 'Wait for the box to turn green, then click, tap or press Space as fast as you can. Five tries give you an average reaction time in milliseconds that you can compare with typical human scores.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'reaction' ),
 	'styles'         => array( 'reaction-time-test' ),
 	'scripts'        => array( 'reaction-time-test' ),
 	'embed_height'   => 620,

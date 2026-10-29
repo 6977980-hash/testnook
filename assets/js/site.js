@@ -189,6 +189,32 @@
 		setTimeout(loadAds, 4000);
 	}
 
+	/* ---------- Embed mode: count the load per embedding site (domain only, no visitor data) ---------- */
+	if (cfg.embed && cfg.rest && cfg.slug) {
+		try {
+			fetch(cfg.rest + 'embed', { method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ slug: cfg.slug, ref: doc.referrer || '' }), keepalive: true }).catch(function () { /* ignore */ });
+		} catch (e) { /* ignore */ }
+	}
+
+	/* ---------- Embed code box: width, height, theme and a preview ---------- */
+	var embedBox = $('.embed-box[data-embed-src]');
+	if (embedBox) {
+		var code = $('#embed-code'), preview = $('#embed-preview');
+		var build = function () {
+			var w = $('[name="embed-w"]', embedBox).value, h = Number($('[name="embed-h"]', embedBox).value) || 620, th = $('[name="embed-theme"]', embedBox).value;
+			var src = embedBox.getAttribute('data-embed-src') + (th ? '&theme=' + th : '');
+			code.value = '<iframe src="' + src + '" width="' + w + '" height="' + h + '" style="border:0;max-width:100%" title="' + embedBox.getAttribute('data-embed-title') + '" allow="camera; microphone; gamepad; fullscreen; autoplay" loading="lazy"></iframe>\n<p><a href="' + embedBox.getAttribute('data-embed-url') + '">' + embedBox.getAttribute('data-embed-title') + '</a> by ' + embedBox.getAttribute('data-embed-site') + '</p>';
+			if (preview && embedBox.open) {
+				preview.hidden = false;
+				preview.style.width = w === '100%' ? '100%' : w + 'px';
+				preview.height = h;
+				if (preview.getAttribute('src') !== src) { preview.src = src; }
+			}
+		};
+		$$('select, input', embedBox).forEach(function (el) { el.addEventListener('change', build); el.addEventListener('input', build); });
+		embedBox.addEventListener('toggle', build);
+	}
+
 	window.addEventListener('load', function () {
 		if (cfg.ga4) {
 			addScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(cfg.ga4));

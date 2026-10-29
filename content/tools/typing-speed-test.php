@@ -10,6 +10,7 @@ return array(
 	'intro'          => 'Find out how fast you type. Pick a length, click the text and start typing the words you see; the clock starts on your first key. At the end you get your words per minute, raw speed, accuracy and error count, with the average for adults so you know where you stand.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'typing-60', 'typing-30' ),
 	'styles'         => array( 'typing-test' ),
 	'scripts'        => array( 'typing-test' ),
 	'embed_height'   => 620,

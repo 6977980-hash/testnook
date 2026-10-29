@@ -39,6 +39,7 @@
 	function open(i) {
 		idx = i || 0;
 		active = true;
+		if (window.TNStats && report && !reported) { TNStats.begin('deadpixel'); }
 		screen.hidden = false;
 		paint();
 		U.enterFullscreen(screen);
@@ -54,6 +55,43 @@
 		screen.classList.remove('hide-cursor');
 		U.exitFullscreen();
 		U.status(statusEl, 'Test closed. Saw a coloured dot? Try the stuck pixel fixer. A black dot on every colour is a dead pixel.', 'ok');
+		if (report && !reported && window.TNStats && TNStats.enabled()) { report.hidden = false; }
+	}
+
+	/* After the test: an optional, anonymous report of where a bad pixel sat (10 x 10 grid) or that none was found. */
+	var report = $('#dp-report'), grid = $('#dp-grid'), reported = false, cell = -1, kind = 0;
+	if (report) {
+		for (var g = 0; g < 100; g++) {
+			var cb = document.createElement('button');
+			cb.type = 'button';
+			cb.setAttribute('aria-label', 'Row ' + (Math.floor(g / 10) + 1) + ', column ' + (g % 10 + 1));
+			cb.setAttribute('aria-pressed', 'false');
+			cb.setAttribute('data-cell', g);
+			grid.appendChild(cb);
+		}
+		grid.addEventListener('click', function (e) {
+			var b = e.target.closest('[data-cell]');
+			if (!b || !kind) { return; }
+			cell = Number(b.getAttribute('data-cell'));
+			U.$$('[data-cell]', grid).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+			$('#dp-send').disabled = false;
+		});
+		U.$$('[data-dp-kind]', report).forEach(function (b) {
+			b.addEventListener('click', function () {
+				kind = Number(b.getAttribute('data-dp-kind'));
+				U.$$('[data-dp-kind]', report).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+				grid.hidden = !kind;
+				$('#dp-send').disabled = kind ? cell < 0 : false;
+			});
+		});
+		$('#dp-send').addEventListener('click', function () {
+			reported = true;
+			report.hidden = true;
+			TNStats.submit('deadpixel', kind ? cell : 0, kind).then(function (j) {
+				if (j) { U.status(statusEl, kind ? 'Thanks, your report was added to the anonymous pixel map below.' : 'Thanks, your clean screen was counted in the anonymous stats below.', 'ok'); }
+			});
+		});
+		$('#dp-skip').addEventListener('click', function () { reported = true; report.hidden = true; });
 	}
 
 	function step(d) {

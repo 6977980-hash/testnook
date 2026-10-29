@@ -9,6 +9,7 @@ return array(
 	'device'         => 'desktop',
 	'device_message' => 'This test is made for a mouse or touchpad. It works with touch too, but compare touch scores only with other touch scores.',
 	'ads'            => 'content',
+	'stats'          => array( 'aim-static-28', 'aim-shrink-28' ),
 	'styles'         => array( 'mouse-accuracy-test' ),
 	'scripts'        => array( 'mouse-accuracy-test' ),
 	'embed_height'   => 820,

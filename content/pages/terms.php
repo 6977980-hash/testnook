@@ -5,7 +5,7 @@ return array(
 	'title'       => 'Terms of Use',
 	'seo_title'   => 'Terms of Use | Testnook',
 	'description' => 'The terms that apply when you use Testnook\'s free online hardware tests.',
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'body'        => '<p>By using testnook.com ("Testnook", "we", "us") you agree to these terms. If you do not agree, please do not use the site.</p>
 <h2>Use of the tools</h2>
 <p>Testnook provides free browser-based tools for checking hardware such as keyboards, mice, controllers, screens, speakers, microphones and cameras. You may use them for personal and commercial purposes, including in a shop or repair setting, free of charge.</p>
@@ -18,7 +18,7 @@ return array(
 <h2>Limitation of liability</h2>
 <p>To the fullest extent allowed by law, Testnook is not liable for any loss or damage arising from the use of the site or its tools, including damage to hardware or hearing caused by misuse.</p>
 <h2>Embedding</h2>
-<p>You may embed our tools using the embed code provided on each tool page, as long as you keep the credit link and do not present the tool as your own.</p>
+<p>You may embed our tools using the embed code provided on each tool page and on the <a href="/embed-tools/">embed page</a>, as long as you keep the credit link, do not cover the frame with your own content or ads, and do not present the tool as your own.</p>
 <h2>Changes</h2>
 <p>We may update these terms. The date at the top of this page shows when they last changed.</p>
 <h2>Contact</h2>

@@ -10,6 +10,7 @@ return array(
 	'intro'          => 'Type real English sentences, with capitals, commas and full stops, for one, two or five minutes. This is the format of typing tests for jobs, exams and typing certificates, and the closest measure of how fast you type actual English text. You get net words per minute, accuracy and an error count.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'typing-60' ),
 	'styles'         => array( 'typing-test' ),
 	'scripts'        => array( 'typing-test' ),
 	'embed_height'   => 620,

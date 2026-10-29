@@ -18,7 +18,7 @@ function tn_asset_ver( $rel ) {
 add_action(
 	'wp_head',
 	function () {
-		echo "<script>(function(){try{var t=localStorage.getItem('tn-theme');}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.className+=' js';})();</script>\n";
+		echo "<script>(function(){var m=location.search.match(/[?&]theme=(light|dark)\b/);var t=m?m[1]:'';if(!t){try{t=localStorage.getItem('tn-theme');}catch(e){}}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);document.documentElement.className+=' js';})();</script>\n";
 	},
 	0
 );
@@ -48,6 +48,7 @@ add_action(
 	'wp_enqueue_scripts',
 	function () {
 		wp_enqueue_script( 'tn-site', TN_URI . '/assets/js/site.js', array(), tn_asset_ver( 'assets/js/site.js' ), array( 'strategy' => 'defer', 'in_footer' => false ) );
+		$def = tn_current_def();
 		wp_add_inline_script(
 			'tn-site',
 			'window.TN=' . wp_json_encode(
@@ -56,12 +57,16 @@ add_action(
 					'ga4'      => TN_GA4_ID,
 					'clarity'  => TN_CLARITY_ID,
 					'embed'    => tn_is_embed(),
+					'rest'     => esc_url_raw( rest_url( 'testnook/v1/' ) ),
+					'slug'     => $def && 'tool' === $def['type'] ? $def['slug'] : '',
 				)
 			) . ';',
 			'before'
 		);
 
-		$def = tn_current_def();
+		if ( $def && ! empty( $def['stats'] ) && ! tn_is_embed() ) {
+			wp_enqueue_script( 'tn-stats', TN_URI . '/assets/js/stats.js', array( 'tn-site' ), tn_asset_ver( 'assets/js/stats.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+		}
 		if ( $def && ! empty( $def['scripts'] ) ) {
 			foreach ( (array) $def['scripts'] as $name ) {
 				$rel = 'assets/js/tools/' . sanitize_file_name( $name ) . '.js';

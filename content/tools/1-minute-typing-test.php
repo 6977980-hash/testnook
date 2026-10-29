@@ -10,6 +10,7 @@ return array(
 	'intro'          => 'The standard one minute test, the length used by most typing courses and job assessments. You type real English sentences with capitals and punctuation for 60 seconds, then see your words per minute and accuracy.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'typing-60' ),
 	'styles'         => array( 'typing-test' ),
 	'scripts'        => array( 'typing-test' ),
 	'embed_height'   => 600,

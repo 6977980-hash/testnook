@@ -1,10 +1,11 @@
 /* Device info: reads what the browser exposes (user agent, client hints, screen, CPU, memory, GPU, network, battery) and shows it.
    Shared by device-info, what-is-my-user-agent and what-phone-do-i-have. Each page has its own markup; this script fills whatever is there:
    [data-di="key"] gets one value, #di-table gets the grouped list (data-di-groups picks the groups), #di-ua the raw string,
-   #di-parse-* the paste-a-user-agent parser, #di-phone* the phone model guess. Nothing is sent anywhere. */
+   #di-parse-* the paste-a-user-agent parser, #di-phone* the phone model guess, #br-* the browser page (up-to-date
+   estimate from the release cadence, feature support list). Nothing is sent anywhere. */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="device-info"], [data-tool="what-is-my-user-agent"], [data-tool="what-phone-do-i-have"]');
+	var root = document.querySelector('[data-tool="device-info"], [data-tool="what-is-my-user-agent"], [data-tool="what-phone-do-i-have"], [data-tool="what-is-my-browser"]');
 	if (!root) { return; }
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
@@ -297,6 +298,106 @@
 			}
 		}
 		renderPhone();
+		renderBrowser();
+	}
+
+	/* ---------- Browser page ---------- */
+	// Expected current major version from each release train: Chromium and Firefox ship every ~4 weeks,
+	// Safari takes the year number each September (Safari 26 in 2025).
+	function expected(kind) {
+		var t = Date.now(), day = 864e5;
+		if (kind === 'chromium') { return 132 + Math.floor((t - Date.UTC(2025, 0, 14)) / (day * 30.3)); }
+		if (kind === 'firefox') { return 134 + Math.floor((t - Date.UTC(2025, 0, 7)) / (day * 28)); }
+		var d = new Date(), y = d.getUTCFullYear();
+		return d >= new Date(Date.UTC(y, 8, 20)) ? y - 1999 : y - 2000;
+	}
+	function chromiumMajor() {
+		var b = nav.userAgentData && nav.userAgentData.brands, v = 0;
+		(b || []).forEach(function (x) { if (/Chromium|Google Chrome/.test(x.brand)) { v = Math.max(v, parseInt(x.version, 10) || 0); } });
+		return v || parseInt(ver(ua, /(?:Chrome|CriOS)\/(\d+)/), 10) || 0;
+	}
+	function fullVersion() {
+		var list = hints.fullVersionList || [], name = info.browser, v = '';
+		list.forEach(function (x) {
+			if ((name === 'Microsoft Edge' && /Edge/.test(x.brand)) || (name === 'Chrome' && x.brand === 'Google Chrome') || (name === 'Opera' && /Opera/.test(x.brand))) { v = x.version; }
+		});
+		return v || info.version;
+	}
+	function upToDate() {
+		var b = info.browser, major = parseInt(info.version, 10) || 0, r = { cls: '', title: '', text: '' };
+		var store = info.os === 'iOS' || info.os === 'iPadOS' ? 'Settings > General > Software Update' : info.os === 'Android' ? 'the Play Store or Galaxy Store' : '';
+		if (b === 'Safari' || ((info.os === 'iOS' || info.os === 'iPadOS') && info.engine === 'WebKit')) {
+			var sv = parseInt(ver(ua, /Version\/(\d+)/), 10) || 0, se = expected('safari');
+			if (!sv) { r.title = 'Update check not possible'; r.text = 'On iPhone and iPad every browser uses Safari\'s engine, which updates with iOS. Check Settings > General > Software Update.'; return r; }
+			if (sv >= se - 1) { r.cls = 'is-ok'; r.title = 'Safari ' + sv + ' looks up to date'; r.text = 'The newest Safari is about version ' + se + '. Safari updates come with ' + (info.os === 'macOS' ? 'macOS updates (System Settings > General > Software Update).' : 'iOS updates (Settings > General > Software Update).'); }
+			else { r.cls = 'is-bad'; r.title = 'Safari ' + sv + ' is out of date'; r.text = 'The newest Safari is about version ' + se + '. Install the latest ' + (info.os === 'macOS' ? 'macOS' : 'iOS') + ' update. Devices too old for it may still get security fixes for this version.'; }
+			return r;
+		}
+		if (b === 'Firefox') {
+			var fe = expected('firefox');
+			if (major >= fe - 2) { r.cls = 'is-ok'; r.title = 'Firefox ' + major + ' looks up to date'; r.text = 'The newest Firefox is about version ' + fe + '. Firefox updates itself; check Menu > Help > About Firefox.'; }
+			else if (major === 115 || major === 128 || major === 140 || major === 153) { r.cls = 'is-ok'; r.title = 'Firefox ' + major + ' ESR'; r.text = 'This looks like the Extended Support Release, which stays on an older version but still gets security fixes. The newest regular Firefox is about version ' + fe + '.'; }
+			else { r.cls = 'is-bad'; r.title = 'Firefox ' + major + ' is out of date'; r.text = 'The newest Firefox is about version ' + fe + '. Open Menu > Help > About Firefox to update' + (store ? ', or update it from ' + store : '') + '.'; }
+			return r;
+		}
+		if (info.engine === 'Blink' && ['Chrome', 'Microsoft Edge', 'Opera', 'Brave', 'Vivaldi'].indexOf(b) >= 0) {
+			var cm = chromiumMajor(), ce = expected('chromium');
+			var how = b === 'Chrome' ? 'Menu > Help > About Google Chrome' : b === 'Microsoft Edge' ? 'Settings > About Microsoft Edge' : b === 'Brave' ? 'Menu > About Brave' : b === 'Opera' ? 'Menu > Update & Recovery' : 'Help > Check for updates';
+			if (store) { how = store; }
+			if (cm >= ce - 2) { r.cls = 'is-ok'; r.title = b + ' looks up to date'; r.text = 'It runs on Chromium ' + cm + '; the newest is about ' + ce + '. Browsers update in the background, and a restart finishes the update.'; }
+			else { r.cls = 'is-bad'; r.title = b + ' is out of date'; r.text = 'It runs on Chromium ' + cm + ', but the newest is about ' + ce + '. Old versions miss security fixes. Update it from ' + how + ', then restart it.'; }
+			return r;
+		}
+		r.title = 'Update check not available for ' + b;
+		r.text = 'This browser follows its own release schedule. Update it from ' + (store || 'its menu or the developer\'s website') + '.';
+		return r;
+	}
+	function features() {
+		var c = document.createElement('canvas'), v = document.createElement('video'), a = document.createElement('audio');
+		var cs = function (q) { try { return window.CSS && CSS.supports(q); } catch (e) { return false; } };
+		var play = function (el, t) { try { return !!el.canPlayType(t); } catch (e) { return false; } };
+		var ls = false;
+		try { localStorage.setItem('tn-br', '1'); localStorage.removeItem('tn-br'); ls = true; } catch (e) {}
+		var gl2 = false;
+		try { gl2 = !!c.getContext('webgl2'); } catch (e) {}
+		return [
+			['Cookies', nav.cookieEnabled], ['Local storage', ls], ['IndexedDB', 'indexedDB' in window], ['Service workers', 'serviceWorker' in nav],
+			['WebAssembly', typeof WebAssembly === 'object'], ['WebGL 2', gl2], ['WebGPU', 'gpu' in nav], ['WebCodecs', 'VideoEncoder' in window],
+			['WebRTC (video calls)', 'RTCPeerConnection' in window], ['WebSockets', 'WebSocket' in window], ['WebTransport', 'WebTransport' in window],
+			['Passkeys (WebAuthn)', 'PublicKeyCredential' in window], ['Payment Request', 'PaymentRequest' in window], ['Notifications', 'Notification' in window], ['Push messages', 'PushManager' in window],
+			['Web Share', !!nav.share], ['Clipboard API', !!nav.clipboard], ['File System Access', 'showOpenFilePicker' in window],
+			['Camera and microphone', !!(nav.mediaDevices && nav.mediaDevices.getUserMedia)], ['Screen sharing', !!(nav.mediaDevices && nav.mediaDevices.getDisplayMedia)], ['Media recording', 'MediaRecorder' in window],
+			['Speech recognition', 'SpeechRecognition' in window || 'webkitSpeechRecognition' in window], ['Text to speech', 'speechSynthesis' in window],
+			['Picture-in-picture', !!document.pictureInPictureEnabled], ['Screen wake lock', 'wakeLock' in nav], ['Fullscreen', !!(document.fullscreenEnabled || document.webkitFullscreenEnabled)],
+			['Gamepad API', 'getGamepads' in nav], ['Vibration', 'vibrate' in nav], ['Motion sensors', 'DeviceMotionEvent' in window], ['Geolocation', 'geolocation' in nav],
+			['Web Bluetooth', 'bluetooth' in nav], ['WebUSB', 'usb' in nav], ['Web Serial', 'serial' in nav], ['WebHID', 'hid' in nav], ['Web MIDI', 'requestMIDIAccess' in nav], ['WebXR (VR and AR)', 'xr' in nav],
+			['H.264 video', play(v, 'video/mp4; codecs="avc1.42E01E"')], ['HEVC (H.265) video', play(v, 'video/mp4; codecs="hvc1.1.6.L93.B0"')], ['VP9 video', play(v, 'video/webm; codecs="vp9"')], ['AV1 video', play(v, 'video/mp4; codecs="av01.0.05M.08"')],
+			['Opus audio', play(a, 'audio/webm; codecs="opus"') || play(a, 'audio/ogg; codecs="opus"') || play(a, 'audio/mp4; codecs="opus"')], ['AAC audio', play(a, 'audio/mp4; codecs="mp4a.40.2"')],
+			['CSS :has()', cs('selector(:has(a))')], ['CSS container queries', cs('container-type: inline-size')], ['CSS nesting', cs('selector(&)')], ['View transitions', 'startViewTransition' in document], ['Popover', typeof HTMLElement !== 'undefined' && HTMLElement.prototype.hasOwnProperty('popover')]
+		];
+	}
+	var featCache = null;
+	function renderBrowser() {
+		var verdictEl = $('#br-verdict'), list = $('#br-feats');
+		if (!verdictEl) { return; }
+		var r = upToDate();
+		verdictEl.className = 'sy-verdict ' + r.cls;
+		verdictEl.querySelector('strong').textContent = r.title;
+		verdictEl.querySelector('p').textContent = r.text;
+		var fv = $('#br-version');
+		if (fv) { fv.textContent = fullVersion() || '-'; }
+		if (!list || featCache) { return; }
+		featCache = features();
+		var yesN = 0;
+		featCache.forEach(function (f) {
+			var li = document.createElement('li');
+			li.textContent = f[0];
+			if (!f[1]) { li.className = 'no'; } else { yesN++; }
+			li.setAttribute('aria-label', f[0] + (f[1] ? ': supported' : ': not supported'));
+			list.appendChild(li);
+		});
+		var sc = $('#br-score');
+		if (sc) { sc.textContent = yesN + ' of ' + featCache.length; }
 	}
 
 	function renderPhone() {
@@ -383,7 +484,7 @@
 	render();
 	var waits = [];
 	if (nav.userAgentData && nav.userAgentData.getHighEntropyValues) {
-		waits.push(nav.userAgentData.getHighEntropyValues(['platformVersion', 'model', 'architecture', 'bitness', 'uaFullVersion']).then(function (h) { hints = h || {}; }, function () {}));
+		waits.push(nav.userAgentData.getHighEntropyValues(['platformVersion', 'model', 'architecture', 'bitness', 'uaFullVersion', 'fullVersionList']).then(function (h) { hints = h || {}; }, function () {}));
 	}
 	if (nav.getBattery) {
 		waits.push(nav.getBattery().then(function (b) { extra.battery = Math.round(b.level * 100) + '%' + (b.charging ? ', charging' : ''); }, function () {}));

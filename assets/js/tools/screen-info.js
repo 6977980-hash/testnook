@@ -24,8 +24,10 @@
 		var r = Math.max(w, h) / Math.min(w, h), best = null, err = Infinity;
 		RATIOS.forEach(function (q) { var e = Math.abs(q[0] / q[1] - r) / r; if (e < err) { err = e; best = q; } });
 		var name = best[0] === 21 ? '21:9 (ultrawide, really 64:27 or 43:18)' : best[0] + ':' + best[1];
-		return { name: name, exact: err < 0.012, ratio: r };
+		return { name: name, exact: err < 0.012, ratio: r, q: best };
 	}
+	var MAX_PX = 32768; // larger than any real screen or video frame
+
 	function reduced(w, h) { var g = gcd(Math.round(w), Math.round(h)); return Math.round(w) / g + ':' + Math.round(h) / g; }
 
 	function read() {
@@ -124,7 +126,14 @@
 		var h1 = $('#ar-h1'), w2 = $('#ar-w2'), h2 = $('#ar-h2'), last = 'w2';
 		var arCalc = function () {
 			var a = parseFloat(w1.value), b = parseFloat(h1.value), round = $('#ar-round').checked;
-			if (!(a > 0 && b > 0)) { $('#ar-ratio').textContent = '-'; return; }
+			if (!(a > 0 && b > 0 && a <= MAX_PX && b <= MAX_PX)) {
+				$('#ar-ratio').textContent = $('#ar-dec').textContent = '-';
+				$('#ar-near').textContent = a > MAX_PX || b > MAX_PX ? 'Enter a width and height up to ' + fmt(MAX_PX, 0) + '.' : 'Enter a width and a height above 0.';
+				$('#ar-preview-label').textContent = '';
+				$('#ar-sizes').innerHTML = '';
+				if (last === 'w2') { h2.value = ''; } else { w2.value = ''; }
+				return;
+			}
 			var r = a / b, nr = nearestRatio(a, b);
 			if (last === 'w2' && parseFloat(w2.value) > 0) { var hv = parseFloat(w2.value) / r; h2.value = round ? Math.round(hv) : fmt(hv, 2).replace(/,/g, ''); }
 			if (last === 'h2' && parseFloat(h2.value) > 0) { var wv = parseFloat(h2.value) * r; w2.value = round ? Math.round(wv) : fmt(wv, 2).replace(/,/g, ''); }
@@ -140,9 +149,12 @@
 			$('#ar-preview-label').textContent = (isInt ? reduced(a, b) : fmt(r, 3) + ':1');
 			var list = $('#ar-sizes');
 			list.innerHTML = '';
+			// A size like 1366 x 768 is 16:9 rounded to whole pixels: list the standard 16:9 sizes, not 683:384 ones.
+			var std = nr.exact && Math.abs(nr.q[0] / nr.q[1] - nr.ratio) > 1e-9, rr = r, tag = '';
+			if (std) { rr = a >= b ? nr.q[0] / nr.q[1] : nr.q[1] / nr.q[0]; tag = ' (' + nn.split(' ')[0] + ', rounded)'; }
 			[480, 720, 1080, 1440, 2160].forEach(function (hh) {
-				var ww = hh * r, li = document.createElement('li');
-				if (a < b) { li.textContent = hh + ' x ' + Math.round(hh / r); } else { li.textContent = Math.round(ww) + ' x ' + hh + (Math.abs(ww - Math.round(ww)) > 0.01 ? ' (' + fmt(ww, 2) + ' exact)' : ''); }
+				var ww = hh * rr, li = document.createElement('li');
+				if (a < b) { li.textContent = hh + ' x ' + Math.round(hh / rr) + tag; } else { li.textContent = Math.round(ww) + ' x ' + hh + (std ? tag : Math.abs(ww - Math.round(ww)) > 0.01 ? ' (' + fmt(ww, 2) + ' exact)' : ''); }
 				list.appendChild(li);
 			});
 		};
@@ -167,11 +179,17 @@
 	/* ---------- PPI calculator ---------- */
 	var ppW = $('#pp-w');
 	if (ppW) {
-		var ppH = $('#pp-h'), ppD = $('#pp-d'), ppUnit = $('#pp-unit');
+		var ppH = $('#pp-h'), ppD = $('#pp-d'), ppUnit = $('#pp-unit'), ppPrevUnit = ppUnit.value;
+		var D_MIN = 1, D_MAX = 200; // inches
 		var ppCalc = function () {
 			var w = parseFloat(ppW.value), h = parseFloat(ppH.value), d = parseFloat(ppD.value);
-			if (!(w > 0 && h > 0 && d > 0)) { set('pp-ppi', '-'); return; }
 			if (ppUnit.value === 'cm') { d /= 2.54; }
+			if (!(w > 0 && h > 0 && d > 0 && w <= MAX_PX && h <= MAX_PX && d >= D_MIN - 1e-9 && d <= D_MAX + 1e-9)) {
+				['pp-ppi', 'pp-ppcm', 'pp-pitch', 'pp-mp', 'pp-size', 'pp-ratio', 'pp-retina'].forEach(function (k) { set(k, '-'); });
+				var cm = ppUnit.value === 'cm';
+				set('pp-verdict', ppW.value === '' || ppH.value === '' || ppD.value === '' ? 'Enter the width, height and diagonal.' : 'Enter a width and height of 1 to ' + fmt(MAX_PX, 0) + ' pixels and a diagonal of ' + (cm ? fmt(D_MIN * 2.54, 2) + ' to ' + fmt(D_MAX * 2.54, 0) + ' cm' : D_MIN + ' to ' + D_MAX + ' inches') + '.');
+				return;
+			}
 			var diagPx = Math.hypot(w, h), ppi = diagPx / d, wIn = w / ppi, hIn = h / ppi;
 			var retina = 1 / (ppi * Math.tan(Math.PI / 180 / 60)); // inches at which one pixel spans 1 arcminute
 			set('pp-ppi', fmt(ppi, 1));
@@ -185,16 +203,24 @@
 			set('pp-verdict', verdict);
 		};
 		[ppW, ppH, ppD].forEach(function (el) { el.addEventListener('input', ppCalc); });
-		ppUnit.addEventListener('change', ppCalc);
+		ppUnit.addEventListener('change', function () {
+			// Convert the diagonal so the same screen stays on screen: 24 in becomes 60.96 cm.
+			var d = parseFloat(ppD.value), toCm = ppUnit.value === 'cm';
+			if (d > 0 && ppUnit.value !== ppPrevUnit) { ppD.value = String(Number((toCm ? d * 2.54 : d / 2.54).toFixed(2))); }
+			ppD.min = toCm ? String(Number((D_MIN * 2.54).toFixed(2))) : String(D_MIN);
+			ppD.max = String(toCm ? D_MAX * 2.54 : D_MAX);
+			ppPrevUnit = ppUnit.value;
+			ppCalc();
+		});
 		$('#pp-preset').addEventListener('change', function () {
 			var v = this.value.split(',');
-			if (v.length === 3) { ppW.value = v[0]; ppH.value = v[1]; ppD.value = v[2]; ppUnit.value = 'in'; ppCalc(); }
+			if (v.length === 3) { ppW.value = v[0]; ppH.value = v[1]; ppD.value = v[2]; ppUnit.value = ppPrevUnit = 'in'; ppD.min = String(D_MIN); ppD.max = String(D_MAX); ppCalc(); }
 		});
 		$('#pp-mine').addEventListener('click', function () {
 			var s = read();
 			ppW.value = Math.max(s.pw, s.ph);
 			ppH.value = Math.min(s.pw, s.ph);
-			if (CAL && CAL.calibrated() && !ppD.value) { ppD.value = fmt(Math.hypot(s.sw, s.sh) / CAL.ppi(), 1); ppUnit.value = 'in'; }
+			if (CAL && CAL.calibrated() && !ppD.value) { ppD.value = fmt(Math.hypot(s.sw, s.sh) / CAL.ppi(), 1); ppUnit.value = ppPrevUnit = 'in'; ppD.min = String(D_MIN); ppD.max = String(D_MAX); }
 			ppCalc();
 			ppD.focus();
 		});

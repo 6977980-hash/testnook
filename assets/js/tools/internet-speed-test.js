@@ -36,7 +36,7 @@
 	function goodFor(r) {
 		var list = $('#st-good');
 		if (!list) { return; }
-		var ping = r.ping, jit = r.jitter;
+		var ping = r.ping, jit = r.jitter, noUp = r.up === null || r.up === undefined;
 		var items = [
 			['Web browsing, email and music', r.down >= 1, r.down >= 1 ? 'Yes' : 'Slow: pages will take a while'],
 			['HD video (1080p) on one screen', r.down >= 5, r.down >= 5 ? 'Yes' : 'Needs about 5 Mbps'],
@@ -45,10 +45,13 @@
 			['Online gaming', r.down >= 3 && r.up >= 1 && ping < 100 && jit < 30, ping < 30 && jit < 10 ? 'Yes, even competitive games' : ping < 60 && jit < 20 ? 'Yes' : ping < 100 ? 'Playable, but you may notice lag' : 'Ping is high: expect lag'],
 			['Working from home with big uploads', r.up >= 10, r.up >= 10 ? 'Yes' : 'Upload under 10 Mbps makes large uploads slow']
 		];
+		if (noUp) { // upload failed: do not judge what depends on it
+			[3, 5].forEach(function (k) { items[k][1] = null; items[k][2] = 'Upload not measured'; });
+		}
 		list.innerHTML = '';
 		items.forEach(function (it) {
 			var li = document.createElement('li'), b = document.createElement('strong'), s = document.createElement('span');
-			li.className = it[1] ? 'st-ok' : 'st-no';
+			li.className = it[1] === null ? '' : it[1] ? 'st-ok' : 'st-no';
 			b.textContent = it[0];
 			s.textContent = it[2];
 			li.appendChild(b);
@@ -169,18 +172,26 @@
 				used += u.bytes;
 				set('st-up', N.fmtMbps(u.mbps) + ' Mbps');
 				set('st-lup', N.fmtMs(r.lup));
-			}, function (e) { stop(); throw e; });
+			}, function (e) {
+				stop();
+				if (c.signal.aborted || (e && e.message === 'stopped')) { throw e; }
+				// Keep ping and download; only the upload phase failed.
+				r.up = r.lup = null;
+				r.upErr = e && e.message && e.message !== 'blocked' ? e.message : 'the upload requests were blocked';
+				set('st-up', 'Not measured');
+			});
 		}).then(function () {
 			if (c !== ctrl) { return; }
 			running = false;
 			startBtn.textContent = 'Test again';
 			var extra = Math.max(r.ldown || 0, r.lup || 0) - r.ping;
+			var upMsg = r.upErr ? 'upload could not be measured (' + r.upErr + '; an ad blocker or a firewall may block uploads to speed.cloudflare.com)' : N.fmtMbps(r.up) + ' Mbps up';
 			set('st-grade', grade(extra));
 			set('st-data', N.fmtBytes(used));
 			show(r.down, 'Download (Mbps)', 1);
 			goodFor(r);
 			saveHist(r);
-			U.status(statusEl, 'Done: ' + N.fmtMbps(r.down) + ' Mbps down, ' + N.fmtMbps(r.up) + ' Mbps up, ping ' + N.fmtMs(r.ping) + '.', 'ok');
+			U.status(statusEl, 'Done: ' + N.fmtMbps(r.down) + ' Mbps down, ' + upMsg + ', ping ' + N.fmtMs(r.ping) + '.', r.upErr ? '' : 'ok');
 		}).catch(function (e) { fail(e, c); });
 	}
 

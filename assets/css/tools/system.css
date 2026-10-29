@@ -3,6 +3,7 @@
 .sy-stage .stat { background: var(--surface); }
 .sy-label { margin: 18px 0 6px; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
 .sy-note { color: var(--muted); font-size: .9rem; margin: 8px 0 0; }
+#ip-multi:not([hidden]) { display: block; margin-top: 4px; }
 .sy-center { justify-content: center; }
 .sy-meta { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 14px; margin: 12px 0 0; font-size: .9rem; }
 .sy-meta dt { color: var(--muted); }

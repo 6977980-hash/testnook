@@ -104,24 +104,55 @@
 		});
 	}
 
-	/* ---------- Homepage tool search ---------- */
+	/* ---------- Homepage tool search ----------
+	   Every word must start a word in the card's name, blurb, hub or keywords (catalog 'keywords' holds synonyms like hz,
+	   ping, wpm). Matches in the name rank first, then keywords, then the blurb; a tool listed in two hubs shows once. */
 	var search = $('#tool-search');
 	if (search) {
-		var empty = $('#search-empty');
+		var empty = $('#search-empty'), chips = $('.hero .chips'), sections = $$('.hub-section'), seen = {}, index = [];
+		$$('.hub-section [data-search]').forEach(function (card, i) {
+			var href = card.getAttribute('href') || card.getAttribute('data-name') || String(i);
+			if (seen[href]) { return; }
+			seen[href] = true;
+			index.push({ li: card.parentNode, i: i, guide: card.classList.contains('card--guide'), name: card.getAttribute('data-name') || '', kw: card.getAttribute('data-keywords') || '', all: card.getAttribute('data-search') || '' });
+		});
+		var results = doc.createElement('section');
+		results.className = 'hub-section search-results';
+		results.hidden = true;
+		results.innerHTML = '<h2>Search results</h2><ul class="cards"></ul>';
+		if (sections[0]) { sections[0].parentNode.insertBefore(results, sections[0]); }
+		var list = $('ul', results);
+		var starts = function (text, word) { return (' ' + text.replace(/[^a-z0-9.+#]+/g, ' ')).indexOf(' ' + word) !== -1; };
+		var score = function (it, words) {
+			var s = 0;
+			for (var w = 0; w < words.length; w++) {
+				var word = words[w];
+				if (it.name.indexOf(word) === 0) { s += 8; }
+				else if (starts(it.name, word)) { s += 6; }
+				else if (it.kw.indexOf(word) === 0) { s += 5; }
+				else if (starts(it.kw, word)) { s += 4; }
+				else if (starts(it.all, word)) { s += 1; }
+				else { return 0; }
+			}
+			return it.guide ? s / 2 : s; // tools before guides
+		};
 		var filter = function () {
 			var q = search.value.trim().toLowerCase();
-			var any = false;
-			$$('.hub-section').forEach(function (section) {
-				var shown = 0;
-				$$('[data-search]', section).forEach(function (card) {
-					var hit = !q || card.getAttribute('data-search').indexOf(q) !== -1;
-					card.parentNode.classList.toggle('is-hidden', !hit);
-					if (hit) { shown++; }
-				});
-				section.hidden = shown === 0;
-				if (shown) { any = true; }
-			});
-			if (empty) { empty.hidden = any; }
+			if (chips) { chips.style.display = q ? 'none' : ''; } // results sit right under the box
+			if (!q) {
+				results.hidden = true;
+				sections.forEach(function (section) { section.hidden = false; });
+				if (empty) { empty.hidden = true; }
+				return;
+			}
+			var words = q.split(/[^a-z0-9.+#]+/).filter(Boolean);
+			var hits = index.map(function (it) { return { it: it, s: score(it, words) }; }).filter(function (h) { return h.s > 0; });
+			hits.sort(function (a, b) { return b.s - a.s || a.it.i - b.it.i; });
+			list.innerHTML = '';
+			hits.forEach(function (h) { list.appendChild(h.it.li.cloneNode(true)); });
+			sections.forEach(function (section) { section.hidden = true; });
+			results.hidden = !hits.length;
+			if (empty) { empty.hidden = hits.length > 0; }
 		};
 		var params = new URLSearchParams(location.search);
 		if (params.get('q')) { search.value = params.get('q'); }

@@ -39,6 +39,7 @@
 	}
 
 	function go() {
+		goAt = 0;
 		setState('go', 'Click!', '');
 		// Time from the frame the colour is actually painted, not from the timeout.
 		requestAnimationFrame(function () { goAt = performance.now(); });
@@ -66,8 +67,17 @@
 		if (limit === 5 && window.TNStats) { TNStats.submit('reaction', Math.round(avg)); }
 	}
 
+	// Under 100 ms is faster than a human can see and respond: the click was a guess.
+	var MIN_HUMAN = 100;
+
+	function anticipated() {
+		setState('soon', 'Too early (anticipated)', 'Under ' + MIN_HUMAN + ' ms is a guess, not a reaction. Click to try again.');
+		U.status(statusEl, 'Clicks under ' + MIN_HUMAN + ' ms after green count as anticipated and are not recorded.', 'bad');
+	}
+
 	function record(t) {
-		var ms = t - goAt;
+		var ms = goAt ? t - goAt : 0;
+		if (ms < MIN_HUMAN) { anticipated(); return; }
 		times.push(ms);
 		lastEl.textContent = U.fmt(ms, 0) + ' ms';
 		var avg = times.reduce(function (a, b) { return a + b; }, 0) / times.length;
@@ -113,7 +123,7 @@
 		lastEl.textContent = avgEl.textContent = bestEl.textContent = '-';
 		countEl.textContent = countText();
 		setState('idle', 'Click to start', 'When the box turns red, wait. Click the moment it turns green.');
-		U.status(statusEl, 'Click, tap or press Space in the box to begin.', '');
+		U.status(statusEl, 'Click, tap or press Space in the box to begin. Clicks under ' + MIN_HUMAN + ' ms after green do not count.', '');
 	}
 	$('#rt-reset').addEventListener('click', reset);
 

@@ -17,7 +17,8 @@
 	var mode = stage.getAttribute('data-cps-mode') || 'left';
 
 	var pressed = root.querySelector('[data-cps-t][aria-pressed="true"]');
-	var dur = pressed ? Number(pressed.getAttribute('data-cps-t')) : Number(stage.getAttribute('data-cps-dur')) || 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0, stamps = [];
+	var dur = pressed ? Number(pressed.getAttribute('data-cps-t')) : Number(stage.getAttribute('data-cps-dur')) || 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0, stamps = [], endedAt = -1e9, lockTimer = 0;
+	var LOCK = 800; // ms after the end in which presses are ignored, so a late click does not wipe the result
 
 	function key() { return 'tn-cps-best-' + (mode === 'left' ? '' : mode + '-') + dur; }
 	function pb() {
@@ -82,6 +83,7 @@
 
 	function stop() {
 		running = false;
+		endedAt = performance.now();
 		cancelAnimationFrame(raf);
 		var cps = count / dur;
 		cpsEl.textContent = U.fmt(cps, 1);
@@ -102,7 +104,10 @@
 		stage.classList.remove('is-running');
 		stage.classList.add('is-done');
 		big.textContent = U.fmt(cps, 1) + ' CPS';
-		small.textContent = count + ' clicks in ' + dur + ' s. ' + rank(cps) + (mode === 'auto' ? '.' : '!') + ' Click to go again.';
+		small.textContent = count + ' clicks in ' + dur + ' s. ' + rank(cps) + (mode === 'auto' ? '.' : '!');
+		var doneText = small.textContent;
+		clearTimeout(lockTimer);
+		lockTimer = setTimeout(function () { if (!running && stage.classList.contains('is-done')) { small.textContent = doneText + ' Result saved. Click again to restart.'; } }, LOCK);
 		var best = pb(), msg = 'Done: ' + count + ' clicks in ' + dur + ' seconds = ' + U.fmt(cps, 1) + ' clicks per second (' + rank(cps) + ').';
 		if (mode === 'auto') {
 			var r = rank(cps), s2 = spread();
@@ -146,11 +151,14 @@
 	function press(t) {
 		if (t - lastInput < (mode === 'auto' ? 0.5 : 8)) { return; } // ignore duplicate events for one press (auto clickers can run at 1 ms gaps)
 		lastInput = t;
+		if (running && t - start >= dur * 1000) { stop(); } // the timer ran out before the next frame
+		if (!running && t - endedAt < LOCK) { return; }
 		if (!running) { begin(t); }
 		count++;
 		stamps.push(t);
 		var sec = Math.min(dur - 1, Math.floor((t - start) / 1000));
 		if (sec >= 0) { perSec[sec]++; }
+		peakEl.textContent = U.fmt(Math.max.apply(null, perSec), 1);
 		countEl.textContent = count;
 		big.textContent = count;
 		stage.classList.remove('is-hit');
@@ -175,6 +183,8 @@
 
 	function reset() {
 		running = false;
+		endedAt = -1e9;
+		clearTimeout(lockTimer);
 		cancelAnimationFrame(raf);
 		count = 0; perSec = [];
 		stage.classList.remove('is-running', 'is-done');

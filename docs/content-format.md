@@ -53,6 +53,9 @@ return array(
 ```
 
 Name, blurb and hub come from `content/catalog.php` and are merged in.
+A catalog entry may also carry `'keywords' => 'hz hertz fps'`: space-separated
+synonyms the homepage search matches (name matches rank first, then keywords,
+then the blurb). Keep them lowercase and short.
 
 Files whose name starts with `_` (`_gamepad-diagram.php`, `_colour-screen.php`, `_monitor-patterns.php`)
 are shared helpers `require`d by several tool files, not pages; keep them out
@@ -137,7 +140,7 @@ return array(
 The `data.html` tokens are `{median:<board>}`, `{mean:<board>}`,
 `{top10:<board>}`, `{count:<board>}` and `{beats:<board>:<value>}` (share of
 results that value beats). The whole data section is skipped while any board
-it names has fewer than 20 results in the last 30 days, so the surrounding
+it names has fewer than 10 results (`TN_RESULTS_MIN_COUNT`) in the last 30 days, so the surrounding
 text must read well without it. Guides get `Article` schema with the
 founder as author, `og:type` article, and an OG image from
 `bin/make-og-images.py` (which now reads `content/guides/` too).

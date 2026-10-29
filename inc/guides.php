@@ -82,11 +82,13 @@ function tn_guide_minutes( $def ) {
 
 function tn_guide_card( $guide ) {
 	printf(
-		'<a class="card card--guide" href="%1$s"><span class="card-icon">%2$s</span><span class="card-body"><span class="card-title">%3$s</span><span class="card-text">%4$s</span></span></a>',
+		'<a class="card card--guide" href="%1$s" data-search="%5$s" data-name="%6$s"><span class="card-icon">%2$s</span><span class="card-body"><span class="card-title">%3$s</span><span class="card-text">%4$s</span></span></a>',
 		esc_url( tn_guide_url( $guide['slug'] ) ),
 		tn_icon( 'book' ), // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG
 		esc_html( $guide['title'] ),
-		esc_html( $guide['blurb'] )
+		esc_html( $guide['blurb'] ),
+		esc_attr( strtolower( $guide['title'] . ' ' . $guide['blurb'] . ' guide' ) ),
+		esc_attr( strtolower( $guide['title'] ) )
 	);
 }
 

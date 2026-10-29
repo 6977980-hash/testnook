@@ -13,6 +13,16 @@
 
 	var unit = 'cm', counts = 0, locked = false, measuring = false, runs = [], raw = false, fallbackMoves = 0, lastX = 0;
 
+	var D_MIN = 0.5, D_MAX = 100; // in the chosen unit
+
+	function distOk() {
+		var d = parseFloat(distIn.value);
+		if (d >= D_MIN && d <= D_MAX) { return true; }
+		U.status(statusEl, 'Enter a distance between ' + D_MIN + ' and ' + D_MAX + ' ' + unit + ' before you start.', 'bad');
+		distIn.focus();
+		return false;
+	}
+
 	function inches() {
 		var d = parseFloat(distIn.value) || 5;
 		return unit === 'cm' ? d / 2.54 : d;
@@ -76,6 +86,7 @@
 	}
 
 	function lock() {
+		if (!distOk()) { return; }
 		if (!stage.requestPointerLock) { startFallback(); return; }
 		var p;
 		try { p = stage.requestPointerLock({ unadjustedMovement: true }); } catch (e) { p = null; }

@@ -28,7 +28,7 @@ return function ( $secs ) {
 	<nav class="cps-len" aria-label="Other test lengths"><span>Length:</span>' . $links . '</nav>
 	<label class="cps-opt"><input type="checkbox" id="cps-right"> Count right clicks too</label>
 </div>
-<div class="tool-stage cps-stage" id="cps-stage" data-cps-dur="' . $secs . '" tabindex="0" role="button" aria-label="Click area">
+<div class="tool-stage cps-stage" id="cps-stage" data-cps-dur="' . $secs . '" tabindex="0" role="button">
 	<div class="cps-ring" id="cps-ring"><span id="cps-timer">' . $secs . '.0</span><small>' . ( 1 === $secs ? 'second' : 'seconds' ) . '</small></div>
 	<div class="cps-msg"><strong id="cps-big">Click here to start</strong><span id="cps-small">The timer starts on your first click.</span></div>
 </div>

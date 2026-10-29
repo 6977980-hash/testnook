@@ -18,7 +18,7 @@ return array(
 	</div>
 	<label class="tb-opt"><input type="checkbox" id="tb-auto" checked> Auto reset after a pause</label>
 </div>
-<div class="tool-stage tb-stage" id="tb-stage" tabindex="0" role="button" aria-label="Tap area">
+<div class="tool-stage tb-stage" id="tb-stage" tabindex="0" role="button">
 	<div class="tb-ring" id="tb-ring">Tap</div>
 	<div class="tb-msg"><strong id="tb-big">Tap here</strong><span id="tb-small">Tap in time with the music. Space or any key works too.</span></div>
 </div>

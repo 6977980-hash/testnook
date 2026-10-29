@@ -94,7 +94,7 @@
 		startBtn.textContent = 'Start again';
 		board.hidden = true;
 		intro.hidden = false;
-		intro.querySelector('h3').textContent = 'Score: ' + score;
+		intro.querySelector('h2').textContent = 'Score: ' + score;
 		intro.querySelector('p').textContent = msg;
 	}
 

@@ -95,7 +95,7 @@
 		else { msg = 'Excellent. Very few people get this far.'; }
 		board.hidden = true;
 		intro.hidden = false;
-		intro.querySelector('h3').textContent = 'Level ' + score;
+		intro.querySelector('h2').textContent = 'Level ' + score;
 		intro.querySelector('p').textContent = msg;
 		startBtn.textContent = 'Start again';
 		U.status(statusEl, 'Game over at level ' + score + '. ' + msg, '');

@@ -26,7 +26,7 @@ get_header();
 			</header>
 
 			<?php if ( 'any' !== $def['device'] ) : ?>
-				<div id="device-note" class="device-note" data-device="<?php echo esc_attr( $def['device'] ); ?>" hidden>
+				<div id="device-note" class="device-note" data-device="<?php echo esc_attr( $def['device'] ); ?>"<?php echo in_array( $def['device'], array( 'desktop', 'touch' ), true ) ? '' : ' hidden'; ?>>
 					<?php echo tn_icon( 'info', 18 ); // phpcs:ignore ?>
 					<div><?php tn_html( ! empty( $def['device_message'] ) ? $def['device_message'] : 'This test may not work on this device.' ); ?></div>
 				</div>
@@ -37,6 +37,7 @@ get_header();
 				<noscript><p class="notice notice--warn">This tool needs JavaScript. Please enable it in your browser settings.</p></noscript>
 				<?php if ( $def['stats'] ) : ?>
 					<p class="share-line" data-tn-share-line hidden></p>
+					<p class="copy-result" data-tn-copy-result hidden><span data-tn-copy-text></span> <button type="button" class="btn btn-sm">Copy result</button></p>
 					<?php tn_leaderboard_claim( $def ); ?>
 				<?php endif; ?>
 			</section>

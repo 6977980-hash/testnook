@@ -1,4 +1,4 @@
-/* Stick drift test: live stick positions with trails, adjustable dead zone ring, a timed resting drift check and an outer range (circularity) trace. */
+/* Stick drift test: live stick positions with trails, adjustable dead zone ring, a timed resting drift check with tiers and a suggested dead zone, and an outer range trace with a circularity error. */
 (function () {
 	'use strict';
 	// Serves the stick drift and Joy-Con drift pages: any page with the #sd-c0 canvas.
@@ -16,10 +16,13 @@
 		var c = $('#sd-c' + i);
 		return {
 			canvas: c, g: c.getContext('2d'), x: 0, y: 0, trail: [], edge: new Float32Array(BINS),
-			out: { x: $('#sd-x' + i), y: $('#sd-y' + i), d: $('#sd-d' + i), rest: $('#sd-rest' + i), range: $('#sd-range' + i) }
+			out: { x: $('#sd-x' + i), y: $('#sd-y' + i), d: $('#sd-d' + i), rest: $('#sd-rest' + i), range: $('#sd-range' + i), circ: $('#sd-circ' + i), dz: $('#sd-dzs' + i) }
 		};
 	});
-	var padIndex = -1, check = null, deadzone = 0.1;
+	var padIndex = -1, check = null, deadzone = 0.1, tiers = $('#sd-tiers');
+	// Upper bound of each drift tier (share of full tilt): excellent, normal, noticeable, needs attention.
+	var TIERS = [0.01, 0.05, 0.10, Infinity], TIER_NAMES = ['Excellent', 'Normal', 'Noticeable', 'Needs attention'];
+	function tierOf(m) { for (var i = 0; i < TIERS.length; i++) { if (m <= TIERS[i]) { return i; } } return 3; }
 	var css = getComputedStyle(root);
 	function colour(n) { return css.getPropertyValue(n).trim(); }
 
@@ -123,6 +126,16 @@
 			var filled = 0, sum = 0;
 			for (var i = 0; i < BINS; i++) { if (s.edge[i]) { filled++; sum += s.edge[i]; } }
 			if (filled > BINS * 0.6) { s.out.range.textContent = Math.round(sum / filled * 100) + '%'; }
+			if (s.out.circ) {
+				if (filled >= BINS * 0.9) {
+					// Circularity error: average gap between the traced edge and the ideal circle at full tilt.
+					var err = 0;
+					for (var j = 0; j < BINS; j++) { if (s.edge[j]) { err += Math.abs(s.edge[j] - 1); } }
+					s.out.circ.textContent = U.fmt(err / filled * 100, 1) + '%';
+				} else {
+					s.out.circ.textContent = 'Rotate ' + Math.round(filled / BINS * 100) + '%';
+				}
+			}
 		}
 	}
 
@@ -144,15 +157,32 @@
 			var m = check.max[i];
 			worst = Math.max(worst, m);
 			s.out.rest.textContent = U.fmt(m * 100, 1) + '%';
-			s.out.rest.className = 'stat-value ' + (m < 0.05 ? 'sd-good' : m < 0.12 ? 'sd-warn' : 'sd-bad');
+			s.out.rest.className = 'stat-value ' + ['sd-good', 'sd-good', 'sd-warn', 'sd-bad'][tierOf(m)];
+			if (s.out.dz) { s.out.dz.textContent = suggestDz(m) + '%'; }
 		});
-		var pct = Math.round(worst * 100), dz = Math.min(30, Math.ceil(worst * 100) + 2);
-		var msg = pct < 5 ? 'No stick drift: both sticks rest within ' + pct + '% of centre. That is normal.' :
-			pct < 12 ? 'Minor drift (' + pct + '%). A dead zone of about ' + dz + '% in your game settings hides it.' :
-			'Stick drift detected (' + pct + '% off centre at rest). Try the fixes below; a dead zone of ' + dz + '% would be needed to hide it.';
-		U.status(statusEl, msg, pct < 12 ? 'ok' : 'bad');
+		var tier = tierOf(worst), pct = U.fmt(worst * 100, 1), dz = suggestDz(worst);
+		var msg = tier === 0 ? 'Excellent: both sticks rest within ' + pct + '% of center. No drift at all.' :
+			tier === 1 ? 'Normal: the worst stick rests ' + pct + '% off center, ordinary sensor noise. Default dead zones hide it.' :
+			tier === 2 ? 'Noticeable drift (' + pct + '% off center at rest). A dead zone of about ' + dz + '% in your game settings hides it.' :
+			'Drift needs attention (' + pct + '% off center at rest). Try the fixes below; a dead zone of ' + dz + '% would be needed to hide it.';
+		U.status(statusEl, msg, tier < 2 ? 'ok' : 'bad');
+		markTier(tier);
+		deadzone = dz / 100; dzIn.value = dz; dzOut.textContent = dz + '%';
 		checkBtn.disabled = false;
 		check = null;
+	}
+
+	// Smallest whole-percent dead zone that hides the resting offset, with a 2% margin.
+	function suggestDz(m) { return Math.min(30, Math.ceil(m * 100) + 2); }
+
+	function markTier(t) {
+		if (!tiers) { return; }
+		U.$$('[data-sd-tier]', tiers).forEach(function (row) {
+			var on = Number(row.getAttribute('data-sd-tier')) === t;
+			row.classList.toggle('is-hit', on);
+			if (on) { row.setAttribute('aria-current', 'true'); } else { row.removeAttribute('aria-current'); }
+		});
+		tiers.setAttribute('data-sd-verdict', t < 0 ? '' : TIER_NAMES[t]);
 	}
 
 	function loop(now) {
@@ -170,9 +200,12 @@
 		sticks.forEach(function (s) {
 			s.trail = []; s.edge = new Float32Array(BINS);
 			s.out.rest.textContent = s.out.range.textContent = '-';
+			if (s.out.circ) { s.out.circ.textContent = '-'; }
+			if (s.out.dz) { s.out.dz.textContent = '-'; }
 			s.out.rest.className = 'stat-value';
 		});
 		check = null;
+		markTier(-1);
 		refreshList();
 	}
 

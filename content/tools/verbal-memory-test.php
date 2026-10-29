@@ -16,7 +16,7 @@ return array(
 	<button type="button" class="btn btn-primary btn-sm" id="vb-start">Start</button>
 </div>
 <div class="tool-stage mm-stage vb-stage" id="vb-stage" tabindex="0" aria-label="Verbal memory test">
-	<div class="mm-intro" id="vb-intro"><h3>Seen or new?</h3><p>Words appear one at a time. Press SEEN if the word already appeared in this round, NEW if it did not. Three mistakes end the game.</p></div>
+	<div class="mm-intro" id="vb-intro"><h2>Seen or new?</h2><p>Words appear one at a time. Press SEEN if the word already appeared in this round, NEW if it did not. Three mistakes end the game.</p></div>
 	<div id="vb-play" hidden><div class="vb-word" id="vb-word" aria-live="polite"></div><div class="vb-btns"><button type="button" class="btn btn-primary" id="vb-seen">Seen <small>(S)</small></button><button type="button" class="btn btn-primary" id="vb-new">New <small>(N)</small></button></div></div>
 </div>
 <span class="mm-pb" id="vb-pb"></span>

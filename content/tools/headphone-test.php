@@ -13,7 +13,7 @@ return array(
 	'embed_height' => 760,
 	'tool'         => '<div class="tool-stage hp-stage">
 	<div class="hp-group">
-		<h3>Left and right</h3>
+		<h2>Left and right</h2>
 		<p>Each sound should be heard only on the side it names.</p>
 		<div class="hp-channels">
 			<button type="button" class="hp-ch" data-hp="left"><span class="hp-ch-ico">&#9664;</span>Left ear</button>
@@ -24,7 +24,7 @@ return array(
 		<div class="btn-row hp-pan"><button type="button" class="btn btn-sm" data-hp="pan">Left &harr; right pan</button></div>
 	</div>
 	<div class="hp-group">
-		<h3>Bass</h3>
+		<h2>Bass</h2>
 		<p>Good over-ear headphones play 30 Hz; small earbuds often fade below 50 Hz.</p>
 		<div class="btn-row">
 			<button type="button" class="btn btn-sm" data-hp="b30">30 Hz</button>
@@ -35,7 +35,7 @@ return array(
 		</div>
 	</div>
 	<div class="hp-group">
-		<h3>Polarity (phase) and range</h3>
+		<h2>Polarity (phase) and range</h2>
 		<p>"In phase" should sound focused in the middle; "out of phase" should sound wide and vague.</p>
 		<div class="btn-row">
 			<button type="button" class="btn btn-sm" data-hp="inphase">In phase</button>

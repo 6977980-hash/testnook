@@ -21,9 +21,9 @@ return array(
 		<div class="stat"><span class="stat-label">Operating system</span><span class="stat-value" data-di="os">-</span></div>
 		<div class="stat"><span class="stat-label">Device</span><span class="stat-value" data-di="device">-</span></div>
 	</div>
-	<h3 class="di-sub">User-Agent Client Hints</h3>
+	<h2 class="di-sub">User-Agent Client Hints</h2>
 	<div class="di-hints" id="di-hints"><p class="di-muted">Loading...</p></div>
-	<h3 class="di-sub">User agent checker</h3>
+	<h2 class="di-sub">User agent checker</h2>
 	<div class="di-parse"><input type="text" id="di-parse-in" placeholder="Paste any user agent string" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="User agent to check"><button type="button" class="btn" id="di-parse-btn">Check</button></div>
 	<dl class="di-parse-out" id="di-parse-out" hidden></dl>
 </div>

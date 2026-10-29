@@ -1,6 +1,6 @@
 /* Headphone test */
 .tool-stage.hp-stage { display: grid; gap: 18px; align-content: start; justify-items: stretch; padding: 16px; min-height: 0; }
-.hp-group h3 { margin: 0 0 4px; font-size: .95rem; }
+.hp-group h2, .hp-group h3 { margin: 0 0 4px; font-size: .95rem; }
 .hp-group p { margin: 0 0 10px; font-size: .88rem; color: var(--muted); }
 .hp-channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .hp-ch {

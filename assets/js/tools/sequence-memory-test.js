@@ -72,7 +72,7 @@
 			timers.push(setTimeout(function () {
 				board.hidden = true;
 				intro.hidden = false;
-				intro.querySelector('h3').textContent = 'Level ' + score;
+				intro.querySelector('h2').textContent = 'Level ' + score;
 				intro.querySelector('p').textContent = msg;
 				startBtn.textContent = 'Start again';
 			}, 700));

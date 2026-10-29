@@ -19,7 +19,7 @@ return array(
 	<div class="stat"><span class="stat-label">Time to full</span><span class="stat-value" id="bt-tofull">-</span></div>
 	<div class="stat"><span class="stat-label">Time left (browser)</span><span class="stat-value" id="bt-toempty">-</span></div>
 </div>
-<h3 class="bt-h">Drain test</h3>
+<h2 class="bt-h">Drain test</h2>
 <div class="tool-bar">
 	<div class="btn-row"><button type="button" class="btn btn-primary" id="bt-start">Start drain test</button><button type="button" class="btn" id="bt-stop" disabled>Stop</button></div>
 </div>

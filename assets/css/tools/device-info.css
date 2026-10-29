@@ -6,7 +6,7 @@
 .di-hero span { color: var(--muted); }
 .di-table { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .di-group { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; background: var(--surface); min-width: 0; }
-.di-group h3 { margin: 0 0 6px; font-size: .95rem; }
+.di-group h2, .di-group h3 { margin: 0 0 6px; font-size: .95rem; }
 .di-group dl, .di-hints dl, .di-parse-out { display: grid; grid-template-columns: minmax(0, 45%) minmax(0, 1fr); gap: 4px 12px; margin: 0; font-size: .9rem; }
 .di-group dt, .di-hints dt, .di-parse-out dt { color: var(--muted); }
 .di-group dd, .di-hints dd, .di-parse-out dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }

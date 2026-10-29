@@ -79,7 +79,30 @@
 			if (!window.isSecureContext) { return 'This page must be opened over HTTPS to use your ' + what + '.'; }
 			return 'Could not start your ' + what + (name ? ' (' + name + ')' : '') + '.';
 		},
-		fmt: function (n, d) { return Number(n).toFixed(d || 0); }
+		fmt: function (n, d) { return Number(n).toFixed(d || 0); },
+		/** Copy text to the clipboard; the button reads "Copied" for a moment. */
+		copyText: function (text, btn) {
+			var label = btn ? btn.textContent : '';
+			var done = function () {
+				if (!btn) { return; }
+				btn.textContent = 'Copied';
+				setTimeout(function () { btn.textContent = label; }, 1600);
+			};
+			if (navigator.clipboard && window.isSecureContext) {
+				navigator.clipboard.writeText(text).then(done, function () { if (btn) { btn.textContent = 'Copy blocked'; setTimeout(function () { btn.textContent = label; }, 1600); } });
+				return;
+			}
+			var ta = doc.createElement('textarea');
+			ta.value = text;
+			ta.setAttribute('readonly', '');
+			ta.style.position = 'fixed';
+			ta.style.opacity = '0';
+			doc.body.appendChild(ta);
+			ta.select();
+			try { doc.execCommand('copy'); } catch (e) { /* ignore */ }
+			doc.body.removeChild(ta);
+			done();
+		}
 	};
 
 	/* ---------- Theme toggle ---------- */
@@ -171,13 +194,10 @@
 	/* ---------- Device notes ---------- */
 	var note = $('#device-note');
 	if (note) {
+		// 'desktop' and 'touch' notes are shown by CSS media queries (pointer type).
 		var need = note.getAttribute('data-device');
-		var show = false;
-		if (need === 'desktop') { show = TNUtil.isTouch() && !TNUtil.hasFinePointer(); }
-		if (need === 'touch') { show = !TNUtil.isTouch(); }
-		if (need === 'gamepad') { show = !('getGamepads' in navigator); }
-		if (need === 'media') { show = !(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
-		note.hidden = !show;
+		if (need === 'gamepad') { note.hidden = 'getGamepads' in navigator; }
+		if (need === 'media') { note.hidden = !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); }
 	}
 
 	/* ---------- Copy buttons: data-tn-copy="#textarea" ---------- */

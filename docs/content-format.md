@@ -200,6 +200,7 @@ return array(
 	'seo_title'   => '...',
 	'description' => '...',
 	'intro'       => 'Lede under the H1.',
+	'pick'        => 'Pick a test below: ...',  // optional bold line under the lede, for hubs whose slug reads like one test
 	'body'        => '<h2>...</h2><p>...</p>',  // guide text after the tool grid
 	'faq'         => array( array( 'Q', 'A' ) ),
 	'updated'     => '2026-10-28',  // shown as "Last updated", emitted as dateModified

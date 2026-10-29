@@ -28,7 +28,7 @@ return array(
 	</div>
 	<p class="si-note" id="ar-near"></p>
 	<div class="ar-preview-wrap"><div class="ar-preview" id="ar-preview"><span id="ar-preview-label"></span></div></div>
-	<h3 class="si-sub">Standard sizes in this ratio</h3>
+	<h2 class="si-sub">Standard sizes in this ratio</h2>
 	<ul class="ar-sizes" id="ar-sizes"></ul>
 </div>',
 	'howto'          => array(

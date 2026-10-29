@@ -7,7 +7,7 @@
 .zt-empty { text-align: center; padding: 24px; max-width: 420px; }
 .zt-empty p { margin: 0 0 .4em; }
 .zt-side { display: grid; gap: 10px; align-content: start; }
-.zt-side h3 { margin: 4px 0 0; font-size: 1rem; }
+.zt-side h2, .zt-side h3 { margin: 4px 0 0; font-size: 1rem; }
 .zt-side audio { width: 100%; }
 .zt-side audio[hidden] { display: none; }
 .zt-meter { height: 16px; }

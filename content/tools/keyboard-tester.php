@@ -12,17 +12,27 @@ return array(
 	'styles'         => array( 'keyboard-tester' ),
 	'scripts'        => array( 'keyboard-tester' ),
 	'embed_height'   => 640,
-	'tool'           => '<div class="tool-bar">
-	<div class="seg" role="group" aria-label="Keyboard layout">
-		<button type="button" data-kb-layout="full" aria-pressed="true">Full size</button>
-		<button type="button" data-kb-layout="tkl" aria-pressed="false">TKL</button>
-		<button type="button" data-kb-layout="sixty" aria-pressed="false">60%</button>
+	'tool'           => '<div class="tool-bar kb-bar">
+	<div class="seg" role="group" aria-label="Keyboard size">
+		<button type="button" data-kb-size="full" aria-pressed="true">Full</button>
+		<button type="button" data-kb-size="tkl" aria-pressed="false">TKL</button>
+		<button type="button" data-kb-size="seventyfive" aria-pressed="false">75%</button>
+		<button type="button" data-kb-size="sixty" aria-pressed="false">60%</button>
 	</div>
-	<button type="button" class="btn" id="kb-reset">Reset</button>
+	<div class="seg" role="group" aria-label="Key shape">
+		<button type="button" data-kb-shape="ansi" aria-pressed="true" title="US layout: wide Enter, long left Shift">ANSI (US)</button>
+		<button type="button" data-kb-shape="iso" aria-pressed="false" title="UK and European layout: tall Enter, extra key beside left Shift">ISO (UK/EU)</button>
+	</div>
+	<div class="seg" role="group" aria-label="Key labels">
+		<button type="button" data-kb-os="win" aria-pressed="true">Windows</button>
+		<button type="button" data-kb-os="mac" aria-pressed="false">Mac</button>
+	</div>
+	<button type="button" class="btn btn-sm" id="kb-reset">Reset</button>
 </div>
-<div class="tool-stage kb-stage">
+<div class="tool-stage kb-stage" id="kb-stage">
 	<div class="kb-board" id="kb-board" tabindex="0" role="application" aria-label="Keyboard diagram. Click here, then press keys on your keyboard."></div>
 </div>
+<p class="kb-hint" id="kb-hint" hidden>Scroll sideways to see the whole keyboard, or pick the 60% size.</p>
 <label class="visually-hidden" for="kb-typing">Typing area</label>
 <textarea class="kb-typing" id="kb-typing" rows="2" placeholder="Or type here to check for repeated or missing characters..." spellcheck="false" autocomplete="off"></textarea>
 <div class="stats kb-stats">
@@ -33,12 +43,17 @@ return array(
 	<div class="stat"><span class="stat-label">Max at once</span><span class="stat-value" id="kb-max">0</span></div>
 	<div class="stat"><span class="stat-label">Keys tested</span><span class="stat-value"><span id="kb-tested">0</span> / <span id="kb-total">0</span></span></div>
 </div>
-<p class="tool-status" id="kb-status" aria-live="polite">Click here and press every key. Each one turns green when it works.</p>',
+<p class="tool-status" id="kb-status" aria-live="polite">Click here and press every key. Each one turns green when it works.</p>
+<details class="kb-log" open>
+	<summary>Key log (last 10 presses)</summary>
+	<div class="table-scroll"><table><thead><tr><th scope="col">key</th><th scope="col">code</th><th scope="col">keyCode</th></tr></thead><tbody id="kb-log-body"></tbody></table></div>
+	<button type="button" class="btn btn-sm" id="kb-log-copy" disabled>Copy log</button>
+</details>',
 	'howto'          => array(
-		'Click anywhere on the keyboard diagram so the page receives your key presses. Pick the layout that matches your keyboard: <strong>Full size</strong> with a number pad, <strong>TKL</strong> without one, or <strong>60%</strong> for compact boards.',
+		'Click anywhere on the keyboard diagram so the page receives your key presses. Pick the size that matches your keyboard: <strong>Full</strong> with a number pad, <strong>TKL</strong> without one, <strong>75%</strong> with the arrows tucked in, or <strong>60%</strong> for compact boards. Choose <strong>ISO (UK/EU)</strong> if your Enter key is tall and there is a key between left Shift and Z, and <strong>Mac</strong> for Command and Option labels.',
 		'Press every key, one at a time, including Shift, Ctrl, Alt, the function keys and the arrows. Each key lights up while held and turns green once it has registered.',
 		'Hold several keys together and read <strong>Max at once</strong>. Most keyboards register at least 6 keys (6-key rollover); gaming keyboards with NKRO register all of them.',
-		'Type a sentence in the typing area. Watch for letters that appear twice, appear late or do not appear at all.',
+		'Type a sentence in the typing area. Watch for letters that appear twice, appear late or do not appear at all. The <strong>key log</strong> lists your last 10 presses with their key, code and keyCode, and <strong>Copy log</strong> puts them on the clipboard for a bug report or a game\'s support team.',
 		'Any key still gray after you have pressed it is a dead key. A key that lights up on its own is stuck.',
 	),
 	'howto_title'    => 'How to test your keyboard',
@@ -73,9 +88,9 @@ return array(
 		array( 'How do I test if my keyboard keys are working?', 'Click the diagram and press every key. Keys that work turn green; keys that stay gray after you press them are dead.' ),
 		array( 'Why does a key not light up even though it types?', 'Some keys, such as Fn, media keys and the Windows key in some games, are handled by the system and never reach the browser. If the key does its job elsewhere, it works.' ),
 		array( 'How many keys should I be able to press at once?', 'At least 6 on most keyboards. Gaming keyboards with N-key rollover register every key at the same time.' ),
-		array( 'Can I test a laptop keyboard here?', 'Yes. Pick the TKL or 60% layout to match your laptop. The number pad block only applies to full-size keyboards.' ),
+		array( 'Can I test a laptop keyboard here?', 'Yes. Pick the TKL, 75% or 60% size to match your laptop. The number pad block only applies to full-size keyboards.' ),
 		array( 'What is key chatter?', 'When one press registers twice, so letters appear doubled. It happens when a mechanical switch\'s contacts bounce, usually because of dirt or wear.' ),
-		array( 'Does this keyboard test work for Mac?', 'Yes. The Win key position shows the Command key on Mac keyboards, and the layout is otherwise the same.' ),
+		array( 'Does this keyboard test work for Mac?', 'Yes. Press Mac above the keyboard and the diagram shows Control, Option and Command in Mac order, with Delete, Return and the F13 to F15 keys named as Apple prints them. Command shortcuts are passed to the browser, so they keep working while you test.' ),
 	),
 	'related'        => array( 'keyboard-ghosting-test', 'spacebar-clicker', 'typing-speed-test', 'mouse-tester', 'gamepad-tester', 'double-click-test', 'reaction-time-test' ),
 	'updated'        => '2026-10-28',

@@ -16,7 +16,7 @@ return array(
 	<button type="button" class="btn btn-primary btn-sm" id="sm-start">Start</button>
 </div>
 <div class="tool-stage mm-stage" id="sm-stage" aria-label="Sequence memory test grid">
-	<div class="mm-intro" id="sm-intro"><h3>Repeat the sequence</h3><p>Tiles flash in order. Click them in the same order. Each level adds a step. One mistake ends the game.</p></div>
+	<div class="mm-intro" id="sm-intro"><h2>Repeat the sequence</h2><p>Tiles flash in order. Click them in the same order. Each level adds a step. One mistake ends the game.</p></div>
 	<div class="mm-board sm-board is-locked" id="sm-board" hidden>
 		<button type="button" class="mm-cell" aria-label="Tile 1"></button><button type="button" class="mm-cell" aria-label="Tile 2"></button><button type="button" class="mm-cell" aria-label="Tile 3"></button>
 		<button type="button" class="mm-cell" aria-label="Tile 4"></button><button type="button" class="mm-cell" aria-label="Tile 5"></button><button type="button" class="mm-cell" aria-label="Tile 6"></button>

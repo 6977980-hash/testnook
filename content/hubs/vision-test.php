@@ -5,6 +5,7 @@ return array(
 	'title'       => 'Eye & Vision Tests',
 	'seo_title'   => 'Online Vision Tests: Eye Chart, Color Blindness & More',
 	'description' => 'Free online eye and vision tests: a calibrated eye chart, red-green color blind plates, a color vision arrangement test, an astigmatism dial, blind spot test.',
+	'pick'        => 'Pick a test below: each one runs right here in your browser.',
 	'intro'       => 'Quick vision checks you can do at home with a screen: a calibrated eye chart for sharpness, two color vision tests, an astigmatism clock dial and a blind spot test. They are screening tools that help you decide whether to book an eye examination, not a replacement for one.',
 	'body'        => '<p class="notice notice--warn">Medical disclaimer: these tests are for information and screening only. They cannot diagnose any eye condition, check eye health or give a glasses prescription. See an optometrist or eye doctor for a full eye examination, and get urgent help for sudden changes in vision, eye pain, flashes or a shadow over your sight.</p>
 

@@ -32,11 +32,11 @@ return array(
 		),
 		array(
 			'Which DNS server to choose',
-			'<table><thead><tr><th>Provider</th><th>IPv4</th><th>IPv6</th><th>Encrypted DNS name</th></tr></thead><tbody>
+			'<div class="table-scroll"><table><thead><tr><th>Provider</th><th>IPv4</th><th>IPv6</th><th>Encrypted DNS name</th></tr></thead><tbody>
 <tr><td>Cloudflare</td><td>1.1.1.1, 1.0.0.1</td><td>2606:4700:4700::1111, 2606:4700:4700::1001</td><td>one.one.one.one</td></tr>
 <tr><td>Google Public DNS</td><td>8.8.8.8, 8.8.4.4</td><td>2001:4860:4860::8888, 2001:4860:4860::8844</td><td>dns.google</td></tr>
 <tr><td>Quad9 (blocks malicious domains)</td><td>9.9.9.9, 149.112.112.112</td><td>2620:fe::fe, 2620:fe::9</td><td>dns.quad9.net</td></tr>
-</tbody></table>
+</tbody></table></div>
 <p>All three are fast worldwide. Which is fastest for you depends on where their nearest servers are. Open the <a href="/dns-lookup/">DNS lookup</a> and press <strong>Test DNS server speed</strong>: it times eight public resolvers from your connection and sorts them. Pick the fastest and use the second fastest as the backup address.</p>',
 			'choose',
 		),

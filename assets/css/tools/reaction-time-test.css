@@ -1,6 +1,6 @@
 /* Reaction time test */
 .rt-stage { min-height: 300px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; text-align: center; padding: 20px; transition: background-color .08s; color: #fff; }
-.rt-stage.is-idle { background: #2563eb; }
+.rt-stage.is-idle { background: #1d4ed8; }
 .rt-stage.is-wait { background: #c62828; }
 .rt-stage.is-go { background: #15a34a; }
 .rt-stage.is-result, .rt-stage.is-done { background: #2563eb; }

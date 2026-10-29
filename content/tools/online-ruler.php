@@ -32,20 +32,21 @@ return array(
 	<summary>Calibrate for exact size <span class="rl-cal-state" id="rl-cal-state">(not calibrated: using the browser\'s default 96 px per inch)</span></summary>
 	<div class="rl-cal-body">
 		<div class="rl-cal-opt">
-			<h3>1. Bank card</h3>
+			<h2>1. Bank card</h2>
 			<p>Hold any bank card against the screen and drag the slider until the box is exactly as wide as the card (85.60 mm).</p>
 			<div class="rl-card" id="rl-card"><span>Match a bank card</span></div>
 			<input type="range" id="rl-card-slider" min="200" max="900" step="1" value="323" aria-label="Card width">
 			<button type="button" class="btn btn-sm btn-primary" id="rl-card-apply">Use this size</button>
 		</div>
 		<div class="rl-cal-opt">
-			<h3>2. Screen size</h3>
+			<h2>2. Screen size</h2>
 			<p>Enter your screen\'s diagonal in inches (from the box or spec sheet). The resolution is read from the browser.</p>
+			<label for="rl-diag">Screen diagonal (inches)</label>
 			<div class="rl-diag-row"><input type="number" id="rl-diag" min="3" max="100" step="0.1" placeholder="e.g. 15.6" inputmode="decimal"><span>inch</span><button type="button" class="btn btn-sm btn-primary" id="rl-diag-apply">Use screen size</button></div>
 			<p class="rl-res" id="rl-res"></p>
 		</div>
 		<div class="rl-cal-opt">
-			<h3>3. Fine tune</h3>
+			<h2>3. Fine tune</h2>
 			<p>Hold a real ruler against the screen and adjust until the marks line up.</p>
 			<div class="btn-row"><button type="button" class="btn btn-sm" data-rl-adj="-1">-1%</button><button type="button" class="btn btn-sm" data-rl-adj="-0.2">-0.2%</button><button type="button" class="btn btn-sm" data-rl-adj="0.2">+0.2%</button><button type="button" class="btn btn-sm" data-rl-adj="1">+1%</button><button type="button" class="btn btn-sm" id="rl-cal-reset">Reset</button></div>
 		</div>

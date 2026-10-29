@@ -28,7 +28,23 @@ Local WordPress 7.1 (SQLite, recipe in phase-3.md) with curl and Playwright:
 - `/llms.txt`: 170 links (12 + 116 + 35 + 7) plus the homepage = all 171 URLs, no duplicates.
 - Lengths checked for every page key with wp-cli eval.
 - Gate: 9 pages (home, leaderboards, guides, fps, sound, speaker cleaner, cps, about, embed-tools) at 375 px (iPhone 13) and 1366 px: 0 page errors, no horizontal overflow, JSON-LD parses, 171 internal links all 200.
-- `assets/.htaccess` cannot be tested on `php -S`; checked live after the deploy (see the PR).
+- `assets/.htaccess` cannot be tested on `php -S`; checked live after the deploy.
+
+Live after the deploy (29 Oct 2026, 11:15 UTC):
+
+- `/?author=1&z=<random>` -> 301 to `/`; the plain URL still served a LiteSpeed
+  copy (200) until the cache is purged. `/feed/`, `/comments/feed/` -> 301.
+  `/wp-json/wp/v2/users` -> 404. `/wp-sitemap.xml` 200.
+- robots.txt shows the AI-crawler comment. Site JS: `cache-control: public,
+  max-age=31536000, immutable` (F-26 passes; `expires` still shows 7 days from
+  Hostinger, but Cache-Control wins).
+- XML-RPC lists only `system.multicall/listMethods/getCapabilities` (built into
+  the XML-RPC server, harmless); no pingback or login methods.
+- `/llms.txt` is still the plugin's: it is a **static file** in `public_html`
+  (has `last-modified` 28 Oct and an `etag`), so the web server sends it before
+  WordPress runs. Turning the plugin option off should delete it; if not,
+  delete `public_html/llms.txt` in File manager. The theme's version then
+  answers.
 
 ## Ali's steps (outside the repo)
 
@@ -41,7 +57,8 @@ Local WordPress 7.1 (SQLite, recipe in phase-3.md) with curl and Playwright:
    -> the LLMs.txt / AI option -> off, so the plugin's 4-page file does not
    compete with the theme's. Then purge the cache (hPanel -> Website -> Cache)
    and open `https://testnook.com/llms.txt`: it should start with `# Testnook`
-   and list the tools.
+   and list the tools. If it still starts with `# testnook.com`, delete the
+   file `public_html/llms.txt` in hPanel -> File manager.
 3. **Optional server rules** (F-25): in hPanel -> File manager ->
    `public_html/.htaccess`, above `# BEGIN WordPress`, add
    `<FilesMatch "^(readme\.html|license\.txt|xmlrpc\.php)$">Require all denied</FilesMatch>`.

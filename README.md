@@ -23,21 +23,25 @@ inc/ads.php          ad slot rules, ads.txt
 inc/indexnow.php     IndexNow key file and pings after a content sync
 inc/helpers.php      breadcrumbs, cards, FAQ, related tools, HTML allow-list
 inc/icons.php        inline SVG icons
+inc/results.php      anonymous result stats (REST, table, hourly cache)
+inc/leaderboards.php nicknames, top-10 boards, moderation screen
+inc/guides.php       guide lists, cards, live-stats tokens, /guides/ index
 content/catalog.php  the 8 hubs and the full list of planned tools, in launch order
 content/home.php     homepage copy
 content/tools/       one file per live tool          -> /<slug>/
 content/hubs/        one file per hub                -> /<hub>/
-content/pages/       about, contact, privacy, terms  -> /<slug>/
-templates/           tool.php, hub.php, static.php, embed.php
+content/pages/       about, contact, privacy, terms, guides, leaderboards, embed-tools -> /<slug>/
+content/guides/      one file per guide (article)   -> /<slug>/
+templates/           tool.php, hub.php, guide.php, static.php, embed.php
 assets/css/main.css  the stylesheet (plus assets/css/tools/*.css per tool)
 assets/js/site.js    theme toggle, nav, search, fullscreen, lazy ads, analytics
 assets/js/tools/     one script per tool
 assets/img/          favicons, logo, share images (assets/img/og/<slug>.jpg per tool and hub)
-bin/make-og-images.py  regenerates the share images from the catalog (run locally, commit the output)
+bin/make-og-images.py  regenerates the share images from the catalog and the guides (run locally, commit the output)
 docs/                content format and phase handoff notes
 ```
 
-How to write a tool, hub or page: [docs/content-format.md](docs/content-format.md).
+How to write a tool, hub, guide or page: [docs/content-format.md](docs/content-format.md).
 Phase notes: [docs/handoff/](docs/handoff/).
 
 ## Local testing

@@ -8,8 +8,8 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'       => 'Testnook Leaderboards',
-	'seo_title'   => 'Leaderboards: Fastest CPS, Reaction Time and Typing Speed | Testnook',
-	'description' => 'Top 10 scores on Testnook for click speed (CPS), reaction time, typing speed and mouse accuracy, today, this week and all time. Add your nickname after any test.',
+	'seo_title'   => 'Leaderboards: Top CPS, Reaction and Typing Scores | Testnook',
+	'description' => 'Top 10 scores on Testnook for click speed (CPS), reaction time, typing and mouse accuracy: today, this week and all time. Add your nickname after any test.',
 	'updated'     => '2026-10-29',
 	'render'      => 'tn_leaderboards_hub',
 	'body'        => '<p>These are the best scores people have chosen to put their name to on Testnook. Every entry comes from a real run of the <a href="/cps-test/">click speed test</a>, <a href="/reaction-time-test/">reaction time test</a>, <a href="/typing-test-english/">typing test</a> or <a href="/mouse-accuracy-test/">mouse accuracy test</a> on this site. Finish a test, press <strong>Add my score to the leaderboard</strong> and type a nickname: no account, no email.</p>

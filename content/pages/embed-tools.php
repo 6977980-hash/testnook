@@ -32,7 +32,7 @@ foreach ( tn_hubs() as $tn_hub_slug => $tn_hub ) {
 return array(
 	'title'       => 'Embed Testnook Tools on Your Site',
 	'seo_title'   => 'Embed Free Hardware Test Tools on Your Website | Testnook',
-	'description' => 'Add any Testnook tool to your site with one line of iframe code: CPS test, reaction time, typing test, dead pixel, webcam and mic tests. Free, no ads in the frame.',
+	'description' => 'Add any Testnook tool to your site with one line of iframe code: CPS, reaction time, typing, dead pixel, webcam and mic tests. Free, no ads in the frame.',
 	'updated'     => '2026-10-29',
 	'body'        => '<p>Every tool on Testnook can be embedded on your own website, blog, forum or school page for free. Paste the code for a tool where you want it to appear. The tool runs inside the frame on your visitor\'s device, exactly as it does here, with no ads inside the frame and no sign-up.</p>
 <h2 id="how">How it works</h2>

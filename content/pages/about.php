@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'About Testnook',
 	'seo_title'   => 'About Testnook: Free Browser-Based Hardware Tests',
-	'description' => 'Testnook is a free collection of browser-based hardware tests for keyboards, mice, controllers, screens, speakers, microphones and cameras. Learn who runs it and why.',
+	'description' => 'Testnook is a free set of browser-based tests for keyboards, mice, controllers, screens, speakers, microphones and cameras. Learn who runs it and why.',
 	'updated'     => '2026-10-28',
 	'body'        => '<p>Testnook is a free collection of hardware tests that run in your web browser. You can check a keyboard, mouse, game controller, monitor, speakers, headphones, microphone or webcam in a few seconds, without installing anything.</p>
 <h2>Why we built it</h2>

@@ -27,8 +27,40 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 remove_action( 'wp_head', 'rest_output_link_wp_head' );
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'wp_head', 'feed_links', 2 );
 remove_action( 'wp_head', 'feed_links_extra', 3 );
 add_filter( 'emoji_svg_url', '__return_false' );
+// XML-RPC is not used: no logins and no methods at all (pingback included).
+add_filter( 'xmlrpc_enabled', '__return_false' );
+add_filter( 'xmlrpc_methods', '__return_empty_array' );
+
+// Logged-out visitors cannot list users over the REST API (wp-admin still can).
+add_filter(
+	'rest_endpoints',
+	function ( $endpoints ) {
+		if ( ! is_user_logged_in() ) {
+			unset( $endpoints['/wp/v2/users'], $endpoints['/wp/v2/users/(?P<id>[\\d]+)'] );
+		}
+		return $endpoints;
+	}
+);
+
+/*
+ * There is no blog: author, date and attachment archives and feeds only show
+ * "Nothing found" (and /?author=1 would reveal the login name), so send them
+ * home. Priority 1 runs before redirect_canonical, which would otherwise
+ * redirect /?author=1 to /author/<username>/.
+ */
+add_action(
+	'template_redirect',
+	function () {
+		if ( is_author() || is_date() || is_attachment() || is_feed() ) {
+			wp_safe_redirect( home_url( '/' ), 301 );
+			exit;
+		}
+	},
+	1
+);
 
 // Block editor styles are only needed on normal posts/pages written in the editor.
 add_action(

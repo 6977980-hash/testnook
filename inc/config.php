@@ -35,3 +35,7 @@ define( 'TN_INDEXNOW_KEY', '00f5e7841c724dd298a04e4d3648544a' );
 // Founder / publisher identity (About page, Organization + Person schema).
 define( 'TN_FOUNDER_NAME', 'Ali Ahmad' );
 define( 'TN_FOUNDER_URL', 'https://www.linkedin.com/in/ali-ahmad-chaudhry-12777486/' );
+
+// Testnook's own social profiles (full URLs), added to the Organization schema
+// as sameAs. Empty until the brand has accounts; the founder's LinkedIn is above.
+define( 'TN_SOCIAL_PROFILES', array() );

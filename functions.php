@@ -21,6 +21,7 @@ require TN_DIR . '/inc/routing.php';
 require TN_DIR . '/inc/assets.php';
 require TN_DIR . '/inc/seo.php';
 require TN_DIR . '/inc/ads.php';
+require TN_DIR . '/inc/llms.php';
 require TN_DIR . '/inc/indexnow.php';
 require TN_DIR . '/inc/results.php';
 require TN_DIR . '/inc/leaderboards.php';

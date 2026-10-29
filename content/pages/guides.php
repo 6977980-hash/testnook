@@ -9,9 +9,9 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'Guides',
 	'seo_title'   => 'Hardware Guides: Fixes, Averages and Explainers | Testnook',
-	'description' => 'Plain-English guides to go with the Testnook tests: what a good CPS or reaction time is, how to fix stick drift, dead pixels, a webcam or mic that will not work.',
+	'description' => 'Plain-English guides to the Testnook tests: what a good CPS or reaction time is, and how to fix stick drift, dead pixels, or a webcam or mic that fails.',
 	'updated'     => '2026-10-29',
 	'render'      => 'tn_guides_index',
-	'body'        => '<p>Each guide goes with one of the free tests on this site. Some answer "is my score good?" with real numbers, including anonymous results from people who took the same test on Testnook. Others walk through a fix, step by step, for hardware that is acting up: a drifting stick, keys that do not register, a webcam or microphone the computer cannot find, dead pixels, screen burn-in.</p>
+	'body'        => '<p>Each guide goes with one of the free tests on this site. Some answer "is my score good?" with real numbers, and will also show anonymous results from people who took the same test on Testnook once enough people have taken it. Others walk through a fix, step by step, for hardware that is acting up: a drifting stick, keys that do not register, a webcam or microphone the computer cannot find, dead pixels, screen burn-in.</p>
 <p>Every guide starts with a short answer, then explains the why. Where a test can show the problem, there is a link to run it in your browser first, so you know what you are fixing before you open a settings menu or a screwdriver.</p>',
 );

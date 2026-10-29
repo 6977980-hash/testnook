@@ -92,6 +92,7 @@
 			if (best) { msg += ' New best!'; }
 		}
 		U.status(statusEl, msg, acc >= 80 && eff < 150 ? 'ok' : '');
+		if (window.TNShare && acc >= 80) { TNShare.show('My Stroop effect is ' + (eff >= 0 ? '+' : '') + eff + ' ms at ' + acc + '% accuracy on the Testnook Stroop test'); }
 		startBtn.textContent = 'Start again';
 		startBtn.disabled = false;
 	}
@@ -118,6 +119,7 @@
 	}
 
 	function start() {
+		if (window.TNShare) { TNShare.hide(); }
 		res = { con: [], inc: [], wrong: 0, total: 0 };
 		conEl.textContent = incEl.textContent = effEl.textContent = accEl.textContent = '-';
 		startBtn.disabled = true;

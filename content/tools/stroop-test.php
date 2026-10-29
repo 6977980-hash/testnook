@@ -9,6 +9,7 @@ return array(
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'stroop-test' ),
+	'share'          => true,
 	'scripts'        => array( 'stroop-test' ),
 	'embed_height'   => 680,
 	'tool'           => '<div class="tool-bar">

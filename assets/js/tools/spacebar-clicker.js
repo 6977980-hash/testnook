@@ -59,6 +59,7 @@
 			if (best) { msg += ' New personal best!'; }
 		}
 		U.status(statusEl, msg, rate >= 8 ? 'ok' : '');
+		if (window.TNShare && count) { TNShare.show('I pressed Space ' + U.fmt(rate, 1) + ' times a second on the Testnook ' + dur + ' second spacebar test'); }
 	}
 
 	function press(t) {
@@ -111,6 +112,7 @@
 	stage.addEventListener('mousedown', function () { stage.focus(); });
 
 	function reset() {
+		if (window.TNShare) { TNShare.hide(); }
 		running = done = false;
 		cancelAnimationFrame(raf);
 		count = repeats = 0; minGap = Infinity; lastT = 0; perSec = [];

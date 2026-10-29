@@ -88,11 +88,12 @@
 			$('#nm-verdict').textContent = 'Wrong. Your number memory score: ' + score + ' digits';
 			$('#nm-next').textContent = 'Try again';
 			U.status(statusEl, 'Score: ' + score + ' digits. ' + msg, '');
+			if (window.TNShare && score) { TNShare.show('I remembered a ' + score + ' digit number on the Testnook number memory test'); }
 			level = 1;
 		}
 	}
 
-	startBtn.addEventListener('click', function () { level = 1; round(); });
+	startBtn.addEventListener('click', function () { if (window.TNShare) { TNShare.hide(); } level = 1; round(); });
 	$('#nm-next').addEventListener('click', round);
 	$('#nm-submit').addEventListener('click', check);
 	input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); check(); } });

@@ -63,6 +63,9 @@ add_action(
 			'before'
 		);
 
+		if ( $def && ( ! empty( $def['stats'] ) || ! empty( $def['share'] ) ) && ! tn_is_embed() ) {
+			wp_enqueue_script( 'tn-share', TN_URI . '/assets/js/share.js', array( 'tn-site' ), tn_asset_ver( 'assets/js/share.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+		}
 		if ( $def && ! empty( $def['stats'] ) && ! tn_is_embed() ) {
 			wp_enqueue_script( 'tn-stats', TN_URI . '/assets/js/stats.js', array( 'tn-site' ), tn_asset_ver( 'assets/js/stats.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
 		}

@@ -76,9 +76,11 @@
 		intro.querySelector('p').textContent = msg;
 		startBtn.textContent = 'Start again';
 		U.status(statusEl, 'Game over with ' + score + ' correct answers over ' + shownCount + ' words. ' + msg, '');
+		if (window.TNShare && score) { TNShare.show('I scored ' + score + ' words on the Testnook verbal memory test'); }
 	}
 
 	startBtn.addEventListener('click', function () {
+		if (window.TNShare) { TNShare.hide(); }
 		seen = {}; score = 0; lives = 3; shownCount = 0;
 		hearts();
 		scoreEl.textContent = '0';

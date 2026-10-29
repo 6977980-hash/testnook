@@ -46,6 +46,7 @@
 
 	function build() {
 		clearTimeout(timer);
+		if (window.TNShare) { TNShare.hide(); }
 		board.innerHTML = '';
 		board.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
 		board.style.maxWidth = (cols * 90) + 'px';
@@ -115,6 +116,7 @@
 		}
 		U.status(statusEl, msg, 'ok');
 		stage.classList.remove('is-run');
+		if (window.TNShare) { TNShare.show('I found all ' + pairs + ' pairs in ' + moves + ' moves and ' + fmtTime(ms) + ' on the Testnook memory game'); }
 	}
 
 	startBtn.addEventListener('click', build);

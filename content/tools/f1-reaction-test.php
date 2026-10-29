@@ -9,6 +9,7 @@ return array(
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'f1-reaction-test' ),
+	'share'          => true,
 	'scripts'        => array( 'f1-reaction-test' ),
 	'embed_height'   => 660,
 	'tool'           => '<div class="tool-bar">

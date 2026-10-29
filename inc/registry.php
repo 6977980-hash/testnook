@@ -88,6 +88,7 @@ function tn_get_def( $key ) {
 				'fixes'   => array(),
 				'howto'   => array(),
 				'stats'   => array(),
+				'share'   => false,
 			),
 			(array) require TN_DIR . '/content/tools/' . $slug . '.php'
 		);

@@ -9,6 +9,7 @@ return array(
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'memory' ),
+	'share'          => true,
 	'scripts'        => array( 'sequence-memory-test' ),
 	'embed_height'   => 680,
 	'tool'           => '<div class="tool-bar">

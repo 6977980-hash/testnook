@@ -127,5 +127,13 @@ return array(
 		'mouse-latency-test'      => array( 'name' => 'Mouse Latency Test', 'blurb' => 'See how far the drawn cursor lags your mouse and measure browser input delay in ms.', 'hub' => 'mouse', 'also' => array() ),
 		'controller-vibration-test' => array( 'name' => 'Controller Vibration Test', 'blurb' => 'Test the rumble motors of PS5, PS4, Xbox and PC controllers with strength sliders and patterns.', 'hub' => 'controller', 'also' => array() ),
 		'joy-con-drift-test'      => array( 'name' => 'Joy-Con Drift Test', 'blurb' => 'Measure Nintendo Switch Joy-Con stick drift on a PC or phone, one Joy-Con at a time.', 'hub' => 'controller', 'also' => array() ),
+		'phone-sensor-test'       => array( 'name' => 'Phone Sensor Test', 'blurb' => 'Check every sensor your phone has in one tap, with live values and a full test for each.', 'hub' => 'phone', 'also' => array() ),
+		'gyroscope-test'          => array( 'name' => 'Gyroscope Test', 'blurb' => 'Live rotation rate and tilt with a 3D phone, plus drift and full-turn accuracy checks.', 'hub' => 'phone', 'also' => array() ),
+		'accelerometer-test'      => array( 'name' => 'Accelerometer Test', 'blurb' => 'X, Y and Z acceleration, g-force, shake count and a gravity check for the motion sensor.', 'hub' => 'phone', 'also' => array() ),
+		'compass-test'            => array( 'name' => 'Compass Test', 'blurb' => 'Your heading in degrees with accuracy and steadiness, to see if the compass needs calibrating.', 'hub' => 'phone', 'also' => array() ),
+		'gps-test'                => array( 'name' => 'GPS Test', 'blurb' => 'Location accuracy in metres, time to first fix, altitude, speed and how much the position wanders.', 'hub' => 'phone', 'also' => array() ),
+		'bubble-level'            => array( 'name' => 'Bubble Level', 'blurb' => 'A spirit level on your phone: round when flat, a bar on its edge, with one-tap calibration.', 'hub' => 'phone', 'also' => array() ),
+		'light-sensor-test'       => array( 'name' => 'Light Sensor Test', 'blurb' => 'Check the ambient light sensor and auto-brightness with a camera light meter and a quick check.', 'hub' => 'phone', 'also' => array( 'screen' ) ),
+		'proximity-sensor-test'   => array( 'name' => 'Proximity Sensor Test', 'blurb' => 'Find out why the screen stays on during calls with a guided test and hidden test codes.', 'hub' => 'phone', 'also' => array() ),
 	),
 );

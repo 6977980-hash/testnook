@@ -156,6 +156,14 @@ CSS fallback on iPhone). `TNUtil` in `assets/js/site.js` has the helpers:
 `$`, `$$`, `isTouch()`, `hasFinePointer()`, `enterFullscreen(el)`,
 `exitFullscreen()`, `isFullscreen()`, `status()`, `mediaError(err, 'camera')`.
 
+Phone sensor pages load `assets/js/tools/sensors.js` before their own script
+(`'scripts' => array( 'sensors', '<page>' )`) and share `sensors.css`. `TNSensor`
+has `request()` (the iOS motion/orientation prompt, must run inside a tap),
+`message(state)`, `on(type, fn)`, `Rate()`, `Graph(canvas, opts)` (rolling line
+chart), `gravity(e)` + `learnFlip()` (fixes the inverted iPhone
+`accelerationIncludingGravity` sign), `screenAngle()`, `cardinal()`, `stats()`,
+`circStats()`, `angleDiff()` and `steps(list, cb)` (pass/fail checklists).
+
 Tool scripts run after `site.js` (deferred). Wrap in an IIFE and bail if
 `document.querySelector('[data-tool="<slug>"]')` is missing, so the script is
 safe on any page.

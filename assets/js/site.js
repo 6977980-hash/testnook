@@ -203,7 +203,7 @@
 		var build = function () {
 			var w = $('[name="embed-w"]', embedBox).value, h = Number($('[name="embed-h"]', embedBox).value) || 620, th = $('[name="embed-theme"]', embedBox).value;
 			var src = embedBox.getAttribute('data-embed-src') + (th ? '&theme=' + th : '');
-			code.value = '<iframe src="' + src + '" width="' + w + '" height="' + h + '" style="border:0;max-width:100%" title="' + embedBox.getAttribute('data-embed-title') + '" allow="camera; microphone; gamepad; fullscreen; autoplay" loading="lazy"></iframe>\n<p><a href="' + embedBox.getAttribute('data-embed-url') + '">' + embedBox.getAttribute('data-embed-title') + '</a> by ' + embedBox.getAttribute('data-embed-site') + '</p>';
+			code.value = '<iframe src="' + src + '" width="' + w + '" height="' + h + '" style="border:0;max-width:100%" title="' + embedBox.getAttribute('data-embed-title') + '" allow="camera; microphone; gamepad; fullscreen; autoplay; accelerometer; gyroscope; magnetometer; geolocation" loading="lazy"></iframe>\n<p><a href="' + embedBox.getAttribute('data-embed-url') + '">' + embedBox.getAttribute('data-embed-title') + '</a> by ' + embedBox.getAttribute('data-embed-site') + '</p>';
 			if (preview && embedBox.open) {
 				preview.hidden = false;
 				preview.style.width = w === '100%' ? '100%' : w + 'px';

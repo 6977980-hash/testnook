@@ -84,6 +84,6 @@ return array(
 		array( 'Can I test a controller\'s vibration here?', 'This page is for phones. Controller rumble is tested in the <a href="/gamepad-tester/">gamepad tester</a>.' ),
 		array( 'Why does vibration stop when I switch apps?', 'Browsers stop vibrating when the page is hidden, to save battery. Keep the page open while the pattern plays.' ),
 	),
-	'related'        => array( 'touch-screen-test', 'speaker-cleaner', 'torch-test', 'what-phone-do-i-have', 'camera-test', 'gamepad-tester' ),
+	'related'        => array( 'touch-screen-test', 'speaker-cleaner', 'torch-test', 'phone-sensor-test', 'what-phone-do-i-have', 'camera-test' ),
 	'updated'        => '2026-10-29',
 );

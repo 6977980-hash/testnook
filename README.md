@@ -38,6 +38,8 @@ assets/js/site.js    theme toggle, nav, search, fullscreen, lazy ads, analytics
 assets/js/tools/     one script per tool
 assets/img/          favicons, logo, share images (assets/img/og/<slug>.jpg per tool and hub)
 bin/make-og-images.py  regenerates the share images from the catalog and the guides (run locally, commit the output)
+bin/check.sh         PHP lint + JS syntax, optionally the page gate (bin/check-pages.js)
+.htaccess            hides *.md, *.py, *.json, *.sh, *.yml and .gitignore; docs/, bin/, .github/ are denied too
 docs/                content format and phase handoff notes
 ```
 
@@ -50,6 +52,25 @@ Any WordPress install works. The quickest is WordPress + the
 "SQLite Database Integration" plugin, with this folder symlinked into
 `wp-content/themes/testnook`, served by `php -S`. Activate the theme once;
 pages are created automatically.
+
+## Checks
+
+```
+bin/check.sh                              # php -l on every PHP file, node --check on every JS file
+bin/check.sh https://testnook.com         # the above, then the page gate over the whole sitemap
+bin/check.sh http://127.0.0.1:8080 --wide # local WordPress, 375 px and 1366 px
+```
+
+The page gate (`bin/check-pages.js`) needs Node and Playwright
+(`npm i -D playwright && npx playwright install chromium`). It reads
+`/wp-sitemap.xml` and fails a page on a non-200 status, a JavaScript page
+error, JSON-LD that does not parse, not exactly one H1, horizontal overflow at
+375 px, an input without a label or a skipped heading level (`--a11y=warn`
+turns the last two into warnings). Options: `--wide` (also 1366 px),
+`--limit=N`, `--only=cps-test,about`. Score sharing is off and the
+`testnook/v1` write endpoints are blocked during a run, so it never adds stats.
+GitHub runs the lint part on every pull request and push to `main`
+(`.github/workflows/check.yml`).
 
 ## Going live checklist (once)
 

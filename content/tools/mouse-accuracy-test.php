@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'          => 'Mouse Accuracy Test',
 	'seo_title'      => 'Mouse Accuracy Test: Aim Trainer With Hit Rate and Speed',
-	'description'    => 'Free mouse accuracy test and aim trainer. Click 30 targets as fast and precisely as you can and get your accuracy, time per target, distance from centre and aim bias.',
+	'description'    => 'Free mouse accuracy test and aim trainer. Click 30 targets as fast and precisely as you can and get your accuracy, time per target, offset and aim bias.',
 	'intro'          => 'How precise is your aim? Click 30 targets that pop up at random spots. The test measures your hit rate, how long each target takes, how far from the centre you click, and whether your clicks drift to one side, which can point to sensitivity that is too high or a mouse sensor problem.',
 	'device'         => 'desktop',
 	'device_message' => 'This test is made for a mouse or touchpad. It works with touch too, but compare touch scores only with other touch scores.',

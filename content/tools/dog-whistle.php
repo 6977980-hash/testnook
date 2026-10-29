@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'          => 'Dog Whistle',
 	'seo_title'      => 'Dog Whistle Online: High Frequency Sound From 4 to 22 kHz',
-	'description'    => 'Free online dog whistle. Play a high-pitched whistle sound from 4 kHz to 22 kHz with hold, short, double and recall patterns for training. Works on phones and PCs.',
+	'description'    => 'Free online dog whistle. Play a high-pitched whistle sound from 4 kHz to 22 kHz with hold, short, double and recall patterns for training. Works on phone or PC.',
 	'intro'          => 'A training whistle in your browser. Pick a pitch from an audible 4 kHz up to a near-silent 22 kHz, then hold the button or play a short, long, double or recall pattern. Dogs hear these high frequencies far better than people, so the sound carries to them without being shrill for everyone else.',
 	'device'         => 'any',
 	'ads'            => 'standard',

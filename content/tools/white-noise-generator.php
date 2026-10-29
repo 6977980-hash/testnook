@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'          => 'White Noise Generator',
 	'seo_title'      => 'White Noise Generator: White, Pink and Brown Noise Online',
-	'description'    => 'Free white noise generator: play white, pink, brown, blue, violet or grey noise online with a warmth control and a sleep timer that fades out. For sleep and focus.',
+	'description'    => 'Free white noise generator: play white, pink, brown, blue, violet or grey noise with a warmth control and a sleep timer that fades out, for sleep and focus.',
 	'intro'          => 'Steady noise to sleep, focus, calm a baby or mask a noisy room. Choose from six noise colours, make the sound softer with the warmth control, and set a sleep timer that fades the noise out gently. The noise is generated in your browser and loops with no gaps.',
 	'device'         => 'any',
 	'ads'            => 'standard',

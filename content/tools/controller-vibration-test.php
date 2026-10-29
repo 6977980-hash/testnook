@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'          => 'Controller Vibration Test',
 	'seo_title'      => 'Controller Vibration Test: Check PS5, Xbox and PC Rumble',
-	'description'    => 'Free controller vibration test for PS5, PS4, Xbox and PC gamepads. Test the left and right rumble motors at any strength, play patterns and check Xbox trigger rumble.',
+	'description'    => 'Free controller vibration test for PS5, PS4, Xbox and PC gamepads. Test left and right rumble motors at any strength, play patterns and check trigger rumble.',
 	'intro'          => 'Check that your controller\'s rumble works. Test the left (strong) and right (weak) motors on their own or together, set any strength and duration, and play pulse, heartbeat and ramp patterns. On Xbox controllers in Chrome or Edge you can also test the trigger motors.',
 	'device'         => 'gamepad',
 	'device_message' => 'This browser cannot read game controllers. Use an up-to-date Chrome or Edge on a computer for the best vibration support.',

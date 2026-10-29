@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'          => 'Mouse Latency Test',
 	'seo_title'      => 'Mouse Latency Test: Measure Input Lag and Cursor Delay',
-	'description'    => 'Free mouse latency test. See how far a drawn dot lags your cursor and measure polling interval, browser event delay, event-to-frame time and click-to-frame time.',
+	'description'    => 'Free mouse latency test. See how far a drawn dot lags your cursor and measure polling interval, browser event delay, event-to-frame and click-to-frame time.',
 	'intro'          => 'Move your mouse inside the box: the red dot is drawn by the page, while the arrow is drawn by your system, so the gap between them when you move fast is the lag the browser adds. Below, the test breaks that delay down into the mouse polling interval, browser event delay and the wait for the next screen refresh, and measures click-to-frame time too.',
 	'device'         => 'desktop',
 	'device_message' => 'This test is made for a mouse or touchpad. On a touch screen use the <a href="/touch-screen-test/">touch screen test</a> instead.',

@@ -18,7 +18,7 @@ $stick = function ( $i, $label ) {
 return array(
 	'title'          => 'Joy-Con Drift Test',
 	'seo_title'      => 'Joy-Con Drift Test: Check Switch Joy-Con Stick Drift Online',
-	'description'    => 'Free Joy-Con drift test. Connect a Nintendo Switch Joy-Con to your PC or phone by Bluetooth, see the stick live and measure drift at rest with a suggested dead zone.',
+	'description'    => 'Free Joy-Con drift test. Pair a Nintendo Switch Joy-Con with your PC or phone by Bluetooth, see the stick live and measure drift at rest with a dead zone tip.',
 	'intro'          => 'Find out if your Nintendo Switch Joy-Con has stick drift. Pair the Joy-Con with your computer or phone by Bluetooth, open this page in Chrome or Edge and press a button: the stick appears live, and a 3-second check measures how far it sits off centre when nobody touches it.',
 	'device'         => 'gamepad',
 	'device_message' => 'This browser cannot read game controllers. Use an up-to-date Chrome or Edge on a computer or Android phone.',

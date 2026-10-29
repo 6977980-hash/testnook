@@ -1,9 +1,11 @@
 /* CPS test: counts raw pointer presses in the stage for a chosen number of seconds; timer starts on the first click.
    Shared by cps-test, right-click-cps-test, jitter-click-test and auto-clicker-test; the stage's data-cps-mode (left | right | jitter | auto) picks the button and the ranks.
-   Auto mode also records every press time and reports the mean interval and its spread, which tells a program apart from a finger. */
+   Auto mode also records every press time and reports the mean interval and its spread, which tells a program apart from a finger.
+   The fixed-length pages (1-second-cps-test ... 100-second-click-test) have no length buttons; the stage's data-cps-dur sets the seconds. */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="cps-test"], [data-tool="right-click-cps-test"], [data-tool="jitter-click-test"], [data-tool="auto-clicker-test"]');
+	var stage0 = document.getElementById('cps-stage');
+	var root = stage0 && stage0.closest('[data-tool]');
 	if (!root) { return; }
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
@@ -15,7 +17,7 @@
 	var mode = stage.getAttribute('data-cps-mode') || 'left';
 
 	var pressed = root.querySelector('[data-cps-t][aria-pressed="true"]');
-	var dur = pressed ? Number(pressed.getAttribute('data-cps-t')) : 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0, stamps = [];
+	var dur = pressed ? Number(pressed.getAttribute('data-cps-t')) : Number(stage.getAttribute('data-cps-dur')) || 5, count = 0, running = false, start = 0, raf = 0, perSec = [], lastInput = 0, stamps = [];
 
 	function key() { return 'tn-cps-best-' + (mode === 'left' ? '' : mode + '-') + dur; }
 	function pb() {
@@ -181,7 +183,7 @@
 		graph.innerHTML = '';
 		big.textContent = mode === 'right' ? 'Right click here to start' : 'Click here to start';
 		small.textContent = mode === 'right' ? 'The timer starts on your first right click.' : 'The timer starts on your first click.';
-		U.status(statusEl, mode === 'right' ? 'Pick a time, then right click in the box as fast as you can.' : mode === 'auto' ? 'Pick a time, move the pointer into the box and start your auto clicker. The timer starts on the first click.' : 'Pick a time, then click in the box as fast as you can.', '');
+		U.status(statusEl, !tSel.length ? 'Click in the box as fast as you can. The ' + dur + ' second timer starts on your first click.' : mode === 'right' ? 'Pick a time, then right click in the box as fast as you can.' : mode === 'auto' ? 'Pick a time, move the pointer into the box and start your auto clicker. The timer starts on the first click.' : 'Pick a time, then click in the box as fast as you can.', '');
 		pb();
 	}
 	$('#cps-reset').addEventListener('click', reset);

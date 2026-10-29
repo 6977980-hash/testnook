@@ -8,7 +8,8 @@ return array(
 	'intro'       => 'Test every part of your sound setup in the browser: speaker and headphone channel checks, a microphone test with recording and playback, a water-ejecting speaker cleaner, a tone generator and a hearing frequency test. Musicians get a guitar tuner, a metronome and a tap BPM counter. Nothing is uploaded.',
 	'body'        => '<h2>Which audio test do you need?</h2>
 <p>No sound, or sound from only one side? The <a href="/sound-test/">sound test</a> plays tones through the left, right and both channels so you can tell a dead speaker from a balance setting. The <a href="/headphone-test/">headphone test</a> adds a left-right pan, a bass sweep and a polarity check for earphones and headsets.</p>
-<p>People cannot hear you on calls? Run the <a href="/mic-test/">mic test</a>. It shows a live level meter, records a short sample and plays it back, so you hear exactly what others hear. If your phone sounds muffled after rain or a swim, the <a href="/speaker-cleaner/">speaker cleaner</a> plays a low tone that pushes water and dust out of the speaker grille.</p>
+<p>For a speaker system, the <a href="/stereo-test/">stereo test</a> checks the left, right and phantom centre, pans a sound across and has a balance tone to find the true middle. The <a href="/mono-test/">mono test</a> tells you in two steps whether your output is mono or stereo, and the <a href="/bass-test/">bass test</a> plays 20 to 200 Hz tones, sweeps down to find how low a subwoofer or headphones really go, and checks for rattles.</p>
+<p>People cannot hear you on calls? Run the <a href="/mic-test/">mic test</a>. It shows a live level meter, records a short sample and plays it back, so you hear exactly what others hear. To record longer takes and download them as WAV, use the <a href="/voice-recorder/">online voice recorder</a>. If your phone sounds muffled after rain or a swim, the <a href="/speaker-cleaner/">speaker cleaner</a> plays a low tone that pushes water and dust out of the speaker grille.</p>
 <p>The <a href="/tone-generator/">tone generator</a> produces sine, square, triangle and sawtooth waves at any frequency for testing speakers, tuning or finding a rattle. The <a href="/hearing-frequency-test/">hearing frequency test</a> steps through high frequencies with headphones on and tells you the highest you can hear, with a note on what is typical for each age.</p>
 
 <h2>Tools for musicians</h2>
@@ -36,6 +37,6 @@ return array(
 		array( 'What frequency should I be able to hear?', 'Most people under 30 hear up to around 17 to 19 kHz. The top of the range falls with age, so 14 to 16 kHz is typical in the 40s and 50s. Cheap earphones also roll off the highest frequencies, so test with the best headphones you have.' ),
 		array( 'Can loud test tones damage my speakers or ears?', 'Loud tones at any frequency can damage small speakers and your hearing. Every tool starts at a safe level. Raise the volume gradually, stop if you hear distortion, and never run a tone at full volume through earphones.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

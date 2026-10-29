@@ -11,10 +11,13 @@ return array(
 <p>Two variations test the same reflex in different ways. The <a href="/f1-reaction-test/">F1 reaction test</a> replays a Formula 1 start: five red lights come on one per second and go out after a random hold, and you react to the lights going out. The <a href="/stroop-test/">Stroop test</a> adds a mental step: colour words printed in the wrong colour, where you must answer the ink colour and the delay the words cause is your Stroop effect.</p>
 <p>The <a href="/cps-test/">CPS test</a> counts clicks per second over 1 to 100 seconds and is the standard way to compare clicking techniques. The <a href="/jitter-click-test/">jitter click test</a> is a 10 second version with a consistency score for jitter clicking, and the <a href="/right-click-cps-test/">right click CPS test</a> counts the right button only. The <a href="/spacebar-clicker/">spacebar clicker</a> does the same for the spacebar, and the <a href="/tap-bpm/">tap BPM counter</a> turns steady tapping into a tempo. The <a href="/fps-test/">FPS test</a> and the <a href="/ufo-test/">UFO test</a> move the question from you to the machine: frame rate, motion blur and skipped frames, all capped by the monitor\'s refresh rate.</p>
 
+<h2>Fixed-length click tests</h2>
+<p>If you already know the length you want, each common one has its own page with typical scores for that length: the <a href="/1-second-cps-test/">1 second CPS test</a> for pure burst speed, the <a href="/5-second-cps-test/">5 second CPS test</a> that leaderboards use, the <a href="/10-second-cps-test/">10 second CPS test</a> and <a href="/15-second-click-test/">15 second click test</a> with a consistency score, and the <a href="/30-second-click-test/">30 second</a>, <a href="/60-second-click-test/">60 second</a> and <a href="/100-second-click-test/">100 second click tests</a> for stamina. Your best score per length is shared with the main CPS test, so practice on any page counts.</p>
+
 <h2>What counts as a good score</h2>
 <ul>
 <li><strong>Reaction time:</strong> under 200 ms is fast, 200 to 250 ms is average for adults, over 300 ms is slow or a sign of a laggy display or input.</li>
-<li><strong>CPS:</strong> 5 to 7 with normal clicking, 8 to 12 with jitter clicking, 15 or more with butterfly or drag clicking on a suitable mouse. Right click scores run about one CPS lower.</li>
+<li><strong>CPS:</strong> 5 to 7 over 5 seconds with normal clicking (one or two less over a minute), 8 to 12 with jitter clicking, 15 or more with butterfly or drag clicking on a suitable mouse. Right click scores run about one CPS lower.</li>
 <li><strong>Stroop effect:</strong> 50 to 150 ms is typical on a button test; accuracy under 80% makes the timing meaningless.</li>
 <li><strong>Typing:</strong> about 40 WPM is average, 60 is good, 100 and above is very fast.</li>
 <li><strong>Spacebar:</strong> similar to CPS; most people manage 6 to 10 presses per second.</li>
@@ -37,6 +40,6 @@ return array(
 		array( 'Can I use these tests on a phone?', 'The reaction time test and CPS test work with taps. The spacebar clicker needs a keyboard. FPS works on phones and reports the screen\'s refresh rate, often 60, 90 or 120.' ),
 		array( 'Are my scores saved?', 'Scores stay on the page only. Nothing is sent to a server and there is no leaderboard, so take a screenshot if you want to keep a result.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

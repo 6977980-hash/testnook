@@ -1,0 +1,27 @@
+/* Vibration test */
+.tool-stage.vb-stage { display: block; place-items: normal; padding: 16px; min-height: 0; }
+.vb-top { display: flex; gap: 18px; align-items: center; margin-bottom: 14px; }
+.vb-phone { flex: 0 0 auto; width: 62px; height: 108px; border: 4px solid var(--text); border-radius: 14px; position: relative; background: var(--surface-2); }
+.vb-phone::after { content: ""; position: absolute; left: 50%; bottom: 6px; width: 18px; height: 4px; margin-left: -9px; border-radius: 2px; background: var(--text); opacity: .5; }
+.vb-phone.is-buzz { animation: vb-buzz .07s linear infinite; border-color: var(--brand); }
+@keyframes vb-buzz { 0% { transform: translateX(-2px) rotate(-1.5deg); } 50% { transform: translateX(2px) rotate(1.5deg); } 100% { transform: translateX(-2px) rotate(-1.5deg); } }
+@media (prefers-reduced-motion: reduce) { .vb-phone.is-buzz { animation: none; box-shadow: 0 0 0 6px var(--brand-soft); } }
+.vb-line { position: relative; flex: 1 1 auto; display: flex; height: 26px; border-radius: 6px; overflow: hidden; background: var(--surface-2); }
+.vb-line span.on { background: var(--brand); }
+.vb-line span.off { background: transparent; }
+.vb-line::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 2px; background: var(--text); opacity: 0; }
+.vb-line.is-play::after { opacity: .8; animation: vb-head var(--dur, 1s) linear forwards; }
+@keyframes vb-head { from { left: 0; } to { left: calc(100% - 2px); } }
+.vb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)); gap: 8px; }
+.vb-grid .btn { width: 100%; justify-content: center; }
+.vb-grid .btn[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.vb-label { margin: 14px 0 6px; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.vb-custom { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.vb-custom input[type="range"] { flex: 1 1 180px; width: auto; }
+.vb-custom output { min-width: 64px; font: 600 .9rem var(--mono); }
+.vb-ask { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+.vb-ask[hidden], #vb-ios[hidden] { display: none; }
+.vb-stage .stat-value.is-ok { color: var(--ok); }
+.vb-stage .stat-value.is-bad { color: var(--bad); }
+.vb-switch { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.vb-ios-row { margin-top: 12px; }

@@ -91,6 +91,6 @@ return array(
 		array( 'Is it safe to play test tones in headphones?', 'Yes, at a low volume. Start quiet, raise the volume slowly, and stop if a tone is uncomfortable. Very low bass can feel louder than it sounds.' ),
 	),
 	'disclaimer'   => 'Protect your hearing: start with a low volume and raise it slowly. Test tones can be louder than music at the same setting. This headphone test checks your equipment and is not a medical hearing test. If you notice hearing loss, ringing or pain, see a doctor or audiologist.',
-	'related'      => array( 'sound-test', 'mic-test', 'hearing-frequency-test', 'tone-generator', 'speaker-cleaner', 'webcam-test' ),
+	'related'      => array( 'stereo-test', 'bass-test', 'mono-test', 'sound-test', 'mic-test', 'hearing-frequency-test' ),
 	'updated'      => '2026-10-28',
 );

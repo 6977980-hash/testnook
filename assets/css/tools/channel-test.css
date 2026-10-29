@@ -1,0 +1,16 @@
+/* Stereo test and mono test */
+.tool-stage.ch-stage { display: block; place-items: normal; padding: 16px; min-height: 0; }
+.ch-speakers { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }
+.ch-spk { --lv: 0; width: 84px; height: 84px; border-radius: 50%; border: 3px solid var(--border); display: grid; place-items: center; font: 700 1.4rem var(--font); color: var(--muted); background: var(--surface-2); transition: border-color .1s; box-shadow: 0 0 0 calc(var(--lv) * 14px) var(--brand-soft); }
+.ch-spk.is-on { border-color: var(--brand); color: var(--brand); }
+.ch-mid { flex: 1 1 auto; text-align: center; color: var(--muted); font-size: .85rem; }
+.ch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr)); gap: 8px; }
+.ch-grid .btn { width: 100%; justify-content: center; }
+.ch-grid .btn[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.ch-label { margin: 14px 0 6px; font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.ch-ask { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--brand-soft); }
+.ch-ask[hidden] { display: none; }
+.ch-ask strong { flex: 1 1 100%; }
+.ch-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 12px; font-size: .9rem; }
+.ch-row input[type="range"] { flex: 1 1 160px; width: auto; }
+.ch-row output { min-width: 56px; font: 600 .9rem var(--mono); }

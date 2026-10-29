@@ -10,6 +10,7 @@ return array(
 	'intro'          => 'A quick words per minute test on common English words. Pick 15, 30 or 60 seconds, type what you see, and get your WPM, raw WPM and accuracy. Below the test, the exact formula behind the number, so you know what your score means and how to compare it with other tests.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'typing-60', 'typing-15' ),
 	'styles'         => array( 'typing-test' ),
 	'scripts'        => array( 'typing-test' ),
 	'embed_height'   => 620,

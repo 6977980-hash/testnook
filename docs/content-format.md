@@ -46,6 +46,7 @@ return array(
 	'faq'            => array( array( 'Question?', 'Answer (HTML ok).' ) ),  // 6 recommended; also emitted as FAQPage schema
 	'disclaimer'     => 'Shown in a warning box after the FAQ (hearing/eye tests).', // optional
 	'related'        => array( 'online-mirror', 'mic-test' ),  // preferred related tools; the rest is filled from the hub
+	'stats'          => array( 'cps-5' ),  // boards from tn_boards() (inc/results.php): loads stats.js, prints the site stats block (optional)
 	'updated'        => '2026-10-28',                          // shown as "Last updated"
 );
 ```
@@ -66,6 +67,20 @@ of the catalog.
   and any tool that is mostly a full-screen surface without text.
 
 Embed mode (`?embed=1`), legal pages and the 404 never show ads.
+
+### Anonymous results (`stats`)
+
+`inc/results.php` stores final scores for the boards in `tn_boards()` (CPS per
+length, reaction, typing per length, mouse accuracy per mode and size, dead
+pixel map). A tool with a `stats` list gets `assets/js/stats.js`, the share
+notice with its off switch, the `[data-tn-share-line]` result line and the
+"How other people score" section built from the hourly cache. In the tool
+script call `TNStats.begin(board)` when a test starts (fetches a signed
+ticket) and `TNStats.submit(board, value, extra, cv)` when it ends. Server-side
+checks: signature, minimum test length, single-use ticket, hourly rate limit
+per hashed IP, plausibility limits, and click-gap regularity for CPS. A new
+board = an entry in `tn_boards()` plus the two calls. `Tools > Testnook stats`
+in wp-admin shows counts per board and the sites embedding tools.
 
 ### Tool markup conventions
 

@@ -32,6 +32,7 @@
 	function countText() { return times.length + (limit ? ' / ' + limit : ''); }
 
 	function wait() {
+		if (!times.length && limit === 5 && window.TNStats) { TNStats.begin('reaction'); }
 		setState('wait', 'Wait for green...', 'Do not click yet.');
 		clearTimeout(timer);
 		timer = setTimeout(go, 1500 + Math.random() * 3500);
@@ -62,6 +63,7 @@
 		}
 		setState('done', U.fmt(avg, 0) + ' ms average', rating(avg) + '. Click to play again.');
 		U.status(statusEl, msg, avg < 300 ? 'ok' : '');
+		if (limit === 5 && window.TNStats) { TNStats.submit('reaction', Math.round(avg)); }
 	}
 
 	function record(t) {

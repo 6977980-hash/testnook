@@ -33,6 +33,7 @@
 
 	function start() {
 		run = { n: 0, hits: 0, misses: 0, times: [], dists: [], offs: [], expired: 0 };
+		if (window.TNStats) { TNStats.begin('aim-' + mode + '-' + size); }
 		stage.classList.add('is-running');
 		$('#ma-intro').hidden = true;
 		out.left.textContent = TOTAL;
@@ -81,6 +82,7 @@
 		$('#ma-intro').hidden = false;
 		$('#ma-go').textContent = 'Play again';
 		run.done = true;
+		if (window.TNStats && score > 0) { TNStats.submit('aim-' + mode + '-' + size, score, Math.round(acc)); }
 	}
 
 	function biasText() {

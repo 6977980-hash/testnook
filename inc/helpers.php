@@ -9,6 +9,23 @@ function tn_tool_url( $slug ) {
 	return home_url( '/' . $slug . '/' );
 }
 
+/** The iframe + credit link for a tool. $theme is '', 'light' or 'dark'. */
+function tn_embed_code( $def, $width = '100%', $height = 620, $theme = '' ) {
+	$src = add_query_arg( 'embed', '1', tn_tool_url( $def['slug'] ) );
+	if ( $theme ) {
+		$src = add_query_arg( 'theme', $theme, $src );
+	}
+	return sprintf(
+		'<iframe src="%1$s" width="%2$s" height="%3$d" style="border:0;max-width:100%%" title="%4$s" allow="camera; microphone; gamepad; fullscreen; autoplay" loading="lazy"></iframe>' . "\n" . '<p><a href="%5$s">%4$s</a> by %6$s</p>',
+		esc_url( $src ),
+		esc_attr( $width ),
+		(int) $height,
+		esc_html( $def['name'] ),
+		esc_url( tn_tool_url( $def['slug'] ) ),
+		esc_html( TN_SITE_NAME )
+	);
+}
+
 /** Hub page URL, or a homepage anchor while the hub page is not built yet. */
 function tn_hub_url( $hub ) {
 	return tn_hub_is_live( $hub ) ? home_url( '/' . $hub . '/' ) : home_url( '/#' . $hub );
@@ -99,6 +116,7 @@ function tn_allowed_html() {
 		'button'   => array( 'type' => true, 'disabled' => true, 'value' => true, 'name' => true ),
 		'input'    => array( 'type' => true, 'min' => true, 'max' => true, 'step' => true, 'value' => true, 'name' => true, 'checked' => true, 'disabled' => true, 'placeholder' => true, 'readonly' => true, 'inputmode' => true, 'autocomplete' => true, 'autocorrect' => true, 'autocapitalize' => true, 'spellcheck' => true, 'enterkeyhint' => true, 'pattern' => true, 'for' => true, 'list' => true ),
 		'select'   => array( 'name' => true, 'disabled' => true ),
+		'textarea' => array( 'rows' => true, 'cols' => true, 'readonly' => true, 'name' => true ),
 		'option'   => array( 'value' => true, 'selected' => true ),
 		'label'    => array( 'for' => true ),
 		'output'   => array( 'for' => true, 'name' => true ),

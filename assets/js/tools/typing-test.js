@@ -135,6 +135,7 @@
 	function begin() {
 		running = true;
 		t0 = performance.now();
+		if (window.TNStats) { TNStats.begin('typing-' + dur); }
 		raf = requestAnimationFrame(tick);
 		U.status(statusEl, 'Go. Type the words; press space after each one.', '');
 	}
@@ -204,6 +205,7 @@
 		}
 		U.status(statusEl, msg, s.acc >= 90 && s.wpm >= 40 ? 'ok' : '');
 		restartBtn.textContent = 'Try again';
+		if (window.TNStats && s.acc >= 85) { TNStats.submit('typing-' + dur, s.wpm, s.acc); }
 	}
 
 	function reset() {

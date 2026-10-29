@@ -117,11 +117,16 @@
 			if (best) { msg += ' New personal best!'; }
 		}
 		U.status(statusEl, msg, mode === 'auto' ? (rank(cps) === 'Automated' ? 'ok' : '') : (cps >= (mode === 'jitter' ? 9 : 6) ? 'ok' : ''));
+		if (window.TNStats && board() && !(rightOk && rightOk.checked)) { TNStats.submit(board(), Number(cps.toFixed(2)), 0, Math.round(spread().cv * 100)); }
 	}
+
+	var BOARD = [1, 5, 10, 15, 30, 60, 100];
+	function board() { return mode === 'left' && BOARD.indexOf(dur) > -1 ? 'cps-' + dur : ''; }
 
 	function begin(t) {
 		running = true;
 		start = t;
+		if (window.TNStats && board()) { TNStats.begin(board()); }
 		count = 0;
 		perSec = [];
 		stamps = [];
@@ -143,7 +148,7 @@
 		lastInput = t;
 		if (!running) { begin(t); }
 		count++;
-		if (mode === 'auto') { stamps.push(t); }
+		stamps.push(t);
 		var sec = Math.min(dur - 1, Math.floor((t - start) / 1000));
 		if (sec >= 0) { perSec[sec]++; }
 		countEl.textContent = count;

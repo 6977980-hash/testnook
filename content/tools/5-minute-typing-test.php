@@ -10,6 +10,7 @@ return array(
 	'intro'          => 'Five minutes of typing real sentences is the test that shows your sustained speed rather than a one minute burst. It is the format used for professional typing certificates and many job tests. Type the passages for five minutes and get your net words per minute and accuracy.',
 	'device'         => 'any',
 	'ads'            => 'content',
+	'stats'          => array( 'typing-300' ),
 	'styles'         => array( 'typing-test' ),
 	'scripts'        => array( 'typing-test' ),
 	'embed_height'   => 600,

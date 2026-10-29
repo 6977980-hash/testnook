@@ -8,6 +8,7 @@ return array(
 	'intro'        => 'Fill your screen with solid colours one after another and look for tiny dots that do not match. It is the quickest way to check a new monitor, laptop or phone for dead or stuck pixels.',
 	'device'       => 'any',
 	'ads'          => 'none',
+	'stats'        => array( 'deadpixel' ),
 	'styles'       => array( 'dead-pixel-test' ),
 	'scripts'      => array( 'dead-pixel-test' ),
 	'embed_height' => 520,
@@ -21,7 +22,17 @@ return array(
 	<p class="dp-keys">In full screen: <kbd>click</kbd> / <kbd>tap</kbd> / <kbd>&rarr;</kbd> next colour, <kbd>&larr;</kbd> previous, <kbd>Esc</kbd> exit.</p>
 </div>
 <div class="dp-screen" id="dp-screen" hidden><div class="dp-hint" id="dp-hint"></div></div>
-<p class="tool-status" id="dp-status" aria-live="polite">Clean your screen first so dust is not mistaken for a pixel.</p>',
+<p class="tool-status" id="dp-status" aria-live="polite">Clean your screen first so dust is not mistaken for a pixel.</p>
+<div class="dp-report" id="dp-report" hidden>
+	<p><strong>Did you find a bad pixel?</strong> Your anonymous answer builds the pixel map on this page.</p>
+	<div class="seg" role="group" aria-label="What you found">
+		<button type="button" data-dp-kind="0" aria-pressed="false">No bad pixels</button>
+		<button type="button" data-dp-kind="1" aria-pressed="false">Dead (black dot)</button>
+		<button type="button" data-dp-kind="2" aria-pressed="false">Stuck (coloured dot)</button>
+	</div>
+	<div id="dp-grid" class="dp-grid" role="group" aria-label="Tap where on the screen the pixel was" hidden></div>
+	<div class="btn-row"><button type="button" class="btn btn-sm btn-primary" id="dp-send" disabled>Send report</button> <button type="button" class="btn btn-sm" id="dp-skip">Skip</button></div>
+</div>',
 	'howto'        => array(
 		'Wipe the screen with a dry microfibre cloth so specks of dust do not fool you.',
 		'Press <strong>Start full-screen test</strong>. The whole screen turns black.',

@@ -77,6 +77,6 @@ return array(
 		array( 'What is key chatter?', 'When one press registers twice, so letters appear doubled. It happens when a mechanical switch\'s contacts bounce, usually because of dirt or wear.' ),
 		array( 'Does this keyboard test work for Mac?', 'Yes. The Win key position shows the Command key on Mac keyboards, and the layout is otherwise the same.' ),
 	),
-	'related'        => array( 'spacebar-clicker', 'typing-speed-test', 'mouse-tester', 'gamepad-tester', 'double-click-test', 'reaction-time-test' ),
+	'related'        => array( 'keyboard-ghosting-test', 'spacebar-clicker', 'typing-speed-test', 'mouse-tester', 'gamepad-tester', 'double-click-test', 'reaction-time-test' ),
 	'updated'        => '2026-10-28',
 );

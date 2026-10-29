@@ -87,6 +87,6 @@ return array(
 		array( 'Does this mic test record me?', 'Only when you press Record sample, and only into your browser\'s memory. Nothing is uploaded or saved unless you press Download.' ),
 		array( 'Why do I sound different in the recording?', 'You normally hear your own voice through your head, which adds bass. The recording is what others hear. Browser processing such as noise suppression can also make it sound thinner.' ),
 	),
-	'related'        => array( 'voice-recorder', 'webcam-test', 'headphone-test', 'sound-test', 'online-mirror', 'speaker-cleaner' ),
+	'related'        => array( 'voice-recorder', 'zoom-test', 'webcam-test', 'headphone-test', 'sound-test', 'online-mirror', 'speaker-cleaner' ),
 	'updated'        => '2026-10-28',
 );

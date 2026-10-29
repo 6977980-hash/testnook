@@ -10,6 +10,7 @@ return array(
 <p>On a laptop or with a USB webcam, open the <a href="/webcam-test/">webcam test</a>. It shows the live picture, the resolution the camera is actually delivering, the frame rate and the camera name, so you can tell a 720p webcam from a 1080p one and spot a camera that drops to 15 fps in low light. It lets you pick a camera when more than one is connected, which fixes the common problem of a video call using the wrong one.</p>
 <p>On a phone or tablet, the <a href="/camera-test/">camera test</a> adds switching between the front and back cameras, a torch button where the browser supports it, and a list of every camera it has tested. The <a href="/online-mirror/">online mirror</a> turns the front camera into a mirror with zoom, brightness and a white ring-light frame, and can freeze and save a photo.</p>
 <p>Camera tests are usually followed by a sound check, so the <a href="/mic-test/">mic test</a> is listed here too. It shows a live level meter and records a short sample for playback.</p>
+<p>About to join a video call? The <a href="/zoom-test/">Zoom test</a> checks the camera, the lighting on your face, the microphone and your speakers on one page, plays back a short recording of your voice and ticks off each item, so you know everything works before you click Join in Zoom, Teams or Meet.</p>
 
 <h2>What the tests can find</h2>
 <ul>
@@ -33,6 +34,6 @@ return array(
 		array( 'My webcam works here but not in Zoom or Teams. Why?', 'The camera is fine. Check the camera picked in the app settings, close other apps that use the camera, and on Windows allow desktop apps to use the camera in the privacy settings. Restarting the app after changing the camera often helps.' ),
 		array( 'Why does the picture look dark or grainy?', 'Almost always lighting. Face a window or a lamp rather than having it behind you. Webcams drop their frame rate and raise noise in low light. Wipe the lens as well; fingerprints make everything look hazy.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

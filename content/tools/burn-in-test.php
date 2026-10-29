@@ -79,6 +79,6 @@ return array(
 		array( 'Does the test harm my screen?', 'No. The patterns are ordinary colours at your current brightness, the same as any app. The auto cycle changes the pattern every few seconds, which is gentler than most games.' ),
 		array( 'Why test on grey instead of white?', 'Burn-in is a small difference in brightness between neighbouring pixels. On a mid grey the eye picks up that difference best; on full white some panels reduce brightness and hide it.' ),
 	),
-	'related'        => array( 'dead-pixel-test', 'white-screen', 'black-screen', 'stuck-pixel-fixer', 'refresh-rate-test', 'fps-test' ),
+	'related'        => array( 'oled-test', 'dead-pixel-test', 'white-screen', 'black-screen', 'stuck-pixel-fixer', 'refresh-rate-test', 'fps-test' ),
 	'updated'        => '2026-10-28',
 );

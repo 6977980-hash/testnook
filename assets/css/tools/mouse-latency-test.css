@@ -1,0 +1,15 @@
+/* Mouse latency test */
+.ml-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: 14px; }
+.tool-stage.ml-stage { position: relative; display: block; place-items: normal; height: 340px; min-height: 0; overflow: hidden; cursor: default; touch-action: none; }
+.ml-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ml-hint { position: absolute; left: 0; right: 0; top: 12px; text-align: center; color: var(--muted); font-size: .9rem; pointer-events: none; }
+.ml-pad {
+	display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; height: 340px; border-radius: var(--radius);
+	border: 2px dashed var(--border); background: var(--surface-2); color: var(--muted); font: 600 1rem/1.4 var(--font); cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation;
+}
+.ml-pad.is-alt { background: var(--brand-soft); border-color: var(--brand); color: var(--text); }
+.ml-opt { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; cursor: pointer; }
+@media (max-width: 760px) {
+	.ml-grid { grid-template-columns: 1fr; }
+	.ml-pad { height: 120px; }
+}

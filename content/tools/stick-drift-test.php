@@ -87,6 +87,6 @@ return array(
 		array( 'Does this work for PS5 DualSense drift?', 'Yes. Connect the DualSense by USB-C or Bluetooth, press a button and run the test in Chrome, Edge, Firefox or Safari.' ),
 		array( 'Is a little movement at rest normal?', 'Yes. Every analog stick reports small values at rest, usually 1-4%. Games ignore it with a small dead zone.' ),
 	),
-	'related'        => array( 'gamepad-tester', 'ps5-controller-test', 'xbox-controller-test', 'ps4-controller-test', 'keyboard-tester', 'mouse-tester' ),
+	'related'        => array( 'gamepad-tester', 'joy-con-drift-test', 'controller-vibration-test', 'ps5-controller-test', 'xbox-controller-test', 'ps4-controller-test', 'keyboard-tester', 'mouse-tester' ),
 	'updated'        => '2026-10-28',
 );

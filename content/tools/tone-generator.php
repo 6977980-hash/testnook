@@ -106,6 +106,6 @@ return array(
 		array( 'Does the tone generator work on a phone?', 'Yes, but phone speakers reproduce very little below 150 Hz. Use headphones to hear bass frequencies.' ),
 	),
 	'disclaimer'   => 'Protect your hearing: start at a low volume and raise it slowly. A steady tone is louder than it seems, especially at high frequencies. This tone generator tests equipment and is not a medical hearing test. If you notice ringing, pain or hearing loss, stop and see a doctor or audiologist.',
-	'related'      => array( 'guitar-tuner', 'metronome', 'sound-test', 'headphone-test', 'hearing-frequency-test', 'speaker-cleaner' ),
+	'related'      => array( 'guitar-tuner', 'metronome', 'sound-test', 'headphone-test', 'hearing-frequency-test', 'white-noise-generator', 'dog-whistle' ),
 	'updated'      => '2026-10-28',
 );

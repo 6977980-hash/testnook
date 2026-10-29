@@ -10,6 +10,7 @@ return array(
 <p>Start with the <a href="/keyboard-tester/">keyboard tester</a> if you want to know whether every key works. It draws a full size, TKL or 60% layout, lights up each key as you press it and keeps it green once it has registered, so a key that never responds or one that fires on its own stands out at once. The same page shows how many keys the board can register at the same time, which is the practical rollover and ghosting check that gaming keyboards are sold on.</p>
 <p>Use the <a href="/spacebar-clicker/">spacebar clicker</a> when the question is speed rather than function: it counts presses per second and over a set time, and it doubles as a quick check that the spacebar does not double-register or stick on one side.</p>
 <p>For typing problems that only show up in one program, run the key tester first. If every key goes green here, the keyboard is fine and the fault is a shortcut, a layout setting or the program itself.</p>
+<p>Gamers should also run the <a href="/keyboard-ghosting-test/">keyboard ghosting test</a>. Hold several keys together and it shows exactly which ones register, measures your rollover (2KRO, 6KRO or NKRO) and checks common combos such as W + A + Shift + Space, which cheaper keyboards often block.</p>
 
 <h2>What the tests can find</h2>
 <ul>
@@ -33,6 +34,6 @@ return array(
 		array( 'How do I fix a key that types twice?', 'That is switch chatter. Blow compressed air around the key, or on a mechanical keyboard pull the keycap and clean the switch with contact cleaner. If it keeps happening, the switch needs replacing. Some keyboard software also has a chatter filter.' ),
 		array( 'Is anything recorded when I type here?', 'No. Key presses are read in your browser to light up the diagram and are never sent anywhere. The typing area is only for your own eyes and is cleared when you leave the page.' ),
 	),
-	'updated'     => '2026-10-28',
+	'updated'     => '2026-10-29',
 	'ads'         => 'standard',
 );

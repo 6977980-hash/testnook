@@ -77,6 +77,6 @@ return array(
 		array( 'Can this test measure 4000 or 8000 Hz?', 'Yes in Chrome, Edge and Firefox, which pass every report to the page. Safari limits the count to the screen refresh rate.' ),
 		array( 'Does polling rate affect DPI?', 'No. DPI is how far the cursor moves per inch of mouse travel; polling rate is how often it updates. Measure DPI with the DPI analyzer.' ),
 	),
-	'related'        => array( 'mouse-tester', 'dpi-analyzer', 'scroll-test', 'double-click-test', 'cps-test', 'refresh-rate-test' ),
+	'related'        => array( 'mouse-tester', 'dpi-analyzer', 'scroll-test', 'double-click-test', 'mouse-latency-test', 'refresh-rate-test' ),
 	'updated'        => '2026-10-28',
 );

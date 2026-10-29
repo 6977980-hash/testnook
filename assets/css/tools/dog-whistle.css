@@ -1,0 +1,20 @@
+/* Dog whistle */
+.tool-stage.dw-stage { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center; }
+.dw-freq { font: 800 2.6rem/1 var(--font); font-variant-numeric: tabular-nums; }
+.dw-note { margin: 0; color: var(--muted); font-size: .95rem; min-height: 1.4em; }
+.dw-wave {
+	--dw-wl: 30px;
+	width: min(420px, 100%); height: 36px; opacity: .25; transition: opacity .1s;
+	background: repeating-linear-gradient(90deg, var(--brand) 0 2px, transparent 2px var(--dw-wl));
+	-webkit-mask: radial-gradient(ellipse at center, #000 40%, transparent 72%);
+	mask: radial-gradient(ellipse at center, #000 40%, transparent 72%);
+}
+.is-on .dw-wave { opacity: 1; }
+.dw-hold {
+	width: 150px; height: 150px; border-radius: 50%; border: 0; background: var(--brand); color: var(--brand-ink);
+	font: 700 1.05rem/1.2 var(--font); cursor: pointer; touch-action: none; user-select: none; -webkit-user-select: none;
+	box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 40%, transparent); transition: box-shadow .15s, transform .1s;
+}
+.is-on .dw-hold { transform: scale(.96); box-shadow: 0 0 0 14px color-mix(in srgb, var(--brand) 25%, transparent); }
+.dw-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+.dw-presets, .dw-patterns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }

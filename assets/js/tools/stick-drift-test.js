@@ -1,8 +1,11 @@
 /* Stick drift test: live stick positions with trails, adjustable dead zone ring, a timed resting drift check and an outer range (circularity) trace. */
 (function () {
 	'use strict';
-	var root = document.querySelector('[data-tool="stick-drift-test"]');
+	// Serves the stick drift and Joy-Con drift pages: any page with the #sd-c0 canvas.
+	var first = document.getElementById('sd-c0');
+	var root = first && first.closest('[data-tool]');
 	if (!root) { return; }
+	var joycon = root.hasAttribute('data-sd-joycon') || !!root.querySelector('[data-sd-joycon]');
 	var U = window.TNUtil;
 	var $ = function (s) { return root.querySelector(s); };
 
@@ -41,7 +44,21 @@
 		if (padIndex < 0) {
 			U.status(statusEl, 'No controller found yet. Connect it by USB or Bluetooth, then press any button on it.', '');
 		} else if (!check) {
-			U.status(statusEl, 'Connected: ' + shortName(list.filter(function (p) { return p.index === padIndex; })[0].id) + '. Leave the sticks alone and press Check drift.', 'ok');
+			var cur = list.filter(function (p) { return p.index === padIndex; })[0];
+			U.status(statusEl, 'Connected: ' + shortName(cur.id) + '. Leave the sticks alone and press Check drift.', 'ok');
+			if (joycon) { joyconNote(cur); }
+		}
+	}
+
+	// Joy-Con page: name the circles after the connected Joy-Con and warn when the browser reads it without analogue sticks.
+	function joyconNote(p) {
+		var id = String(p.id), h0 = $('#sd-h0'), h1 = $('#sd-h1'), isJc = /joy-?con|057e/i.test(id);
+		if (!h0 || !h1) { return; }
+		if (/\(L\)/.test(id) && !/L\+R/.test(id)) { h0.textContent = 'Joy-Con (L) stick'; h1.textContent = 'Not used'; }
+		else if (/\(R\)/.test(id) && !/L\+R/.test(id)) { h0.textContent = 'Joy-Con (R) stick'; h1.textContent = 'Not used'; }
+		else { h0.textContent = 'Left stick'; h1.textContent = 'Right stick'; }
+		if (isJc && p.mapping !== 'standard') {
+			U.status(statusEl, 'This browser reads the Joy-Con as a basic device, so its stick may only report 8 directions and drift cannot be measured. Open the page in Chrome or Edge.', 'bad');
 		}
 	}
 

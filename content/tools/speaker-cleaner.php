@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'        => 'Speaker Cleaner',
 	'seo_title'    => 'Speaker Cleaner: Remove Water From Your Phone Speaker',
-	'description'  => 'Free speaker cleaner that plays a 165 Hz water eject sound to push water and dust out of your phone speaker. Works on iPhone, Android and laptops, no app needed.',
+	'description'  => 'Free speaker cleaner: a 165 Hz water eject sound that pushes water and dust out of your phone speaker. Works on iPhone, Android and laptops, no app needed.',
 	'intro'        => 'Got water in your phone speaker? Press start and this speaker cleaner plays a low 165 Hz tone that shakes water and dust out of the grille, the same idea as the Apple Watch water lock.',
 	'device'       => 'any',
 	'ads'          => 'standard',

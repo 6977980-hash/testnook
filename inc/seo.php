@@ -69,7 +69,8 @@ add_filter( 'document_title_separator', function () { return '|'; } );
 add_filter(
 	'wp_robots',
 	function ( $robots ) {
-		if ( tn_is_embed() ) {
+		if ( tn_is_embed() || is_archive() || is_search() ) {
+			// Archives are redirected in inc/setup.php; any left (categories, search) stay out of the index.
 			$robots['noindex'] = true;
 			$robots['follow']  = true;
 		} elseif ( ! is_404() ) {
@@ -77,6 +78,19 @@ add_filter(
 		}
 		return $robots;
 	}
+);
+
+/** robots.txt: AI crawlers are allowed (audit 2026-10-29, decision H-4); point them at /llms.txt. */
+add_filter(
+	'robots_txt',
+	function ( $output, $public ) {
+		if ( ! $public ) {
+			return $output;
+		}
+		return $output . "\n# AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended and others) are allowed.\n# A summary of every page for language models: " . home_url( '/llms.txt' ) . "\n";
+	},
+	10,
+	2
 );
 
 // Search Console verification tag, on every page, before the SEO output.
@@ -145,12 +159,16 @@ function tn_schema_org() {
 		),
 		'email'        => TN_CONTACT_EMAIL,
 		'founder'      => array( '@id' => home_url( '/#founder' ) ),
+		'sameAs'       => TN_SOCIAL_PROFILES,
 		'contactPoint' => array(
 			'@type'       => 'ContactPoint',
 			'email'       => TN_CONTACT_EMAIL,
 			'contactType' => 'customer support',
 		),
 	);
+	if ( ! $org['sameAs'] ) {
+		unset( $org['sameAs'] );
+	}
 	$founder = array(
 		'@type'  => 'Person',
 		'@id'    => home_url( '/#founder' ),

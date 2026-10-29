@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'        => 'FPS Test',
 	'seo_title'    => 'FPS Test: Check Your Frame Rate Online (Free)',
-	'description'  => 'Free online FPS test. Measure the frame rate your browser and screen can show, with average, min and max FPS, frame times, dropped frames and a 30/15 fps comparison.',
+	'description'  => 'Free FPS test. See the frame rate your browser and screen show, with average, min and max FPS, frame times, dropped frames and a 30/15 fps comparison.',
 	'intro'        => 'See how many frames per second your browser and screen really show. The FPS test counts every frame live, graphs frame times and compares smooth and choppy motion side by side.',
 	'device'       => 'any',
 	'ads'          => 'standard',

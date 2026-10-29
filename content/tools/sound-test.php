@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'        => 'Sound Test',
 	'seo_title'    => 'Sound Test: Test Your Speakers Online (Left, Right, Stereo)',
-	'description'  => 'Free online sound test for speakers and headphones. Play left, right and stereo test sounds, bass, mid and treble tones, a sweep and a music clip in your browser.',
+	'description'  => 'Free sound test for speakers and headphones. Play left, right and stereo test sounds, bass, mid and treble tones, a sweep and a music clip in your browser.',
 	'intro'        => 'Check that your speakers or headphones work and that left and right are the right way round. Play channel checks, test tones, a frequency sweep and a short music clip, all generated in your browser.',
 	'device'       => 'any',
 	'ads'          => 'standard',

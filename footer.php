@@ -33,7 +33,7 @@ $tn_hub_list = array_keys( tn_hubs() );
 				<h2><?php echo esc_html( TN_SITE_NAME ); ?></h2>
 				<ul>
 					<?php
-					foreach ( array( 'about' => 'About', 'contact' => 'Contact', 'embed-tools' => 'Embed our tools', 'privacy-policy' => 'Privacy Policy', 'terms' => 'Terms of Use' ) as $tn_slug => $tn_label ) :
+					foreach ( array( 'about' => 'About', 'contact' => 'Contact', 'leaderboards' => 'Leaderboards', 'embed-tools' => 'Embed our tools', 'privacy-policy' => 'Privacy Policy', 'terms' => 'Terms of Use' ) as $tn_slug => $tn_label ) :
 						if ( tn_get_def( 'page:' . $tn_slug ) ) :
 							?>
 						<li><a href="<?php echo esc_url( home_url( '/' . $tn_slug . '/' ) ); ?>"><?php echo esc_html( $tn_label ); ?></a></li>

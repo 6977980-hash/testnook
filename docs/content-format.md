@@ -82,6 +82,22 @@ per hashed IP, plausibility limits, and click-gap regularity for CPS. A new
 board = an entry in `tn_boards()` plus the two calls. `Tools > Testnook stats`
 in wp-admin shows counts per board and the sites embedding tools.
 
+### Leaderboards (`lb` boards)
+
+Boards with `'lb' => true` in `tn_boards()` (CPS, reaction, typing 60 and 300,
+mouse accuracy) also have public top-10 leaderboards (`inc/leaderboards.php`).
+Nothing extra is needed in the content file: a tool whose `stats` list has an
+`lb` board gets the "Add my score to the leaderboard" form under the tool
+(`tn_leaderboard_claim`), the leaderboard section (`tn_leaderboard_section`,
+all boards of the same family) and `assets/js/leaderboard.js`. `/result`
+returns `id` + `claim` for `lb` boards; `POST /claim {id, claim, nick}` adds the
+nickname; `GET /board?board=&period=day|week|all` lists the top 10. Held and
+hidden entries are moderated at `Tools > Testnook leaderboards`. The
+`/leaderboards/` page prints every board via the page's `render` key.
+
+Static pages (`content/pages/`) may set `'render' => 'callable'` to print
+theme output after the body.
+
 ### Tool markup conventions
 
 Use the shared classes so every tool looks the same:

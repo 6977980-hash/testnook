@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TN_VERSION', '0.3.0' );
+define( 'TN_VERSION', '0.4.0' );
 define( 'TN_DIR', get_template_directory() );
 define( 'TN_URI', get_template_directory_uri() );
 
@@ -23,4 +23,5 @@ require TN_DIR . '/inc/seo.php';
 require TN_DIR . '/inc/ads.php';
 require TN_DIR . '/inc/indexnow.php';
 require TN_DIR . '/inc/results.php';
+require TN_DIR . '/inc/leaderboards.php';
 require TN_DIR . '/inc/helpers.php';

@@ -67,6 +67,9 @@ add_action(
 		if ( $def && ! empty( $def['stats'] ) && ! tn_is_embed() ) {
 			wp_enqueue_script( 'tn-stats', TN_URI . '/assets/js/stats.js', array( 'tn-site' ), tn_asset_ver( 'assets/js/stats.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
 		}
+		if ( $def && tn_lb_page_has_boards( $def ) ) {
+			wp_enqueue_script( 'tn-leaderboard', TN_URI . '/assets/js/leaderboard.js', array( 'tn-site' ), tn_asset_ver( 'assets/js/leaderboard.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+		}
 		if ( $def && ! empty( $def['scripts'] ) ) {
 			foreach ( (array) $def['scripts'] as $name ) {
 				$rel = 'assets/js/tools/' . sanitize_file_name( $name ) . '.js';

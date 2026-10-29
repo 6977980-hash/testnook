@@ -20,7 +20,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const TN_RESULTS_DB_VERSION = '1';
+const TN_RESULTS_DB_VERSION = '2';   // 2: lb column for leaderboards (Phase 13b)
 const TN_RESULTS_WINDOW_DAYS = 30;   // stats cover the last 30 days
 const TN_RESULTS_KEEP_DAYS   = 400;  // older rows are summarised and deleted
 const TN_RESULTS_MIN_COUNT   = 20;   // boards with fewer results show no stats
@@ -44,6 +44,7 @@ function tn_embed_hits_table() {
  * higher   true when a bigger score is better
  * unit, dp label and decimals for the printed stats
  * extra    limits for the second number, or null
+ * lb       true when the board has a public leaderboard (inc/leaderboards.php)
  */
 function tn_boards() {
 	static $boards = null;
@@ -61,6 +62,7 @@ function tn_boards() {
 			'unit'   => 'CPS',
 			'dp'     => 1,
 			'extra'  => null,
+			'lb'     => true,
 		);
 	}
 	$boards['reaction'] = array(
@@ -72,6 +74,7 @@ function tn_boards() {
 		'unit'   => 'ms',
 		'dp'     => 0,
 		'extra'  => null,
+		'lb'     => true,
 	);
 	foreach ( array( 15, 30, 60, 120, 300 ) as $s ) {
 		$boards[ 'typing-' . $s ] = array(
@@ -83,6 +86,7 @@ function tn_boards() {
 			'unit'   => 'WPM',
 			'dp'     => 0,
 			'extra'  => array( 85, 100 ), // accuracy %
+			'lb'     => in_array( $s, array( 60, 300 ), true ),
 		);
 	}
 	foreach ( array( 'static', 'shrink' ) as $mode ) {
@@ -96,6 +100,7 @@ function tn_boards() {
 				'unit'   => 'points',
 				'dp'     => 0,
 				'extra'  => array( 0, 100 ), // accuracy %
+				'lb'     => true,
 			);
 		}
 	}
@@ -132,9 +137,11 @@ function tn_results_install() {
 	extra smallint(5) unsigned NOT NULL DEFAULT 0,
 	nick varchar(16) DEFAULT NULL,
 	status varchar(8) NOT NULL DEFAULT 'ok',
+	lb tinyint(3) unsigned NOT NULL DEFAULT 0,
 	created date NOT NULL,
 	PRIMARY KEY  (id),
-	KEY board_status_created (board,status,created)
+	KEY board_status_created (board,status,created),
+	KEY board_lb_created (board,lb,created)
 ) $charset;"
 	);
 	dbDelta(
@@ -220,14 +227,20 @@ function tn_client_key() {
 	return substr( hash( 'sha256', $ip . '|' . wp_salt( 'auth' ) . '|' . gmdate( 'Y-m-d' ) ), 0, 16 );
 }
 
-/** Counts a request against an hourly limit; true when the limit is exceeded. */
-function tn_rate_limited( $bucket, $limit ) {
+/**
+ * Counts a request against a limit per client; true when the limit is exceeded.
+ * $ttl is the window (one hour by default; the client key itself changes daily).
+ * $peek only checks, without counting.
+ */
+function tn_rate_limited( $bucket, $limit, $ttl = HOUR_IN_SECONDS, $peek = false ) {
 	$key = 'tn_rl_' . $bucket . '_' . tn_client_key();
 	$n   = (int) get_transient( $key );
 	if ( $n >= $limit ) {
 		return true;
 	}
-	set_transient( $key, $n + 1, HOUR_IN_SECONDS );
+	if ( ! $peek ) {
+		set_transient( $key, $n + 1, $ttl );
+	}
 	return false;
 }
 
@@ -346,6 +359,7 @@ function tn_rest_result( WP_REST_Request $req ) {
 		array( '%s', '%f', '%d', '%s', '%s' )
 	);
 
+	$id    = (int) $wpdb->insert_id;
 	$stats = tn_stats_get( $board );
 	$out   = array(
 		'ok'         => true,
@@ -353,6 +367,11 @@ function tn_rest_result( WP_REST_Request $req ) {
 		'count'      => $stats ? (int) $stats['count'] : 0,
 		'percentile' => $stats && 'ok' === $status ? tn_percentile( $stats, $def, $value ) : null,
 	);
+	// Leaderboard boards: the row id and a signed claim so the visitor can add a nickname (POST /claim).
+	if ( ! empty( $def['lb'] ) && 'ok' === $status && $id ) {
+		$out['id']    = $id;
+		$out['claim'] = tn_claim_token( $id, $board );
+	}
 	$res = new WP_REST_Response( $out );
 	$res->header( 'Cache-Control', 'no-store' );
 	return $res;
@@ -500,12 +519,16 @@ function tn_percentile( $stats, $def, $value ) {
 	return (int) min( 99, max( 1, round( $beats / count( $stats['quantiles'] ) * 100 ) ) );
 }
 
-/** Rolls rows older than 400 days into a monthly summary option, then deletes them. */
+/**
+ * Rolls rows older than 400 days into a monthly summary option, then deletes
+ * them. Named leaderboard entries that are shown (lb = 1) are kept, so the
+ * all-time boards do not lose their old records.
+ */
 function tn_results_prune() {
 	global $wpdb;
 	$table  = tn_results_table();
 	$before = gmdate( 'Y-m-d', time() - TN_RESULTS_KEEP_DAYS * DAY_IN_SECONDS );
-	$rows   = $wpdb->get_results( $wpdb->prepare( "SELECT board, SUBSTR(created, 1, 7) AS month, COUNT(*) AS n, AVG(value) AS mean FROM $table WHERE created < %s AND status = 'ok' GROUP BY board, SUBSTR(created, 1, 7)", $before ), ARRAY_A ); // phpcs:ignore
+	$rows   = $wpdb->get_results( $wpdb->prepare( "SELECT board, SUBSTR(created, 1, 7) AS month, COUNT(*) AS n, AVG(value) AS mean FROM $table WHERE created < %s AND status = 'ok' AND lb <> 1 GROUP BY board, SUBSTR(created, 1, 7)", $before ), ARRAY_A ); // phpcs:ignore
 	if ( $rows ) {
 		$archive = (array) get_option( 'tn_results_archive', array() );
 		foreach ( $rows as $r ) {
@@ -516,7 +539,7 @@ function tn_results_prune() {
 		}
 		update_option( 'tn_results_archive', $archive, false );
 	}
-	$wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE created < %s", $before ) ); // phpcs:ignore
+	$wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE created < %s AND lb <> 1", $before ) ); // phpcs:ignore
 	$embeds = tn_embed_hits_table();
 	$wpdb->query( $wpdb->prepare( "DELETE FROM $embeds WHERE day < %s", $before ) ); // phpcs:ignore
 }

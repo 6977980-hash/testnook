@@ -143,6 +143,7 @@
 
 	function begin() {
 		running = true;
+		overlay.hidden = true;
 		t0 = performance.now();
 		if (window.TNStats) { TNStats.begin('typing-' + dur); }
 		raf = requestAnimationFrame(tick);
@@ -246,6 +247,13 @@
 		if (e.key === 'Enter' && source === 'sentences') { e.preventDefault(); input.value += ' '; onInput(); }
 	});
 	input.addEventListener('paste', function (e) { e.preventDefault(); });
+	// "Press any key to start": a printable key anywhere on the page (outside other fields) focuses the test, and the key lands in it.
+	document.addEventListener('keydown', function (e) {
+		var a = document.activeElement;
+		if (done || a === input || e.key.length !== 1 || e.ctrlKey || e.metaKey || e.altKey || e.key === ' ') { return; }
+		if (a && (a.isContentEditable || /^(INPUT|TEXTAREA|SELECT|BUTTON|A)$/.test(a.tagName))) { return; }
+		focus();
+	});
 	restartBtn.addEventListener('click', function () { reset(); focus(); });
 	tSel.forEach(function (b) {
 		b.addEventListener('click', function () {

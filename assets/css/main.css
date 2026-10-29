@@ -46,6 +46,8 @@
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
+/* The hidden attribute always wins over a component's display (e.g. the typing test overlay is display: grid). */
+[hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
 body {
 	margin: 0;

@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'Privacy Policy',
 	'seo_title'   => 'Privacy Policy | Testnook',
-	'description' => 'How Testnook handles your data: tests run on your device and a few share only an anonymous final score. Cookies, ads and analytics explained.',
+	'description' => 'How Testnook handles your data: tests run on your device and a few share only an anonymous final score. How Google Analytics, cookies and ads are used.',
 	'updated'     => '2026-10-29',
 	'body'        => '<p>This policy explains what information testnook.com ("Testnook", "we", "us") collects and how it is used. The short version: <strong>the tests run on your device, and we never see your camera, microphone or anything you type into a test.</strong> A few tools share your final score anonymously so we can show site averages, and you can turn that off.</p>
 <h2>Camera, microphone and input tests</h2>
@@ -21,9 +21,11 @@ return array(
 <h2>Information collected automatically</h2>
 <p>Like almost every website, our hosting provider (Hostinger) keeps standard server logs, which include your IP address, browser type, the page requested and the time of the request. These logs are used for security and to keep the site running, and are deleted on a rolling basis.</p>
 <h2>Cookies and local storage</h2>
-<p>We store a small setting in your browser\'s local storage to remember whether you prefer light or dark mode. Some tools may also remember your own settings, such as screen calibration for the online ruler, your personal best scores and whether you turned score sharing off, in the same way. This data stays on your device.</p>
-<h2>Analytics</h2>
-<p>Analytics are <strong>not switched on</strong> at the moment. When they are enabled, we will use Google Analytics and Microsoft Clarity to understand which pages are used and how the site performs, and this section will say so. These services use cookies or similar technologies to collect information such as pages visited, approximate location, device type and how you interact with pages. This information is aggregated and does not identify you personally to us. You can learn more in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">how Google uses information from sites that use its services</a> and the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener" target="_blank">Microsoft privacy statement</a>.</p>
+<p>Google Analytics sets the cookies described under <a href="#analytics">analytics</a> below (outside the EEA, the UK and Switzerland). Apart from those, we store a small setting in your browser\'s local storage to remember whether you prefer light or dark mode. Some tools may also remember your own settings, such as screen calibration for the online ruler, your personal best scores and whether you turned score sharing off, in the same way. This data stays on your device.</p>
+<h2 id="analytics">Analytics</h2>
+<p>We use <strong>Google Analytics 4</strong>, a service from Google, to understand which pages and tests are used, where visitors come from and how fast the site works for them. Google Analytics collects information such as the pages you view, the page that sent you here, approximate location (city or country, worked out from your IP address, which Google does not store), browser and device type, screen size and how long pages take to load. It uses cookies (named <code>_ga</code> and <code>_ga_*</code>) to tell a returning visitor from a new one. We see this only as aggregated reports; it does not identify you personally to us, and nothing from inside a test (camera, microphone, keys, clicks or scores) is sent to Google Analytics. Data in Google Analytics is kept for the period set in our account (between 2 and 14 months) and then deleted.</p>
+<p>In the European Economic Area, the UK and Switzerland, Google Analytics runs in Google\'s consent mode with analytics and advertising storage <strong>denied</strong> by default. It then sets no cookies and sends Google only anonymous, cookieless signals (such as a page view) that cannot recognize you on a later visit. Tools embedded on other websites do not load Google Analytics at all.</p>
+<p>You can block Google Analytics with your browser\'s cookie or tracking settings, a content blocker, or the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">Google Analytics opt-out add-on</a>. Learn more in <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">how Google uses information from sites that use its services</a>. We do not use Microsoft Clarity or any other analytics service at the moment.</p>
 <h2>Advertising</h2>
 <p>Testnook is free and is meant to be supported by advertising. Ads are <strong>not switched on</strong> at the moment. When they are enabled, we will use Google AdSense, and the following applies:</p>
 <ul>
@@ -31,11 +33,11 @@ return array(
 <li>Google\'s use of advertising cookies enables it and its partners to serve ads to you based on your visits to this site and/or other sites on the internet.</li>
 <li>You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com/" rel="noopener" target="_blank">Google Ads Settings</a>. You can also opt out of some third-party vendors\' use of cookies for personalized advertising at <a href="https://www.aboutads.info/choices/" rel="noopener" target="_blank">www.aboutads.info</a>.</li>
 </ul>
-<p>When ads or analytics are switched on, visitors in the European Economic Area, the UK and Switzerland are shown a consent message first, before any personalized ads or analytics cookies are used, and can change their choice at any time.</p>
+<p>When ads are switched on, visitors in the European Economic Area, the UK and Switzerland will be shown a consent message first, before any personalized ads or analytics cookies are used, and will be able to change their choice at any time.</p>
 <h2>Children</h2>
 <p>Testnook is a general audience site and is not directed at children under 13. We do not knowingly collect personal information from children.</p>
 <h2>Your rights</h2>
-<p>Depending on where you live, you may have the right to access, correct or delete personal data held about you, or to object to its use. Because the tests do not send personal data to us, we usually hold nothing beyond standard server logs, anonymous test scores that cannot be linked to you, and any email you send us. To make a request, contact us at the address below.</p>
+<p>Depending on where you live, you may have the right to access, correct or delete personal data held about you, or to object to its use. Because the tests do not send personal data to us, we usually hold nothing beyond standard server logs, aggregated Google Analytics reports, anonymous test scores that cannot be linked to you, and any email you send us. To make a request, contact us at the address below.</p>
 <h2>Emails you send us</h2>
 <p>If you email us, we use your address and message only to reply and to improve the site. We do not sell or share it.</p>
 <h2>Changes to this policy</h2>

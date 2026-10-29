@@ -76,6 +76,6 @@ return array(
 		array( 'Can I test surround sound or 5.1 here?', 'Browsers generally output two channels, so this page tests stereo only. For 5.1 or Dolby Atmos use the test built into your receiver or the Windows Sound settings "Test" button.' ),
 		array( 'Does this work on phones?', 'Yes, on Android and iPhone. Phone speakers are often mono or have a weaker second speaker, so use headphones for the left-right check.' ),
 	),
-	'related'      => array( 'headphone-test', 'speaker-cleaner', 'mic-test', 'tone-generator', 'hearing-frequency-test', 'webcam-test' ),
+	'related'      => array( 'stereo-test', 'bass-test', 'headphone-test', 'speaker-cleaner', 'mic-test', 'tone-generator' ),
 	'updated'      => '2026-10-28',
 );

@@ -80,6 +80,6 @@ return array(
 		array( 'Why is the front camera mirrored?', 'The preview is mirrored to feel like a mirror, the way phone selfie previews are. The back camera is not mirrored.' ),
 		array( 'Does the camera test work on a laptop?', 'Yes. It shows the built-in webcam and any USB cameras in the camera list. The switch button only appears on phones and tablets.' ),
 	),
-	'related'        => array( 'webcam-test', 'online-mirror', 'mic-test', 'touch-screen-test', 'dead-pixel-test', 'sound-test' ),
+	'related'        => array( 'torch-test', 'webcam-test', 'online-mirror', 'mic-test', 'touch-screen-test', 'dead-pixel-test' ),
 	'updated'        => '2026-10-28',
 );

@@ -54,7 +54,8 @@ return array(
 <tr><td>8-10</td><td>Cheetah</td><td>Jitter clicking or two fingers alternating.</td></tr>
 <tr><td>Over 10</td><td>Lightning</td><td>Butterfly or drag clicking. Many games treat this as suspicious.</td></tr>
 </tbody></table></div>
-<p><strong>Peak CPS</strong> is your fastest single second. The graph shows your clicks in each second of the test, so you can see where you slowed down. If the count stops rising while you are clicking, your mouse or browser is missing clicks; try the <a href="/double-click-test/">double click test</a> to check the switch.</p>',
+<p><strong>Peak CPS</strong> is your fastest single second. The graph shows your clicks in each second of the test, so you can see where you slowed down. If the count stops rising while you are clicking, your mouse or browser is missing clicks; try the <a href="/double-click-test/">double click test</a> to check the switch.</p>
+<p>Each length also has its own page with scores for that length: the <a href="/1-second-cps-test/">1 second</a>, <a href="/5-second-cps-test/">5 second</a> and <a href="/10-second-cps-test/">10 second CPS tests</a>, and the <a href="/15-second-click-test/">15</a>, <a href="/30-second-click-test/">30</a>, <a href="/60-second-click-test/">60</a> and <a href="/100-second-click-test/">100 second click tests</a>. Best scores are shared between them and this page.</p>',
 	'extra'          => array(
 		array(
 			'Clicking techniques explained',
@@ -82,6 +83,6 @@ return array(
 		array( 'Can I take the CPS test on a phone?', 'Yes, taps are counted the same way. Phone scores are usually a bit lower because the touch screen adds a small delay between taps.' ),
 		array( 'Is my best score saved?', 'Your best CPS for each test length is stored in this browser only. Nothing is sent anywhere.' ),
 	),
-	'related'        => array( 'jitter-click-test', 'right-click-cps-test', 'auto-clicker-test', 'spacebar-clicker', 'reaction-time-test', 'double-click-test' ),
+	'related'        => array( '5-second-cps-test', 'jitter-click-test', 'right-click-cps-test', '1-second-cps-test', '10-second-cps-test', 'auto-clicker-test' ),
 	'updated'        => '2026-10-28',
 );

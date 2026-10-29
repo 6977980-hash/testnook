@@ -80,6 +80,6 @@ return array(
 		array( 'Can a dead zone be fixed?', 'If cleaning, removing the protector and a restart do not help, it is hardware damage and the screen or digitiser must be replaced.' ),
 		array( 'Does this touch screen test work with a stylus?', 'Yes. Pens and styluses are detected and shown as Stylus, so you can check their accuracy the same way.' ),
 	),
-	'related'        => array( 'dead-pixel-test', 'speaker-cleaner', 'online-mirror', 'camera-test', 'sound-test', 'burn-in-test' ),
+	'related'        => array( 'dead-pixel-test', 'vibration-test', 'speaker-cleaner', 'camera-test', 'what-phone-do-i-have', 'burn-in-test' ),
 	'updated'        => '2026-10-28',
 );

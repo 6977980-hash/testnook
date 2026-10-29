@@ -18,3 +18,8 @@
 .cps-graph span { flex: 1 1 0; background: var(--brand); border-radius: 2px 2px 0 0; min-width: 2px; }
 .cps-foot { margin-top: 10px; justify-content: space-between; }
 .cps-pb { font-size: .88rem; color: var(--muted); }
+.cps-len { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .9rem; }
+.cps-len span { color: var(--muted); margin-right: 2px; }
+.cps-len a { display: inline-flex; align-items: center; min-height: 36px; padding: 4px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); font-weight: 600; text-decoration: none; }
+.cps-len a:hover { border-color: var(--brand); }
+.cps-len a[aria-current="page"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }

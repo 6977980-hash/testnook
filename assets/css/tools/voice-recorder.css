@@ -1,0 +1,27 @@
+/* Voice recorder */
+.tool-stage.vr-stage { display: block; place-items: normal; padding: 16px; min-height: 0; }
+.vr-head { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.vr-time { font: 700 clamp(2rem, 7vw, 2.8rem)/1 var(--font); font-variant-numeric: tabular-nums; display: inline-flex; align-items: center; gap: 10px; }
+.vr-time::before { content: ""; width: 14px; height: 14px; border-radius: 50%; background: var(--border); }
+.is-recording .vr-time::before { background: var(--bad); animation: vr-blink 1s steps(2, start) infinite; }
+.is-paused .vr-time::before { background: var(--warn); }
+@keyframes vr-blink { to { visibility: hidden; } }
+.vr-select { width: auto; min-height: 40px; padding: 6px 10px; max-width: 260px; }
+.vr-select[hidden] { display: none; }
+.vr-wave { display: block; width: 100%; height: 120px; border-radius: var(--radius-sm); background: var(--surface-2); }
+.vr-level { margin: 8px 0 12px; }
+.vr-level .meter { height: 10px; }
+.vr-level .meter > span { background: linear-gradient(90deg, var(--ok) 0 70%, var(--warn) 70% 90%, var(--bad) 90%); background-size: 100vw 100%; transition: width .05s linear; }
+.vr-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.vr-controls .btn[hidden] { display: none; }
+#vr-rec { background: var(--bad); border-color: var(--bad); color: #fff; }
+.vr-opts { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: .9rem; }
+.vr-opts label { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; }
+.vr-list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.vr-take { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; background: var(--surface); display: grid; gap: 8px; }
+.vr-take-head { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; justify-content: space-between; }
+.vr-take-head span { color: var(--muted); font-size: .85rem; }
+.vr-take audio { width: 100%; height: 40px; }
+.vr-del { color: var(--bad); }
+.vr-empty { color: var(--muted); font-size: .9rem; margin: 12px 0 0; }
+.vr-empty[hidden] { display: none; }

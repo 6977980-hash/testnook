@@ -45,6 +45,7 @@ return array(
 	'fixes'          => array( array( 'Problem', 'Fix text, paragraphs separated by blank lines.' ) ),
 	'faq'            => array( array( 'Question?', 'Answer (HTML ok).' ) ),  // 6 recommended; also emitted as FAQPage schema
 	'disclaimer'     => 'Shown in a warning box after the FAQ (hearing/eye tests).', // optional
+	'trust'          => 'Nothing is sent to Testnook', // replaces the "Nothing is uploaded" badge under the intro (optional)
 	'related'        => array( 'online-mirror', 'mic-test' ),  // preferred related tools; the rest is filled from the hub
 	'stats'          => array( 'cps-5' ),  // boards from tn_boards() (inc/results.php): loads stats.js, prints the site stats block (optional)
 	'updated'        => '2026-10-28',                          // shown as "Last updated"
@@ -163,6 +164,15 @@ has `request()` (the iOS motion/orientation prompt, must run inside a tap),
 chart), `gravity(e)` + `learnFlip()` (fixes the inverted iPhone
 `accelerationIncludingGravity` sign), `screenAngle()`, `cardinal()`, `stats()`,
 `circStats()`, `angleDiff()` and `steps(list, cb)` (pass/fail checklists).
+
+System hub network pages load `assets/js/tools/net.js` first (`'scripts' => array( 'net', '<page>' )`)
+and share `system.css`. `TNNet` has `ping()` (latency to the nearest Cloudflare edge from resource timing minus
+server time), `pingOpaque(url)`, `meta()` (IP, colo, country from `speed.cloudflare.com/cdn-cgi/trace` plus
+`cf-meta-*` headers), `ipv4()` / `ipv6()` (ipify), `owner(ip)` (RDAP via rdap.org), `download(opts)` /
+`upload(opts)` (parallel streams to `speed.cloudflare.com/__down` and `/__up`, warm-up skipped, `maxBytes`),
+`stats(list)` (min, max, mean, median, p95, jitter, lost), `dns(name, type, resolver)` (DoH JSON at
+Cloudflare or Google) and formatters. All requests go from the browser to those services, never to Testnook.
+`what-is-my-browser` reuses `device-info.js` (`#br-*` elements).
 
 Tool scripts run after `site.js` (deferred). Wrap in an IIFE and bail if
 `document.querySelector('[data-tool="<slug>"]')` is missing, so the script is

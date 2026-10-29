@@ -6,6 +6,7 @@ return array(
 	'seo_title'      => 'What Is My IP Address? See Your IPv4, IPv6 & Network',
 	'description'    => 'See your public IP address instantly: IPv4 and IPv6, the network that owns it, its rough location and a check for a VPN or proxy. Copy or hide it in one tap.',
 	'intro'          => 'This is the address every website sees when you visit it. The page shows your public IPv4 and IPv6 addresses, the internet provider or company that owns the address block, its rough location, and whether it looks like a VPN or proxy. You can also look up any other IP address.',
+	'trust'          => 'Nothing is sent to Testnook',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'system' ),

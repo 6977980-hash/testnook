@@ -6,6 +6,7 @@ return array(
 	'seo_title'      => 'DNS Lookup: Check A, MX, TXT, NS & CNAME Records Online',
 	'description'    => 'Free DNS lookup tool. Check A, AAAA, MX, TXT, NS, CNAME, SOA and CAA records, compare Cloudflare and Google answers, and find the fastest public DNS server.',
 	'intro'          => 'Look up the DNS records of any domain straight from your browser: the IP addresses it points to, its mail servers, TXT records such as SPF and site verification, name servers and more. Compare two public resolvers to see whether a DNS change has spread, and time eight public DNS servers to find the fastest one from where you are.',
+	'trust'          => 'Nothing is sent to Testnook',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'system' ),

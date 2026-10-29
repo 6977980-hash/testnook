@@ -89,8 +89,6 @@ return array(
 		'auto-clicker-test'       => array( 'name' => 'Auto Clicker Test', 'blurb' => 'Measure the real CPS of an auto clicker and the gap between its clicks.', 'hub' => 'benchmark', 'also' => array( 'mouse' ) ),
 		'vibration-test'          => array( 'name' => 'Vibration Test', 'blurb' => 'Check your phone\'s vibration motor with short, long and pattern buzzes.', 'hub' => 'phone', 'also' => array() ),
 		'torch-test'              => array( 'name' => 'Torch Test', 'blurb' => 'Turn the phone flashlight on, off and strobe from the browser to check the LED.', 'hub' => 'phone', 'also' => array( 'camera' ) ),
-		'device-info'             => array( 'name' => 'Device Info', 'blurb' => 'Your browser, OS, screen, CPU cores, memory, GPU and network in one list.', 'hub' => 'system', 'also' => array( 'phone', 'screen' ) ),
-		'what-is-my-user-agent'   => array( 'name' => 'What Is My User Agent', 'blurb' => 'See and copy your user agent string, parsed into browser, engine and OS.', 'hub' => 'system', 'also' => array( 'phone' ) ),
 		'what-phone-do-i-have'    => array( 'name' => 'What Phone Do I Have', 'blurb' => 'Find your phone\'s make and model from the browser, plus where to confirm it.', 'hub' => 'phone', 'also' => array( 'system' ) ),
 		'voice-recorder'          => array( 'name' => 'Voice Recorder', 'blurb' => 'Record your voice in the browser, pause, play back and download as WAV or WebM.', 'hub' => 'audio', 'also' => array( 'phone' ) ),
 		'stereo-test'             => array( 'name' => 'Stereo Test', 'blurb' => 'Left, right, centre and panning sounds to check stereo speakers and balance.', 'hub' => 'audio', 'also' => array() ),
@@ -143,5 +141,7 @@ return array(
 		'what-is-my-browser'      => array( 'name' => 'What Is My Browser', 'blurb' => 'Your browser, version and whether it is up to date, plus which web features it supports.', 'hub' => 'system', 'also' => array() ),
 		'webgl-test'              => array( 'name' => 'WebGL Test', 'blurb' => 'Check WebGL, WebGPU and hardware acceleration, see your GPU and run a quick graphics benchmark.', 'hub' => 'system', 'also' => array( 'screen' ) ),
 		'webrtc-leak-test'        => array( 'name' => 'WebRTC Leak Test', 'blurb' => 'See whether WebRTC reveals your real IP address while a VPN is on.', 'hub' => 'system', 'also' => array() ),
+		'device-info'             => array( 'name' => 'Device Info', 'blurb' => 'Your browser, OS, screen, CPU cores, memory, GPU and network in one list.', 'hub' => 'system', 'also' => array( 'phone', 'screen' ) ),
+		'what-is-my-user-agent'   => array( 'name' => 'What Is My User Agent', 'blurb' => 'See and copy your user agent string, parsed into browser, engine and OS.', 'hub' => 'system', 'also' => array( 'phone' ) ),
 	),
 );

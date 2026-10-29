@@ -6,6 +6,7 @@ return array(
 	'seo_title'      => 'WebRTC Leak Test: Is Your VPN Leaking Your Real IP?',
 	'description'    => 'Free WebRTC leak test. See whether your browser reveals your real or local IP address through WebRTC while a VPN is on, and how to stop it in each browser.',
 	'intro'          => 'A VPN hides your IP address from websites, but a browser feature called WebRTC can still reveal it. This test asks public STUN servers which address they see from your browser and compares it with the address your normal browsing uses. If they differ while your VPN is on, your real IP is leaking.',
+	'trust'          => 'Nothing is sent to Testnook',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'system' ),

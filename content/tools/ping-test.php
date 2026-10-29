@@ -6,6 +6,7 @@ return array(
 	'seo_title'      => 'Ping Test: Check Your Ping, Jitter & Packet Loss Online',
 	'description'    => 'Free online ping test. Watch your ping live for up to 60 seconds and see jitter, lag spikes and lost requests, with a clear verdict for gaming and video calls.',
 	'intro'          => 'Measure your ping the way games feel it: a reading every quarter of a second for 10, 30 or 60 seconds, drawn live so you can see lag spikes. You get the lowest, average and highest ping, jitter, lost requests and a plain verdict for gaming, video calls and streaming.',
+	'trust'          => 'Nothing is sent to Testnook',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'system' ),

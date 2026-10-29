@@ -6,6 +6,7 @@ return array(
 	'seo_title'      => 'Internet Speed Test: Check Download, Upload & Ping',
 	'description'    => 'Free internet speed test. Measure your download and upload speed in Mbps, ping, jitter and lag under load, and see what your connection is really good for.',
 	'intro'          => 'Check how fast your internet really is. One tap measures ping and jitter, then download and upload speed in Mbps, and how much your ping rises while the line is busy (bufferbloat). It takes about 25 seconds and tells you what the result means for streaming, calls and gaming.',
+	'trust'          => 'Nothing is sent to Testnook',
 	'device'         => 'any',
 	'ads'            => 'standard',
 	'styles'         => array( 'system' ),

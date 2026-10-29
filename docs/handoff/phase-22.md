@@ -36,6 +36,23 @@ Date: 29 Oct 2026. Source: site audit of 29 Oct 2026, fix phase 5
 - Gate against the live site before this merge: only the same 20 phase 4
   a11y failures.
 
+Live after the deploy (29 Oct 2026, ~12:00 UTC):
+
+- `curl -I https://testnook.com/` shows `strict-transport-security:
+  max-age=31536000; includeSubDomains`, `x-content-type-options: nosniff`,
+  `referrer-policy`, `permissions-policy`; no `x-frame-options`. A fresh URL
+  keeps the headers on its LiteSpeed and hCDN cache hits; pages cached before
+  the deploy lack them until the cache is purged.
+- `docs/handoff/phase-17.md`, `bin/make-og-images.py`, `README.md`,
+  `.gitignore` -> 403; `style.css`, `assets/img/og/cps-test.jpg` -> 200.
+- A page on another origin iframing `/cps-test/?embed=1` and
+  `/webcam-test/?embed=1`: both load, the webcam embed gets the camera.
+- `bin/check.sh https://testnook.com --wide --a11y=warn`: 356/356 pass (the 20
+  phase 4 pages warn). One earlier run had 12 load failures on a cold cache
+  and passed on rerun, so the gate now retries a load failure or 5xx once.
+- securityheaders.com blocks scripted requests (403); check the grade in a
+  browser (expected A: only X-Frame-Options is missing, on purpose).
+
 ## Ali's steps after this merge
 
 1. Purge the cache (hPanel -> Website -> Cache) so cached pages get the new

@@ -61,7 +61,7 @@ Local WordPress 6.9 on SQLite (Phase 3 recipe). Playwright audit over all
 97 content pages (86 tools + 11 hubs) at 1280 px and iPhone 13: 200, title
 50-60, description 150-160, 6 FAQs, 8 related cards on tools, own OG image,
 valid JSON-LD, no console errors or page errors, no horizontal scroll, no
-"Coming soon"; every internal link resolves 200. Sitemap 102 URLs, homepage
+"Coming soon"; every internal link resolves 200. Sitemap 102 URLs;
 `debug.log` clean. Four older Tier 1 pages sit just outside the audit's
 ranges and were left as they are (not this phase's pages): descriptions of
 `fps-test` (165), `sound-test` (162), `speaker-cleaner` (161) and the

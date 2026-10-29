@@ -20,7 +20,7 @@ get_header();
 				<?php endif; ?>
 				<ul class="trust">
 					<li><?php echo tn_icon( 'shield', 16 ); // phpcs:ignore ?>Runs in your browser</li>
-					<li><?php echo tn_icon( 'shield', 16 ); // phpcs:ignore ?><?php echo $def['stats'] ? 'Only your score is shared, anonymously' : 'Nothing is uploaded'; ?></li>
+					<li><?php echo tn_icon( 'shield', 16 ); // phpcs:ignore ?><?php echo esc_html( ! empty( $def['trust'] ) ? $def['trust'] : ( $def['stats'] ? 'Only your score is shared, anonymously' : 'Nothing is uploaded' ) ); ?></li>
 					<li><?php echo tn_icon( 'shield', 16 ); // phpcs:ignore ?>Free, no sign-up</li>
 				</ul>
 			</header>

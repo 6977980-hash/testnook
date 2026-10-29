@@ -16,7 +16,7 @@ return array(
 	<div class="sy-hero"><small id="ip-kind">Your public IP address</small><strong id="ip-main" data-ip-blur>Looking up...</strong></div>
 	<div class="btn-row"><button type="button" class="btn btn-primary" id="ip-copy">Copy IP address</button><button type="button" class="btn" id="ip-refresh">Check again</button><label class="btn btn-sm"><input type="checkbox" id="ip-hide"> Hide (for screenshots)</label></div>
 	<dl class="sy-meta">
-		<dt>IPv4 address</dt><dd id="ip-v4" data-ip-blur>-</dd>
+		<dt>IPv4 address</dt><dd><span id="ip-v4" data-ip-blur>-</span><small id="ip-multi" class="sy-note" hidden> Your network uses more than one exit address.</small></dd>
 		<dt>IPv6 address</dt><dd id="ip-v6" data-ip-blur>-</dd>
 		<dt>Location (from IP)</dt><dd id="ip-loc">-</dd>
 		<dt>Network owner</dt><dd id="ip-net">-</dd>

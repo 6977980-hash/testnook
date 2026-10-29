@@ -9,6 +9,8 @@
 	var statusEl = $('#ip-status'), main = $('#ip-main'), hide = $('#ip-hide');
 	var info = { ip: '', v4: null, v6: null, meta: null, owner: null };
 	var HOSTING = /\bvpn\b|proxy|hosting|servers|cloud|data ?cent|datacamp|digitalocean|amazon|\baws\b|google cloud|azure|oracle|\bovh|hetzner|linode|akamai|vultr|choopa|leaseweb|contabo|m247|mullvad|proton ?ag|nordvpn|expressvpn|surfshark|private internet access|cyberghost|packethub|tefincom|zenlayer|cdn77|datapacket|g-core|gcore|stark industries|frantech|scaleway|psychz|quadranet|zscaler|cloudflare|fastly/i;
+	// Names that mark a consumer ISP or mobile carrier. An owner that matches neither this nor HOSTING is a company, school or host.
+	var ISP = /telecom|telekom|telecomunica|communications|\bcomm?\b|broadband|cable|mobile|wireless|cellular|internet|\bisp\b|fib(er|re)|dsl|telephone|\btel\b|comcast|charter|spectrum|verizon|at&t|\batt\b|t-mobile|sprint|cox|centurylink|lumen|frontier|windstream|mediacom|altice|optimum|suddenlink|rcn|wow|starlink|spacex|rogers|bell canada|telus|shaw|videotron|vodafone|orange|\bbt\b|british telecommunications|virgin|\bsky\b|talktalk|\bee\b|three|\bo2\b|telefonica|movistar|claro|vivo|\btim\b|wind|iliad|free sas|bouygues|\bsfr\b|kpn|ziggo|liberty global|swisscom|proximus|telia|tele2|telenor|elisa|\bdna\b|fastweb|turk telekom|turkcell|vodacom|mtn|safaricom|airtel|bharti|jio|reliance|bsnl|act fibernet|ptcl|nayatel|stormfiber|zong|jazz|ufone|etisalat|\bdu\b|\bstc\b|mobily|zain|ooredoo|china (telecom|unicom|mobile)|chinanet|kddi|ntt|softbank|\bkt\b|sk broadband|lg ?u\+?|chunghwa|hinet|pldt|globe|viettel|vnpt|true internet|\bais\b|maxis|celcom|unifi|tm net|singtel|starhub|\bm1\b|optus|telstra|\btpg\b|spark|\bmts\b|beeline|megafon|rostelecom|ertelecom/i;
 
 	function set(id, v) { var el = $('#' + id); if (el) { el.textContent = v; } }
 	function kind(ip) { return ip && ip.indexOf(':') >= 0 ? 'IPv6' : 'IPv4'; }
@@ -30,6 +32,10 @@
 			cls = '';
 			title = 'VPN check not finished';
 			text = 'The network owner could not be looked up, so the VPN hint is not available.';
+		} else if (!ISP.test(name)) {
+			cls = '';
+			title = 'Owner: ' + (o.name || o.net) + ' (business or hosting network)';
+			text = 'The name does not look like a home or mobile internet provider. This is normal on a work, school or campus network; elsewhere it can mean a VPN or a proxy.';
 		} else {
 			title = 'Looks like a normal home or mobile connection';
 			text = 'This IP belongs to ' + (o.name || o.net) + '. If you expected a VPN to be on, it is not hiding this address.';
@@ -44,6 +50,8 @@
 		main.textContent = info.ip || 'Not found';
 		set('ip-kind', info.ip ? 'Your public ' + kind(info.ip) + ' address' : 'Could not reach the lookup servers');
 		set('ip-v4', info.v4 === null ? 'Checking...' : info.v4 || 'None found');
+		var note = $('#ip-multi');
+		if (note) { note.hidden = !(info.ip && info.v4 && kind(info.ip) === 'IPv4' && info.ip !== info.v4); }
 		set('ip-v6', info.v6 === null ? 'Checking...' : info.v6 || 'No IPv6 connection');
 		set('ip-loc', [m.city, N.country(m.country)].filter(Boolean).join(', ') || '-');
 		set('ip-net', o ? (o.name || o.net || '-') + (m.asn ? ' (AS' + m.asn + ')' : '') : m.asn ? 'AS' + m.asn : 'Looking up...');

@@ -439,7 +439,15 @@ function tn_lb_rows_html( $board, $rows ) {
  * This week / All time tabs and the top 10. Printed with the all-time board.
  */
 function tn_leaderboard_widget( $boards, $heading, $id, $intro = '' ) {
+	// The first board is the one shown first; the select lists them all in their natural order (1, 5, 10 s ...).
 	$board = $boards[0];
+	$order = array_keys( tn_lb_boards() );
+	usort(
+		$boards,
+		function ( $a, $b ) use ( $order ) {
+			return (int) array_search( $a, $order, true ) - (int) array_search( $b, $order, true );
+		}
+	);
 	$rows  = tn_lb_get( $board, 'all' );
 	$extra = tn_lb_extra_label( $board );
 	echo '<section class="lb" id="' . esc_attr( $id ) . '" data-tn-lb data-board="' . esc_attr( $board ) . '" data-period="all" data-meta="' . esc_attr( wp_json_encode( tn_lb_board_meta( $boards ) ) ) . '" aria-labelledby="' . esc_attr( $id ) . '-title">';
@@ -447,7 +455,7 @@ function tn_leaderboard_widget( $boards, $heading, $id, $intro = '' ) {
 	if ( count( $boards ) > 1 ) {
 		echo '<label class="lb__pick"><span class="visually-hidden">Board</span><select data-tn-lb-board>';
 		foreach ( $boards as $b ) {
-			echo '<option value="' . esc_attr( $b ) . '">' . esc_html( tn_lb_board_label( $b ) ) . '</option>';
+			echo '<option value="' . esc_attr( $b ) . '"' . selected( $b, $board, false ) . '>' . esc_html( tn_lb_board_label( $b ) ) . '</option>';
 		}
 		echo '</select></label>';
 	}
@@ -462,7 +470,7 @@ function tn_leaderboard_widget( $boards, $heading, $id, $intro = '' ) {
 	echo '</div>';
 	echo '<div class="lb__wrap"><table class="lb__table"><thead><tr><th scope="col">#</th><th scope="col">Name</th><th scope="col">Score</th><th scope="col" data-tn-lb-extra' . ( $extra ? '' : ' hidden' ) . '>' . esc_html( $extra ? $extra : 'Accuracy' ) . '</th><th scope="col">Date</th></tr></thead>';
 	echo '<tbody data-tn-lb-rows>' . tn_lb_rows_html( $board, $rows ) . '</tbody></table></div>'; // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in tn_lb_rows_html
-	echo '<p class="lb__empty" data-tn-lb-empty' . ( $rows ? ' hidden' : '' ) . '>No names here yet. Finish a test and press <strong>Add my score to the leaderboard</strong> to take the first spot.</p>';
+	echo '<p class="lb__empty" data-tn-lb-empty' . ( $rows ? ' hidden' : '' ) . '>No scores yet. Be the first: finish a test and press <strong>Add my score to the leaderboard</strong>.</p>';
 	echo '</section>';
 }
 

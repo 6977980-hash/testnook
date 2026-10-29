@@ -16,10 +16,10 @@ return array(
 		<button type="button" class="btn btn-sm" data-ar="16:9">16:9</button><button type="button" class="btn btn-sm" data-ar="4:3">4:3</button><button type="button" class="btn btn-sm" data-ar="16:10">16:10</button><button type="button" class="btn btn-sm" data-ar="21:9">21:9</button><button type="button" class="btn btn-sm" data-ar="1:1">1:1</button><button type="button" class="btn btn-sm" data-ar="3:2">3:2</button><button type="button" class="btn btn-sm" data-ar="4:5">4:5</button><button type="button" class="btn btn-sm" data-ar="9:16">9:16</button><button type="button" class="btn btn-sm" id="ar-mine">My screen</button>
 	</div>
 	<div class="si-form">
-		<label>Original width (W1)<input type="number" id="ar-w1" min="0" step="any" value="1920" inputmode="decimal"></label>
-		<label>Original height (H1)<input type="number" id="ar-h1" min="0" step="any" value="1080" inputmode="decimal"></label>
-		<label>New width (W2)<input type="number" id="ar-w2" min="0" step="any" value="1280" inputmode="decimal"></label>
-		<label>New height (H2)<input type="number" id="ar-h2" min="0" step="any" value="" inputmode="decimal"></label>
+		<label>Original width (W1)<input type="number" id="ar-w1" min="0" max="32768" step="any" value="1920" inputmode="decimal"></label>
+		<label>Original height (H1)<input type="number" id="ar-h1" min="0" max="32768" step="any" value="1080" inputmode="decimal"></label>
+		<label>New width (W2)<input type="number" id="ar-w2" min="0" max="32768" step="any" value="1280" inputmode="decimal"></label>
+		<label>New height (H2)<input type="number" id="ar-h2" min="0" max="32768" step="any" value="" inputmode="decimal"></label>
 	</div>
 	<div class="btn-row"><label class="si-check"><input type="checkbox" id="ar-round" checked> Round to whole pixels</label><button type="button" class="btn btn-sm" id="ar-swap">Swap width and height</button></div>
 	<div class="stats" style="margin-top:14px">

@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 const TN_RESULTS_DB_VERSION = '2';   // 2: lb column for leaderboards (Phase 13b)
 const TN_RESULTS_WINDOW_DAYS = 30;   // stats cover the last 30 days
 const TN_RESULTS_KEEP_DAYS   = 400;  // older rows are summarised and deleted
-const TN_RESULTS_MIN_COUNT   = 20;   // boards with fewer results show no stats
+const TN_RESULTS_MIN_COUNT   = 10;   // boards with fewer results show a count, not stats
 const TN_RESULTS_PER_HOUR    = 60;   // results per client per hour
 
 function tn_results_table() {
@@ -553,12 +553,13 @@ function tn_fmt_value( $v, $def ) {
 /**
  * The "Testnook stats" section for a tool page. $boards is the tool's 'stats'
  * list. Printed from the hourly cache so the HTML (and Google) carries real
- * numbers; returns nothing while a board has under 20 results. Guides pass
+ * numbers; a board with under TN_RESULTS_MIN_COUNT results shows its count so far. Guides pass
  * their own heading, a lead paragraph (HTML) and a section id.
  */
 function tn_stats_block( $boards, $heading = 'How other people score on Testnook', $lead = '', $id = 'site-stats' ) {
 	$all    = tn_boards();
-	$blocks = '';
+	$blocks  = '';
+	$pending = '';
 	foreach ( (array) $boards as $board ) {
 		if ( ! isset( $all[ $board ] ) ) {
 			continue;
@@ -566,6 +567,10 @@ function tn_stats_block( $boards, $heading = 'How other people score on Testnook
 		$def   = $all[ $board ];
 		$stats = tn_stats_get( $board );
 		if ( ! $stats || $stats['count'] < TN_RESULTS_MIN_COUNT ) {
+			$n        = $stats ? (int) $stats['count'] : 0;
+			$pending .= '<li><strong>' . esc_html( $def['name'] ) . ':</strong> '
+				. ( $n ? esc_html( $n . ' result' . ( 1 === $n ? '' : 's' ) . ' so far' ) : 'no results yet' )
+				. ', stats appear at ' . esc_html( TN_RESULTS_MIN_COUNT ) . '.</li>';
 			continue;
 		}
 		$count = number_format_i18n( $stats['count'] );
@@ -614,13 +619,14 @@ function tn_stats_block( $boards, $heading = 'How other people score on Testnook
 			. ( $bars ? '<div class="site-stats__hist" role="img" aria-label="Distribution of results from ' . esc_attr( tn_fmt_value( $stats['hist']['from'], $def ) ) . ' to ' . esc_attr( tn_fmt_value( $stats['hist']['to'], $def ) ) . '">' . $bars . '</div><p class="site-stats__axis"><span>' . esc_html( tn_fmt_value( $stats['hist']['from'], $def ) ) . '</span><span>' . esc_html( tn_fmt_value( $stats['hist']['to'], $def ) ) . '</span></p>' : '' )
 			. '</div>';
 	}
-	if ( ! $blocks ) {
+	if ( ! $blocks && ! $pending ) {
 		return;
 	}
 	echo '<section id="' . esc_attr( $id ) . '" class="site-stats"><h2>' . esc_html( $heading ) . '</h2>'
 		. ( $lead ? wp_kses( $lead, tn_allowed_html() ) : '' )
 		. '<p>Anonymous results from the last ' . esc_html( TN_RESULTS_WINDOW_DAYS ) . ' days on this site, updated hourly. The top and bottom 1% are left out of the average, and results that fail our checks are not counted.</p>'
 		. $blocks // phpcs:ignore WordPress.Security.EscapeOutput -- built above from escaped parts
+		. ( $pending ? '<ul class="site-stats__pending">' . $pending . '</ul>' : '' ) // phpcs:ignore WordPress.Security.EscapeOutput -- built above from escaped parts
 		. '</section>';
 }
 

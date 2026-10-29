@@ -72,12 +72,14 @@ function tn_tool_card( $tool ) {
 	$icon = tn_icon( tn_hubs()[ $hub ]['icon'] );
 	if ( $tool['live'] ) {
 		printf(
-			'<a class="card" href="%1$s" data-search="%2$s"><span class="card-icon">%3$s</span><span class="card-body"><span class="card-title">%4$s</span><span class="card-text">%5$s</span></span></a>',
+			'<a class="card" href="%1$s" data-search="%2$s" data-name="%6$s" data-keywords="%7$s"><span class="card-icon">%3$s</span><span class="card-body"><span class="card-title">%4$s</span><span class="card-text">%5$s</span></span></a>',
 			esc_url( tn_tool_url( $tool['slug'] ) ),
 			esc_attr( strtolower( $tool['name'] . ' ' . $tool['blurb'] . ' ' . $hub ) ),
 			$icon, // phpcs:ignore WordPress.Security.EscapeOutput -- static SVG
 			esc_html( $tool['name'] ),
-			esc_html( $tool['blurb'] )
+			esc_html( $tool['blurb'] ),
+			esc_attr( strtolower( $tool['name'] ) ),
+			esc_attr( strtolower( isset( $tool['keywords'] ) ? $tool['keywords'] : '' ) )
 		);
 	} else {
 		printf(

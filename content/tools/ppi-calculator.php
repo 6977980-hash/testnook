@@ -31,9 +31,9 @@ return array(
 		<button type="button" class="btn" id="pp-mine">Use my screen</button>
 	</div>
 	<div class="si-form" style="margin-top:10px">
-		<label>Width (pixels)<input type="number" id="pp-w" min="1" step="1" value="2560" inputmode="numeric"></label>
-		<label>Height (pixels)<input type="number" id="pp-h" min="1" step="1" value="1440" inputmode="numeric"></label>
-		<label>Diagonal<input type="number" id="pp-d" min="0.1" step="any" value="27" inputmode="decimal"></label>
+		<label>Width (pixels)<input type="number" id="pp-w" min="1" max="32768" step="1" value="2560" inputmode="numeric"></label>
+		<label>Height (pixels)<input type="number" id="pp-h" min="1" max="32768" step="1" value="1440" inputmode="numeric"></label>
+		<label>Diagonal<input type="number" id="pp-d" min="1" max="200" step="any" value="27" inputmode="decimal"></label>
 		<label>Unit<select id="pp-unit"><option value="in">inches</option><option value="cm">cm</option></select></label>
 	</div>
 	<div class="si-hero" style="margin-top:16px"><small>Pixel density</small><strong><span data-si="pp-ppi">-</span> PPI</strong><span data-si="pp-verdict"></span></div>

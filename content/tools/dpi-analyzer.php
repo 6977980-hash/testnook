@@ -13,7 +13,7 @@ return array(
 	'scripts'        => array( 'dpi-analyzer' ),
 	'embed_height'   => 680,
 	'tool'           => '<div class="tool-bar">
-	<div class="field dpi-field"><label for="dpi-dist">Distance you will move</label><div class="dpi-dist-row"><input type="number" id="dpi-dist" min="1" max="50" step="0.5" value="5" inputmode="decimal"><div class="seg" role="group" aria-label="Unit"><button type="button" data-dpi-unit="cm" aria-pressed="true">cm</button><button type="button" data-dpi-unit="in" aria-pressed="false">inch</button></div></div></div>
+	<div class="field dpi-field"><label for="dpi-dist">Distance you will move</label><div class="dpi-dist-row"><input type="number" id="dpi-dist" min="0.5" max="100" step="0.5" value="5" inputmode="decimal"><div class="seg" role="group" aria-label="Unit"><button type="button" data-dpi-unit="cm" aria-pressed="true">cm</button><button type="button" data-dpi-unit="in" aria-pressed="false">inch</button></div></div></div>
 	<div class="field dpi-field"><label for="dpi-set">DPI set in your software (optional)</label><input type="number" id="dpi-set" min="50" max="50000" step="50" placeholder="e.g. 800" inputmode="numeric"></div>
 </div>
 <div class="tool-stage dpi-stage" id="dpi-stage" tabindex="0">

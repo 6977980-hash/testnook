@@ -62,6 +62,32 @@ add_action(
 	1
 );
 
+/*
+ * Author URLs answer the same whether or not the user exists (F-50, audit
+ * 1 Nov 2026). Without this, /author/<real-slug>/ and /?author=<real-id> hit
+ * the 301 above while unknown ones 404, which confirms login slugs. This runs
+ * on parse_request, before WordPress looks the user up, and sends every
+ * author request (path /author/..., ?author=, ?author_name=) home with 301.
+ */
+add_action(
+	'parse_request',
+	function ( $wp ) {
+		if ( is_admin() ) {
+			return;
+		}
+		$path = trim( (string) $wp->request, '/' );
+		if (
+			isset( $_GET['author'] ) || isset( $_GET['author_name'] ) // phpcs:ignore WordPress.Security.NonceVerification
+			|| isset( $wp->query_vars['author'] ) || isset( $wp->query_vars['author_name'] )
+			|| 'author' === $path || 0 === strpos( $path, 'author/' )
+		) {
+			wp_safe_redirect( home_url( '/' ), 301 );
+			exit;
+		}
+	},
+	1
+);
+
 // Block editor styles are only needed on normal posts/pages written in the editor.
 add_action(
 	'wp_enqueue_scripts',

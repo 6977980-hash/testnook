@@ -32,9 +32,26 @@ with `production` (GA requests aborted in Playwright, nothing sent to Google).
 
 **Lighthouse TBT does not drop with idle loading, and that is expected.** Lighthouse keeps recording until the CPU has been quiet for 5 s, so gtag.js's ~300 ms of script (3 long tasks, 70-155 ms) still lands inside its TBT window, now just after `load` instead of before it. The real gain is for visitors: gtag.js no longer downloads alongside the page's own files and no longer runs while the page is still loading or during the first input. The audit's goal "mobile TBT < 100 ms, Performance >= 98" can only be met in the lab by loading gtag.js more than ~5 s after load or on first input; the first loses page views from short visits and the second is what Ali ruled out, so neither was done.
 
-## After merge (live)
+## Live checks (1 Nov 2026, after PR #31 deployed)
 
-See "Live checks" below (added after the deploy).
+Hostinger deployed within a minute, but LiteSpeed still served cached 0.7.6
+HTML for already-visited URLs (`x-litespeed-cache: hit`), so the checks below
+used a `?nc=<random>` query to get fresh pages. **Ali must purge the cache**
+for every visitor to get the new pages.
+
+- `bin/check.sh https://testnook.com`: 182/182 page loads pass.
+- GA4 (Playwright, collect requests aborted so nothing reached Google): `load` at 923 ms, gtag.js requested at 925 ms (idle right after load), `g/collect` at 1.7 s; `dataLayer` starts with both `consent default` entries and a test `share` event pushed via `gtag()` is in it. `?embed=1`: no dataLayer and no Google request.
+- Author URLs (fresh): `/author/nobody/`, `/author/<random>/`, `/?author=999`, `/?author=1`, `/?author_name=nobody` all 301 -> `/`. Cached URLs (`/author/nobody/` without a query) still show the old 404 until the purge.
+- Lighthouse 12 live (collect blocked, gtag.js runs):
+
+| Page | Score | TBT | CLS | LCP |
+|---|---|---|---|---|
+| `/` mobile (2 runs) | 95, 97 | 230, 180 ms | 0 | 1.5 s |
+| `/keyboard-tester/` mobile | 97 | 190 ms | 0 | 1.3 s |
+| `/keyboard-tester/` desktop | 100 | 0 ms | 0.003 | 0.6 s |
+| `/keyboard-tester/` desktop, old cached page | 99 | 0 ms | 0.074 | 0.5 s |
+
+One extra desktop keyboard run on a cold (never-cached) URL gave CLS 0.174 from the whole `.wrap` moving while the stylesheet arrived; Playwright on the same URL saw no shift and the next run gave 0.003, so it is a cold-cache artefact, not the board. Lighthouse TBT on `/` stays around 200 ms for the reason explained above.
 
 ## Ali's steps after this merge
 

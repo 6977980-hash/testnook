@@ -3,11 +3,11 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'Mouse Accuracy and Aim Training: The Basics That Work',
 	'seo_title'   => 'Mouse Accuracy and Aim Training Basics: What Actually Works',
-	'description' => 'How mouse accuracy is measured, why speed and precision trade off, the settings that matter (sensitivity, acceleration, DPI) and a 10-minute aim training routine.',
+	'description' => 'How mouse accuracy is measured, why speed and precision trade off, which settings matter (sensitivity, acceleration, DPI) and a 10-minute aim routine.',
 	'blurb'       => 'How aim is measured, the settings that matter and a short routine that improves accuracy.',
 	'hub'         => 'mouse',
 	'tool'        => 'mouse-accuracy-test',
-	'tools'       => array( 'dpi-analyzer', 'mouse-latency-test', 'reaction-time-test', 'mouse-polling-rate-test' ),
+	'tools'       => array( 'dpi-analyzer', 'edpi-calculator', 'mouse-latency-test', 'reaction-time-test', 'mouse-polling-rate-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
 	'intro'       => 'Good aim is two skills: getting to the target quickly and stopping on it. Most people can improve both in a few weeks, and a surprising share of the gain comes from settings rather than practice. Here is how accuracy is measured, which settings to fix first and a short routine you can repeat with the mouse accuracy test.',
@@ -28,7 +28,7 @@ return array(
 			'Fix your settings first',
 			'<ol>
 <li><strong>Turn off mouse acceleration.</strong> In Windows, Settings &gt; Bluetooth &amp; devices &gt; Mouse &gt; Additional mouse settings &gt; Pointer Options, untick <strong>Enhance pointer precision</strong>. With acceleration on, the same hand movement moves the cursor different distances depending on speed, so muscle memory cannot form. On a Mac, recent macOS versions have a Pointer acceleration switch under Mouse &gt; Advanced.</li>
-<li><strong>Pick one sensitivity and keep it.</strong> A common starting point for games is a setting where a comfortable sweep of the forearm or wrist turns the view 180 to 360 degrees. Changing it every few days resets your practice. Our guide on <a href="/what-dpi-should-i-use/">what DPI to use</a> explains how DPI and in-game sensitivity combine.</li>
+<li><strong>Pick one sensitivity and keep it.</strong> A common starting point for games is a setting where a comfortable sweep of the forearm or wrist turns the view 180 to 360 degrees. Changing it every few days resets your practice. Our guide on <a href="/what-dpi-should-i-use/">what DPI to use</a> explains how DPI and in-game sensitivity combine, and the <a href="/edpi-calculator/">eDPI calculator</a> converts your sensitivity when you switch games so you keep the same aim.</li>
 <li><strong>Check the mouse.</strong> Measure the real DPI with the <a href="/dpi-analyzer/">DPI analyzer</a>, confirm the <a href="/mouse-polling-rate-test/">polling rate</a> is 500 Hz or more for a gaming mouse, and use a cloth pad with an even surface. A dirty sensor makes the cursor jitter, which no amount of practice fixes.</li>
 <li><strong>Check the screen.</strong> A higher refresh rate shows the target and your crosshair sooner and makes tracking easier. The <a href="/refresh-rate-test/">refresh rate test</a> tells you what your screen really runs at.</li>
 </ol>',

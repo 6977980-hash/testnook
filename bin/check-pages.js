@@ -8,7 +8,9 @@
  * (iPhone 13; with --wide also 1366 px). A page fails on: status other than
  * 200, a JavaScript page error, JSON-LD that does not parse, not exactly one
  * H1, horizontal overflow, an input without a label, or a skipped heading
- * level (h2 -> h4). With --a11y=warn the last two only print.
+ * level (h2 -> h4). With --a11y=warn the last two only print. A <title>
+ * over 65 characters (not the homepage) or a meta description over 160
+ * prints a warning.
  *
  * Score sharing is switched off (tn-share-off) and testnook/v1 writes
  * (start, result, claim, embed) are blocked, so a run never adds stats.
@@ -48,7 +50,10 @@ async function sitemapUrls(request) {
 
 // Runs inside the page.
 function inspect() {
-	const out = { jsonld: [], h1: 0, overflow: 0, unlabeled: [], skips: [] };
+	const out = { jsonld: [], h1: 0, overflow: 0, unlabeled: [], skips: [], title: '', desc: '', home: location.pathname === '/' };
+	out.title = document.title || '';
+	const md = document.querySelector('meta[name="description"]');
+	out.desc = md ? md.getAttribute('content') || '' : '';
 	document.querySelectorAll('script[type="application/ld+json"]').forEach((s, i) => {
 		try { JSON.parse(s.textContent); } catch (e) { out.jsonld.push('block ' + (i + 1) + ': ' + e.message); }
 	});
@@ -90,6 +95,10 @@ async function checkPage(browser, url, viewport) {
 		if (r.overflow > 0) errors.push('horizontal overflow ' + r.overflow + ' px');
 		const a11y = r.unlabeled.map((x) => 'unlabeled ' + x).concat(r.skips.map((x) => 'heading skip ' + x));
 		(a11yWarn ? warns : errors).push(...a11y);
+		// Length warnings (never fail the run): titles over 65 characters (the homepage may be longer) and
+		// meta descriptions over 160 characters get cut in search results.
+		if (!r.home && r.title.length > 65) warns.push('title is ' + r.title.length + ' characters (over 65)');
+		if (r.desc.length > 160) warns.push('meta description is ' + r.desc.length + ' characters (over 160)');
 	} catch (e) {
 		errors.push('load failed: ' + e.message.split('\n')[0]);
 	}

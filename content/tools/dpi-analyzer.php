@@ -41,7 +41,7 @@ return array(
 	),
 	'howto_title'    => 'How to measure your mouse DPI',
 	'results'        => '<p><strong>Measured DPI</strong> is the number of movement counts your mouse sent divided by the distance you moved in inches. A mouse set to 800 DPI should send about 800 counts per inch, so a 2 inch move produces about 1600 counts.</p>
-<p><strong>Deviation</strong> compares the measured value with the DPI you typed in. Within about 5% is normal: your hand is not a machine and the sensor has tolerances. A deviation of 10-20% is common on cheap mice and on some sensors at very high DPI settings; it is not a fault, but if you want exact in-game sensitivity you can enter the real value instead of the nominal one in sensitivity calculators.</p>
+<p><strong>Deviation</strong> compares the measured value with the DPI you typed in. Within about 5% is normal: your hand is not a machine and the sensor has tolerances. A deviation of 10-20% is common on cheap mice and on some sensors at very high DPI settings; it is not a fault, but if you want exact in-game sensitivity you can enter the real value instead of the nominal one in the <a href="/edpi-calculator/">eDPI and sensitivity calculator</a>.</p>
 <p>A result that is <strong>half or double</strong> what you expected usually means the operating system is scaling your movement (see the fixes), not that the mouse is wrong. Run the test again after checking pointer speed and acceleration.</p>',
 	'extra'          => array(
 		array(
@@ -60,16 +60,16 @@ return array(
 		array( 'The result is about half or double what I set', 'Your operating system is scaling the movement. On Windows, set Settings > Mouse > pointer speed to the middle (6 of 11) and untick "Enhance pointer precision" in Additional mouse settings. On macOS, this browser may not expose raw counts; try Chrome.' ),
 		array( 'The pointer does not lock or escapes the box', 'Pointer lock needs a direct click and is blocked inside some embedded frames. Open the page directly, click once inside the box, and allow the browser\'s pointer-lock prompt. Press Esc to release it.' ),
 		array( 'The count keeps rising when the mouse is still', 'The sensor is jittering, usually because the surface is reflective, patterned or dirty, or the mouse is lifted a little. Clean the sensor lens and test on a plain mouse pad.' ),
-		array( 'Deviation is more than 10%', 'Common on budget sensors and at DPI steps above 3200. Use the measured value in sensitivity calculators, or pick a DPI step that measures closer to its label. Update the mouse firmware; some updates fix DPI tracking.' ),
+		array( 'Deviation is more than 10%', 'Common on budget sensors and at DPI steps above 3200. Use the measured value in the eDPI calculator, or pick a DPI step that measures closer to its label. Update the mouse firmware; some updates fix DPI tracking.' ),
 	),
 	'faq'            => array(
 		array( 'How do I check my mouse DPI?', 'Enter a distance, click the box, move the mouse exactly that distance along a ruler and press Space. The analyzer divides the movement counts by the distance in inches.' ),
 		array( 'What is the difference between DPI and CPI?', 'Nothing in practice. CPI (counts per inch) is the technically correct term for a mouse sensor; DPI (dots per inch) is the name most brands use.' ),
 		array( 'Why is my measured DPI not exactly what I set?', 'Sensors have tolerances of a few percent, and your start and stop points add error. Within 5% is normal. Larger differences are usually operating system scaling or sensor deviation.' ),
-		array( 'What DPI should I use for gaming?', 'Most players use 400-1600 DPI with in-game sensitivity adjusted to taste. What matters is the total "effective DPI" (DPI x in-game sensitivity) and that you keep it consistent.' ),
+		array( 'What DPI should I use for gaming?', 'Most players use 400-1600 DPI with in-game sensitivity adjusted to taste. What matters is the total "effective DPI" (DPI x in-game sensitivity) and that you keep it consistent. The <a href="/edpi-calculator/">eDPI calculator</a> works it out.' ),
 		array( 'Does Windows pointer speed affect the DPI test?', 'Only if your browser does not support raw input. Chrome and Edge use unaccelerated movement during the test. Elsewhere, set pointer speed to 6/11 and disable Enhance pointer precision.' ),
 		array( 'Can I measure DPI on a laptop touchpad?', 'No. Touchpads report finger position, not sensor counts, so DPI does not apply to them.' ),
 	),
-	'related'        => array( 'mouse-tester', 'mouse-polling-rate-test', 'double-click-test', 'cps-test', 'online-ruler', 'scroll-test' ),
+	'related'        => array( 'edpi-calculator', 'mouse-tester', 'mouse-polling-rate-test', 'double-click-test', 'cps-test', 'online-ruler', 'scroll-test' ),
 	'updated'        => '2026-10-28',
 );

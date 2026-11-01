@@ -5,7 +5,7 @@ return array(
 	'title'        => 'Refresh Rate Test',
 	'seo_title'    => 'Refresh Rate Test: Check Your Monitor Hz Online (Free)',
 	'description'  => 'Free refresh rate test. Find your monitor\'s real refresh rate in Hz (60, 120, 144, 165, 240 Hz), check frame timing and skipped frames, and compare motion live.',
-	'intro'        => 'Find out how many times per second your screen really refreshes. The refresh rate test measures your display in hertz within a few seconds and shows moving objects at full and reduced rates so you can see the difference.',
+	'intro'        => 'Find out how many times per second your screen really refreshes. The refresh rate test measures your display in hertz within a few seconds and shows moving objects at full and reduced rates so you can see the difference. Testing a new or used monitor? <a href="/monitor-check/">Check a whole monitor in 5 steps</a>.',
 	'device'       => 'any',
 	'ads'          => 'content',
 	'styles'       => array( 'refresh-rate-test' ),

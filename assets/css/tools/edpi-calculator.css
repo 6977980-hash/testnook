@@ -1,0 +1,6 @@
+/* eDPI calculator (layout classes come from screen-info.css) */
+.ed-stage .si-note:empty { display: none; }
+.ed-stage .si-sub { margin-top: 22px; }
+.ed-out strong { color: var(--brand); }
+.ed-table td:nth-child(n+2), .ed-table th:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ed-table th:first-child, .ed-table td:first-child { text-align: left; }

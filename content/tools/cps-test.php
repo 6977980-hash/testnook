@@ -6,7 +6,7 @@ $bands = require __DIR__ . '/_bands.php';
 return array(
 	'title'          => 'CPS Test',
 	'seo_title'      => 'CPS Test: Clicks Per Second Speed Test (1 to 100 Seconds)',
-	'description'    => 'Free CPS test. Click as fast as you can for 1, 5, 10, 15, 30, 60 or 100 seconds and see your clicks per second, total clicks and best score. Works with any mouse.',
+	'description'    => 'Free CPS test. Click as fast as you can for 1, 5, 10, 15, 30, 60 or 100 seconds and see your clicks per second, total clicks and best score. Any mouse works.',
 	'intro'          => 'How many times can you click in a second? Pick a time, click the box as fast as you can and the timer starts on your first click. You get your clicks per second, total clicks and a rank from Turtle to Lightning.',
 	'device'         => 'desktop',
 	'device_message' => 'This CPS test is made for a mouse or touchpad. Taps on a touch screen are counted too, but compare only with other touch scores. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
@@ -74,7 +74,7 @@ return array(
 	'faq'            => array(
 		array( 'What is a good CPS?', 'Around 6 CPS is good for normal clicking, 8-10 is very fast, and anything above 10 usually means jitter, butterfly or drag clicking.' ),
 		array( 'What does CPS mean?', 'Clicks per second: the number of mouse clicks you make in one second, averaged over the test. A 5 second test with 30 clicks is 6 CPS.' ),
-		array( 'What is the world record for clicks per second?', 'Claimed records with drag clicking go well above 50 CPS, but they depend heavily on the mouse. For honest single-finger clicking, a sustained 10+ CPS is exceptional.' ),
+		array( 'What is the world record for clicks per second?', 'There is no official clicks-per-second record. The Guinness World Records title is for one minute: 760 clicks (about 12.7 CPS) by Yiğit Arslan in February 2026. Higher CPS "records" for short tests are single-site scores, often with drag or butterfly clicking. Sources and details are in our <a href="/world-records-cps-typing-reaction-time/">world records guide</a>.' ),
 		array( 'Does the CPS test count double clicks?', 'It counts every button press the browser receives. If your mouse double clicks on its own, the extra clicks inflate your score; use our double click test to check.' ),
 		array( 'Can I take the CPS test on a phone?', 'Yes, taps are counted the same way. Phone scores are usually a bit lower because the touch screen adds a small delay between taps.' ),
 		array( 'Is my best score saved?', 'Your best CPS for each test length is saved in this browser. Your clicks stay in this browser; only your final score is shared anonymously for the site averages, unless you turn sharing off under the tool.' ),

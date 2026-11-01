@@ -3,14 +3,22 @@
    Tool scripts read window.TNScreenCal.ppi() and listen with TNScreenCal.onChange(fn). */
 (function () {
 	'use strict';
-	var KEY = 'tn-ruler-ppi', CARD_MM = 85.6;
-	var ppi = 96, calibrated = false, listeners = [];
-	try { var saved = parseFloat(localStorage.getItem(KEY)); if (saved > 20 && saved < 1000) { ppi = saved; calibrated = true; } } catch (e) { /* private mode */ }
+	// SRC_KEY remembers a typed diagonal as 'diag:<ppi>'; it only counts while the ppi still matches (the ruler writes KEY alone).
+	var KEY = 'tn-ruler-ppi', SRC_KEY = 'tn-ruler-ppi-src', CARD_MM = 85.6, D_MIN = 3, D_MAX = 100;
+	var ppi = 96, calibrated = false, source = '', listeners = [];
+	try {
+		var saved = parseFloat(localStorage.getItem(KEY));
+		if (saved > 20 && saved < 1000) { ppi = saved; calibrated = true; source = localStorage.getItem(SRC_KEY) === 'diag:' + saved.toFixed(2) ? 'diag' : 'card'; }
+	} catch (e) { /* private mode */ }
 
-	function set(v, isCal) {
+	function set(v, isCal, src) {
 		ppi = v;
 		calibrated = isCal;
-		try { if (isCal) { localStorage.setItem(KEY, v.toFixed(2)); } else { localStorage.removeItem(KEY); } } catch (e) { /* ignore */ }
+		source = isCal ? (src || 'card') : '';
+		try {
+			if (isCal) { localStorage.setItem(KEY, v.toFixed(2)); } else { localStorage.removeItem(KEY); }
+			if (source === 'diag') { localStorage.setItem(SRC_KEY, 'diag:' + v.toFixed(2)); } else { localStorage.removeItem(SRC_KEY); }
+		} catch (e) { /* ignore */ }
 		paint();
 		listeners.forEach(function (fn) { fn(ppi, calibrated); });
 	}
@@ -18,6 +26,8 @@
 	window.TNScreenCal = {
 		ppi: function () { return ppi; },
 		calibrated: function () { return calibrated; },
+		/* 'card', 'diag' (typed diagonal) or '' when not calibrated. */
+		source: function () { return source; },
 		pxPerMm: function () { return ppi / 25.4; },
 		onChange: function (fn) { listeners.push(fn); }
 	};
@@ -25,7 +35,7 @@
 	var box = document.getElementById('sc-cal');
 	if (!box) { return; }
 	var $ = function (s) { return box.querySelector(s); };
-	var card = $('#sc-card'), slider = $('#sc-slider'), state = $('#sc-state'), diag = $('#sc-diag'), hint = $('#sc-hint');
+	var card = $('#sc-card'), slider = $('#sc-slider'), state = $('#sc-state'), diag = $('#sc-diag'), hint = $('#sc-hint'), diagMsg = $('#sc-diag-msg');
 	// On a narrow phone screen the card's long side (85.60 mm) does not fit, so match its short side (53.98 mm) instead.
 	var SHORT_MM = 53.98, edge = CARD_MM, other = SHORT_MM;
 
@@ -50,9 +60,18 @@
 	$('#sc-card-apply').addEventListener('click', function () { set(Number(slider.value) / (edge / 25.4), true); });
 	$('#sc-diag-apply').addEventListener('click', function () {
 		var d = parseFloat(diag.value);
-		if (!(d >= 3 && d <= 100)) { diag.focus(); return; }
-		set(Math.hypot(screen.width, screen.height) / d, true);
+		if (!(d >= D_MIN && d <= D_MAX)) {
+			diagMsg.textContent = 'Enter a diagonal between ' + D_MIN + ' and ' + D_MAX + ' inches.';
+			diagMsg.hidden = false;
+			diag.setAttribute('aria-invalid', 'true');
+			diag.focus();
+			return;
+		}
+		diagMsg.hidden = true;
+		diag.removeAttribute('aria-invalid');
+		set(Math.hypot(screen.width, screen.height) / d, true, 'diag');
 	});
+	diag.addEventListener('input', function () { diagMsg.hidden = true; diag.removeAttribute('aria-invalid'); });
 	$('#sc-reset').addEventListener('click', function () { set(96, false); });
 	paint();
 }());

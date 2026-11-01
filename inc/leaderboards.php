@@ -468,9 +468,12 @@ function tn_leaderboard_widget( $boards, $heading, $id, $intro = '' ) {
 		echo '<button type="button" role="tab" data-tn-lb-period="' . esc_attr( $period ) . '" aria-selected="' . ( 'all' === $period ? 'true' : 'false' ) . '">' . esc_html( $label ) . '</button>';
 	}
 	echo '</div>';
+	// Fewer than 3 entries: label them "First scores" and keep the invite visible, so one entry reads as early days.
+	$few = count( $rows ) > 0 && count( $rows ) < 3;
+	echo '<p class="lb__first" data-tn-lb-first' . ( $few ? '' : ' hidden' ) . '>First scores</p>';
 	echo '<div class="lb__wrap"><table class="lb__table"><thead><tr><th scope="col">#</th><th scope="col">Name</th><th scope="col">Score</th><th scope="col" data-tn-lb-extra' . ( $extra ? '' : ' hidden' ) . '>' . esc_html( $extra ? $extra : 'Accuracy' ) . '</th><th scope="col">Date</th></tr></thead>';
 	echo '<tbody data-tn-lb-rows>' . tn_lb_rows_html( $board, $rows ) . '</tbody></table></div>'; // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in tn_lb_rows_html
-	echo '<p class="lb__empty" data-tn-lb-empty' . ( $rows ? ' hidden' : '' ) . '>No scores yet. Be the first: finish a test and press <strong>Add my score to the leaderboard</strong>.</p>';
+	echo '<p class="lb__empty" data-tn-lb-empty' . ( $rows && ! $few ? ' hidden' : '' ) . '><span data-tn-lb-lead>' . ( $few ? 'Early days: this board has just started. Be one of the first scores:' : 'No scores yet. Be the first:' ) . '</span> finish a test and press <strong>Add my score to the leaderboard</strong>.</p>';
 	echo '</section>';
 }
 

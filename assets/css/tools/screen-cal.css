@@ -11,3 +11,4 @@
 .sc-opt input[type="range"] { width: 100%; margin: 0 0 8px; }
 .sc-diag { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 8px; }
 .sc-diag input { width: 110px; }
+.sc-diag-msg { margin: 0 0 8px; color: var(--bad); font-size: .9rem; }

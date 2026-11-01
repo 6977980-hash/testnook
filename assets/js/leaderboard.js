@@ -40,6 +40,8 @@
 		this.period = el.getAttribute('data-period') || 'all';
 		this.rows = el.querySelector('[data-tn-lb-rows]');
 		this.empty = el.querySelector('[data-tn-lb-empty]');
+		this.lead = el.querySelector('[data-tn-lb-lead]');
+		this.first = el.querySelector('[data-tn-lb-first]');
 		this.extraTh = el.querySelector('[data-tn-lb-extra]');
 		this.highlight = '';
 		var self = this;
@@ -72,7 +74,13 @@
 				+ (meta.extra ? '<td class="lb__extra">' + r.extra + '%</td>' : '') + '<td class="lb__date">' + esc(fmtDate(r.date)) + '</td></tr>';
 		});
 		this.rows.innerHTML = html;
-		if (this.empty) { this.empty.hidden = rows.length > 0; }
+		// Fewer than 3 entries: "First scores" label plus the invite, so a lone entry reads as early days.
+		var few = rows.length > 0 && rows.length < 3;
+		if (this.first) { this.first.hidden = !few; }
+		if (this.empty) {
+			this.empty.hidden = rows.length >= 3;
+			if (this.lead) { this.lead.textContent = few ? 'Early days: this board has just started. Be one of the first scores:' : 'No scores yet. Be the first:'; }
+		}
 		this.el.classList.remove('is-loading');
 	};
 	Widget.prototype.show = function (board, period, nick) {

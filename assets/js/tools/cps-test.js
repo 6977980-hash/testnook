@@ -107,7 +107,7 @@
 		small.textContent = count + ' clicks in ' + dur + ' s. ' + rank(cps) + (mode === 'auto' ? '.' : '!');
 		var doneText = small.textContent;
 		clearTimeout(lockTimer);
-		lockTimer = setTimeout(function () { if (!running && stage.classList.contains('is-done')) { small.textContent = doneText + ' Result saved. Click again to restart.'; } }, LOCK);
+		lockTimer = setTimeout(function () { if (!running && stage.classList.contains('is-done')) { small.textContent = doneText + ' Your best is kept in this browser. Click again to restart.'; } }, LOCK);
 		var best = pb(), msg = 'Done: ' + count + ' clicks in ' + dur + ' seconds = ' + U.fmt(cps, 1) + ' clicks per second (' + rank(cps) + ').';
 		if (mode === 'auto') {
 			var r = rank(cps), s2 = spread();

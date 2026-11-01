@@ -374,6 +374,7 @@ body.has-pseudo-fs { overflow: hidden; }
 .lb__table tr.is-me td { background: var(--brand-soft); }
 .lb.is-loading .lb__table { opacity: .5; }
 .lb__empty { margin: 10px 0 0; color: var(--muted); }
+.lb__first { margin: 0 0 6px; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--brand); }
 .lb__foot { font-size: .85rem; color: var(--muted); margin: 10px 0 0; max-width: var(--prose); }
 .static-page .lb { margin-top: 2em; }
 @media (max-width: 520px) { .lb__table th:last-child, .lb__date { display: none; } }

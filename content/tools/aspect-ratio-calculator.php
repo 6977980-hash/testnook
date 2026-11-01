@@ -13,7 +13,7 @@ return array(
 	'embed_height'   => 780,
 	'tool'           => '<div class="tool-stage si-stage">
 	<div class="si-presets" aria-label="Common ratios">
-		<button type="button" class="btn btn-sm" data-ar="16:9">16:9</button><button type="button" class="btn btn-sm" data-ar="4:3">4:3</button><button type="button" class="btn btn-sm" data-ar="16:10">16:10</button><button type="button" class="btn btn-sm" data-ar="21:9">21:9</button><button type="button" class="btn btn-sm" data-ar="1:1">1:1</button><button type="button" class="btn btn-sm" data-ar="3:2">3:2</button><button type="button" class="btn btn-sm" data-ar="4:5">4:5</button><button type="button" class="btn btn-sm" data-ar="9:16">9:16</button><button type="button" class="btn btn-sm" id="ar-mine">My screen</button>
+		<button type="button" class="btn btn-sm" data-ar="16:9">16:9</button><button type="button" class="btn btn-sm" data-ar="4:3">4:3</button><button type="button" class="btn btn-sm" data-ar="16:10">16:10</button><button type="button" class="btn btn-sm" data-ar="64:27">21:9 (64:27)</button><button type="button" class="btn btn-sm" data-ar="1:1">1:1</button><button type="button" class="btn btn-sm" data-ar="3:2">3:2</button><button type="button" class="btn btn-sm" data-ar="4:5">4:5</button><button type="button" class="btn btn-sm" data-ar="9:16">9:16</button><button type="button" class="btn btn-sm" id="ar-mine">My screen</button>
 	</div>
 	<div class="si-form">
 		<label>Original width (W1)<input type="number" id="ar-w1" min="0" max="32768" step="any" value="1920" inputmode="decimal"></label>
@@ -53,7 +53,7 @@ return array(
 <tr><td>4:3</td><td>1024 x 768, 1600 x 1200</td><td>Old TVs, iPad, many compact cameras</td></tr>
 <tr><td>3:2</td><td>6000 x 4000</td><td>35 mm film, most DSLR and mirrorless photos, 6 x 4 inch prints</td></tr>
 <tr><td>16:10</td><td>1920 x 1200, 2560 x 1600</td><td>Laptops and work monitors</td></tr>
-<tr><td>21:9</td><td>2560 x 1080, 3440 x 1440</td><td>Ultrawide monitors, cinema-style video</td></tr>
+<tr><td>21:9 (really 64:27 or 43:18)</td><td>2560 x 1080 (64:27), 3440 x 1440 (43:18)</td><td>Ultrawide monitors, cinema-style video</td></tr>
 </tbody></table></div>',
 			'common-ratios',
 		),

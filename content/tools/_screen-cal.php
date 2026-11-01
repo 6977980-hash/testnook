@@ -22,6 +22,7 @@ return function ( $open = false ) {
 			<h2>Screen size</h2>
 			<p>Or enter the diagonal of this screen in inches, from the box or spec sheet.</p>
 			<div class="sc-diag"><input type="number" id="sc-diag" min="3" max="100" step="0.1" placeholder="e.g. 15.6" inputmode="decimal" aria-label="Screen diagonal in inches"><span>inch</span><button type="button" class="btn btn-sm btn-primary" id="sc-diag-apply">Use screen size</button></div>
+			<p class="sc-diag-msg" id="sc-diag-msg" role="alert" hidden></p>
 			<button type="button" class="btn btn-sm" id="sc-reset">Reset calibration</button>
 		</div>
 	</div>

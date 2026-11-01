@@ -108,6 +108,17 @@ get_header();
 
 				<?php tn_faq( $def['faq'] ); ?>
 
+				<?php if ( $def['sources'] ) : ?>
+					<section id="sources" class="sources">
+						<h2>Sources</h2>
+						<ol>
+							<?php foreach ( $def['sources'] as $source ) : ?>
+								<li><a href="<?php echo esc_url( $source[1] ); ?>" rel="noopener"><?php echo esc_html( $source[0] ); ?></a></li>
+							<?php endforeach; ?>
+						</ol>
+					</section>
+				<?php endif; ?>
+
 				<?php if ( ! empty( $def['disclaimer'] ) ) : ?>
 					<p class="notice notice--warn"><?php tn_html( $def['disclaimer'] ); ?></p>
 				<?php endif; ?>

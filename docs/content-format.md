@@ -44,7 +44,8 @@ return array(
 	'extra'          => array( array( 'Heading', '<p>HTML</p>', 'anchor-id' ) ), // more H2 sections (optional)
 	'fixes'          => array( array( 'Problem', 'Fix text, paragraphs separated by blank lines.' ) ),
 	'faq'            => array( array( 'Question?', 'Answer (HTML ok).' ) ),  // 6 recommended; also emitted as FAQPage schema
-	'disclaimer'     => 'Shown in a warning box after the FAQ (hearing/eye tests).', // optional
+	'sources'        => array( array( 'Label', 'https://...' ) ),  // optional; printed as a Sources list after the FAQ (same markup as guides)
+	'disclaimer'     => 'Shown in a warning box after the sources (hearing/eye tests).', // optional
 	'trust'          => 'Nothing is sent to Testnook', // replaces the "Nothing is uploaded" badge under the intro (optional)
 	'related'        => array( 'online-mirror', 'mic-test' ),  // preferred related tools; the rest is filled from the hub
 	'stats'          => array( 'cps-5' ),  // boards from tn_boards() (inc/results.php): loads stats.js, prints the site stats block (optional)

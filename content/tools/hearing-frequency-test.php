@@ -64,9 +64,9 @@ return array(
 		'Test each ear on its own with the <strong>Left</strong> and <strong>Right</strong> buttons, and use the 500 Hz step for a finer result.',
 	),
 	'howto_title'  => 'How to take the hearing frequency test',
-	'results'      => '<p>Your result is the highest tone you heard at a low volume. The top of the hearing range falls with age as the hair cells in the inner ear that detect high frequencies wear out, so the table gives a rough idea of what is typical. Loud music, machinery and headphones at high volume speed this up.</p>
+	'results'      => '<p>Your result is the highest tone you heard at a low volume. The top of the hearing range falls with age as the hair cells in the inner ear that detect high frequencies wear out, so the table gives a rough idea of what is typical. Loud music, machinery and headphones at high volume speed this up. The bands are approximate and vary widely from person to person; they summarize the published age trends listed under Sources below.</p>
 <table class="hf-table">
-<tr><th>Highest tone heard</th><th>Typical for</th></tr>
+<tr><th>Highest tone heard</th><th>Typical for (approximate, varies widely)</th></tr>
 <tr><td>19-20 kHz</td><td>Children and teenagers</td></tr>
 <tr><td>17-18 kHz</td><td>People in their 20s</td></tr>
 <tr><td>15-16 kHz</td><td>30s</td></tr>
@@ -76,6 +76,10 @@ return array(
 </table>
 <p>A result a few kHz below your age band is not a diagnosis. Headphones that roll off at the top, a noisy room, a low volume and tiredness all lower the number. A big difference between the left and right ear, or a limit far below your age band at a normal volume, is worth mentioning to a doctor or audiologist, who can run a proper audiogram.</p>',
 	'results_title' => 'What your result means',
+	'sources'      => array(
+		array( 'ISO 7029:2017, Acoustics: Statistical distribution of hearing thresholds related to age and gender', 'https://www.iso.org/standard/42916.html' ),
+		array( 'Rodríguez Valiente A et al., "Extended high-frequency (9-20 kHz) audiometry reference thresholds in 645 healthy subjects", International Journal of Audiology, 2014', 'https://pubmed.ncbi.nlm.nih.gov/24749665/' ),
+	),
 	'extra'        => array(
 		array(
 			'Why this is not a medical hearing test',

@@ -9,7 +9,7 @@ return array(
 	'tool'        => 'gyroscope-test',
 	'tools'       => array( 'phone-sensor-test', 'accelerometer-test' ),
 	'published'   => '2026-10-29',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'intro'       => 'Gyro aiming in mobile games, 360 degree videos, VR viewers and smooth panorama photos all need a gyroscope, and not every phone has one. Every iPhone does; many cheaper Android phones and tablets leave it out to save cost. Here is the fastest way to check yours, and what it means if the answer is no.',
 	'summary'     => array(
 		'<strong>Every iPhone since the iPhone 4</strong> has a gyroscope. Most mid-range and flagship Android phones do too; some <strong>budget Android phones and tablets</strong> do not.',
@@ -27,6 +27,17 @@ return array(
 </ol>
 <p>The page tells you in words what it found. "Gyroscope is working" means a real sensor is reporting. "Motion data arrives but without rotation rate" means the phone has an accelerometer and no gyroscope. "No motion data" usually means the browser blocks sensors (some privacy browsers do) or the page was opened on a computer, which almost never has one. The <a href="/phone-sensor-test/">phone sensor test</a> lists every motion, orientation, light and location sensor the browser can see in one go.</p>',
 			'check',
+		),
+		array(
+			'Built-in checks from the phone maker',
+			'<p>Some makers ship their own hardware test menus. They are a useful second opinion when the browser test says something unexpected:</p>
+<ul>
+<li><strong>Samsung:</strong> open Samsung Members and tap Diagnostics (on many models also Settings, Device care, Diagnostics), then run the tests. On many Galaxy phones you can also dial <code>*#0*#</code> in the Phone app to open a hardware test menu.</li>
+<li><strong>Xiaomi, Redmi and POCO:</strong> dial <code>*#*#6484#*#*</code> in the Phone app, or go to Settings, About phone, Detailed info and specs and tap Kernel version five times, to open the hardware detection menu.</li>
+<li><strong>iPhone:</strong> there is no public sensor menu. Use the <a href="/gyroscope-test/">gyroscope test</a> in Safari, or ask Apple Support to run its diagnostics.</li>
+</ul>
+<p>Menu names and codes change between models and software versions, and some phones block the codes. If a code does nothing, use the browser test instead.</p>',
+			'built-in-checks',
 		),
 		array(
 			'Which phones do not have a gyroscope?',
@@ -70,6 +81,9 @@ return array(
 		array( 'Apple: iPhone 4 technical specifications (three-axis gyro)', 'https://support.apple.com/en-us/112562' ),
 		array( 'Google: ARCore supported devices and requirements', 'https://developers.google.com/ar/devices' ),
 		array( 'W3C: DeviceOrientation Event Specification', 'https://www.w3.org/TR/orientation-event/' ),
+		array( 'Samsung: How to check your Galaxy device status and run diagnostics', 'https://www.samsung.com/au/support/mobile-devices/check-device-status-and-run-diagnostics-samsung-galaxy/' ),
+		array( 'Samsung: How do I perform a hardware test on my Galaxy (*#0*#)', 'https://www.samsung.com/za/support/mobile-devices/how-do-i-perform-a-hardware-test-on-my-samsung-galaxy-s5/' ),
+		array( 'Xiaomi: How to perform hardware detection (*#*#6484#*#*)', 'https://www.mi.com/uk/support/faq/details/KA-509315/' ),
 	),
 	'ads'         => 'standard',
 );

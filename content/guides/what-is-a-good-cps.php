@@ -10,10 +10,10 @@ return array(
 	'tool'        => 'cps-test',
 	'tools'       => array( '5-second-cps-test', '10-second-cps-test', 'jitter-click-test', 'auto-clicker-test', 'double-click-test' ),
 	'published'   => '2026-10-29',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'intro'       => 'A good CPS (clicks per second) depends on how you click and for how long. Here is what normal, fast and record scores look like, why your number drops on longer tests, and what actually makes you faster.',
 	'summary'     => array(
-		'Most people click <strong>6 to 7 times per second</strong> on a 5 second test with one finger. That is a normal, healthy score.',
+		'Most people land between <strong>4 and 7 clicks per second</strong> on a 5 second test with one finger. <strong>6 to 7 CPS</strong> is a good one-finger score.',
 		'<strong>8 to 10 CPS</strong> is fast and usually needs jitter clicking. <strong>Over 10 CPS</strong> on a 5 second test almost always means butterfly or drag clicking.',
 		'Scores fall on longer tests: a 60 second run is often 1 to 3 CPS lower than your 5 second best, because the forearm tires.',
 		'A lighter mouse switch, a relaxed grip and short daily practice raise CPS more than any "trick".',
@@ -74,7 +74,7 @@ return array(
 		'html'   => '<p>Real numbers from this site: over the last 30 days the median 5 second score was <strong>{median:cps-5}</strong> and the median 10 second score <strong>{median:cps-10}</strong>. To be in the top 10% you needed <strong>{top10:cps-5}</strong> on 5 seconds. A score of 8 CPS on the 5 second test beats {beats:cps-5:8} of results. The best named scores are on the <a href="/leaderboards/">leaderboards</a>.</p>',
 	),
 	'faq'         => array(
-		array( 'What is the average CPS?', 'For normal one-finger clicking the average is about 6 to 7 clicks per second on a 5 second test. Over 10 seconds most people average 5 to 6.' ),
+		array( 'What is the average CPS?', 'For normal one-finger clicking most people score between 4 and 7 clicks per second on a 5 second test, and 6 to 7 is a good score. Over 10 seconds most people average 5 to 6.' ),
 		array( 'Is 10 CPS good?', 'Yes. 10 CPS on a 5 or 10 second test is very fast for normal clicking and a solid score for jitter clicking. Most people cannot reach it without a special technique.' ),
 		array( 'What is the world record for CPS?', 'There is no official body that tracks CPS records, so "records" online are self-reported and mostly come from drag clicking on specific mice, where 30 to 50 CPS on short tests is claimed. For normal clicking, sustained scores above 14 CPS are exceptional.' ),
 		array( 'Is butterfly clicking allowed?', 'It depends on the server or competition. Some Minecraft servers allow it, others ban butterfly and drag clicking because they look like auto clicking to anti-cheat systems. Always check the rules.' ),

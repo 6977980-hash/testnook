@@ -4,6 +4,17 @@
 .tool-stage.kb-stage { display: block; place-items: normal; padding: 12px; min-height: 0; overflow-x: auto; position: relative; }
 .tool-stage.kb-stage.is-scroll { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
 .kb-board { --u: 40px; display: flex; gap: calc(var(--u) * .4); justify-content: center; outline: none; width: max-content; margin: 0 auto; }
+/* Reserve the board's height before the script builds it, so the content below does not jump (F-55).
+   The stage is a size container; the formulas mirror fit() in keyboard-tester.js:
+   full layout width = 22.8u + 76px, height = 6u + 20px; 60% layout (default on touch-only devices)
+   width = 15u + 56px, height = 5u + 16px; u is floored and clamped to 22-46px. */
+.tool-stage.kb-stage { container-type: inline-size; }
+.kb-board:empty { --ku: clamp(22px, (100cqi - 76px) / 22.8, 46px); min-height: calc(6 * var(--ku) + 20px); }
+@supports (width: round(down, 10.5px, 1px)) { .kb-board:empty { --ku: clamp(22px, round(down, (100cqi - 76px) / 22.8, 1px), 46px); } }
+@media not (any-pointer: fine) {
+	.kb-board:empty { --ku: clamp(22px, (100cqi - 56px) / 15, 46px); min-height: calc(5 * var(--ku) + 16px); }
+	@supports (width: round(down, 10.5px, 1px)) { .kb-board:empty { --ku: clamp(22px, round(down, (100cqi - 56px) / 15, 1px), 46px); } }
+}
 .kb-board:focus-visible { box-shadow: 0 0 0 3px var(--focus); border-radius: var(--radius-sm); }
 .kb-block { display: grid; gap: 4px; align-content: start; }
 .kb-row { display: flex; gap: 4px; height: var(--u); }

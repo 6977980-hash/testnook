@@ -1,6 +1,14 @@
 <?php
 /**
- * Google Analytics 4 (gtag.js), printed early in <head> on every page.
+ * Google Analytics 4 (gtag.js). The inline block (dataLayer, gtag() stub,
+ * consent defaults, config) is printed early in <head> on every page, so
+ * consent is set before anything else runs and events pushed by the tools
+ * (e.g. share.js) queue in dataLayer. gtag.js itself (~180 KiB) is injected
+ * only after window "load", when the browser is idle (requestIdleCallback,
+ * 2 s timeout; setTimeout 1.5 s where that API is missing). It is never tied
+ * to a first click or keypress, so the first input on CPS / reaction / typing
+ * tests is not slowed by it (Ali's decision, 1 Nov 2026). Queued events are
+ * sent when the script arrives.
  *
  * Skipped when TN_GA4_ID is empty, outside production (WP_ENVIRONMENT_TYPE
  * local/development/staging), inside ?embed=1 iframes (those visits belong to
@@ -44,12 +52,16 @@ add_action(
 			'ad_personalization' => 'granted',
 			'analytics_storage'  => 'granted',
 		);
-		printf( "<script async src=\"https://www.googletagmanager.com/gtag/js?id=%s\"></script>\n", esc_attr( rawurlencode( TN_GA4_ID ) ) );
+		$src     = 'https://www.googletagmanager.com/gtag/js?id=' . rawurlencode( TN_GA4_ID );
 		echo "<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}"
 			. "gtag('consent','default'," . wp_json_encode( $denied ) . ');'
 			. "gtag('consent','default'," . wp_json_encode( $granted ) . ');'
 			. "gtag('set','ads_data_redaction',true);"
-			. "gtag('js',new Date());gtag('config'," . wp_json_encode( TN_GA4_ID ) . ");</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput
+			. "gtag('js',new Date());gtag('config'," . wp_json_encode( TN_GA4_ID ) . ');'
+			. '(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src=' . wp_json_encode( $src ) . ';document.head.appendChild(s);}'
+			. 'function idle(){if(typeof window.requestIdleCallback==="function"){window.requestIdleCallback(load,{timeout:2000});}else{setTimeout(load,1500);}}'
+			. 'if(document.readyState==="complete"){idle();}else{window.addEventListener("load",idle,{once:true});}})();'
+			. "</script>\n"; // phpcs:ignore WordPress.Security.EscapeOutput
 	},
 	2
 );

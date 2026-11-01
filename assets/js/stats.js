@@ -35,9 +35,12 @@
 		line.classList.toggle('is-ok', type === 'ok');
 	}
 
+	/* The trust badge under the H1 says "Score sharing is off" once the visitor turns sharing off. */
+	var badge = document.querySelector('[data-tn-share-badge]');
 	function paintNote() {
-		if (!note) { return; }
 		var isOff = off();
+		if (badge) { badge.textContent = isOff ? 'Score sharing is off' : 'Only your score is shared, anonymously'; }
+		if (!note) { return; }
 		note.querySelector('[data-tn-share-on]').hidden = isOff;
 		note.querySelector('[data-tn-share-off]').hidden = !isOff;
 	}
@@ -49,8 +52,8 @@
 			paintNote();
 			show('');
 		});
-		paintNote();
 	}
+	paintNote();
 
 	/* The "Share your score" line (share.js) for CPS, reaction, typing and aim results, shown even when sharing is off. */
 	function claim(board, value, extra) {

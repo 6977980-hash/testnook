@@ -47,7 +47,7 @@
 		jitEl.textContent = U.fmt(sd, 2) + ' ms';
 		if (deltas.length >= 90) {
 			var msg = 'Your screen is running at ' + nom + ' Hz.';
-			if (nom <= 60) { msg += ' If you own a 120 Hz or faster monitor, it is set to 60 Hz: see the fixes below.'; }
+			if (nom <= 60) { msg += ' If you own a 120 Hz or faster monitor, it is probably running at 60 Hz right now: check the display setting, the cable and port, power saving and the browser notes below.'; }
 			U.status(statusEl, msg, 'ok');
 		}
 		lastReport = now;

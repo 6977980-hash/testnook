@@ -146,6 +146,25 @@
 		if (sections[0]) { sections[0].parentNode.insertBefore(results, sections[0]); }
 		var list = $('ul', results);
 		var starts = function (text, word) { return (' ' + text.replace(/[^a-z0-9.+#]+/g, ' ')).indexOf(' ' + word) !== -1; };
+		/* One typo allowed for words of 5+ letters ("controler", "keybaord"): a word of the text starts with
+		   something one edit away (a letter missing, extra, changed or two letters swapped). */
+		var oneEdit = function (a, b) {
+			if (a === b) { return true; }
+			var la = a.length, lb = b.length, i = 0;
+			if (Math.abs(la - lb) > 1) { return false; }
+			while (i < la && i < lb && a[i] === b[i]) { i++; }
+			if (la === lb) { return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2)); }
+			return la > lb ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+		};
+		var typo = function (text, word) {
+			var toks = text.split(/[^a-z0-9]+/);
+			for (var t = 0; t < toks.length; t++) {
+				var tok = toks[t];
+				if (tok.length < 4) { continue; }
+				for (var n = word.length - 1; n <= word.length + 1; n++) { if (n <= tok.length && oneEdit(word, tok.slice(0, n))) { return true; } }
+			}
+			return false;
+		};
 		var score = function (it, words) {
 			var s = 0;
 			for (var w = 0; w < words.length; w++) {
@@ -155,6 +174,7 @@
 				else if (it.kw.indexOf(word) === 0) { s += 5; }
 				else if (starts(it.kw, word)) { s += 4; }
 				else if (starts(it.all, word)) { s += 1; }
+				else if (word.length >= 5 && (typo(it.name, word) || typo(it.kw, word))) { s += 2; }
 				else { return 0; }
 			}
 			return it.guide ? s / 2 : s; // tools before guides

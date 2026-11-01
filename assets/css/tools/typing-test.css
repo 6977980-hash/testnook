@@ -27,3 +27,6 @@
 	.tt-input { opacity: 1; position: static; width: 100%; height: auto; pointer-events: auto; margin-top: 12px; font: 1rem var(--font); padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); }
 	.tt-mobile { display: block; }
 }
+.tt-overlay { text-align: center; padding: 16px; }
+.tt-ov-touch { display: none; }
+@media (pointer: coarse) { .tt-ov-fine { display: none; } .tt-ov-touch { display: inline; } }

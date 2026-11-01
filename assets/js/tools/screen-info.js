@@ -30,6 +30,34 @@
 
 	function reduced(w, h) { var g = gcd(Math.round(w), Math.round(h)); return Math.round(w) / g + ':' + Math.round(h) / g; }
 
+	/* PPI verdict worded for the kind of screen the diagonal suggests and its usual viewing distance.
+	   Classes by diagonal in inches: under 11 phone/tablet, 11-18 laptop, 18-50 monitor, 50 and up TV.
+	   Each class has its own PPI steps, because a TV seen from the sofa needs far fewer pixels per inch than a phone. */
+	function ppiVerdict(ppi, dIn) {
+		if (dIn < 11) {
+			return ppi >= 400 ? 'Very sharp for a phone or tablet: pixels are invisible at any normal distance.'
+				: ppi >= 260 ? 'Sharp for a phone or tablet (Retina class): pixels are hard to see at a normal 30 cm.'
+				: ppi >= 180 ? 'Fine for a tablet held at arm\'s length; a phone this coarse shows soft text up close.'
+				: 'Low density for a phone or tablet: text and edges look grainy at hand-held distance.';
+		}
+		if (dIn < 18) {
+			return ppi >= 200 ? 'Very sharp for a laptop (Retina class): pixels are invisible at a normal 50 cm.'
+				: ppi >= 130 ? 'Good for a laptop: text is clear at a normal 50 cm, though a 200+ PPI screen looks crisper.'
+				: ppi >= 100 ? 'Standard laptop density: fine for work, but text looks softer than on a high-density screen.'
+				: 'Low density for a laptop: pixels are easy to see at a normal 50 cm.';
+		}
+		if (dIn < 50) {
+			return ppi >= 160 ? 'Very sharp for a monitor: pixels are invisible at arm\'s length (60-80 cm).'
+				: ppi >= 105 ? 'Sharp for a desktop monitor at arm\'s length (60-80 cm).'
+				: ppi >= 85 ? 'Standard monitor density: pixels can be seen up close but not at arm\'s length.'
+				: ppi >= 50 ? 'Coarse for a desk monitor; fine as a TV or a screen seen from 1.5 m or more.'
+				: 'Low density: only fine from across a room.';
+		}
+		return ppi >= 70 ? 'Very sharp for a TV: pixels are invisible from the sofa, even close to a big screen.'
+			: ppi >= 35 ? 'Sharp for a TV from a normal sofa distance (2-3 m); pixels only show if you sit right in front of it.'
+			: 'Fine for a TV seen from across the room; you will see pixels from closer than about 3 m.';
+	}
+
 	function read() {
 		var dpr = window.devicePixelRatio || 1, sw = screen.width, sh = screen.height;
 		return {
@@ -87,7 +115,9 @@
 		set('size-w', fmt(wIn, 1) + '" (' + fmt(wIn * 2.54, 1) + ' cm)');
 		set('size-h', fmt(hIn, 1) + '" (' + fmt(hIn * 2.54, 1) + ' cm)');
 		set('size-ppi', fmt(ppi * s.dpr, 0) + ' px per inch');
-		$('#sz-note').textContent = CAL.calibrated() ? 'Measured from your calibration. Accurate to about 2-3% if the card matched closely.' : 'Rough guess: the screen is not calibrated, so this assumes 96 CSS px per inch. Calibrate below for a real measurement.';
+		$('#sz-note').textContent = !CAL.calibrated() ? 'Rough guess: the screen is not calibrated, so this assumes 96 CSS px per inch. Calibrate below for a real measurement.'
+			: CAL.source() === 'diag' ? 'Worked out from the diagonal you typed in, so it repeats that size back: width, height and pixel density follow from it. Use the bank card calibration below to measure the screen instead.'
+			: 'Measured from your bank card calibration. Accurate to about 2-3% if the card matched closely.';
 		$('#sz-note').classList.toggle('is-bad', !CAL.calibrated());
 	}
 
@@ -142,7 +172,7 @@
 			$('#ar-dec').textContent = fmt(r, 4) + ':1';
 			var nn = nr.name.split(' ')[0];
 			if (a < b) { nn = nn.split(':').reverse().join(':') + ' (portrait)'; }
-			$('#ar-near').textContent = (nr.exact ? 'Standard ratio: ' : 'Closest standard ratio: ') + nn;
+			$('#ar-near').textContent = (nr.exact ? 'Standard ratio: ' : 'Closest standard ratio: ') + nn + (nr.q[0] === 21 ? '. "21:9" is a marketing name: 2560 x 1080 and 5120 x 2160 are really 64:27, and 3440 x 1440 is 43:18.' : '');
 			var pv = $('#ar-preview');
 			pv.style.aspectRatio = a + ' / ' + b;
 			pv.style.width = a >= b ? '100%' : (a / b * 100) + '%';
@@ -199,8 +229,7 @@
 			set('pp-size', fmt(wIn * 2.54, 1) + ' x ' + fmt(hIn * 2.54, 1) + ' cm (' + fmt(wIn, 2) + ' x ' + fmt(hIn, 2) + ' in)');
 			set('pp-ratio', nearestRatio(w, h).name.split(' ')[0] + ' (' + reduced(w, h) + ')');
 			set('pp-retina', fmt(retina * 2.54, 0) + ' cm (' + fmt(retina, 1) + ' in)');
-			var verdict = ppi >= 400 ? 'Phone-class density: pixels are invisible at any normal distance.' : ppi >= 200 ? 'High density (Retina class) for a laptop or tablet.' : ppi >= 140 ? 'Very sharp for a desktop monitor at arm\'s length.' : ppi >= 100 ? 'Sharp for a desktop monitor at arm\'s length.' : ppi >= 80 ? 'Standard desktop density: pixels can be seen up close.' : 'Low density: fine for a TV seen from the sofa, coarse up close.';
-			set('pp-verdict', verdict);
+			set('pp-verdict', ppiVerdict(ppi, d));
 		};
 		[ppW, ppH, ppD].forEach(function (el) { el.addEventListener('input', ppCalc); });
 		ppUnit.addEventListener('change', function () {

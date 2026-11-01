@@ -32,5 +32,15 @@ return array(
 		<tr data-sd-tier="2"><td>5-10%</td><td>Noticeable</td><td>Slow camera creep in some games. Raise the dead zone or clean the stick.</td></tr>
 		<tr data-sd-tier="3"><td>Over 10%</td><td>Needs attention</td><td>Clear drift. The stick module is worn or dirty; try the fixes below.</td></tr>
 	</tbody>
-</table></div>',
+</table></div>
+<div class="table-scroll sd-tiers-wrap"><table class="sd-tiers" id="sd-circ-bands">
+	<caption>Circularity error, after rotating the stick all the way round</caption>
+	<thead><tr><th scope="col">Error</th><th scope="col">Verdict</th><th scope="col">What it means</th></tr></thead>
+	<tbody>
+		<tr><td>Under 10%</td><td class="sd-good">Round</td><td>The stick reaches full tilt evenly in every direction.</td></tr>
+		<tr><td>10-20%</td><td class="sd-warn">Fair</td><td>Common on pads with square-ish gates, whose diagonals read past 100%. Usually nothing wrong.</td></tr>
+		<tr><td>Over 20%</td><td class="sd-bad">Check</td><td>Look for a dent in the green trace: the stick may be worn, dirty or blocked in that direction.</td></tr>
+	</tbody>
+</table></div>
+<p class="sd-circ-note">These bands are rules of thumb, not a standard. Xbox and PlayStation pads often read past 100% on the diagonals, which raises the error without anything being wrong.</p>',
 );

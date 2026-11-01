@@ -27,7 +27,7 @@ return function ( $lengths, $default, $source ) {
 <div class="tool-stage tt-stage" id="tt-stage" data-tt-text="' . $source . '" data-tt-dur="' . (int) $default . '" aria-label="Typing test text">
 	<div class="tt-window"><div class="tt-text" id="tt-text"></div></div>
 	<div class="tt-result" id="tt-result" hidden></div>
-	<div class="tt-overlay" id="tt-overlay">Click here or press any key to start typing</div>
+	<div class="tt-overlay" id="tt-overlay"><span class="tt-ov-fine">Click here or press any key to start typing</span><span class="tt-ov-touch">Tap here to start typing</span></div>
 	<p class="tt-hint tt-mobile">Type in the box below; the words above show what to type.</p>
 	<input type="text" class="tt-input" id="tt-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Type the words shown above">
 	<p class="tt-hint">Space after each word. Tab restarts.</p>

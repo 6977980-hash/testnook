@@ -18,3 +18,4 @@
 .sd-tiers th { background: var(--surface-2); }
 .sd-tiers tr.is-hit td { background: var(--brand-soft); font-weight: 600; }
 .sd-tiers tr.is-hit td:first-child { box-shadow: inset 4px 0 0 var(--brand); }
+.sd-circ-note { font-size: .85rem; color: var(--muted); margin: 6px 0 0; }

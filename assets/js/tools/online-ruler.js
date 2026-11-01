@@ -82,7 +82,7 @@
 		cx.textAlign = 'right';
 		cx.fillStyle = c.muted;
 		cx.font = '500 12px system-ui';
-		cx.fillText(unit === 'cm' ? 'centimetres (1 mm marks)' : 'inches (1/16 marks)', length - pad, depth - 22);
+		cx.fillText(unit === 'cm' ? 'centimeters (1 mm marks)' : 'inches (1/16 marks)', length - pad, depth - 22);
 		cx.restore();
 
 		ppiEl.textContent = Math.round(ppi);

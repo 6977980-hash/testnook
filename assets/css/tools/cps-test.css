@@ -23,3 +23,8 @@
 .cps-len a { display: inline-flex; align-items: center; min-height: 36px; padding: 4px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); font-weight: 600; text-decoration: none; }
 .cps-len a:hover { border-color: var(--brand); }
 .cps-len a[aria-current="page"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+/* Phones: all length buttons on one row in equal columns, so no button wraps alone. */
+@media (max-width: 560px) {
+	.cps-seg { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 100%; }
+	.cps-seg button { padding: 8px 2px; font-size: .85rem; white-space: nowrap; }
+}

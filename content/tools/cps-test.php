@@ -6,8 +6,8 @@ $bands = require __DIR__ . '/_bands.php';
 return array(
 	'title'          => 'CPS Test',
 	'seo_title'      => 'CPS Test: Clicks Per Second Speed Test (1 to 100 Seconds)',
-	'description'    => 'Free CPS test. Click as fast as you can for 1, 5, 10, 30, 60 or 100 seconds and see your clicks per second, total clicks and best score. Works with any mouse.',
-	'intro'          => 'How many times can you click in a second? Pick a time, click the box as fast as you can and the timer starts on your first click. You get your clicks per second, total clicks and a rank from Turtle to Cheetah.',
+	'description'    => 'Free CPS test. Click as fast as you can for 1, 5, 10, 15, 30, 60 or 100 seconds and see your clicks per second, total clicks and best score. Works with any mouse.',
+	'intro'          => 'How many times can you click in a second? Pick a time, click the box as fast as you can and the timer starts on your first click. You get your clicks per second, total clicks and a rank from Turtle to Lightning.',
 	'device'         => 'desktop',
 	'device_message' => 'This CPS test is made for a mouse or touchpad. Taps on a touch screen are counted too, but compare only with other touch scores. For a touch screen check, use the <a href="/touch-screen-test/">touch screen test</a>.',
 	'ads'            => 'content',
@@ -20,6 +20,7 @@ return array(
 		<button type="button" data-cps-t="1" aria-pressed="false">1 s</button>
 		<button type="button" data-cps-t="5" aria-pressed="true">5 s</button>
 		<button type="button" data-cps-t="10" aria-pressed="false">10 s</button>
+		<button type="button" data-cps-t="15" aria-pressed="false">15 s</button>
 		<button type="button" data-cps-t="30" aria-pressed="false">30 s</button>
 		<button type="button" data-cps-t="60" aria-pressed="false">60 s</button>
 		<button type="button" data-cps-t="100" aria-pressed="false">100 s</button>

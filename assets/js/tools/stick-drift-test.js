@@ -131,9 +131,14 @@
 					// Circularity error: average gap between the traced edge and the ideal circle at full tilt.
 					var err = 0;
 					for (var j = 0; j < BINS; j++) { if (s.edge[j]) { err += Math.abs(s.edge[j] - 1); } }
-					s.out.circ.textContent = U.fmt(err / filled * 100, 1) + '%';
+					var ce = err / filled * 100;
+					s.out.circ.textContent = U.fmt(ce, 1) + '%';
+					// Rule-of-thumb bands from the circularity table: under 10% round, 10-20% fair, over 20% check.
+					s.out.circ.className = 'stat-value ' + (ce < 10 ? 'sd-good' : ce <= 20 ? 'sd-warn' : 'sd-bad');
+					s.out.circ.title = ce < 10 ? 'Round' : ce <= 20 ? 'Fair' : 'Check this stick';
 				} else {
 					s.out.circ.textContent = 'Rotate ' + Math.round(filled / BINS * 100) + '%';
+					s.out.circ.className = 'stat-value';
 				}
 			}
 		}
@@ -200,7 +205,7 @@
 		sticks.forEach(function (s) {
 			s.trail = []; s.edge = new Float32Array(BINS);
 			s.out.rest.textContent = s.out.range.textContent = '-';
-			if (s.out.circ) { s.out.circ.textContent = '-'; }
+			if (s.out.circ) { s.out.circ.textContent = '-'; s.out.circ.className = 'stat-value'; s.out.circ.removeAttribute('title'); }
 			if (s.out.dz) { s.out.dz.textContent = '-'; }
 			s.out.rest.className = 'stat-value';
 		});

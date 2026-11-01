@@ -5,7 +5,7 @@ return array(
 	'title'        => 'Dead Pixel Test',
 	'seo_title'    => 'Dead Pixel Test: Check Your Monitor or Phone Screen',
 	'description'  => 'Free dead pixel test for monitors, laptops, TVs and phones. Cycle full-screen colors to spot dead, stuck and hot pixels in seconds. Works in any browser.',
-	'intro'        => 'Fill your screen with solid colors one after another and look for tiny dots that do not match. It is the quickest way to check a new monitor, laptop or phone for dead or stuck pixels.',
+	'intro'        => 'Fill your screen with solid colors one after another and look for tiny dots that do not match. It is the quickest way to check a new monitor, laptop or phone for dead or stuck pixels. To check a whole monitor in 5 steps, use the <a href="/monitor-check/">guided monitor check</a>.',
 	'device'       => 'any',
 	'ads'          => 'none',
 	'stats'        => array( 'deadpixel' ),

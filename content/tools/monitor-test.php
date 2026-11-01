@@ -7,7 +7,7 @@ return array(
 	'title'          => 'Monitor Test',
 	'seo_title'      => 'Monitor Test: Check Your Screen With 16 Test Patterns',
 	'description'    => 'Free online monitor test with 16 full-screen patterns: dead pixels, backlight bleed, uniformity, banding, black and white level, gamma, sharpness and geometry.',
-	'intro'          => 'A complete check for a new or used monitor in a few minutes. Step through 16 full-screen test patterns, each with a short tip on what to look for: dead pixels, backlight bleed, uneven brightness, color banding, black and white levels, gamma, sharpness and geometry.',
+	'intro'          => 'A complete check for a new or used monitor in a few minutes. Step through 16 full-screen test patterns, each with a short tip on what to look for: dead pixels, backlight bleed, uneven brightness, color banding, black and white levels, gamma, sharpness and geometry. Prefer a short checklist? <a href="/monitor-check/">Check a whole monitor in 5 steps</a>.',
 	'device'         => 'any',
 	'ads'            => 'content',
 	'styles'         => array( 'monitor-test' ),

@@ -3,14 +3,14 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'How to Test a Used Monitor Before You Buy It',
 	'seo_title'   => 'How to Test a Used Monitor Before You Buy: 10-Minute Check',
-	'description' => 'A 10-minute checklist for a second-hand monitor: dead pixels, backlight bleed, burn-in, refresh rate, ports and panel hours, with free browser tests for each step.',
+	'description' => 'A 10-minute checklist for a used monitor: dead pixels, backlight bleed, burn-in, refresh rate, ports and panel hours, with a free test for each step.',
 	'blurb'       => 'A 10-minute checklist for a second-hand monitor, from dead pixels to refresh rate and ports.',
 	'hub'         => 'screen',
 	'tool'        => 'monitor-test',
 	'tools'       => array( 'dead-pixel-test', 'refresh-rate-test', 'burn-in-test', 'black-screen', 'screen-resolution', 'ufo-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
-	'intro'       => 'A used monitor can be a bargain or a box of problems that only show up at home. Most faults are visible in ten minutes if you know where to look: dead pixels, uneven backlight, burn-in on OLEDs, a refresh rate that will not go above 60 Hz, or a port that does not work. Bring a laptop and a cable, and go through the checks below in order.',
+	'intro'       => 'A used monitor can be a bargain or a box of problems that only show up at home. Most faults are visible in ten minutes if you know where to look: dead pixels, uneven backlight, burn-in on OLEDs, a refresh rate that will not go above 60 Hz, or a port that does not work. Bring a laptop and a cable, and go through the checks below in order, or let the <a href="/monitor-check/">guided monitor check</a> walk you through 5 steps and give you a summary.',
 	'summary'     => array(
 		'Bring a <strong>laptop, the right cable</strong> (DisplayPort or HDMI 2.0+ for high refresh rates) and ideally a USB-C cable if the monitor has a USB-C input.',
 		'Run full-screen <strong>white, black, red, green and blue</strong> to find dead or stuck pixels, then a dark room check for <strong>backlight bleed</strong> or, on OLED, <strong>burn-in</strong>.',

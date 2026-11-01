@@ -5,7 +5,7 @@ return array(
 	'title'          => 'Burn-in Test',
 	'seo_title'      => 'Screen Burn-in Test: Check OLED and LCD for Ghost Images',
 	'description'    => 'Free online burn-in test for OLED, AMOLED and LCD screens. Full-screen gray, color, gradient and checkerboard patterns reveal ghost images; clear retention.',
-	'intro'          => 'Find out whether your phone, monitor or TV has burn-in. Open the full-screen test patterns and look for faint ghost shapes of icons, logos or a keyboard. The auto cycle runs the patterns for a set time to help clear temporary image retention.',
+	'intro'          => 'Find out whether your phone, monitor or TV has burn-in. Open the full-screen test patterns and look for faint ghost shapes of icons, logos or a keyboard. The auto cycle runs the patterns for a set time to help clear temporary image retention. Buying a used screen? <a href="/monitor-check/">Check a whole monitor in 5 steps</a>.',
 	'device'         => 'any',
 	'ads'            => 'none',
 	'styles'         => array( 'burn-in-test' ),

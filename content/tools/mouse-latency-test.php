@@ -46,7 +46,7 @@ return array(
 <li><strong>Frame time:</strong> the time per screen refresh; 16.7 ms at 60 Hz, 6.9 ms at 144 Hz, 4.2 ms at 240 Hz. Drawing and showing a frame takes about one more frame.</li>
 <li><strong>Estimated browser latency:</strong> the sum of half a polling interval, event to frame, and one frame. Typical results are 20-35 ms at 60 Hz and 8-15 ms at 144 Hz or more.</li>
 </ul>
-<p>The monitor adds its own input lag (often 1-10 ms on gaming monitors, more on TVs outside game mode) plus pixel response time. Measuring the full chain needs a high-speed camera or a dedicated tool such as NVIDIA LDAT or Reflex Latency Analyzer.</p>',
+<p>The monitor adds its own input lag (often 1-10 ms on gaming monitors, more on TVs outside game mode) plus pixel response time. Measuring the full chain needs a high-speed camera or a dedicated tool such as NVIDIA LDAT or Reflex Latency Analyzer. Our guide to <a href="/input-lag-vs-response-time/">input lag vs response time</a> explains the difference and why a browser cannot measure the monitor part.</p>',
 	'extra'          => array(
 		array(
 			'Why the red dot lags behind the cursor',

@@ -7,7 +7,7 @@ return array(
 	'blurb'       => 'Good DPI settings for shooters, other games and desktop work, and why higher is not better.',
 	'hub'         => 'mouse',
 	'tool'        => 'dpi-analyzer',
-	'tools'       => array( 'mouse-accuracy-test', 'mouse-polling-rate-test', 'mouse-tester' ),
+	'tools'       => array( 'edpi-calculator', 'mouse-accuracy-test', 'mouse-polling-rate-test', 'mouse-tester' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
 	'intro'       => 'Mouse boxes advertise 26,000 DPI, but most good players use 400 to 1600. The right number depends on your screen, your games and how you like to move your arm. Here is how to choose a DPI, and how to tune the sensitivity that really matters.',
@@ -43,7 +43,7 @@ return array(
 		array(
 			'eDPI and cm/360: the numbers that matter in games',
 			'<p>In games your aim speed is DPI multiplied by the game\'s sensitivity setting. That product is <strong>eDPI</strong>. 800 DPI at 0.5 sensitivity and 400 DPI at 1.0 sensitivity both give an eDPI of 400 and feel the same in that game.</p>
-<p>eDPI only compares within one game, because each game scales sensitivity differently. To compare across games, use <strong>cm/360</strong>: how many centimeters you move the mouse to turn a full circle. Many tactical shooter players sit somewhere between 25 and 50 cm/360; fast arena shooters are often lower, around 15 to 30 cm.</p>
+<p>eDPI only compares within one game, because each game scales sensitivity differently. To compare across games, use <strong>cm/360</strong>: how many centimeters you move the mouse to turn a full circle. Many tactical shooter players sit somewhere between 25 and 50 cm/360; fast arena shooters are often lower, around 15 to 30 cm. The <a href="/edpi-calculator/">eDPI calculator</a> gives both numbers and converts your sensitivity between games.</p>
 <p>A simple way to find your own: set a sensitivity, stand in front of a clear object in the game and move the mouse across the pad in one smooth swipe. If you overshoot targets often, lower the sensitivity by about 10%. If you run out of mousepad during a turn, raise it. Repeat over a few sessions until both feel natural, then stop changing it so muscle memory can build.</p>',
 			'edpi',
 		),

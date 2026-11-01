@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) || exit;
 return array(
 	'title'       => 'Why Is My Upload Speed So Slow? Causes and Fixes',
 	'seo_title'   => 'Why Is My Upload Speed So Slow? 8 Causes and How to Fix Them',
-	'description' => 'Why upload is much slower than download, how much upload you need for calls, streaming and backups, and eight fixes for an upload speed that is lower than it should be.',
+	'description' => 'Why upload is slower than download, how much upload you need for calls, streaming and backups, and eight fixes when your upload speed is too low.',
 	'blurb'       => 'Why upload is slower than download, how much you need, and what to fix when it is too low.',
 	'hub'         => 'system',
 	'tool'        => 'internet-speed-test',

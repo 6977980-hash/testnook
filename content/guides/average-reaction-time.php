@@ -9,10 +9,10 @@ return array(
 	'tool'        => 'reaction-time-test',
 	'tools'       => array( 'f1-reaction-test', 'stroop-test', 'mouse-latency-test', 'refresh-rate-test' ),
 	'published'   => '2026-10-29',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'intro'       => 'Most people react to a visual signal in about a quarter of a second. Here is how that number shifts with age, what the fastest people score, and why your screen and mouse are part of the result.',
 	'summary'     => array(
-		'The average visual reaction time for adults is <strong>about 230 to 250 ms</strong> in laboratory studies, and <strong>250 to 300 ms</strong> on a normal computer, where the screen and mouse add delay.',
+		'The average visual reaction time for adults is <strong>about 215 to 255 ms</strong> in a large published study run on a PC with a gaming mouse, and often <strong>250 to 300 ms</strong> on an everyday setup, where a slower screen and mouse add delay.',
 		'Reaction time is fastest in the <strong>late teens and twenties</strong> and slows by only about 5 ms per decade between 18 and 65 in a widely cited study of about 1,400 adults.',
 		'Under <strong>200 ms</strong> on a computer test is excellent; it is typical of esports players and sprinters at the start line. Under 100 ms is anticipation, not reaction.',
 		'Sleep, caffeine, a 60 Hz screen and a laggy wireless mouse can each move your average by 10 to 40 ms.',
@@ -21,7 +21,7 @@ return array(
 		array(
 			'What a reaction time test measures',
 			'<p>A simple reaction time test shows one signal and asks for one response: the box turns green, you click. The time between the two is your reaction time. It is the sum of several steps: light reaching the eye and the retina responding (about 20 to 40 ms), the visual cortex noticing the change, a decision to move, the signal traveling down the arm, and the finger pressing the button.</p>
-<p>On a computer there are two more steps outside your body: the screen has to draw the green frame, and the mouse has to report the click. A 60 Hz monitor adds up to 16 ms before you even see the change; a wireless mouse in power-saving mode can add 10 ms or more on the way back. That is why computer tests read 20 to 50 ms slower than laboratory equipment.</p>
+<p>On a computer there are two more steps outside your body: the screen has to draw the green frame, and the mouse has to report the click. A 60 Hz monitor adds up to 16 ms before you even see the change; a wireless mouse in power-saving mode can add 10 ms or more on the way back. That is why an everyday setup can read 20 to 50 ms slower than a fast, low-latency test setup.</p>
 <p>Choice reaction tests, where you must decide between responses (the <a href="/stroop-test/">Stroop test</a> is one), take longer, usually 350 to 500 ms, because the decision step grows.</p>',
 			'what-it-measures',
 		),
@@ -29,15 +29,15 @@ return array(
 			'Average reaction time by age',
 			'<p>A widely cited study of about 1,400 people aged 18 to 65 (Woods and colleagues, 2015), all tested with the same gaming mouse and method, found a mean simple reaction time of 231 ms, or 213 ms once the delay of the equipment was subtracted. Reaction time rose by about 0.55 ms per year of age. A second group of 189 people aged 18 to 82 showed the same gentle slope, about 0.45 ms per year. Applied to the study\'s numbers, the picture by age looks like this:</p>
 <div class="table-scroll"><table>
-<thead><tr><th>Age</th><th>Typical average (lab)</th><th>Typical on a computer test</th></tr></thead>
+<thead><tr><th>Age</th><th>Published average (PC test, gaming mouse)</th></tr></thead>
 <tbody>
-<tr><td>18 to 29</td><td>215 to 235 ms</td><td>240 to 280 ms</td></tr>
-<tr><td>30 to 39</td><td>220 to 240 ms</td><td>245 to 285 ms</td></tr>
-<tr><td>40 to 49</td><td>225 to 245 ms</td><td>250 to 290 ms</td></tr>
-<tr><td>50 to 65</td><td>230 to 255 ms</td><td>255 to 300 ms</td></tr>
-<tr><td>66 to 82 (estimate, small group)</td><td>235 to 265 ms</td><td>260 to 320 ms</td></tr>
+<tr><td>18 to 29</td><td>215 to 235 ms</td></tr>
+<tr><td>30 to 39</td><td>220 to 240 ms</td></tr>
+<tr><td>40 to 49</td><td>225 to 245 ms</td></tr>
+<tr><td>50 to 65</td><td>230 to 255 ms</td></tr>
+<tr><td>66 to 82 (estimate, small group)</td><td>235 to 265 ms</td></tr>
 </tbody></table></div>
-<p>The computer column adds the 20 to 50 ms that a normal screen and mouse put on top of a laboratory setup. The study did not test children or teenagers, so there is no row for them here.</p>
+<p>The study ran on a PC with a fast gaming mouse. On an everyday screen and mouse, expect your own average to read somewhat higher, often 20 to 50 ms, for the reasons above. The study did not test children or teenagers, so there is no row for them here.</p>
 <p>Two things stand out. The change from 20 to 50 is small, around 15 to 20 ms, far less than the difference between a rested and a tired person. And the spread inside each age group is wide: plenty of 50-year-olds beat the average 20-year-old. Age shifts the average, it does not set your number.</p>',
 			'by-age',
 		),
@@ -52,7 +52,7 @@ return array(
 <li><strong>Over 400 ms:</strong> slow. Worth retrying rested and checking the hardware notes below.</li>
 </ul>
 <p>Look at the average of five or more tries, never a single best time. One 150 ms result is usually a lucky click that happened to land just after the change. Times under 100 ms are physically impossible for a true reaction; in athletics a start under 100 ms is ruled a false start for that reason.</p>
-<p>Elite numbers for context: Formula 1 drivers react to the start lights in roughly 200 to 250 ms (try the <a href="/f1-reaction-test/">F1 reaction test</a>), and Olympic sprinters leave the blocks 120 to 160 ms after the gun, which is faster than a visual reaction because sound reaches the brain more quickly than light.</p>',
+<p>Elite numbers for context: Formula 1 drivers react to the start lights in roughly 200 to 250 ms (try the <a href="/f1-reaction-test/">F1 reaction test</a>), and Olympic sprinters leave the blocks 120 to 160 ms after the gun, which is faster than a visual reaction because the ear turns sound into a nerve signal faster than the eye turns light into one.</p>',
 			'good-score',
 		),
 		array(
@@ -81,7 +81,7 @@ return array(
 		'html'   => '<p>Real numbers from the <a href="/reaction-time-test/">reaction time test</a> on this site over the last 30 days: the median average-of-five was <strong>{median:reaction}</strong>, and the fastest 10% of people averaged <strong>{top10:reaction}</strong> or better. An average of 200 ms beats {beats:reaction:200} of results here. The quickest named results are on the <a href="/leaderboards/">leaderboards</a>.</p>',
 	),
 	'faq'         => array(
-		array( 'What is the average human reaction time?', 'About 230 to 250 milliseconds to a visual signal for a young adult in laboratory conditions, and about 250 to 300 ms on a typical computer test, because the screen and the mouse add their own delay.' ),
+		array( 'What is the average human reaction time?', 'About 215 to 255 milliseconds to a visual signal for adults in a large published study on a PC with a gaming mouse, and often 250 to 300 ms on an everyday computer, because a slower screen and mouse add their own delay.' ),
 		array( 'Is 200 ms a good reaction time?', 'Yes. An average of 200 ms on a computer test is better than most people manage and close to what competitive gamers score. A single 200 ms try is less meaningful than an average of five.' ),
 		array( 'Is 150 ms reaction time possible?', 'As an average on a visual test, almost never. Individual tries around 150 ms happen when a click lands by luck just after the change. Sprinters react to a sound in 120 to 160 ms, but hearing is faster than seeing.' ),
 		array( 'Do gamers have faster reaction times?', 'On average, slightly. Studies of action video game players find faster reaction times than non-gamers with no loss of accuracy, and training on action games speeds up non-players too (Dye, Green and Bavelier, 2009). Part of the difference is also hardware: high refresh rate screens and wired mice.' ),

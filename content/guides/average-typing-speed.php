@@ -11,19 +11,20 @@ return array(
 	'tool'        => 'typing-test-english',
 	'tools'       => array( '1-minute-typing-test', 'wpm-test', 'typing-speed-test', 'keyboard-tester' ),
 	'published'   => '2026-10-29',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'intro'       => 'The average person types around 40 words per minute. Touch typists reach 60 to 80, professionals pass 100. Here is what the numbers mean, how they change with age and practice, and what actually makes you faster.',
 	'summary'     => array(
 		'The average typing speed for adults is <strong>about 40 WPM</strong>; the mean in a large online study was 52 WPM, because people who take typing tests are faster than average. <strong>50 to 70 WPM</strong> is good.',
 		'<strong>60 to 80 WPM</strong> is a good speed for office work. <strong>Over 100 WPM</strong> is professional level; the fastest typists exceed 150 WPM for a minute.',
-		'A "word" is five characters, including spaces. Accuracy matters: most tests subtract uncorrected errors, so slower and accurate beats fast and messy.',
+		'A "word" is five characters, including spaces. Accuracy matters: every test counts errors against you in some way, so slower and accurate beats fast and messy.',
 		'Speed peaks between about 20 and 40 and falls slowly after. Touch typing, not finger speed, is what separates 40 from 80 WPM.',
 	),
 	'sections'    => array(
 		array(
 			'How WPM is calculated',
 			'<p>Words per minute does not count real words. By convention a word is <strong>five characters, including spaces and punctuation</strong>, so "I am happy today" (16 characters) is 3.2 words. That keeps a test with long words fair against one with short words.</p>
-<p>Most tests, including ours, report two numbers. <strong>Gross WPM</strong> is every character you typed divided by five, per minute. <strong>Net WPM</strong> (the headline score) subtracts one word for every uncorrected error. If you type 300 characters in one minute with 4 mistakes left in the text, gross is 60 WPM and net is 56 WPM. Accuracy is the share of characters that were right.</p>
+<p>Testnook\'s tests count only what you got right. Your <strong>WPM</strong> is the correctly typed characters, including the space after each correct word, divided by five and by the minutes. <strong>Raw WPM</strong> counts everything you typed, errors included, so the gap between the two is what your mistakes cost. A wrong word also costs the space after it. <strong>Accuracy</strong> is the share of characters that were right.</p>
+<p>Many other tests and most employers use a different rule. <strong>Gross WPM</strong> is every character you typed divided by five, per minute, and <strong>net WPM</strong> subtracts one word for every uncorrected error. If you type 300 characters in one minute with 4 mistakes left in the text, gross is 60 WPM and net is 56 WPM. Both methods punish errors, so the scores land close together, but they are not identical; compare results from the same test.</p>
 <p>Errors you fix with backspace before the end cost time but not words, which is why good typists correct as they go.</p>',
 			'how-wpm-works',
 		),
@@ -58,7 +59,7 @@ return array(
 <li><strong>Writers and journalists:</strong> 70 to 100 WPM. Thinking, not typing, is the limit, but a fast typist loses fewer thoughts.</li>
 <li><strong>Court reporters:</strong> 225 WPM on a stenotype machine, which uses chords, not single keys. On a normal keyboard they are around 100 to 120.</li>
 </ul>
-<p>Most companies that test typing use a one minute or three minute test with net WPM and an accuracy floor. Our <a href="/1-minute-typing-test/">1 minute test</a> and <a href="/5-minute-typing-test/">5 minute test</a> work the same way, so you can rehearse under the same conditions.</p>',
+<p>Most companies that test typing use a one minute or three minute test with net WPM and an accuracy floor. Our <a href="/1-minute-typing-test/">1 minute test</a> and <a href="/5-minute-typing-test/">5 minute test</a> use the same lengths and also count errors against you, so they are close to how employers test and a good way to rehearse.</p>',
 			'by-job',
 		),
 		array(

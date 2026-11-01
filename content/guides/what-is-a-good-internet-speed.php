@@ -9,7 +9,7 @@ return array(
 	'tool'        => 'internet-speed-test',
 	'tools'       => array( 'ping-test' ),
 	'published'   => '2026-10-29',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'intro'       => 'Internet plans are sold by one big number, the download speed in megabits per second (Mbps), but that number alone does not tell you whether video calls will be smooth or games will lag. This guide gives practical speeds for each activity, explains how to add them up for a household, and shows which other numbers on a speed test matter.',
 	'summary'     => array(
 		'For <strong>one person</strong>, 25 Mbps download handles 4K streaming, video calls and browsing. Netflix recommends 15 Mbps for 4K and YouTube 20 Mbps.',
@@ -20,7 +20,7 @@ return array(
 	'sections'    => array(
 		array(
 			'Mbps, download and upload in plain words',
-			'<p>Internet speed is the amount of data your connection moves each second. Providers measure it in <strong>megabits per second (Mbps)</strong>; a gigabit line is 1,000 Mbps. Download managers and game launchers usually show <strong>megabytes per second (MB/s)</strong> instead. One byte is eight bits, so divide by eight: 100 Mbps is about 12.5 MB/s, which downloads a 50 GB game in a little under an hour and a half.</p>
+			'<p>Internet speed is the amount of data your connection moves each second. Providers measure it in <strong>megabits per second (Mbps)</strong>; a gigabit line is 1,000 Mbps. Download managers and game launchers usually show <strong>megabytes per second (MB/s)</strong> instead. One byte is eight bits, so divide by eight: 100 Mbps is about 12.5 MB/s, which downloads a 50 GB game in a little over an hour.</p>
 <p><strong>Download</strong> speed is data coming to you: websites, streaming, app and game downloads. <strong>Upload</strong> speed is data you send: your camera in a video call, photos backing up to the cloud, files sent to work, a live stream. Most activities download far more than they upload, which is why cable, DSL and many fiber plans give much more download than upload. A plan sold as "500 Mbps" may upload at only 20 or 50 Mbps.</p>',
 			'basics',
 		),

@@ -5,15 +5,15 @@ return array(
 	'title'       => 'How We Test and Check Our Tools',
 	'seo_title'   => 'How We Test and Check Our Tools | Testnook',
 	'description' => 'How every Testnook tool is checked before it goes live, which browsers and screen sizes it runs on, and what a browser test can and cannot measure.',
-	'updated'     => '2026-10-29',
+	'updated'     => '2026-11-01',
 	'body'        => '<p>Every tool on Testnook reads what your browser reports through standard web features, then explains it. This page says how we check that the tools report the right thing, which parts are simulated in those checks, and where a browser test reaches its limit. If a result on your device looks wrong, <a href="/contact/">tell us</a>: real devices are the best test we have.</p>
 
 <h2 id="release-checks">Checks every release goes through</h2>
 <ul>
-<li><strong>Scripted runs in a real browser engine.</strong> Each changed page is opened by script in a desktop window (1366 pixels wide) and a phone-sized window (375 pixels, the width of an iPhone 13). The page must load with no script errors, must not scroll sideways, its structured data must parse and every internal link on it must load.</li>
+<li><strong>Scripted runs in a real browser engine.</strong> Each changed page is opened by script in a desktop window (1366 pixels wide) and a phone-sized window (390 pixels, the width of an iPhone 13). The page must load with no script errors, must not scroll sideways, its structured data must parse and every internal link on it must load.</li>
 <li><strong>Known inputs, known answers.</strong> Each tool is driven with inputs whose answer we know in advance, for example 60 clicks in 5 seconds must read 12.0 CPS, a click 20 ms after the reaction screen turns green must be rejected as anticipation, and a 24 inch diagonal must convert to 60.96 cm with the same pixel density.</li>
 <li><strong>Simulated hardware where a script cannot reach.</strong> A test browser has no real camera, microphone, motion sensor or game controller, so those runs use the browser\'s simulated devices or pre-recorded readings. That proves the page logic, not your hardware, which is why the tools in those families also depend on checks on real phones and computers and on reports from readers.</li>
-<li><strong>Figures from named sources.</strong> Numbers in the guides (average reaction time, typing speed, CPS bands, internet speed needs) come from the studies and documents listed under Sources on each guide. When a figure comes from users of a typing or clicking site rather than a controlled study, we say so.</li>
+<li><strong>Figures from named sources.</strong> Numbers in the guides (average reaction time, typing speed, internet speed needs) come from the studies and documents listed under Sources on each guide. When a figure comes from users of a typing or clicking site rather than a controlled study, we say so. The CPS bands are the exception: we know of no controlled study of click speed, so they are our reading of public click-test results, and we will replace them with Testnook\'s own distribution once the leaderboards have enough results.</li>
 </ul>
 
 <h2 id="families">Tool by tool family</h2>

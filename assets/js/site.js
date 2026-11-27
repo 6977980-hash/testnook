@@ -129,16 +129,25 @@
 
 	/* ---------- Homepage tool search ----------
 	   Every word must start a word in the card's name, blurb, hub or keywords (catalog 'keywords' holds synonyms like hz,
-	   ping, wpm). Matches in the name rank first, then keywords, then the blurb; a tool listed in two hubs shows once. */
+	   ping, wpm). Matches in the name rank first, then keywords, then the blurb; a tool listed in two hubs shows once.
+	   Filler words ("my", "not", "working", "fix"...) score when they match but never rule a card out, so problem
+	   phrases like "mic not working" still find the mic test. With no match, the best hubs are offered instead. */
 	var search = $('#tool-search');
 	if (search) {
-		var empty = $('#search-empty'), chips = $('.hero .chips'), sections = $$('.hub-section'), seen = {}, index = [];
+		var empty = $('#search-empty'), emptyText = empty ? empty.innerHTML : '', chips = $('.hero .chips'), sections = $$('.hub-section'), seen = {}, index = [];
 		$$('.hub-section [data-search]').forEach(function (card, i) {
 			var href = card.getAttribute('href') || card.getAttribute('data-name') || String(i);
 			if (seen[href]) { return; }
 			seen[href] = true;
 			index.push({ li: card.parentNode, i: i, guide: card.classList.contains('card--guide'), name: card.getAttribute('data-name') || '', kw: card.getAttribute('data-keywords') || '', all: card.getAttribute('data-search') || '' });
 		});
+		var hubIndex = sections.filter(function (s) { return s.id && s.id !== 'guides'; }).map(function (s) {
+			var h = $('h2', s), a = $('h2 a', s), b = $('.hub-blurb', s);
+			var cards = $$('[data-search]', s).map(function (c) { return (c.getAttribute('data-search') || '') + ' ' + (c.getAttribute('data-keywords') || ''); }).join(' ');
+			return { id: s.id, title: h ? h.textContent.trim() : s.id, href: a ? a.getAttribute('href') : '#' + s.id, head: ((h ? h.textContent : '') + ' ' + (b ? b.textContent : '')).toLowerCase(), cards: cards.toLowerCase() };
+		});
+		var FILLER = ' a an the my is are it its i me to of on in for and or with how fix fixing not no working work works doesnt dont wont isnt cant broken problem problems issue issues help test tester testing check checker online free ';
+		var filler = function (w) { return FILLER.indexOf(' ' + w + ' ') !== -1; };
 		var results = doc.createElement('section');
 		results.className = 'hub-section search-results';
 		results.hidden = true;
@@ -175,7 +184,7 @@
 				else if (starts(it.kw, word)) { s += 4; }
 				else if (starts(it.all, word)) { s += 1; }
 				else if (word.length >= 5 && (typo(it.name, word) || typo(it.kw, word))) { s += 2; }
-				else { return 0; }
+				else if (!filler(word)) { return 0; }
 			}
 			return it.guide ? s / 2 : s; // tools before guides
 		};
@@ -195,7 +204,32 @@
 			hits.forEach(function (h) { list.appendChild(h.it.li.cloneNode(true)); });
 			sections.forEach(function (section) { section.hidden = true; });
 			results.hidden = !hits.length;
-			if (empty) { empty.hidden = hits.length > 0; }
+			if (empty) {
+				empty.hidden = hits.length > 0;
+				if (!hits.length) { showHubs(words); }
+			}
+		};
+		/* No test matched: offer the hubs whose heading, blurb or cards share the most words with the query. */
+		var showHubs = function (words) {
+			var real = words.filter(function (w) { return !filler(w) && w.length > 1; });
+			var ranked = hubIndex.map(function (h) {
+				var s = 0;
+				real.forEach(function (w) {
+					if (starts(h.head, w)) { s += 3; } else if (starts(h.cards, w)) { s += 1; } else if (w.length >= 5 && typo(h.head + ' ' + h.cards, w)) { s += 1; }
+				});
+				return { h: h, s: s };
+			}).filter(function (r) { return r.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 3);
+			empty.innerHTML = '';
+			if (!ranked.length) { empty.innerHTML = emptyText; if (chips) { chips.style.display = ''; } return; }
+			empty.appendChild(doc.createTextNode('No single test matches that search. Try these categories: '));
+			ranked.forEach(function (r, i) {
+				var a = doc.createElement('a');
+				a.href = r.h.href;
+				a.textContent = r.h.title;
+				if (i) { empty.appendChild(doc.createTextNode(i === ranked.length - 1 ? ' or ' : ', ')); }
+				empty.appendChild(a);
+			});
+			empty.appendChild(doc.createTextNode('.'));
 		};
 		var params = new URLSearchParams(location.search);
 		if (params.get('q')) { search.value = params.get('q'); }

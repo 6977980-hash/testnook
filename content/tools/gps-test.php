@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'          => 'GPS Test',
-	'seo_title'      => 'GPS Test: Check Your GPS Accuracy and Signal Online',
+	'seo_title'      => 'GPS Test & GPS Tester: Check Accuracy and Signal Online',
 	'description'    => 'Free online GPS test for phones and laptops. See your location accuracy in meters, time to first fix, altitude and speed, and how much the position wanders.',
 	'intro'          => 'Test your phone\'s GPS in the browser. Tap Start and the page shows how long the first fix takes, how accurate it is in meters, whether it comes from satellites or Wi-Fi, your altitude and speed, and a plot of how much the position wanders while you stand still. Your location stays on your device.',
 	'device'         => 'any',

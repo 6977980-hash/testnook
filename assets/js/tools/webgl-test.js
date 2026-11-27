@@ -92,6 +92,22 @@
 		['Graphics API used', gl && info.parsed.api ? info.parsed.api : gl ? 'Not reported' : '-'],
 		['Hardware acceleration', !gl ? '-' : soft ? 'Off (software rendering)' : 'On']
 	]);
+	var raw = $('#gl-raw'), copyBtn = $('#gl-copy');
+	raw.textContent = gl ? String(info.renderer) : 'Not available: WebGL is off or blocked';
+	if (gl) {
+		copyBtn.disabled = false;
+		copyBtn.addEventListener('click', function () {
+			var text = String(info.renderer);
+			var ok = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1500); };
+			if (navigator.clipboard && navigator.clipboard.writeText) {
+				navigator.clipboard.writeText(text).then(ok, function () { copyBtn.textContent = 'Select and copy'; });
+			} else {
+				var r = document.createRange(); r.selectNodeContents(raw);
+				var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+				copyBtn.textContent = 'Press Ctrl+C';
+			}
+		});
+	}
 	if (!gl) {
 		verdict($('#gl-verdict'), 'is-bad', 'WebGL does not work here', 'Turn on hardware acceleration in the browser settings, update the graphics driver and the browser, and make sure WebGL is not blocked by an extension or a work policy.');
 	} else if (soft) {

@@ -3,7 +3,7 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'          => 'WebGL Test',
-	'seo_title'      => 'WebGL Test: Check WebGL, WebGPU & Your Graphics Card',
+	'seo_title'      => 'WebGL Test: Your WebGL Renderer, GPU & WebGPU Support',
 	'description'    => 'Free WebGL test. Check if WebGL 1, WebGL 2 and WebGPU work, see your graphics card and whether hardware acceleration is on, and run a quick GPU benchmark.',
 	'intro'          => 'Check whether your browser can draw 3D graphics and which graphics card it uses. The page tests WebGL 1, WebGL 2 and WebGPU, names your GPU and the graphics API behind it, tells you if hardware acceleration is off, lists the limits and extensions, and runs a five second GPU benchmark.',
 	'device'         => 'any',
@@ -15,6 +15,8 @@ return array(
 	<div class="sy-hero"><small>Your graphics</small><strong id="gl-name">Checking WebGL...</strong><span id="gl-sub">-</span></div>
 	<div class="sy-verdict" id="gl-verdict"><strong>Checking...</strong><p>This needs JavaScript.</p></div>
 	<dl class="sy-meta" id="gl-summary"></dl>
+	<p class="sy-label" id="gl-raw-label">Your WebGL renderer (UNMASKED_RENDERER_WEBGL)</p>
+	<div class="gl-raw"><code id="gl-raw">-</code><button type="button" class="btn btn-sm" id="gl-copy" disabled>Copy</button></div>
 	<p class="sy-label">GPU benchmark</p>
 	<canvas class="gl-canvas" id="gl-canvas" aria-label="Animated shader used for the GPU benchmark"></canvas>
 	<div class="btn-row"><button type="button" class="btn btn-primary" id="gl-bench">Run benchmark</button><span class="sy-note" id="gl-live">About 5 seconds</span></div>
@@ -36,11 +38,12 @@ return array(
 <p class="tool-status" id="gl-status" aria-live="polite">Reading your graphics details...</p>',
 	'howto'          => array(
 		'Open the page. The top box says straight away whether WebGL works and whether the browser uses your graphics card.',
+		'Read <strong>Your WebGL renderer</strong>: the exact string the browser reports, the same one sites and support forms ask for. <strong>Copy</strong> puts it on your clipboard.',
 		'Read <strong>Graphics card (GPU)</strong> and <strong>Graphics API used</strong>. On a laptop with two GPUs, this is the one the browser picked.',
 		'Press <strong>Run benchmark</strong> and keep the tab in front for about five seconds. It finds how much drawing your GPU can do per frame and gives a score.',
 		'Compare the score after changing a setting, such as turning on hardware acceleration or switching the browser to the high-performance GPU.',
 	),
-	'howto_title'    => 'How to test WebGL and your GPU',
+	'howto_title'    => 'How to check your WebGL renderer and GPU',
 	'results'        => '<ul>
 <li><strong>WebGL 1 and 2</strong> let websites draw 3D: maps, product viewers, browser games and many online tools. WebGL 2 is supported by every current browser; if it says "Not supported", the browser has blocked the GPU.</li>
 <li><strong>WebGPU</strong> is the newer, faster graphics and compute API used by modern 3D sites and AI tools that run in the browser. Chrome and Edge have it, Safari and Firefox are adding it.</li>

@@ -69,7 +69,7 @@ return array(
 			'When to return the screen',
 			'<p>Return or exchange the screen if bleed is visible in normal use: dark films, games with night scenes or dark mode apps, at your usual brightness and in your usual room light. That is the practical test most retailers and makers accept.</p>
 <p>Makers do not usually count a fixed number of bleeding areas the way they count <a href="/dead-pixel-vs-stuck-pixel/">dead pixels</a>, so arguments go better with a clear description: where the bleed is, that it does not move with your head (so it is not IPS glow) and that it shows at normal settings. Include a photo with fixed exposure if you can.</p>
-<p>Buying from a shop with a no-questions return period gives you the most room. Test a new screen on the first day, and check it again for <a href="/dead-pixel-test/">dead pixels</a> at the same time.</p>',
+<p>Buying from a shop with a no-questions return period gives you the most room. Test a new screen on the first day, and run the <a href="/dead-pixel-test/">dead pixel test</a> at the same time.</p>',
 			'return',
 		),
 	),

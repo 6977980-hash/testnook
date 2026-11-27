@@ -10,7 +10,7 @@ return array(
 	'tools'       => array( 'light-sensor-test', 'phone-sensor-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
-	'intro'       => 'The proximity sensor has one job: turn the screen off when the phone is against your ear, so your cheek does not mute or hang up the call. When it fails you either press buttons with your face, or the screen goes black during a call and will not come back. Both are usually fixable at home. Start with the two minute <a href="/proximity-sensor-test/">proximity sensor test</a>, then work through the fixes below.',
+	'intro'       => 'The proximity sensor has one job: turn the screen off when the phone is against your ear, so your cheek does not mute or hang up the call. When it fails you either press buttons with your face, or the screen goes black during a call and will not come back. Both are usually fixable at home. Start with the two minute <a href="/proximity-sensor-test/">proximity sensor test</a>, then work through the fixes below. The light sensor usually sits right beside it, so if auto-brightness has stopped working too, check it with the <a href="/light-sensor-test/">light sensor test</a>.',
 	'summary'     => array(
 		'The most common cause is a <strong>screen protector or case</strong> covering the sensor near the earpiece. Peel the top back and test again.',
 		'<strong>Dirt, make-up and cracks</strong> over the sensor window come next. Clean the top of the screen with a dry microfiber cloth.',

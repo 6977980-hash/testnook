@@ -23,3 +23,4 @@
 .hf-table th, .hf-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
 .hf-table th { font-size: .85rem; color: var(--muted); }
 .hf-answer [hidden] { display: none; }
+.hf-tip { margin: 6px 0 0; font-size: .875rem; color: var(--muted); }

@@ -59,7 +59,7 @@ return array(
 		),
 		array(
 			'Step 4: double typing (chatter) and stiff keys',
-			'<p>A key that types two letters for one press is "chattering": the switch contacts bounce and the controller reads two presses. On a mechanical keyboard this is a worn or dirty switch. Fixes in order:</p>
+			'<p>A key that types two letters for one press is "chattering": the switch contacts bounce and the controller reads two presses. On a mechanical keyboard this is a worn or dirty switch. The <a href="/keyboard-tester/">keyboard tester</a> turns a chattering key red; the full walkthrough is in <a href="/how-to-fix-keyboard-chatter/">how to fix keyboard chatter</a>. Fixes in order:</p>
 <ol>
 <li>Clean the switch with contact cleaner or isopropyl alcohol and press it 50 times.</li>
 <li>Update the keyboard firmware; some manufacturers (Razer, Corsair, Keychron and others) ship debounce fixes.</li>

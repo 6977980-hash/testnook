@@ -42,11 +42,22 @@ return array(
 	<div class="stat"><span class="stat-label">Held now</span><span class="stat-value" id="kb-held">0</span></div>
 	<div class="stat"><span class="stat-label">Max at once</span><span class="stat-value" id="kb-max">0</span></div>
 	<div class="stat"><span class="stat-label">Keys tested</span><span class="stat-value"><span id="kb-tested">0</span> / <span id="kb-total">0</span></span></div>
+	<div class="stat"><span class="stat-label">Chatter</span><span class="stat-value" id="kb-chatter">0</span></div>
+</div>
+<div class="kb-chatter-row"><label for="kb-chatter-ms">Chatter window</label>
+	<select id="kb-chatter-ms">
+		<option value="10">10 ms</option>
+		<option value="20">20 ms</option>
+		<option value="30" selected>30 ms (default)</option>
+		<option value="50">50 ms</option>
+		<option value="80">80 ms</option>
+	</select>
+	<span class="kb-chatter-help">A second press this soon after a key is released is flagged as chatter.</span>
 </div>
 <p class="tool-status" id="kb-status" aria-live="polite">Click here and press every key. Each one turns green when it works.</p>
 <details class="kb-log" open>
 	<summary>Key log (last 10 presses)</summary>
-	<div class="table-scroll"><table><thead><tr><th scope="col">key</th><th scope="col">code</th><th scope="col">keyCode</th></tr></thead><tbody id="kb-log-body"></tbody></table></div>
+	<div class="table-scroll"><table><thead><tr><th scope="col">key</th><th scope="col">code</th><th scope="col">keyCode</th><th scope="col">note</th></tr></thead><tbody id="kb-log-body"></tbody></table></div>
 	<button type="button" class="btn btn-sm" id="kb-log-copy" disabled>Copy log</button>
 </details>',
 	'howto'          => array(
@@ -55,13 +66,15 @@ return array(
 		'Hold several keys together and read <strong>Max at once</strong>. Most keyboards register at least 6 keys (6-key rollover); gaming keyboards with NKRO register all of them.',
 		'Type a sentence in the typing area. Watch for letters that appear twice, appear late or do not appear at all. The <strong>key log</strong> lists your last 10 presses with their key, code and keyCode, and <strong>Copy log</strong> puts them on the clipboard for a bug report or a game\'s support team.',
 		'Any key still gray after you have pressed it is a dead key. A key that lights up on its own is stuck.',
+		'To check for <strong>chatter</strong> (one press typed twice), tap the suspect key 20 to 30 times at a normal pace. A key that bounces turns red, the <strong>Chatter</strong> counter goes up and the key log shows a line such as "Chatter: E twice in 12 ms". Raise the <strong>Chatter window</strong> to 50 or 80 ms if a key doubles only now and then.',
 	),
 	'howto_title'    => 'How to test your keyboard',
 	'results'        => '<ul>
 <li><strong>All keys turn green:</strong> every switch and the keyboard\'s controller work. If a key still fails in one program, the problem is a shortcut or setting in that program.</li>
 <li><strong>A key never lights up:</strong> dead key. Dirt under the keycap, a worn membrane or a failed switch. On laptops a cluster of dead keys often means a damaged ribbon cable.</li>
 <li><strong>A key lights up without being pressed, or stays lit:</strong> stuck key. Usually something spilled or crumbs under the cap.</li>
-<li><strong>A letter appears twice when typed once:</strong> chatter, common on worn mechanical switches. Cleaning or a switch replacement fixes it.</li>
+<li><strong>A key turns red and the Chatter count rises:</strong> the key was pressed again within the chatter window (30 ms by default) after you let go. Fingers cannot release and press a key that fast, so it is switch chatter, common on worn or dirty mechanical switches. The <a href="/how-to-fix-keyboard-chatter/">keyboard chatter fix guide</a> walks through cleaning, debounce settings and switch replacement.</li>
+<li><strong>A letter appears twice in the typing area but no chatter is flagged:</strong> the double press came later than the chatter window. Raise the window to 50 or 80 ms and test again, or check the key repeat delay in your system settings.</li>
 <li><strong>Max at once stays at 2 or 3 on certain combinations:</strong> ghosting or limited rollover. Normal on budget keyboards; gaming keyboards should handle 6 or more.</li>
 <li><strong>The wrong character shows in the typing area:</strong> a layout mismatch (for example a UK keyboard set to US), not a hardware fault. Change the keyboard layout in your system settings.</li>
 </ul>',
@@ -89,9 +102,9 @@ return array(
 		array( 'Why does a key not light up even though it types?', 'Some keys, such as Fn, media keys and the Windows key in some games, are handled by the system and never reach the browser. If the key does its job elsewhere, it works.' ),
 		array( 'How many keys should I be able to press at once?', 'At least 6 on most keyboards. Gaming keyboards with N-key rollover register every key at the same time.' ),
 		array( 'Can I test a laptop keyboard here?', 'Yes. Pick the TKL, 75% or 60% size to match your laptop. The number pad block only applies to full-size keyboards.' ),
-		array( 'What is key chatter?', 'When one press registers twice, so letters appear doubled. It happens when a mechanical switch\'s contacts bounce, usually because of dirt or wear.' ),
+		array( 'What is key chatter?', 'When one press registers twice, so letters appear doubled. It happens when a mechanical switch\'s contacts bounce, usually because of dirt or wear. This tester flags it automatically: a key pressed again within 30 ms of its release turns red and is listed in the key log. See <a href="/how-to-fix-keyboard-chatter/">how to fix keyboard chatter</a>.' ),
 		array( 'Does this keyboard test work for Mac?', 'Yes. Press Mac above the keyboard and the diagram shows Control, Option and Command in Mac order, with Delete, Return and the F13 to F15 keys named as Apple prints them. Command shortcuts are passed to the browser, so they keep working while you test.' ),
 	),
 	'related'        => array( 'keyboard-ghosting-test', 'spacebar-clicker', 'typing-speed-test', 'mouse-tester', 'gamepad-tester', 'double-click-test', 'reaction-time-test' ),
-	'updated'        => '2026-10-28',
+	'updated'        => '2026-11-27',
 );

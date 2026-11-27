@@ -1,0 +1,13 @@
+/* Frame skipping test: a dark box with 12 cells, one lit per frame. Always dark so photos have contrast. */
+.tool-stage.fs-stage { display: block; place-items: normal; min-height: 0; padding: 24px 16px 14px; background: #0b0f14; border-color: #0b0f14; }
+.fs-cells { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; max-width: 900px; margin: 0 auto; counter-reset: fs -1; }
+.fs-cells span { aspect-ratio: 3 / 4; border-radius: 4px; background: #1f2933; position: relative; }
+.fs-cells span.is-on { background: #fff; }
+.fs-cells span::after { counter-increment: fs; content: counter(fs, decimal); position: absolute; left: 0; right: 0; bottom: -18px; text-align: center; font: 600 .7rem/1 var(--mono); color: #8b98a5; }
+.fs-caption { margin: 26px 0 0; text-align: center; font-size: .85rem; color: #b6c2cf; }
+.fs-photo { margin: 10px 0 16px; }
+.fs-photo svg { display: block; width: 100%; max-width: 360px; height: auto; }
+.fs-photo figcaption { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+.tool:fullscreen .fs-stage, .tool.is-pseudo-fs .fs-stage { flex: 1; display: grid; align-content: center; }
+.tool:fullscreen, .tool.is-pseudo-fs { display: flex; flex-direction: column; background: var(--bg); padding: 16px; }
+@media (max-width: 560px) { .fs-cells { grid-template-columns: repeat(6, 1fr); row-gap: 26px; } }

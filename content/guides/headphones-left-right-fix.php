@@ -65,7 +65,8 @@ return array(
 <li><strong>Forget and re-pair.</strong> Remove the headphones from the Bluetooth list, reset them (usually by holding the case button for 10 to 15 seconds; check the maker\'s guide) and pair again.</li>
 <li><strong>Update the firmware</strong> through the maker\'s app. Updates often fix sync problems between buds.</li>
 <li><strong>Turn off "mono" call modes.</strong> Some headsets switch to a mono hands-free profile during calls, which sounds flat and can affect one bud only. Choose the stereo (A2DP) profile for music.</li>
-</ol>',
+</ol>
+<p>If both sides play but the sound arrives late, for example voices out of sync with a video or game sounds behind the action, that is Bluetooth delay rather than a channel fault. The <a href="/audio-latency-test/">audio latency test</a> measures it in milliseconds.</p>',
 			'bluetooth',
 		),
 		array(

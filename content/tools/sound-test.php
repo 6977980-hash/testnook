@@ -57,7 +57,7 @@ return array(
 	'extra'        => array(
 		array(
 			'What this sound test checks',
-			'<p>This audio test covers the basics that break most often: whether any sound comes out at all, whether both channels work and are the right way round, and whether the speaker can reproduce low, middle and high frequencies without distortion. It works with laptop speakers, desktop speakers, a soundbar, a Bluetooth speaker, wired or wireless headphones and phone speakers. For headphones specifically, including a detailed left-right test and bass check, see the <a href="/headphone-test/">headphone test</a>.</p>
+			'<p>This audio test covers the basics that break most often: whether any sound comes out at all, whether both channels work and are the right way round, and whether the speaker can reproduce low, middle and high frequencies without distortion. It works with laptop speakers, desktop speakers, a soundbar, a Bluetooth speaker, wired or wireless headphones and phone speakers. For headphones specifically, including a detailed left-right test and bass check, see the <a href="/headphone-test/">headphone test</a>. To measure how late a Bluetooth speaker or headphone plays, use the <a href="/audio-latency-test/">audio latency test</a>.</p>
 <p>Everything you hear is synthesized in your browser with Web Audio, so nothing is downloaded and there is no video to buffer. The level meters show the signal being sent to each channel, which helps you tell a silent speaker apart from a silent page.</p>',
 			'what-it-checks',
 		),

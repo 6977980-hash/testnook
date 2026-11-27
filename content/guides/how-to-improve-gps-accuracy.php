@@ -10,7 +10,7 @@ return array(
 	'tools'       => array( 'compass-test', 'phone-sensor-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
-	'intro'       => 'According to GPS.gov, GPS-enabled smartphones are typically accurate to within about 4.9 meters (16 feet) under open sky. If the blue dot sits in the next street, jumps around or takes minutes to appear, it is usually a setting or the environment rather than a broken chip. These fixes start with the quickest and end with how to tell when the hardware is the problem.',
+	'intro'       => 'According to GPS.gov, GPS-enabled smartphones are typically accurate to within about 4.9 meters (16 feet) under open sky. If the blue dot sits in the next street, jumps around or takes minutes to appear, it is usually a setting or the environment rather than a broken chip. Measure your accuracy first with the free <a href="/gps-test/">GPS test</a>, then work through these fixes, which start with the quickest and end with how to tell when the hardware is the problem.',
 	'summary'     => array(
 		'Turn on <strong>precise location</strong> for the app or browser (iPhone: Precise Location; Android: Google Location Accuracy). Without it you only get an approximate area.',
 		'GPS needs a <strong>view of the sky</strong>. Indoors, between tall buildings and under thick trees, accuracy drops from meters to tens of meters.',

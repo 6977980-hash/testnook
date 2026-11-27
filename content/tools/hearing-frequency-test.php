@@ -3,9 +3,9 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'        => 'Hearing Frequency Test',
-	'seo_title'    => 'Hearing Frequency Test: Highest Pitch You Can Hear (Online)',
-	'description'  => 'Free online hearing frequency test. Tones rise from 8 kHz to 20 kHz; press the button while you still hear them to find your upper limit and compare it by age.',
-	'intro'        => 'Find the highest frequency you can hear. Put on headphones, set a low volume and start: a tone plays at 8 kHz and rises in steps. Press "I can hear it" every time you hear the tone. The last one you heard is your upper hearing limit.',
+	'seo_title'    => 'Frequency Test: Highest Pitch You Can Hear (8-20 kHz)',
+	'description'  => 'Free online frequency hearing test: tones from 8 to 20 kHz find the highest pitch you can hear, per ear, with silent catch trials. Compare your result by age.',
+	'intro'        => 'Find the highest frequency you can hear. Put on headphones, set a low volume and start: a tone plays at 8 kHz and rises in steps. Press "I can hear it" every time you hear the tone. Some checks are silent on purpose, and a short replay at the end confirms your upper hearing limit, for both ears or each ear on its own.',
 	'device'       => 'any',
 	'ads'          => 'standard',
 	'styles'       => array( 'hearing-frequency-test' ),
@@ -27,6 +27,7 @@ return array(
 	<div class="hf-result" id="hf-result" hidden>
 		<div>Highest tone heard: <b id="hf-reshz">-</b> <span id="hf-resage"></span></div>
 		<p id="hf-resnote"></p>
+		<p class="hf-tip">Press only when you are sure; re-run once to confirm.</p>
 	</div>
 	<div class="hf-scale" aria-label="Frequencies in the test; tap one to hear it">
 		<button type="button" class="hf-tick" data-hf-hz="8000">8 k</button>
@@ -51,6 +52,7 @@ return array(
 				<button type="button" data-hf-ch="-1" aria-pressed="false">Left</button>
 				<button type="button" data-hf-ch="0" aria-pressed="true">Both</button>
 				<button type="button" data-hf-ch="1" aria-pressed="false">Right</button>
+				<button type="button" data-hf-ch="2" aria-pressed="false">Each ear</button>
 			</div>
 		</div>
 	</div>
@@ -59,9 +61,9 @@ return array(
 	'howto'        => array(
 		'Put on headphones or earphones. Laptop and phone speakers often cannot play tones above 15 kHz, which would make the result look worse than your hearing. Find a quiet room.',
 		'Keep the volume slider low (15% is the default) and tap the <strong>8 k</strong> button to check that you hear a tone at a comfortable level. Raise the volume a little only if 8 kHz is very faint.',
-		'Press <strong>Start test</strong>. Each tone plays for 2.5 seconds, then rises by 1 kHz. Press <strong>I can hear it</strong> (or Space) as soon as you hear each one.',
-		'When a tone is silent for you, wait: it repeats once, and if you still hear nothing the test ends and shows the last tone you heard. You can also press <strong>I can\'t hear it</strong>.',
-		'Test each ear on its own with the <strong>Left</strong> and <strong>Right</strong> buttons, and use the 500 Hz step for a finer result.',
+		'Press <strong>Start test</strong>. Each tone plays for 2.5 seconds, then rises by 1 kHz. Press <strong>I can hear it</strong> (or Space) as soon as you hear each one. About one check in five is silent on purpose: if you press during silence, the page tells you and counts it, so press only when you are sure.',
+		'When a tone is silent for you, wait: it repeats once, and if you still hear nothing the sweep ends. You can also press <strong>I can\'t hear it</strong>. A short confirm pass then replays your top tone and the step below it (plus one silent check) in random order, and the result is the highest tone you heard again.',
+		'Choose <strong>Each ear</strong> to test the left ear and then the right ear in one run (each tone plays on one side only), or pick <strong>Left</strong> or <strong>Right</strong>. Use the 500 Hz step for a finer result, and re-run once to confirm.',
 	),
 	'howto_title'  => 'How to take the hearing frequency test',
 	'results'      => '<p>Your result is the highest tone you heard at a low volume. The top of the hearing range falls with age as the hair cells in the inner ear that detect high frequencies wear out, so the table gives a rough idea of what is typical. Loud music, machinery and headphones at high volume speed this up. The bands are approximate and vary widely from person to person; they summarize the published age trends listed under Sources below.</p>
@@ -99,7 +101,7 @@ return array(
 		array( 'I hear a click or buzz but no tone', 'Some earphones and Bluetooth links distort at high frequencies and produce artifacts. Lower the volume. If you only hear a click when each tone starts, the tone itself is above your range.' ),
 	),
 	'faq'          => array(
-		array( 'How does the hearing frequency test work?', 'A pure tone plays at 8 kHz and rises 1 kHz at a time. You press a button while you can hear it; the last tone you heard is your upper limit.' ),
+		array( 'How does the hearing frequency test work?', 'A pure tone plays at 8 kHz and rises 1 kHz at a time. You press a button while you can hear it. About one check in five is silent, to catch presses out of habit, and at the end the top tone and the step below are replayed: the highest tone you hear again is your upper limit.' ),
 		array( 'What is a normal hearing range?', '20 Hz to 20 kHz for young ears. The top drops with age: about 17 kHz in your 20s, 15 kHz in your 30s and 12 kHz in your 40s.' ),
 		array( 'Is this an accurate hearing test?', 'It finds your highest audible frequency at the volume you set. It does not measure how quiet a sound you can hear, which is what a medical audiogram does.' ),
 		array( 'Do I need headphones?', 'Yes for a fair result. Speakers, especially on phones and laptops, often cannot play tones above 15 kHz.' ),
@@ -108,5 +110,5 @@ return array(
 	),
 	'disclaimer'   => 'This hearing frequency test is for information and equipment checking only. It is not a medical test and cannot diagnose hearing loss. Keep the volume low, and if you have ringing, pain, sudden hearing loss or a large difference between your ears, see a doctor or audiologist.',
 	'related'      => array( 'tone-generator', 'headphone-test', 'sound-test', 'speaker-cleaner', 'mic-test', 'refresh-rate-test' ),
-	'updated'      => '2026-10-28',
+	'updated'      => '2026-11-27',
 );

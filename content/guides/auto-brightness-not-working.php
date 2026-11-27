@@ -10,7 +10,7 @@ return array(
 	'tools'       => array( 'phone-sensor-test', 'proximity-sensor-test' ),
 	'published'   => '2026-10-29',
 	'updated'     => '2026-10-29',
-	'intro'       => 'Auto-brightness should make the screen dim in a dark room and bright in the sun without you touching the slider. When it stops working, the screen is unreadable outdoors or blinding at night. The cause is usually a setting, a covered light sensor or a brightness curve the phone has learned badly. Test the sensor in 30 seconds with the <a href="/light-sensor-test/">light sensor test</a>, then use the fixes below.',
+	'intro'       => 'Auto-brightness should make the screen dim in a dark room and bright in the sun without you touching the slider. When it stops working, the screen is unreadable outdoors or blinding at night. The cause is usually a setting, a covered light sensor or a brightness curve the phone has learned badly. Test the sensor in 30 seconds with the <a href="/light-sensor-test/">light sensor test</a>, then use the fixes below. The same window near the earpiece often holds the proximity sensor too, so if the screen also misbehaves during calls, run the <a href="/proximity-sensor-test/">proximity sensor test</a>.',
 	'summary'     => array(
 		'Check auto-brightness is actually on: Android <strong>Adaptive brightness</strong> in Display settings; iPhone <strong>Auto-Brightness</strong> in Accessibility &gt; Display &amp; Text Size.',
 		'The light sensor sits <strong>beside the front camera</strong>. A case lip, screen protector or dirt over it makes the phone think the room is dark.',

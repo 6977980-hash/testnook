@@ -3,8 +3,8 @@ defined( 'ABSPATH' ) || exit;
 
 return array(
 	'title'          => 'What Phone Do I Have?',
-	'seo_title'      => 'What Phone Do I Have? Find Your Phone Model Online',
-	'description'    => 'Find out what phone you have from the browser: make, model and model code on Android, likely iPhone models from your screen size, and where to check it.',
+	'seo_title'      => 'What Phone Do I Have? Instant Phone Model Checker',
+	'description'    => 'See what phone you have instantly: the make, model and model code on Android, the likely iPhone models from your screen size, and where to confirm it.',
 	'intro'          => 'Open this page on the phone you want to identify. On Android it reads the model your browser shares and turns Samsung codes into names; on iPhone, where Apple hides the model, it narrows it down from the screen size. It also shows where to find the exact model in settings.',
 	'device'         => 'touch',
 	'device_message' => 'You seem to be on a computer. Open this page on the phone you want to identify: type testnook.com/what-phone-do-i-have into its browser.',
@@ -58,6 +58,7 @@ return array(
 		array( 'The name looks wrong', 'Some phones report a code shared by several regional versions, and resellers sometimes flash other firmware. Trust Settings > About phone and the IMEI over what the browser reports.' ),
 	),
 	'faq'            => array(
+		array( 'What phone is this?', 'Open this page on the phone in question and the top box answers at once. On Android it shows the maker and the model code the phone reports, such as SM-S921B, and turns it into a name (Galaxy S24). On an iPhone, Apple hides the model, so the page narrows it down from the screen size to the few iPhones that share it; Settings > General > About shows the exact one.' ),
 		array( 'How do I know what phone I have?', 'Open this page on the phone, or go to Settings > About phone on Android, or Settings > General > About on iPhone, where the model name is listed.' ),
 		array( 'Why can\'t the page tell my exact iPhone model?', 'Apple blocks websites from reading the model for privacy. Several iPhones share the same screen size, so the page can only list the models that match.' ),
 		array( 'What is a model number?', 'The code a manufacturer gives each version of a phone, such as SM-A556B for a Galaxy A55. It tells you the exact variant, which matters for cases, parts and software updates.' ),
@@ -66,5 +67,5 @@ return array(
 		array( 'Does it work on tablets?', 'Yes. Android tablets report their model the same way as phones. iPads hide the model, so the page only says it is an iPad.' ),
 	),
 	'related'        => array( 'device-info', 'what-is-my-user-agent', 'phone-sensor-test', 'touch-screen-test', 'vibration-test', 'camera-test', 'dead-pixel-test' ),
-	'updated'        => '2026-10-29',
+	'updated'        => '2026-11-27',
 );

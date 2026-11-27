@@ -45,7 +45,7 @@ return array(
 	'extra'          => array(
 		array(
 			'Checking a new or used monitor',
-			'<p>Run the test on the day a new monitor arrives: most shops only take returns for dead pixels, bleed or uneven backlight within their return window, and many brands have a pixel policy that allows a few faulty pixels before they swap the panel. Take photos of any fault with your phone, because a screenshot only shows what the computer sends, not what the panel displays.</p>
+			'<p>Run the test on the day a new monitor arrives: most shops only take returns for dead pixels, bleed or uneven backlight within their return window, and many brands have a pixel policy that allows a few faulty pixels before they swap the panel. If pattern 1 shows a suspicious dot, confirm it on every color with the <a href="/dead-pixel-test/">dead pixel test</a>. Take photos of any fault with your phone, because a screenshot only shows what the computer sends, not what the panel displays.</p>
 <p>When buying second hand, ask the seller to open this page on the monitor. The black screen shows bleed and stuck pixels, the 50% gray shows burn-in from a static taskbar or game HUD, and the gradient shows if the panel has been damaged or set up badly.</p>',
 			'new-or-used',
 		),

@@ -23,8 +23,9 @@ defined( 'ABSPATH' ) || exit;
 const TN_RESULTS_DB_VERSION = '2';   // 2: lb column for leaderboards (Phase 13b)
 const TN_RESULTS_WINDOW_DAYS = 30;   // stats cover the last 30 days
 const TN_RESULTS_KEEP_DAYS   = 400;  // older rows are summarised and deleted
-const TN_RESULTS_MIN_COUNT   = 10;   // boards with fewer results show a count, not stats
+const TN_RESULTS_MIN_COUNT   = 25;   // boards with fewer results show a count, not stats
 const TN_RESULTS_PER_HOUR    = 60;   // results per client per hour
+const TN_CPS_MIN_PRESSES     = 3;    // CPS results need at least this many presses
 
 function tn_results_table() {
 	global $wpdb;
@@ -56,7 +57,7 @@ function tn_boards() {
 		$boards[ 'cps-' . $s ] = array(
 			'name'   => $s . ' second click test',
 			'min_s'  => $s,
-			'min'    => 0.5,
+			'min'    => 1 === $s ? 3 : 0.5,
 			'max'    => 1 === $s ? 25 : 20,
 			'higher' => true,
 			'unit'   => 'CPS',
@@ -175,6 +176,36 @@ add_action(
 	30
 );
 add_action( 'tn_results_refresh', 'tn_stats_refresh_all' );
+
+/**
+ * One-time cleanups, each behind its own option flag so it runs once and
+ * running it again changes nothing.
+ *
+ * tn_cleanup_cps1_v1 (Phase 29): CPS runs with fewer than TN_CPS_MIN_PRESSES
+ * presses (score x seconds) were accepted before; on the 1 second board that
+ * meant single clicks at 1.0 CPS. Delete them, then rebuild stats and boards.
+ */
+function tn_results_cleanup() {
+	if ( get_option( 'tn_cleanup_cps1_v1' ) || get_option( 'tn_results_db_version' ) !== TN_RESULTS_DB_VERSION ) {
+		return;
+	}
+	update_option( 'tn_cleanup_cps1_v1', gmdate( 'c' ), true ); // first, so parallel requests do not repeat the work
+	global $wpdb;
+	$table   = tn_results_table();
+	$deleted = 0;
+	foreach ( tn_boards() as $board => $def ) {
+		if ( 0 !== strpos( $board, 'cps-' ) ) {
+			continue;
+		}
+		$deleted += (int) $wpdb->query( $wpdb->prepare( "DELETE FROM $table WHERE board = %s AND ROUND( value * %d ) < %d", $board, $def['min_s'], TN_CPS_MIN_PRESSES ) ); // phpcs:ignore
+		if ( function_exists( 'tn_lb_flush' ) ) {
+			tn_lb_flush( $board );
+		}
+	}
+	update_option( 'tn_cleanup_cps1_v1', gmdate( 'c' ) . ' deleted ' . $deleted, true );
+	tn_stats_refresh_all();
+}
+add_action( 'init', 'tn_results_cleanup', 31 );
 add_action( 'tn_results_prune', 'tn_results_prune' );
 
 /* ---------- Tickets, client keys, rate limits ---------- */
@@ -330,6 +361,10 @@ function tn_rest_result( WP_REST_Request $req ) {
 	$extra = (int) $req['extra'];
 	// Out of human range: answered with 200 so the browser console stays clean; the JS shows a short note.
 	if ( ! is_finite( $value ) || $value < $def['min'] || $value > $def['max'] || ( $def['extra'] && ( $extra < $def['extra'][0] || $extra > $def['extra'][1] ) ) ) {
+		return array( 'ok' => false, 'code' => 'implausible' );
+	}
+	// CPS boards: a run needs at least 3 presses (score x seconds); one or two clicks are not a click speed.
+	if ( 0 === strpos( $board, 'cps-' ) && round( $value * $def['min_s'] ) < TN_CPS_MIN_PRESSES ) {
 		return array( 'ok' => false, 'code' => 'implausible' );
 	}
 	if ( tn_rate_limited( 'result', TN_RESULTS_PER_HOUR ) ) {

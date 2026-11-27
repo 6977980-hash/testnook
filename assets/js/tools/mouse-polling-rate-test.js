@@ -61,12 +61,15 @@
 			var med = median(seconds);
 			// The interval between reports (median of gaps) is more exact than a 1 s count when the mouse pauses.
 			var gap = median(gaps.slice(-1500));
-			var hz = gap ? 1000 / gap : med;
+			// Browsers round timestamps to about 0.1 ms, so at 4000-8000 Hz the gaps read 0.1 or 0.2 ms and equal stamps
+			// are dropped: below 0.3 ms the gap is too coarse, and the count per second gives the rate instead.
+			var fine = gap && gap < 0.3;
+			var hz = gap && !fine ? 1000 / gap : med;
 			out.live.textContent = c;
 			out.avg.textContent = fmtHz(Math.max(med, 0));
 			out.max.textContent = bestSec;
 			out.nominal.textContent = fmtHz(nearest(hz));
-			out.interval.textContent = gap ? gap.toFixed(2) + ' ms' : '-';
+			out.interval.textContent = fine ? 'under 0.3 ms' : gap ? gap.toFixed(2) + ' ms' : '-';
 			out.samples.textContent = total;
 			U.status(statusEl, 'Measuring: about ' + fmtHz(hz) + ' (nearest standard rate ' + fmtHz(nearest(hz)) + '). Keep the mouse moving in fast circles.', 'ok');
 			hint.hidden = true;

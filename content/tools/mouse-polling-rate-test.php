@@ -24,7 +24,7 @@ return array(
 </div>
 <div class="stats pr-stats">
 	<div class="stat"><span class="stat-label">Reports this second</span><span class="stat-value" id="pr-live">-</span></div>
-	<div class="stat"><span class="stat-label">Measured rate</span><span class="stat-value" id="pr-avg">-</span></div>
+	<div class="stat"><span class="stat-label">Median rate</span><span class="stat-value" id="pr-avg">-</span></div>
 	<div class="stat"><span class="stat-label">Nearest standard</span><span class="stat-value" id="pr-nominal">-</span></div>
 	<div class="stat"><span class="stat-label">Report interval</span><span class="stat-value" id="pr-interval">-</span></div>
 	<div class="stat"><span class="stat-label">Best second</span><span class="stat-value" id="pr-max">-</span></div>
@@ -74,7 +74,7 @@ return array(
 		array( 'What polling rate should my mouse be?', '1000 Hz for gaming if the mouse supports it. 125 or 500 Hz is fine for everyday use and saves battery on wireless mice.' ),
 		array( 'Why does the test show less than 1000 Hz?', 'Small drops to 950-990 Hz are normal. Much lower means slow movement, a slow USB port, a weak wireless link or a busy computer.' ),
 		array( 'Can I measure a wireless mouse here?', 'Yes. The rate over wireless depends on the receiver and battery mode, so it is often lower than on a cable.' ),
-		array( 'Can this test measure 4000 or 8000 Hz?', 'Yes in Chrome, Edge and Firefox, which pass every report to the page. Safari limits the count to the screen refresh rate.' ),
+		array( 'Can this test measure 4000 or 8000 Hz?', 'Yes. It counts 4000-8000 Hz reports in Chrome, Edge and Firefox, which pass every report to the page. Browsers round the time of each report to about 0.1 ms, so at these rates the interval is too coarse to use and the rate comes from the count per second instead. Safari limits the count to the screen refresh rate.' ),
 		array( 'Does polling rate affect DPI?', 'No. DPI is how far the cursor moves per inch of mouse travel; polling rate is how often it updates. Measure DPI with the DPI analyzer.' ),
 	),
 	'related'        => array( 'mouse-tester', 'dpi-analyzer', 'scroll-test', 'double-click-test', 'mouse-latency-test', 'refresh-rate-test' ),

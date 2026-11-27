@@ -37,8 +37,9 @@ return function ( $lengths, $default, $source ) {
 	<div class="stat"><span class="stat-label">Accuracy</span><span class="stat-value" id="tt-acc">-</span></div>
 	<div class="stat"><span class="stat-label">Raw WPM</span><span class="stat-value" id="tt-raw">-</span></div>
 	<div class="stat"><span class="stat-label">Errors</span><span class="stat-value" id="tt-err">0</span></div>
-	<div class="stat"><span class="stat-label">Characters</span><span class="stat-value" id="tt-chars">0</span></div>
+	<div class="stat"><span class="stat-label">Keys</span><span class="stat-value" id="tt-chars">0</span></div>
 </div>
 <div class="btn-row tt-foot"><span class="tt-pb" id="tt-pb"></span></div>
-<p class="tool-status" id="tt-status" aria-live="polite">Click the text and start typing. The clock starts on your first key.</p>';
+<p class="tool-status" id="tt-status" aria-live="polite">Click the text and start typing. The clock starts on your first key.</p>
+<p class="tt-method">WPM = correct characters ÷ 5 per minute; raw counts every key you pressed. <a href="/average-typing-speed/#how-wpm-works">How we calculate it</a></p>';
 };

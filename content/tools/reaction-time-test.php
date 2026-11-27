@@ -44,11 +44,10 @@ return array(
 <div class="table-scroll"><table>
 <thead><tr><th>Average</th><th>What it means</th></tr></thead>
 <tbody>
-<tr><td>Under 200 ms</td><td>Excellent. Typical of practiced gamers and sprinters at the start line.</td></tr>
-<tr><td>200-250 ms</td><td>Faster than most people.</td></tr>
-<tr><td>250-300 ms</td><td>Average. Most adults score here on a normal computer.</td></tr>
-<tr><td>300-400 ms</td><td>A bit slow. Often caused by tiredness, a slow screen or a laggy wireless mouse.</td></tr>
-<tr><td>Over 400 ms</td><td>Slow. Check your setup (see the fixes) and try again when rested.</td></tr>
+<tr><td>Under 200 ms</td><td>Very fast. Typical of practiced gamers and sprinters at the start line.</td></tr>
+<tr><td>200-250 ms</td><td>Good: faster than most people.</td></tr>
+<tr><td>250-300 ms</td><td>Average. Most adults score here on a normal computer, where the screen and mouse add about 20-50 ms.</td></tr>
+<tr><td>Over 300 ms</td><td>Slower than average. Often caused by tiredness, a slow screen or a laggy wireless mouse; over 400 ms, check your setup (see the fixes) and try again when rested.</td></tr>
 </tbody></table></div>
 <p>Look at your <strong>average</strong>, not your best. A single 150 ms try is often a lucky guess that happened to land at the right moment. Times under 100 ms are almost always anticipation, because the eye and brain cannot react that fast.</p>',
 	'extra'          => array(

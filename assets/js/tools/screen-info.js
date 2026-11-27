@@ -28,12 +28,15 @@
 	}
 	var MAX_PX = 32768; // larger than any real screen or video frame
 
+	// Decimal places typed in a field (8.5 -> 1), so 8.5 x 11 can be reduced as 85 x 110.
+	function places(el) { var m = String(el.value).trim().match(/\.(\d+)$/); return m ? m[1].length : 0; }
+
 	function reduced(w, h) { var g = gcd(Math.round(w), Math.round(h)); return Math.round(w) / g + ':' + Math.round(h) / g; }
 
 	/* PPI verdict worded for the kind of screen the diagonal suggests and its usual viewing distance.
 	   Classes by diagonal in inches: under 11 phone/tablet, 11-18 laptop, 18-50 monitor, 50 and up TV.
 	   Each class has its own PPI steps, because a TV seen from the sofa needs far fewer pixels per inch than a phone. */
-	function ppiVerdict(ppi, dIn) {
+	function ppiVerdict(ppi, dIn, retinaCm) {
 		if (dIn < 11) {
 			return ppi >= 400 ? 'Very sharp for a phone or tablet: pixels are invisible at any normal distance.'
 				: ppi >= 260 ? 'Sharp for a phone or tablet (Retina class): pixels are hard to see at a normal 30 cm.'
@@ -47,11 +50,13 @@
 				: 'Low density for a laptop: pixels are easy to see at a normal 50 cm.';
 		}
 		if (dIn < 50) {
-			return ppi >= 160 ? 'Very sharp for a monitor: pixels are invisible at arm\'s length (60-80 cm).'
-				: ppi >= 105 ? 'Sharp for a desktop monitor at arm\'s length (60-80 cm).'
-				: ppi >= 85 ? 'Standard monitor density: pixels can be seen up close but not at arm\'s length.'
-				: ppi >= 50 ? 'Coarse for a desk monitor; fine as a TV or a screen seen from 1.5 m or more.'
-				: 'Low density: only fine from across a room.';
+			// Monitors: worded from the same number as "Pixels vanish beyond", against an arm's length of 60-80 cm.
+			var r = Math.round(retinaCm), beyond = 'pixels vanish beyond ' + r + ' cm';
+			return r <= 60 ? 'Very sharp for a monitor: pixels are invisible at arm\'s length (60-80 cm); ' + beyond + '.'
+				: r <= 80 ? 'Sharp for a desktop monitor: ' + beyond + ', so they are only visible at the near end of arm\'s length (60-80 cm).'
+				: r <= 110 ? 'Standard monitor density: pixels are visible at arm\'s length (60-80 cm) if you look closely; they vanish beyond ' + r + ' cm.'
+				: r <= 150 ? 'Coarse for a desk monitor: pixels are clearly visible at arm\'s length and vanish only beyond ' + r + ' cm.'
+				: 'Low density: ' + beyond + ', so it suits a screen seen from across a room.';
 		}
 		return ppi >= 70 ? 'Very sharp for a TV: pixels are invisible from the sofa, even close to a big screen.'
 			: ppi >= 35 ? 'Sharp for a TV from a normal sofa distance (2-3 m); pixels only show if you sit right in front of it.'
@@ -128,6 +133,7 @@
 			var d = parseFloat(szD.value), rw = parseFloat($('#sz-rw').value), rh = parseFloat($('#sz-rh').value);
 			var out = $('#sz-out');
 			if (!(d > 0 && rw > 0 && rh > 0)) { out.textContent = 'Enter a diagonal and a ratio.'; return; }
+			if (d < 1 || d > 200 || rw > MAX_PX || rh > MAX_PX) { out.textContent = 'Enter a diagonal of 1 to 200 inches.'; return; }
 			var k = d / Math.hypot(rw, rh), w = rw * k, h = rh * k;
 			out.innerHTML = '';
 			[['Width', fmt(w, 2) + ' in = ' + fmt(w * 2.54, 1) + ' cm'], ['Height', fmt(h, 2) + ' in = ' + fmt(h * 2.54, 1) + ' cm'], ['Area', fmt(w * h, 1) + ' sq in = ' + fmt(w * h * 6.4516, 0) + ' sq cm']].forEach(function (r) {
@@ -167,8 +173,10 @@
 			var r = a / b, nr = nearestRatio(a, b);
 			if (last === 'w2' && parseFloat(w2.value) > 0) { var hv = parseFloat(w2.value) / r; h2.value = round ? Math.round(hv) : fmt(hv, 2).replace(/,/g, ''); }
 			if (last === 'h2' && parseFloat(h2.value) > 0) { var wv = parseFloat(h2.value) * r; w2.value = round ? Math.round(wv) : fmt(wv, 2).replace(/,/g, ''); }
-			var isInt = a === Math.round(a) && b === Math.round(b);
-			$('#ar-ratio').textContent = isInt ? reduced(a, b) : fmt(r, 4) + ':1';
+			var dp = Math.max(places(w1), places(h1)), k = Math.pow(10, dp);
+			var isInt = dp <= 3 && Math.abs(a * k - Math.round(a * k)) < 1e-6 && Math.abs(b * k - Math.round(b * k)) < 1e-6;
+			var exact = isInt ? reduced(a * k, b * k) : '';
+			$('#ar-ratio').textContent = isInt ? exact : fmt(r, 4) + ':1';
 			$('#ar-dec').textContent = fmt(r, 4) + ':1';
 			var nn = nr.name.split(' ')[0];
 			if (a < b) { nn = nn.split(':').reverse().join(':') + ' (portrait)'; }
@@ -176,7 +184,7 @@
 			var pv = $('#ar-preview');
 			pv.style.aspectRatio = a + ' / ' + b;
 			pv.style.width = a >= b ? '100%' : (a / b * 100) + '%';
-			$('#ar-preview-label').textContent = (isInt ? reduced(a, b) : fmt(r, 3) + ':1');
+			$('#ar-preview-label').textContent = (isInt ? exact : fmt(r, 3) + ':1');
 			var list = $('#ar-sizes');
 			list.innerHTML = '';
 			// A size like 1366 x 768 is 16:9 rounded to whole pixels: list the standard 16:9 sizes, not 683:384 ones.
@@ -190,8 +198,8 @@
 		};
 		w1.addEventListener('input', arCalc);
 		h1.addEventListener('input', arCalc);
-		w2.addEventListener('input', function () { last = 'w2'; arCalc(); });
-		h2.addEventListener('input', function () { last = 'h2'; arCalc(); });
+		w2.addEventListener('input', function () { last = 'w2'; if (w2.value === '') { h2.value = ''; } arCalc(); });
+		h2.addEventListener('input', function () { last = 'h2'; if (h2.value === '') { w2.value = ''; } arCalc(); });
 		$('#ar-round').addEventListener('change', arCalc);
 		U.$$('[data-ar]', root).forEach(function (b) {
 			b.addEventListener('click', function () {
@@ -229,7 +237,7 @@
 			set('pp-size', fmt(wIn * 2.54, 1) + ' x ' + fmt(hIn * 2.54, 1) + ' cm (' + fmt(wIn, 2) + ' x ' + fmt(hIn, 2) + ' in)');
 			set('pp-ratio', nearestRatio(w, h).name.split(' ')[0] + ' (' + reduced(w, h) + ')');
 			set('pp-retina', fmt(retina * 2.54, 0) + ' cm (' + fmt(retina, 1) + ' in)');
-			set('pp-verdict', ppiVerdict(ppi, d));
+			set('pp-verdict', ppiVerdict(ppi, d, retina * 2.54));
 		};
 		[ppW, ppH, ppD].forEach(function (el) { el.addEventListener('input', ppCalc); });
 		ppUnit.addEventListener('change', function () {

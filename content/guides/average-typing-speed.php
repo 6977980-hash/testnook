@@ -23,9 +23,9 @@ return array(
 		array(
 			'How WPM is calculated',
 			'<p>Words per minute does not count real words. By convention a word is <strong>five characters, including spaces and punctuation</strong>, so "I am happy today" (16 characters) is 3.2 words. That keeps a test with long words fair against one with short words.</p>
-<p>Testnook\'s tests count only what you got right. Your <strong>WPM</strong> is the correctly typed characters, including the space after each correct word, divided by five and by the minutes. <strong>Raw WPM</strong> counts everything you typed, errors included, so the gap between the two is what your mistakes cost. A wrong word also costs the space after it. <strong>Accuracy</strong> is the share of characters that were right.</p>
+<p>Testnook\'s tests count only what you got right. Your <strong>WPM</strong> is the correctly typed characters, including the space after each correct word, divided by five and by the minutes. <strong>Raw WPM</strong> counts every key you pressed, including mistakes you later deleted, so the gap between the two is what your mistakes cost. A wrong word also costs the space after it. <strong>Accuracy</strong> is the share of the keys you pressed that were right.</p>
 <p>Many other tests and most employers use a different rule. <strong>Gross WPM</strong> is every character you typed divided by five, per minute, and <strong>net WPM</strong> subtracts one word for every uncorrected error. If you type 300 characters in one minute with 4 mistakes left in the text, gross is 60 WPM and net is 56 WPM. Both methods punish errors, so the scores land close together, but they are not identical; compare results from the same test.</p>
-<p>Errors you fix with backspace before the end cost time but not words, which is why good typists correct as they go.</p>',
+<p>Errors you fix with backspace cost time but not words, which is why good typists correct as they go. They still count against accuracy, and the result shows how many you corrected.</p>',
 			'how-wpm-works',
 		),
 		array(

@@ -15,6 +15,9 @@
 	var KEY = 'tn-ruler-ppi';
 	var CARD_MM = 85.6;
 	var ppi = 96, unit = 'cm', vertical = false, calibrated = false, dragStart = null, dragEnd = null;
+	var PAD = 12;          // px before the zero mark (same as draw())
+	var showIn = null;     // "Show a length" target in inches, or null
+	var showEl = $('#rl-show'), showMsg = $('#rl-show-msg');
 
 	try { var saved = parseFloat(localStorage.getItem(KEY)); if (saved > 20 && saved < 1000) { ppi = saved; calibrated = true; } } catch (e) { /* private mode */ }
 
@@ -91,8 +94,59 @@
 		card.style.width = (CARD_MM / 25.4 * ppi) + 'px';
 		card.style.height = (53.98 / 25.4 * ppi) + 'px';
 		cardSlider.value = Math.round(CARD_MM / 25.4 * ppi);
+		if (showIn !== null) { placeShow(); }
 		drawMeasure();
 	}
+
+	/* ---------- Show a length ---------- */
+	// "1.5 in", '1.5"', "1.5inch", "8.5 cm", "10 mm", "8,5cm"; a bare number uses the ruler's current unit.
+	function parseLen(str) {
+		var m = String(str).trim().toLowerCase().replace(/\u201d|\u2033|''/g, '"').match(/^(\d+(?:[.,]\d+)?|[.,]\d+)\s*(in|inch|inches|"|cm|mm)?$/);
+		if (!m) { return null; }
+		var v = parseFloat(m[1].replace(',', '.')), u = m[2] || (unit === 'cm' ? 'cm' : 'in');
+		if (!(v > 0)) { return null; }
+		if (u === 'cm') { return { inches: v / 2.54, text: v + ' cm', q: v + 'cm' }; }
+		if (u === 'mm') { return { inches: v / 25.4, text: v + ' mm', q: v + 'mm' }; }
+		return { inches: v, text: v + ' in', q: v + 'in' };
+	}
+
+	function placeShow() {
+		var px = showIn * ppi, length = vertical ? wrap.clientHeight : wrap.clientWidth;
+		if (PAD + px > length - PAD + 0.5) {
+			dragStart = dragEnd = null;
+			setShowMsg('That is longer than the ruler on this screen (' + lenEl.textContent + '). Try Full screen or Vertical.', 'bad');
+			return;
+		}
+		dragStart = PAD; dragEnd = PAD + px;
+		setShowMsg(calibrated ? 'Shown from the zero mark at your calibration of ' + Math.round(ppi) + ' px per inch.' : 'Calibrate first: until then the bar assumes 96 px per inch and is only approximate.', calibrated ? '' : 'bad');
+	}
+
+	function setShowMsg(t, cls) { showMsg.textContent = t; showMsg.className = 'rl-show-msg' + (cls ? ' is-' + cls : ''); }
+
+	function setQuery(q) {
+		try {
+			var u = new URL(location.href);
+			if (q) { u.searchParams.set('show', q); } else { u.searchParams.delete('show'); }
+			history.replaceState(history.state, '', u.pathname + u.search + u.hash);
+		} catch (e) { /* old browser: the bar still works */ }
+	}
+
+	function show(str, fromUrl) {
+		var len = parseLen(str);
+		if (!len) {
+			showIn = null; dragStart = dragEnd = null; drawMeasure(); valEl.textContent = '-';
+			setShowMsg(String(str).trim() ? 'Enter a length such as 1.5 in, 8.5 cm or 10 mm.' : '', 'bad');
+			if (!fromUrl) { setQuery(''); }
+			return;
+		}
+		showIn = len.inches;
+		placeShow();
+		drawMeasure();
+		setQuery(len.q);
+	}
+
+	$('#rl-show-apply').addEventListener('click', function () { show(showEl.value, false); });
+	showEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); show(showEl.value, false); } });
 
 	function pos(e) {
 		var r = wrap.getBoundingClientRect();
@@ -125,6 +179,7 @@
 		if (e.button !== 0 && e.pointerType === 'mouse') { return; }
 		e.preventDefault();
 		dragging = true;
+		showIn = null; setShowMsg('', '');
 		dragStart = pos(e); dragEnd = dragStart;
 		wrap.setPointerCapture(e.pointerId);
 		drawMeasure();
@@ -197,4 +252,7 @@
 	new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 	draw();
 	if (calibrated) { U.status(statusEl, 'Using your saved calibration: ' + Math.round(ppi) + ' pixels per inch.', 'ok'); }
+	var q = null;
+	try { q = new URLSearchParams(location.search).get('show'); } catch (e) { /* ignore */ }
+	if (q !== null) { showEl.value = q; show(q, true); }
 }());

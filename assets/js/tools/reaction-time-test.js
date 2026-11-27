@@ -46,11 +46,11 @@
 	}
 
 	function rating(ms) {
-		if (ms < 200) { return 'Excellent'; }
-		if (ms < 250) { return 'Fast'; }
+		// Matches /average-reaction-time/: most adults average about 215-255 ms on a click test like this one.
+		if (ms < 200) { return 'Very fast'; }
+		if (ms < 250) { return 'Good'; }
 		if (ms < 300) { return 'Average'; }
-		if (ms < 400) { return 'A bit slow'; }
-		return 'Slow';
+		return 'Slower than average';
 	}
 
 	function finish() {
@@ -63,7 +63,7 @@
 			msg += best ? ' New best average!' : '';
 		}
 		setState('done', U.fmt(avg, 0) + ' ms average', rating(avg) + '. Click to play again.');
-		U.status(statusEl, msg, avg < 300 ? 'ok' : '');
+		U.status(statusEl, msg, avg < 250 ? 'ok' : '');
 		if (limit === 5 && window.TNStats) { TNStats.submit('reaction', Math.round(avg)); }
 	}
 
@@ -86,7 +86,7 @@
 		countEl.textContent = countText();
 		var li = document.createElement('li');
 		li.textContent = U.fmt(ms, 0) + ' ms';
-		li.className = ms < 250 ? 'is-fast' : (ms > 400 ? 'is-slow' : '');
+		li.className = ms < 200 ? 'is-fast' : (ms >= 300 ? 'is-slow' : '');
 		log.appendChild(li);
 		if (log.children.length > 20) { log.removeChild(log.firstChild); }
 

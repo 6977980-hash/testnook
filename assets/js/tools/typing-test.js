@@ -61,7 +61,9 @@
 	var dur = pressed ? Number(pressed.getAttribute('data-tt-t')) : Number(stage.getAttribute('data-tt-dur')) || 60;
 
 	var words = [], idx = 0, typed = [], running = false, done = false, t0 = 0, timer = 0, raf = 0;
-	var okChars = 0, badChars = 0, keyChars = 0, lastSentence = -1;
+	var okChars = 0, badChars = 0, lastSentence = -1;
+	// Every key that added a character (incl. space), the ones that matched the target when pressed, and wrong letters later deleted.
+	var keys = 0, okKeys = 0, fixed = 0;
 
 	function key() { return 'tn-typing-best-' + slug + '-' + dur; }
 	function pb() {
@@ -128,8 +130,8 @@
 		// Same time base for both: seconds since the first key, capped at the test length.
 		var el = (final ? dur : Math.min(dur, Math.max(0.5, (performance.now() - t0) / 1000))) / 60;
 		var ok = okChars + (final ? 0 : partialOk());
-		var wpm = Math.round((ok / 5) / el), raw = Math.round((keyChars / 5) / el);
-		var acc = keyChars ? Math.round(okChars / keyChars * 100) : 100;
+		var wpm = Math.round((ok / 5) / el), raw = Math.round((keys / 5) / el);
+		var acc = keys ? Math.floor(okKeys / keys * 100) : 100;
 		return { wpm: wpm, raw: raw, acc: acc };
 	}
 
@@ -159,13 +161,23 @@
 		var bad = got.length - ok + Math.max(0, target.length - got.length);
 		okChars += ok + (got === target ? 1 : 0); // the space counts when the word is right
 		badChars += bad + (got === target ? 0 : 1);
-		keyChars += got.length + 1;
+		keys++; if (got === target) { okKeys++; }
 		idx++;
 		more(idx + 60);
 		render(idx - 1);
 		scroll();
 		errEl.textContent = String(badChars);
-		charsEl.textContent = String(keyChars);
+		charsEl.textContent = String(keys);
+	}
+
+	// Compare the field with what it held before: added characters are key presses (right if they match the target
+	// at that position), removed wrong characters are corrected errors.
+	function track(v) {
+		var prev = typed[idx] || '', target = words[idx] || '', p = 0, c;
+		while (p < prev.length && p < v.length && prev[p] === v[p]) { p++; }
+		for (c = p; c < prev.length; c++) { if (prev[c] !== target[c]) { fixed++; } }
+		for (c = p; c < v.length; c++) { keys++; if (v[c] === target[c]) { okKeys++; } }
+		charsEl.textContent = String(keys);
 	}
 
 	function onInput() {
@@ -173,11 +185,14 @@
 		var v = input.value;
 		if (!running && v.trim()) { begin(); }
 		if (v.indexOf(' ') > -1) {
-			typed[idx] = v.replace(/\s+$/, '');
+			v = v.replace(/\s+$/, '');
+			if (running) { track(v); }
+			typed[idx] = v;
 			commit();
 			input.value = '';
 			return;
 		}
+		if (running) { track(v); }
 		typed[idx] = v;
 		render(idx);
 		scroll();
@@ -188,16 +203,17 @@
 		cancelAnimationFrame(raf);
 		if (typed[idx]) { // partial last word counts its correct letters
 			var got = typed[idx], ok = partialOk();
-			okChars += ok; badChars += got.length - ok; keyChars += got.length;
+			okChars += ok; badChars += got.length - ok;
 		}
+		var errTxt = badChars + (badChars === 1 ? ' error' : ' errors') + (fixed ? ', ' + fixed + ' corrected' : '');
 		var s = stats(true), best = pb();
 		wpmEl.textContent = String(s.wpm); rawEl.textContent = String(s.raw); accEl.textContent = s.acc + '%';
-		errEl.textContent = String(badChars); charsEl.textContent = String(keyChars);
+		errEl.textContent = String(badChars); charsEl.textContent = String(keys);
 		timeEl.textContent = fmtTime(0);
 		stage.classList.add('is-done');
 		overlay.hidden = true;
 		input.blur();
-		resultEl.innerHTML = '<strong>' + s.wpm + ' WPM</strong><span>' + s.acc + '% accuracy, ' + idx + ' words, ' + keyChars + ' characters in ' + label(dur) + '</span>';
+		resultEl.innerHTML = '<strong>' + s.wpm + ' WPM</strong><span>' + s.acc + '% accuracy, ' + idx + ' words, ' + keys + ' keys, ' + errTxt + ' in ' + label(dur) + '</span>';
 		resultEl.hidden = false;
 		var verdict;
 		if (s.acc < 90) { verdict = 'Accuracy under 90% is dragging the score down: slow down a little and let the speed come.'; }
@@ -206,7 +222,7 @@
 		else if (s.wpm < 70) { verdict = 'Faster than most people, at the level expected for office and data entry work.'; }
 		else if (s.wpm < 100) { verdict = 'Fast. Professional typists and keen programmers land here.'; }
 		else { verdict = 'Very fast. Competitive typing territory.'; }
-		var msg = s.wpm + ' words per minute with ' + s.acc + '% accuracy (raw ' + s.raw + ' WPM, ' + badChars + ' errors; a wrong word also counts the space after it). ' + verdict;
+		var msg = s.wpm + ' words per minute with ' + s.acc + '% accuracy (raw ' + s.raw + ' WPM, ' + errTxt + '; a wrong word also counts the space after it). ' + verdict;
 		if (s.acc >= 90 && s.wpm > best) {
 			try { localStorage.setItem(key(), String(s.wpm)); } catch (e) { /* ignore */ }
 			pb();
@@ -221,7 +237,7 @@
 		cancelAnimationFrame(raf);
 		clearTimeout(timer);
 		words = []; typed = []; idx = 0; running = false; done = false;
-		okChars = 0; badChars = 0; keyChars = 0;
+		okChars = 0; badChars = 0; keys = 0; okKeys = 0; fixed = 0;
 		more(80);
 		textEl.innerHTML = '';
 		textEl.style.transform = '';

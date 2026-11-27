@@ -34,6 +34,10 @@ Tested: `bin/check.sh` lint OK. No page output changed, so the sitemap gate was 
 3. **S-25** Google Search Console: Request indexing (a few per day) for `/how-to-fix-stick-drift/`, `/what-is-a-good-internet-speed/`, `/how-to-reduce-ping/`, `/auto-rotate-not-working/`, `/eye-test/`, `/how-to-test-a-used-monitor/`, `/webcam-not-working/`, then `/cps-test/`, `/reaction-time-test/`, `/typing-speed-test/`, `/keyboard-tester/`, `/mouse-tester/`. Add the Domain property `testnook.com` (DNS TXT in hPanel -> DNS). Bing Webmaster Tools: import from GSC. Make `aliahmadventures@gmail.com` an Owner of the GSC property.
 4. **S-31**: make Testnook social profiles, send the URLs; then list on AlternativeTo / Product Hunt / Slant, answer real Reddit questions with one disclosed link, offer `/embed-tools/` widgets to small blogs. No paid links or link exchanges.
 
-## Status of Ali's steps
+## Status of Ali's steps (checked from outside, 27 Nov 2026)
 
-Filled in after the live re-check (see the thread). Until then treat 1-4 as open.
+- **F-73 done.** Hostinger's git deploy did **not** delete the removed PNGs (still 200 for 15+ min after the merge), so Ali deleted them in File manager. Now 404. Lesson: when a phase deletes a file from the repo, ask Ali to delete it on the server too.
+- **F-66 done.** Ali removed the Hostinger AI Assistant / MCP plugin. `/wp-json/` no longer lists `hostinger-ai-assistant/v1` or `mcp`. `wp-abilities/v1` stays; it is WordPress core (Abilities API), not the plugin.
+- **F-65 partly done.** Ali deleted `readme.html` and `license.txt` in File manager; both now 404. The `.htaccess` rule was not added, so the next WordPress core update will bring them back. Next audit: re-check, and add the rule if they return.
+- **S-25 open** (GSC Request indexing, Domain property, Owner, Bing import): Ali's ongoing task.
+- **S-20 / S-31 open:** no social profile URLs yet, `TN_SOCIAL_PROFILES` still empty. When Ali sends URLs, add them in `inc/config.php` (one-line PR).

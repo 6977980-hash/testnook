@@ -38,6 +38,12 @@ guides, 182 URLs).
   - Ruler at 96 px/in: `?show=1.5in` and `?show=1.5"` -> 144 px, `8.5cm` -> 321 px, `10mm` -> 37.8 px; `abc` -> message; `500cm` -> too long message; typing "2 in" -> 192 px and URL `?show=2in`; canonical `/online-ruler/`; uncalibrated -> 144 px + "Calibrate first".
 - Not testable headless: a real 4-8 kHz mouse for F-71.
 
+## Live checks (27 Nov 2026, after PR #34 deployed)
+
+- Hostinger deployed within a few minutes; fresh pages (`?nc=`) load `ver=0.7.8`.
+- `bin/check.sh https://testnook.com`: 182/182 page loads pass.
+- Cleanup ran: `/wp-json/testnook/v1/stats?board=cps-1` now has 6 results (the audit saw 10, incl. 3+ single-click runs); `/1-second-cps-test/` prints "6 results so far, stats appear at 25".
+
 ## Ali's steps after this merge
 
 1. Purge the cache (hPanel -> Website -> Cache) so 0.7.8 loads.

@@ -2,3 +2,7 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Test screenshots must never land in the public theme root (F-73)
+/*.png
+!/screenshot.png

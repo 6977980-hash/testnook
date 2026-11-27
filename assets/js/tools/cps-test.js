@@ -104,11 +104,11 @@
 		stage.classList.remove('is-running');
 		stage.classList.add('is-done');
 		big.textContent = U.fmt(cps, 1) + ' CPS';
-		small.textContent = count + ' clicks in ' + dur + ' s. ' + rank(cps) + (mode === 'auto' ? '.' : '!');
+		small.textContent = count + (count === 1 ? ' click' : ' clicks') + ' in ' + dur + ' s. ' + rank(cps) + (mode === 'auto' ? '.' : '!');
 		var doneText = small.textContent;
 		clearTimeout(lockTimer);
 		lockTimer = setTimeout(function () { if (!running && stage.classList.contains('is-done')) { small.textContent = doneText + ' Your best is kept in this browser. Click again to restart.'; } }, LOCK);
-		var best = pb(), msg = 'Done: ' + count + ' clicks in ' + dur + ' seconds = ' + U.fmt(cps, 1) + ' clicks per second (' + rank(cps) + ').';
+		var best = pb(), msg = 'Done: ' + count + ' click' + (count === 1 ? '' : 's') + ' in ' + dur + (dur === 1 ? ' second' : ' seconds') + ' = ' + U.fmt(cps, 1) + ' clicks per second (' + rank(cps) + ').';
 		if (mode === 'auto') {
 			var r = rank(cps), s2 = spread();
 			if (r === 'Automated') { msg += ' The gap between clicks was ' + U.fmt(s2.mean, 1) + ' ms with only ' + Math.round(s2.cv * 100) + '% variation: that regularity is a program, so the auto clicker is working at ' + U.fmt(cps, 1) + ' CPS.'; }
@@ -122,7 +122,8 @@
 			if (best) { msg += ' New personal best!'; }
 		}
 		U.status(statusEl, msg, mode === 'auto' ? (rank(cps) === 'Automated' ? 'ok' : '') : (cps >= (mode === 'jitter' ? 9 : 6) ? 'ok' : ''));
-		if (window.TNStats && board() && !(rightOk && rightOk.checked)) { TNStats.submit(board(), Number(cps.toFixed(2)), 0, Math.round(spread().cv * 100)); }
+		// Site stats need at least 3 presses (the server checks the same).
+		if (window.TNStats && board() && count >= 3 && !(rightOk && rightOk.checked)) { TNStats.submit(board(), Number(cps.toFixed(2)), 0, Math.round(spread().cv * 100)); }
 		else if (window.TNShare && mode !== 'auto' && count) { TNShare.show('I scored ' + U.fmt(cps, 1) + ' CPS on the Testnook ' + dur + ' second ' + (mode === 'left' ? '' : mode + ' ') + 'click test'); }
 	}
 

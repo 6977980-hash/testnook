@@ -66,7 +66,7 @@ return array(
 	'fixes'          => array(
 		array( 'The new height has decimals', 'Not every width gives a whole-number height in a ratio. Turn on "Round to whole pixels", or choose a width from the standard sizes list, which divide evenly.' ),
 		array( 'My video size must be an even number', 'Many video encoders need even widths and heights. Round the result to the nearest even number; the change in shape is too small to see.' ),
-		array( 'The ratio shows a long decimal', 'You entered a size with decimals. Use whole pixel sizes to get a simplified ratio such as 16:9.' ),
+		array( 'The ratio shows a long decimal', 'You entered a size with more than three decimal places. Sizes with up to three are simplified too: 8.5 x 11 (US Letter) gives 17:22 and A4\'s 21 x 29.7 cm gives 70:99, about 1:1.414. Round the numbers to three places or fewer to get a simplified ratio.' ),
 	),
 	'faq'            => array(
 		array( 'How do I calculate the aspect ratio?', 'Divide the width and height by their greatest common divisor. 1920 and 1080 share 120, so the ratio is 16:9. Or just type them into the calculator.' ),

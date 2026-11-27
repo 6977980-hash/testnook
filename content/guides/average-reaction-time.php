@@ -14,7 +14,7 @@ return array(
 	'summary'     => array(
 		'The average visual reaction time for adults is <strong>about 215 to 255 ms</strong> in a large published study run on a PC with a gaming mouse, and often <strong>250 to 300 ms</strong> on an everyday setup, where a slower screen and mouse add delay.',
 		'Reaction time is fastest in the <strong>late teens and twenties</strong> and slows by only about 5 ms per decade between 18 and 65 in a widely cited study of about 1,400 adults.',
-		'Under <strong>200 ms</strong> on a computer test is excellent; it is typical of esports players and sprinters at the start line. Under 100 ms is anticipation, not reaction.',
+		'Under <strong>200 ms</strong> on a computer test is very fast; it is typical of esports players and sprinters at the start line. Under 100 ms is anticipation, not reaction.',
 		'Sleep, caffeine, a 60 Hz screen and a laggy wireless mouse can each move your average by 10 to 40 ms.',
 	),
 	'sections'    => array(
@@ -45,11 +45,10 @@ return array(
 			'What is a good reaction time?',
 			'<p>On a computer test, where the screen and mouse are part of the measurement:</p>
 <ul>
-<li><strong>Under 200 ms:</strong> excellent. Typical of competitive esports players and trained athletes, usually on a high refresh rate screen.</li>
-<li><strong>200 to 250 ms:</strong> faster than most people.</li>
+<li><strong>Under 200 ms:</strong> very fast. Typical of competitive esports players and trained athletes, usually on a high refresh rate screen.</li>
+<li><strong>200 to 250 ms:</strong> good, faster than most people.</li>
 <li><strong>250 to 300 ms:</strong> average for a healthy adult.</li>
-<li><strong>300 to 400 ms:</strong> slower than average; often tiredness, distraction or a slow setup rather than the person.</li>
-<li><strong>Over 400 ms:</strong> slow. Worth retrying rested and checking the hardware notes below.</li>
+<li><strong>Over 300 ms:</strong> slower than average; often tiredness, distraction or a slow setup rather than the person. Over 400 ms is worth retrying rested and checking the hardware notes below.</li>
 </ul>
 <p>Look at the average of five or more tries, never a single best time. One 150 ms result is usually a lucky click that happened to land just after the change. Times under 100 ms are physically impossible for a true reaction; in athletics a start under 100 ms is ruled a false start for that reason.</p>
 <p>Elite numbers for context: Formula 1 drivers react to the start lights in roughly 200 to 250 ms (try the <a href="/f1-reaction-test/">F1 reaction test</a>), and Olympic sprinters leave the blocks 120 to 160 ms after the gun, which is faster than a visual reaction because the ear turns sound into a nerve signal faster than the eye turns light into one.</p>',

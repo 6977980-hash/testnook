@@ -28,6 +28,12 @@ return array(
 	</div>
 	<p class="rl-tip" id="rl-tip">Drag along the ruler to measure. Hold an object against the screen and read the length.</p>
 </div>
+<div class="rl-show" id="rl-show-form">
+	<label for="rl-show">Show a length</label>
+	<input type="text" id="rl-show" placeholder="e.g. 1.5 in, 8.5 cm, 10 mm" autocomplete="off" spellcheck="false" enterkeyhint="go">
+	<button type="button" class="btn btn-sm btn-primary" id="rl-show-apply">Show</button>
+	<p class="rl-show-msg" id="rl-show-msg" aria-live="polite"></p>
+</div>
 <details class="rl-cal" id="rl-cal">
 	<summary>Calibrate for exact size <span class="rl-cal-state" id="rl-cal-state">(not calibrated: using the browser\'s default 96 px per inch)</span></summary>
 	<div class="rl-cal-body">
@@ -64,6 +70,7 @@ return array(
 		'Choose <strong>cm / mm</strong> or <strong>inches</strong>. Press <strong>Vertical</strong> to turn the ruler for tall objects, or <strong>Full screen</strong> for the longest ruler.',
 		'Hold the object against the screen at the zero mark and read its length from the ruler.',
 		'Or <strong>drag</strong> along the ruler: the highlighted span shows the exact length between your start and end points.',
+		'To see how long something is without holding it up, type a length such as <strong>1.5 in</strong> or <strong>8.5 cm</strong> under <strong>Show a length</strong>: a bar of exactly that length appears on the ruler.',
 		'Your calibration is saved in this browser, so the ruler stays accurate next time.',
 	),
 	'howto_title'  => 'How to use the online ruler',
@@ -71,6 +78,12 @@ return array(
 <p><strong>Ruler length</strong> is how much of a real ruler fits on your screen at the current size; a 24 inch monitor shows about 50 cm in full screen, a phone around 6-7 cm in portrait. <strong>Measured</strong> is the length of your last drag.</p>
 <p>Accuracy depends on your calibration. A bank card is the easiest reference: every card is 85.60 mm by 53.98 mm. If you have a real ruler, the fine tune buttons get the last fraction of a percent.</p>',
 	'extra'        => array(
+		array(
+			'Show an exact length on your screen',
+			'<p>Type a length in the <strong>Show a length</strong> box, for example <code>1.5 in</code>, <code>1.5"</code>, <code>8.5 cm</code> or <code>10 mm</code>, and the ruler highlights a bar of exactly that length from the zero mark. It is a quick way to see how big 1.5 inches or 10 cm really is before you buy or cut something.</p>
+<p>The bar is only as exact as your calibration, so match a bank card first; until then it uses the default 96 pixels per inch and says so. The length is added to the page address (for example <code>?show=8.5cm</code>), so you can bookmark it or send it to someone, who then sees it on their own calibrated screen.</p>',
+			'show-length',
+		),
 		array(
 			'Why screen rulers need calibration',
 			'<p>A web page measures everything in CSS pixels, and the browser assumes 96 of them make an inch. Real screens have anywhere from 90 to 500 physical pixels per inch, and operating systems scale pages by 125%, 150%, 200% or odd amounts, so "1 inch" on a page is rarely 1 inch of glass. The browser does not know the physical size of your screen, which is why every online ruler needs a reference object or your screen size to be exact.</p>
@@ -94,9 +107,10 @@ return array(
 		array( 'How do I calibrate the ruler without a card?', 'Enter your screen\'s diagonal size in inches, or hold any object you know the size of (a coin, a sheet of A4) against the ruler and use the fine tune buttons until it matches.' ),
 		array( 'How long is the ruler?', 'As long as your screen allows. The "Ruler length" box shows the current length. Full screen and Vertical modes give you the longest ruler your display can show.' ),
 		array( 'Does the online ruler work on a phone?', 'Yes. Phone screens show about 6-7 cm across in portrait and 12-15 cm in landscape. Calibrate with a bank card for best accuracy.' ),
+		array( 'How do I show 1.5 inches or 10 cm on my screen?', 'Calibrate the ruler once, then type the length (such as 1.5 in, 1.5", 8.5 cm or 10 mm) in the Show a length box and press Show. A highlighted bar of that exact length appears on the ruler, starting at zero.' ),
 		array( 'Can I measure in millimeters?', 'Yes. The cm / mm mode has a mark every millimeter, with longer marks every 5 mm and numbers every centimeter. Inch mode shows sixteenths.' ),
 		array( 'Is my calibration saved?', 'It is stored in this browser on this device only. Nothing is sent to a server, and you can reset it any time.' ),
 	),
 	'related'      => array( 'dpi-analyzer', 'dead-pixel-test', 'white-screen', 'refresh-rate-test', 'touch-screen-test', 'online-mirror' ),
-	'updated'      => '2026-10-28',
+	'updated'      => '2026-11-27',
 );

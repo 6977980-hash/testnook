@@ -22,3 +22,8 @@
 .rl-diag-row { display: grid; grid-template-columns: 1fr auto auto; gap: 8px; align-items: center; margin-bottom: 8px; }
 .rl-diag-row input { min-height: 40px; }
 .rl-res { font-size: .82rem !important; }
+.rl-show { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; }
+.rl-show label { font-weight: 600; font-size: .95rem; }
+.rl-show input { min-height: 40px; flex: 1 1 180px; max-width: 260px; }
+.rl-show-msg { flex-basis: 100%; margin: 0; min-height: 1.4em; font-size: .9rem; color: var(--muted); }
+.rl-show-msg.is-bad { color: var(--bad); }

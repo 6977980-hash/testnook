@@ -26,6 +26,30 @@ $tn_edpi_options = function ( $selected ) use ( $tn_edpi_games ) {
 	return $html . '<option value="custom">Other game (enter its yaw)</option>';
 };
 
+/*
+ * Default outputs printed in the HTML (800 DPI, 0.5 in Valorant, converted to
+ * CS2) so the page does not shift when the script runs; the JS recalculates
+ * the same numbers with the same formatting (en-US, trailing zeros dropped).
+ */
+$tn_edpi_fmt  = function ( $n, $d ) {
+	$s = number_format( $n, $d, '.', ',' );
+	return false !== strpos( $s, '.' ) ? rtrim( rtrim( $s, '0' ), '.' ) : $s;
+};
+$tn_edpi_sens = function ( $n ) use ( $tn_edpi_fmt ) {
+	return $tn_edpi_fmt( $n, $n < 0.1 ? 4 : 3 );
+};
+$tn_d_dpi    = 800;
+$tn_d_sens   = 0.5;
+$tn_d_yaw    = (float) $tn_edpi_games['valorant'][1];
+$tn_d_counts = 360 / ( $tn_d_yaw * $tn_d_sens );
+$tn_d_in     = $tn_d_counts / $tn_d_dpi;
+$tn_d_out    = $tn_d_sens * $tn_d_yaw / (float) $tn_edpi_games['cs2'][1];
+$tn_edpi_all = '';
+foreach ( $tn_edpi_games as $key => $g ) {
+	$v            = $tn_d_sens * $tn_d_yaw / (float) $g[1];
+	$tn_edpi_all .= '<tr><td>' . $g[0] . '</td><td>' . $tn_edpi_sens( $v ) . '</td><td>' . $tn_edpi_fmt( $v * $tn_d_dpi, 1 ) . '</td></tr>';
+}
+
 $tn_edpi_rows = '';
 foreach ( $tn_edpi_games as $key => $g ) {
 	$tn_edpi_rows .= '<tr><td>' . $g[0] . '</td><td>' . $g[1] . '</td></tr>';
@@ -49,11 +73,11 @@ return array(
 		<label class="ed-yaw" hidden>Yaw of that game (degrees per count)<input type="number" id="ed-yaw-from" min="0" step="any" placeholder="e.g. 0.022" inputmode="decimal"></label>
 	</div>
 	<p class="si-note is-bad" id="ed-msg" role="alert"></p>
-	<div class="si-hero" style="margin-top:12px"><small>Your eDPI</small><strong id="ed-edpi">-</strong><span id="ed-edpi-note"></span></div>
+	<div class="si-hero" style="margin-top:12px"><small>Your eDPI</small><strong id="ed-edpi">' . $tn_edpi_fmt( $tn_d_dpi * $tn_d_sens, 2 ) . '</strong><span id="ed-edpi-note">' . $tn_d_dpi . ' DPI × ' . $tn_edpi_sens( $tn_d_sens ) . ' in ' . $tn_edpi_games['valorant'][0] . '</span></div>
 	<div class="stats">
-		<div class="stat"><span class="stat-label">cm/360</span><span class="stat-value" id="ed-cm360">-</span></div>
-		<div class="stat"><span class="stat-label">inches/360</span><span class="stat-value" id="ed-in360">-</span></div>
-		<div class="stat"><span class="stat-label">Counts per 360°</span><span class="stat-value" id="ed-counts">-</span></div>
+		<div class="stat"><span class="stat-label">cm/360</span><span class="stat-value" id="ed-cm360">' . $tn_edpi_fmt( $tn_d_in * 2.54, 1 ) . ' cm</span></div>
+		<div class="stat"><span class="stat-label">inches/360</span><span class="stat-value" id="ed-in360">' . $tn_edpi_fmt( $tn_d_in, 2 ) . ' in</span></div>
+		<div class="stat"><span class="stat-label">Counts per 360°</span><span class="stat-value" id="ed-counts">' . $tn_edpi_fmt( $tn_d_counts, 0 ) . '</span></div>
 	</div>
 	<h2 class="si-sub" id="ed-convert-title">Convert your sensitivity</h2>
 	<div class="si-form">
@@ -61,9 +85,9 @@ return array(
 		<label class="ed-yaw" hidden>Yaw of that game (degrees per count)<input type="number" id="ed-yaw-to" min="0" step="any" placeholder="e.g. 0.022" inputmode="decimal"></label>
 		<label>At DPI (optional)<input type="number" id="ed-dpi2" min="50" max="50000" step="any" placeholder="same DPI" inputmode="numeric"></label>
 	</div>
-	<div class="si-hero ed-out" style="margin-top:12px"><small id="ed-to-name">Sensitivity in Counter-Strike 2</small><strong id="ed-out-sens">-</strong><span id="ed-out-note"></span></div>
+	<div class="si-hero ed-out" style="margin-top:12px"><small id="ed-to-name">Sensitivity in Counter-Strike 2</small><strong id="ed-out-sens">' . $tn_edpi_sens( $tn_d_out ) . '</strong><span id="ed-out-note">at ' . $tn_d_dpi . ' DPI (eDPI ' . $tn_edpi_fmt( $tn_d_out * $tn_d_dpi, 1 ) . '), the same ' . $tn_edpi_fmt( $tn_d_in * 2.54, 1 ) . ' cm/360</span></div>
 	<h2 class="si-sub">Same aim in every game</h2>
-	<div class="table-scroll"><table class="ed-table"><thead><tr><th>Game</th><th>Sensitivity</th><th>eDPI there</th></tr></thead><tbody id="ed-all"></tbody></table></div>
+	<div class="table-scroll"><table class="ed-table"><thead><tr><th>Game</th><th>Sensitivity</th><th>eDPI there</th></tr></thead><tbody id="ed-all">' . $tn_edpi_all . '</tbody></table></div>
 	<p class="si-note">Hip-fire sensitivity at your DPI, keeping the same cm/360. Scoped and ADS multipliers are separate settings in each game.</p>
 </div>',
 	'howto'          => array(

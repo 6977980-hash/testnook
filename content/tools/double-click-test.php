@@ -47,7 +47,8 @@ return array(
 		array(
 			'Why does a mouse double click on its own?',
 			'<p>Each mouse button has a tiny metal micro switch. Over hundreds of thousands of presses the spring contact wears and oxidizes, and instead of one clean "on" it bounces: on, off, on in a few milliseconds. The mouse firmware normally filters bounce for a short window (debounce), but a worn switch bounces for longer than that window and the computer sees two clicks. Dust and static can cause the same thing on a nearly new mouse, which is why cleaning sometimes helps.</p>
-<p>This double click test uses the browser\'s high resolution timer to measure the gap between every <em>mousedown</em> event, so it sees exactly what your games and apps see.</p>',
+<p>This double click test uses the browser\'s high resolution timer to measure the gap between every <em>mousedown</em> event, so it sees exactly what your games and apps see.</p>
+<p>Keyboards suffer from the same fault, called key chatter: one key press types two letters. The <a href="/keyboard-tester/">keyboard tester</a> flags it, and the guide on <a href="/how-to-fix-keyboard-chatter/">how to fix keyboard chatter</a> covers cleaning, debounce settings and switch swaps.</p>',
 			'why',
 		),
 	),

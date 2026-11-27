@@ -72,7 +72,7 @@ return array(
 		),
 		array(
 			'Testing Bluetooth and wireless headphones',
-			'<p>Bluetooth headphones work the same way here. Make sure they are connected as the output device, not just paired. If you use a headset with a microphone on Windows, choose the "Stereo" or "Headphones" output, not the "Hands-Free" one, which is mono and low quality. After this headphone check, you can test the built-in microphone with the <a href="/mic-test/">mic test</a>, or check any speaker with the general <a href="/sound-test/">sound test</a>.</p>',
+			'<p>Bluetooth headphones work the same way here. Make sure they are connected as the output device, not just paired. If you use a headset with a microphone on Windows, choose the "Stereo" or "Headphones" output, not the "Hands-Free" one, which is mono and low quality. After this headphone check, you can test the built-in microphone with the <a href="/mic-test/">mic test</a>, or check any speaker with the general <a href="/sound-test/">sound test</a>. If the sound lags behind videos or games, measure the delay with the <a href="/audio-latency-test/">audio latency test</a>.</p>',
 			'bluetooth',
 		),
 	),

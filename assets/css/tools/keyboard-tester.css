@@ -41,3 +41,9 @@
 .kb-log th { background: var(--surface-2); font-family: var(--font); }
 .kb-log tbody:empty::after { content: "Press a key to fill the log."; display: block; padding: 6px 8px; color: var(--muted); font-family: var(--font); }
 @media (max-width: 560px) { .tool-stage.kb-stage { padding: 6px; } }
+/* Chatter detector (audit 3): a red key, a red log row; same size as a normal key, so no layout shift. */
+.kb-key.is-chatter { border-color: var(--bad); color: var(--bad); background: color-mix(in srgb, var(--bad) 16%, var(--surface)); }
+.kb-log tr.is-chatter td { color: var(--bad); font-weight: 600; }
+.kb-chatter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 10px; font-size: .9rem; }
+.kb-chatter-row label { font-weight: 600; }
+.kb-chatter-help { color: var(--muted); font-size: .85rem; }

@@ -66,7 +66,7 @@ return array(
 <ol>
 <li><strong>Windows:</strong> Settings &gt; System &gt; Display &gt; Advanced display &gt; Choose a refresh rate. <strong>Mac:</strong> System Settings &gt; Displays &gt; Refresh Rate (hold Option while clicking the resolution list if it is missing).</li>
 <li><strong>Cable:</strong> HDMI 1.4 tops out at 1080p 144Hz or 1440p 75Hz; for 1440p 144Hz you need DisplayPort 1.2 or HDMI 2.0; for 4K 144Hz, DisplayPort 1.4 with DSC or HDMI 2.1. Use the cable that came with the monitor.</li>
-<li><strong>Monitor menu:</strong> some monitors have an "overclock" or "DisplayPort 1.2" toggle that must be on for the full rate.</li>
+<li><strong>Monitor menu:</strong> some monitors have an "overclock" or "DisplayPort 1.2" toggle that must be on for the full rate. After any overclock, run the <a href="/frame-skipping-test/">frame skipping test</a> to check that the monitor shows every frame instead of quietly dropping some.</li>
 <li><strong>Laptops:</strong> the internal screen often drops to 60Hz on battery to save power. Check the power settings or plug in.</li>
 <li><strong>Browser:</strong> Chrome on Windows sometimes locks to 60 fps on a secondary monitor; drag the window to the fast monitor and reload the test.</li>
 </ol>

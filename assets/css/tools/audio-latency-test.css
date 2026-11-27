@@ -1,0 +1,21 @@
+/* Audio latency test */
+.al-bar { flex-wrap: wrap; gap: 8px; }
+.al-vol { display: inline-flex; align-items: center; gap: 8px; font-size: .9rem; }
+.al-vol input { width: 110px; }
+.al-vol output { min-width: 3.2em; font-variant-numeric: tabular-nums; }
+.tool-stage.al-stage { min-height: 260px; cursor: pointer; user-select: none; -webkit-user-select: none; touch-action: manipulation; padding: 20px; grid-template-rows: auto auto; gap: 14px; align-content: center; text-align: center; border: 2px dashed var(--border); outline: none; }
+.al-stage.is-live { border-color: var(--brand); border-style: solid; }
+.al-stage:focus-visible { box-shadow: 0 0 0 3px var(--focus); }
+.al-ring { width: 96px; height: 96px; border-radius: 50%; margin: 0 auto; background: var(--surface-2); border: 4px solid var(--border); }
+.al-ring.is-hit { animation: al-hit .3s ease-out; }
+.al-ring.is-tap { animation: al-tap .2s ease-out; }
+@keyframes al-hit { 0% { background: var(--brand); border-color: var(--brand); transform: scale(1.1); } 100% { transform: scale(1); } }
+@keyframes al-tap { 0% { border-color: var(--ok); transform: scale(.94); } 100% { transform: scale(1); } }
+.al-msg { display: grid; gap: 6px; }
+.al-msg strong { font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.al-msg span { color: var(--muted); font-size: .95rem; }
+.al-foot { margin-top: 10px; justify-content: center; }
+.al-runs table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: .9rem; }
+.al-runs th, .al-runs td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+.al-runs th { background: var(--surface-2); }
+@media (prefers-reduced-motion: reduce) { .al-ring.is-hit, .al-ring.is-tap { animation-duration: .01s; } }

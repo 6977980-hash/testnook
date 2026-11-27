@@ -16,7 +16,7 @@ return array(
 <ul>
 <li><strong>Dead keys:</strong> a key that never lights up. On laptops a whole row or cluster of dead keys usually means the ribbon cable, not the keys.</li>
 <li><strong>Stuck keys:</strong> a key that stays lit or lights up without a press, almost always something under the keycap.</li>
-<li><strong>Key chatter:</strong> one press typed twice, common on worn mechanical switches.</li>
+<li><strong>Key chatter:</strong> one press typed twice, common on worn mechanical switches. The keyboard tester flags it automatically, and the guide on <a href="/how-to-fix-keyboard-chatter/">how to fix keyboard chatter</a> covers the fixes.</li>
 <li><strong>Ghosting and limited rollover:</strong> a third or fourth key that is ignored while two others are held. Budget membrane boards do this on some combinations; gaming boards should register six or more keys at once.</li>
 <li><strong>Layout mismatches:</strong> the key lights up in the right place but types the wrong character. That is a system language setting, not hardware.</li>
 </ul>

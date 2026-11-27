@@ -1,4 +1,4 @@
-/* Keyboard tester: full-size / TKL / 75% / 60% layouts, ANSI or ISO (UK/EU) shape, Windows or Mac labels, keys light up on keydown and stay green once tested, held-key count (rollover), last key details, a key log and a typing area. The board scales to fit its box. */
+/* Keyboard tester: full-size / TKL / 75% / 60% layouts, ANSI or ISO (UK/EU) shape, Windows or Mac labels, keys light up on keydown and stay green once tested, held-key count (rollover), last key details, a key log, a chatter detector (a second press that follows the key's last release within the chatter window) and a typing area. The board scales to fit its box. */
 (function () {
 	'use strict';
 	var root = document.querySelector('[data-tool="keyboard-tester"]');
@@ -11,6 +11,8 @@
 	var out = { key: $('#kb-key'), code: $('#kb-code'), which: $('#kb-which'), held: $('#kb-held'), max: $('#kb-max'), tested: $('#kb-tested'), total: $('#kb-total') };
 	var opt = { size: 'full', shape: 'ansi', os: /Mac|iPhone|iPad/.test(navigator.platform || '') ? 'mac' : 'win' };
 	var tested = {}, down = {}, maxHeld = 0, keyCount = 0, log = [];
+	var lastUp = {}, chatter = {}, chatterCount = 0, chatterSel = $('#kb-chatter-ms'), chatterOut = $('#kb-chatter');
+	var chatterMs = 30;
 	var LOG_MAX = 10, U_MIN = 22, U_MAX = 46;
 
 	// Keys are [code, label, width in units, height in units]; a row is an array of keys.
@@ -109,7 +111,7 @@
 						return;
 					}
 					var el = document.createElement('span');
-					el.className = 'kb-key' + (tested[k[0]] ? ' is-done' : '');
+					el.className = 'kb-key' + (tested[k[0]] ? ' is-done' : '') + (chatter[k[0]] ? ' is-chatter' : '');
 					el.setAttribute('data-code', k[0]);
 					el.setAttribute('data-label', label(k));
 					el.textContent = label(k);
@@ -161,13 +163,14 @@
 		out.which.textContent = e.keyCode || e.which || '-';
 	}
 
-	function addLog(e) {
-		log.unshift({ key: keyName(e), code: e.code || '-', keyCode: e.keyCode || e.which || 0, repeat: !!e.repeat });
+	function addLog(e, note) {
+		log.unshift({ key: keyName(e), code: e.code || '-', keyCode: e.keyCode || e.which || 0, repeat: !!e.repeat, note: note || '' });
 		if (log.length > LOG_MAX) { log.length = LOG_MAX; }
 		logBody.innerHTML = '';
 		log.forEach(function (row) {
 			var tr = document.createElement('tr');
-			[row.key + (row.repeat ? ' (held)' : ''), row.code, String(row.keyCode)].forEach(function (v) {
+			if (row.note) { tr.className = 'is-chatter'; }
+			[row.key + (row.repeat ? ' (held)' : ''), row.code, String(row.keyCode), row.note].forEach(function (v) {
 				var td = document.createElement('td');
 				td.textContent = v;
 				tr.appendChild(td);
@@ -186,12 +189,27 @@
 			e.preventDefault(); // stops Tab focus moves, Space scroll, Backspace navigation, Alt menus
 		}
 		show(e);
-		addLog(e);
-		down[e.code || e.keyCode] = 1;
+		var id = e.code || e.keyCode, gap = -1;
+		// Chatter: a fresh press (not auto-repeat) that comes within the window after this key's last release.
+		if (!e.repeat && lastUp[id] !== undefined) {
+			gap = e.timeStamp - lastUp[id];
+			if (gap < 0 || gap > chatterMs) { gap = -1; }
+		}
+		addLog(e, gap >= 0 ? 'Chatter: ' + keyName(e).toUpperCase() + ' twice in ' + Math.round(gap) + ' ms' : '');
+		down[id] = 1;
 		var held = Object.keys(down).length;
 		out.held.textContent = held;
 		if (held > maxHeld) { maxHeld = held; out.max.textContent = held; }
 		var el = keyEl(e);
+		if (gap >= 0) {
+			chatterCount++;
+			chatter[e.code] = 1;
+			chatterOut.textContent = chatterCount;
+			if (el) { el.classList.add('is-chatter'); }
+			U.status(statusEl, 'Chatter on ' + keyName(e).toUpperCase() + ': pressed again ' + Math.round(gap) + ' ms after it was released. A finger cannot do that; the switch bounced. See the key log below.', 'bad');
+			if (el) { el.classList.add('is-down'); }
+			return;
+		}
 		if (el) {
 			el.classList.add('is-down');
 			if (!tested[e.code]) {
@@ -208,6 +226,7 @@
 	}
 
 	function onUp(e) {
+		lastUp[e.code || e.keyCode] = e.timeStamp;
 		delete down[e.code || e.keyCode];
 		out.held.textContent = Object.keys(down).length;
 		var el = keyEl(e);
@@ -216,6 +235,7 @@
 
 	function reset() {
 		tested = {}; down = {}; maxHeld = 0; log = [];
+		lastUp = {}; chatter = {}; chatterCount = 0; chatterOut.textContent = '0';
 		out.max.textContent = '0'; out.held.textContent = '0';
 		out.key.textContent = out.code.textContent = out.which.textContent = '-';
 		typing.value = '';
@@ -242,9 +262,11 @@
 			});
 		});
 	});
+	chatterSel.addEventListener('change', function () { chatterMs = parseInt(chatterSel.value, 10) || 30; });
+	chatterMs = parseInt(chatterSel.value, 10) || 30;
 	$('#kb-reset').addEventListener('click', function () { reset(); board.focus(); });
 	logCopy.addEventListener('click', function () {
-		var text = 'key\tcode\tkeyCode\n' + log.slice().reverse().map(function (r) { return r.key + '\t' + r.code + '\t' + r.keyCode; }).join('\n');
+		var text = 'key\tcode\tkeyCode\tnote\n' + log.slice().reverse().map(function (r) { return r.key + '\t' + r.code + '\t' + r.keyCode + '\t' + r.note; }).join('\n');
 		U.copyText(text, logCopy);
 	});
 	board.addEventListener('mousedown', function () { setTimeout(function () { board.focus(); }, 0); });
